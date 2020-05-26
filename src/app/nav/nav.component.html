@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <a class="navbar-brand" href="#">
+    <img src="../../assets/img/uftam_logo.png" alt="uftam_logo">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink='/home'>Accueil <span class="sr-only">(current)</span>
+          <div class="underline"></div>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink='/uftam_about'>uftam</a>
+        <div class="underline"></div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <div class="underline"></div>
+          Formation
+
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" routerLink='/uftam_formation/uftam_license'>Licence</a>
+          <a class="dropdown-item" routerLink='/uftam_formation/uftam_master'>Masters</a>
+          <a class="dropdown-item" routerLink='/uftam_formation/uftam_certificate'>Certificats</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink='/uftam_partners'>
+          Partenaires
+          <div class="underline"></div>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink='/uftam_admission'>Admission <div class="underline"></div></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink='/uftam_vie'>Vie étudiante <div class="underline"></div></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink='/uftam_actuality'>Actualité <div class="underline"></div></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink='/uftam_contact'>Contact <div class="underline"></div></a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2 d-none" type="search" placeholder="Search" aria-label="Search">
+      <button class="my-2 my-sm-0" type="submit">
+        <i class="fas fa-search fa-lg"></i>
+      </button>
+    </form>
+  </div>
+</nav>

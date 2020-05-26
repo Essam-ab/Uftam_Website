@@ -1,0 +1,60 @@
+<nav id="sidebar">
+  <div class="sidebar-header">
+    <h3 class="text-center">UFTAM</h3>
+  </div>
+
+  <ul class="list-unstyled components">
+    <p class="text-center">Menu</p>
+    <li class="active">
+      <a routerLink="/dashboardHome">Home</a>
+    </li>
+    <li>
+      <a href="#formationSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
+          class="fas fa-list"></i> Formation</a>
+      <ul class="collapse list-unstyled" id="formationSubmenu">
+        <li>
+          <a routerLink="/admin/typeFormationView"><i class="far fa-eye"></i> Type Formation</a>
+        </li>
+        <li>
+          <a routerLink="/admin/formationView"><i class="far fa-eye"></i> Formation</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="#eventSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
+          class="fas fa-list"></i> Évènement</a>
+      <ul class="collapse list-unstyled" id="eventSubmenu">
+        <li>
+          <a routerLink="/admin/typeEventView"><i class="far fa-eye"></i> Type Évènement</a>
+        </li>
+        <li>
+          <a routerLink="/admin/eventView"><i class="far fa-eye"></i> Évènement</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="#editSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
+          class="fas fa-list"></i> Modification</a>
+      <ul class="collapse list-unstyled" id="editSubmenu">
+        <li>
+          <a routerLink="/admin/modification/partners"><i class="far fa-eye"></i> Partenaire</a>
+        </li>
+        <li>
+          <a routerLink="/admin/modification/confCompaniesView"><i class="far fa-eye"></i> Confiance Company</a>
+        </li>
+        <li>
+          <a routerLink="/admin/modification/laVieView"><i class="far fa-eye"></i> La Vie</a>
+        </li>
+        <li>
+          <a routerLink="/admin/modification/studentExpView"><i class="fas fa-edit"></i> Vie Étudiant</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul class="list-unstyled CTAs">
+    <li>
+      <a routerLink="/" class="article btn btn-primary">Back to Site</a>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,33 @@
+<div class="pageheader-nav">
+  <ol class="breadcrumb slim-breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="/admin">Home</a></li>
+    <li class="breadcrumb-item"><a routerLink="/admin/modification/partners">Partenaires</a></li>
+    <li class="breadcrumb-item">Add Partenaire</li>
+  </ol>
+</div>
+<form (ngSubmit)="addPartner($event)">
+  <div class="form-group">
+    <label for="partnerName">Nom</label>
+    <input required type="text" class="form-control" id="partnerName" aria-describedby="emailHelp"
+      placeholder="Nom Partenaire..">
+    <!-- <small id="formationHelp" class="form-text text-muted">exemple.</small> -->
+  </div>
+
+  <style>
+    input[type="file"] {
+      padding: 3px;
+    }
+
+  </style>
+
+  <div class="input-group mb-5">
+    <input type='file' class="form-control" (change)='onFileChanged($event)'>
+    <button class="btn btn-outline-success" type="button" (click)="upload()">Upload</button>
+  </div>
+
+  <div class="text-center">
+    <button type="submit" class="btn btn-outline-primary">Submit</button>
+  </div>
+</form>
+
+<app-flash-messages></app-flash-messages>

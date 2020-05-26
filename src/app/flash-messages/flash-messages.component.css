@@ -1,0 +1,20 @@
+#errorMsg,
+#incorrectCred,
+#successMsg,
+#successAdded,
+#successPassed,
+#warningCancel,
+#successSignup,
+#emailExist,
+#usernameExist,
+#loggedStand,
+#loggedOutStand,
+#emptyMessage,
+#phoneWrong,
+#mailSent,
+#errorCode {
+  position: fixed !important;
+  top: 75%;
+  right: 5%;
+  width: 20vw;
+}

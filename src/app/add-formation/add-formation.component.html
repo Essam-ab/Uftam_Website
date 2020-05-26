@@ -1,0 +1,51 @@
+<div class="pageheader-nav">
+  <ol class="breadcrumb slim-breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="/admin">Home</a></li>
+    <li class="breadcrumb-item"><a routerLink="/admin/formationView">Formation</a></li>
+    <li class="breadcrumb-item">Add Formation</li>
+  </ol>
+</div>
+<form (ngSubmit)="addFormation($event)">
+  <div class="form-group">
+    <label for="formationName">Nom</label>
+    <input required type="text" class="form-control" id="formationName" aria-describedby="emailHelp"
+      placeholder="Nom Formation..">
+    <!-- <small id="formationHelp" class="form-text text-muted">exemple.</small> -->
+  </div>
+
+  <div class="form-group">
+    <label for="formationPresentation">Presentation(brève description)</label>
+    <input required type="text" class="form-control" id="formationPresentation" placeholder="Presentation Formation..">
+  </div>
+
+  <div class="form-group">
+    <label for="formationDescription">Description</label>
+    <input required type="text" class="form-control" id="formationDescription" placeholder="Description Formation..">
+  </div>
+
+  <div class="form-group">
+    <label for="typeFormation">Type</label>
+    <select class="form-control" id="typeFormation">
+      <option value="Default">Type de formation</option>
+      <option *ngFor="let type of types" value="{{type.id}}">{{type.lib}}</option>
+    </select>
+  </div>
+
+  <style>
+    input[type="file"] {
+      padding: 3px;
+    }
+
+  </style>
+
+  <label for="typeFormation">Image</label>
+  <div class="input-group mb-5">
+    <input type='file' class="form-control" (change)='onFileChanged($event)'>
+    <button class="btn btn-outline-success" type="button" (click)="upload()">Upload</button>
+  </div>
+
+  <div class="text-center">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+<app-flash-messages></app-flash-messages>

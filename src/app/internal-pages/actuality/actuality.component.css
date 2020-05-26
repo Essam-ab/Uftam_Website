@@ -1,0 +1,86 @@
+@import '../../home/home.component.css';
+
+:root {
+  --primary-color: #2a416d !important;
+  --secondary-color: black !important;
+}
+
+header {
+  padding-bottom: 5%;
+}
+
+.admission_header {
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+/* info */
+.info {
+  font-family: 'poppins', sans-serif;
+  background: #f5f6fc;
+  padding-bottom: 3%;
+  padding-left: 12%;
+  padding-right: 12%;
+}
+
+.container {
+  background: transparent !important;
+}
+
+.info_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.act_block {
+  width: 45%;
+  -webkit-box-shadow: 0px 0px 9px -2px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 0px 9px -2px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 9px -2px rgba(0, 0, 0, 0.25);
+  margin-bottom: 5%;
+}
+
+.act_block .act_header {
+  width: 100%;
+  height: 35vh;
+}
+
+.act_block .act_header img {
+  width: 100%;
+  height: 100%;
+}
+
+.act_block .act_body {
+  padding: 2% 10%;
+}
+
+.act_block .act_body h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.act_block .act_body p {
+  font-size: 12px;
+  font-weight: 500;
+  color: #000;
+  margin-top: 30px;
+}
+
+.act_block .act_footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.template-btn1-dark {
+  padding: 12px 25px !important;
+  margin-right: 40px;
+}
+
+.act_load {
+  margin: 0 auto;
+  text-align: center;
+}

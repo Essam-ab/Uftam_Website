@@ -1,0 +1,119 @@
+button {
+  background: none;
+  border: none;
+}
+
+#navbarSupportedContent {
+  justify-content: flex-end;
+}
+
+.mr-auto,
+.mx-auto {
+  margin-right: 0 !important;
+}
+
+nav {
+  margin-right: 8%;
+  position: relative;
+  z-index: 12335;
+}
+
+
+.navbar-brand {
+  transform: translate(80%, 0%);
+  width: 20%;
+}
+
+.navbar-brand img {
+  width: 90%;
+}
+
+.navbar-collapse {
+  transform: translateX(-10%);
+}
+
+.nav-item {
+  font-family: 'poppins';
+  font-size: 13px;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-item .nav-link {
+  color: #fff !important;
+}
+
+.nav-item:hover div.underline {
+  position: absolute;
+  height: 3px;
+  width: 35px;
+  background: #fff;
+  z-index: 1;
+}
+
+
+.nav-item:nth-child(1):hover div.underline,
+.nav-item.active:nth-child(1) div.underline {
+  bottom: 0;
+  right: 15px;
+}
+
+
+.nav-item:nth-child(2):hover div.underline,
+.nav-item.active:nth-child(2) div.underline {
+  bottom: 0;
+  right: 10px;
+}
+
+.nav-item:nth-child(3):hover div.underline,
+.nav-item.active:nth-child(3) div.underline {
+  bottom: 0;
+  right: 35px;
+}
+
+.nav-item:nth-child(4):hover div.underline,
+.nav-item.active:nth-child(4) div.underline {
+  bottom: 0;
+  right: 25px;
+}
+
+.nav-item:nth-child(5):hover div.underline,
+.nav-item.active:nth-child(5) div.underline {
+  bottom: 0;
+  right: 25px;
+}
+
+.nav-item:nth-child(6):hover div.underline,
+.nav-item.active:nth-child(6) div.underline {
+  bottom: 0;
+  right: 32px;
+}
+
+.nav-item:nth-child(7):hover div.underline,
+.nav-item.active:nth-child(7) div.underline {
+  bottom: 0;
+  right: 12px;
+}
+
+.nav-item:nth-child(8):hover div.underline,
+.nav-item.active:nth-child(8) div.underline {
+  bottom: 0;
+  right: 18px;
+}
+
+.nav-item.active div.underline {
+  position: absolute;
+  height: 3px;
+  width: 35px;
+  background: #fff;
+  z-index: 1;
+}
+
+
+/* internal */
+#nav-bar a.navbar-brand {
+  transform: translate(0%, 0%) !important;
+  width: 20% !important;
+}

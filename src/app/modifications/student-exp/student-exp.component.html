@@ -1,0 +1,26 @@
+<div class="pageheader-nav">
+  <ol class="breadcrumb slim-breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="/admin">Home</a></li>
+    <li class="breadcrumb-item"><a routerLink="/admin/modification/studentExpView">Vie Étudiant</a></li>
+    <li class="breadcrumb-item">Add Vie Étudiant</li>
+  </ol>
+</div>
+<form (ngSubmit)="addStudentExp($event)">
+  <div class="form-group">
+    <label for="expName">Nom</label>
+    <input required type="text" class="form-control" id="expName" aria-describedby="emailHelp"
+      placeholder="Nom Personne ou Titre..">
+    <!-- <small id="formationHelp" class="form-text text-muted">exemple.</small> -->
+  </div>
+
+  <div class="form-group">
+    <label for="expDescription">Description</label>
+    <input required type="text" class="form-control" id="expDescription" placeholder="Description..">
+  </div>
+
+  <div class="text-center">
+    <button type="submit" class="btn btn-outline-primary">Submit</button>
+  </div>
+</form>
+
+<app-flash-messages></app-flash-messages>

@@ -1,0 +1,52 @@
+<div class="pageheader-nav">
+  <ol class="breadcrumb slim-breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="/admin">Home</a></li>
+    <li class="breadcrumb-item">Partenaires</li>
+  </ol>
+</div>
+<div class="container text-right mb-1">
+  <a routerLink="../addPartner" class="btn btn-primary">
+    <i class="fas fa-plus"></i> Ajouter un Partenaire
+  </a>
+</div>
+<table class="table table-dark">
+  <thead class="">
+    <tr class="head">
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Logo</th>
+      <th scope="col">Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <style>
+
+    </style>
+    <tr *ngFor="let partner of partners">
+      <th scope="row">{{partner.id}}</th>
+      <td id="{{partner.id}}">{{partner.lib}}</td>
+      <td class="w-25" id="{{partner.id}}">
+        <img src="{{apiUrl}}upload/{{partner.path}}" alt="">
+      </td>
+      <td>
+        <a *ngIf="partner.status === 'yes'" id="{{partner.id}}" (click)="storeItem($event);disableRow($event)"
+          class="btn btn-outline-warning form-control-sm mr-3">
+          <i id="{{partner.id}}" class="far fa-eye-slash">
+          </i>
+        </a>
+
+        <a *ngIf="partner.status === 'no'" id="{{partner.id}}" (click)="storeItem($event);enableRow($event)"
+          class="btn btn-outline-warning form-control-sm mr-3">
+          <i id="{{partner.id}}" class="far fa-eye">
+          </i>
+        </a>
+
+        <a id="{{partner.id}}" (click)="storeItem($event);deleteRow($event)"
+          class="btn btn-outline-danger form-control-sm">
+          <i id="{{partner.id}}" class="far fa-trash-alt">
+          </i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>

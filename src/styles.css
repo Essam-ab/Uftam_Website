@@ -1,0 +1,294 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+  --primary-color: #2a416d !important;
+  --primary-hover: #325aa3 !important;
+  --secondary-color: black !important;
+}
+
+.nav-item.nav-link {
+  color: #fff !important;
+  font-family: 'poppins', sans-serif !important;
+  font-weight: 500 !important;
+}
+
+.nav-link {
+  font-weight: 600 !important;
+}
+
+.info {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* internal navbar */
+button {
+  background: none;
+  border: none;
+  color: #fff;
+}
+
+header#internal {
+  background: #f5f6fc;
+  position: relative;
+  z-index: 16513684168415;
+}
+
+header#internal .top_connect {
+  padding-top: 5px;
+  margin-bottom: -10px;
+}
+
+header#internal .top_connect {
+  color: var(--primary-color);
+}
+
+header#internal .top_connect ul li a {
+  color: var(--primary-color);
+}
+
+header#internal .top_connect ul .seperate {
+  color: var(--primary-hover);
+}
+
+header#internal .top_connect ul li a:hover {
+  color: var(--primary-hover);
+}
+
+
+
+button:hover {
+  color: var(--primary);
+}
+
+
+#navbarSupportedContent {
+  justify-content: flex-end;
+}
+
+.mr-auto,
+.mx-auto {
+  margin-right: 0 !important;
+}
+
+nav {
+  margin-right: 8%;
+}
+
+
+.navbar-brand {
+  transform: translate(80%, 0%);
+  width: 20%;
+}
+
+.navbar-brand img {
+  width: 100%;
+}
+
+.navbar-collapse {
+  transform: translateX(5%);
+}
+
+.nav-item {
+  font-family: 'poppins';
+  font-size: 13px;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-item .nav-link {
+  color: #fff !important;
+}
+
+.nav-item:hover div.underline {
+  position: absolute;
+  height: 3px;
+  width: 35px;
+  background: #fff;
+  z-index: 1;
+}
+
+
+.nav-item:nth-child(1):hover div.underline,
+.nav-item.active:nth-child(1) div.underline {
+  bottom: 0;
+  right: 15px;
+}
+
+
+.nav-item:nth-child(2):hover div.underline,
+.nav-item.active:nth-child(2) div.underline {
+  bottom: 0;
+  right: 10px;
+}
+
+.nav-item:nth-child(3):hover div.underline,
+.nav-item.active:nth-child(3) div.underline {
+  bottom: 0;
+  right: 35px;
+}
+
+.nav-item:nth-child(4):hover div.underline,
+.nav-item.active:nth-child(4) div.underline {
+  bottom: 0;
+  right: 25px;
+}
+
+.nav-item:nth-child(5):hover div.underline,
+.nav-item.active:nth-child(5) div.underline {
+  bottom: 0;
+  right: 25px;
+}
+
+.nav-item:nth-child(6):hover div.underline,
+.nav-item.active:nth-child(6) div.underline {
+  bottom: 0;
+  right: 32px;
+}
+
+.nav-item:nth-child(7):hover div.underline,
+.nav-item.active:nth-child(7) div.underline {
+  bottom: 0;
+  right: 18px;
+}
+
+.nav-item:nth-child(8):hover div.underline,
+.nav-item.active:nth-child(8) div.underline {
+  bottom: 0;
+  right: 18px;
+}
+
+.nav-item.active div.underline {
+  position: absolute;
+  height: 3px;
+  width: 35px;
+  background: #fff;
+  z-index: 1;
+}
+
+
+/* internal */
+#nav-bar a.navbar-brand {
+  /* transform: translate(30%, 0%) !important; */
+  transform: translate(6%, 0%) !important;
+  width: 20% !important;
+}
+
+#nav-bar {
+  background: #2a416d !important;
+  margin: 0 auto !important;
+}
+
+
+
+button.block {
+  border-radius: 0px !important;
+}
+
+.btn-inscription-1 {
+  margin-left: 0px !important;
+  background: #dedede !important;
+  color: var(--primary-hover) !important;
+  border: 1px solid transparent !important;
+  font-weight: 700 !important;
+  border-radius: 0px !important;
+  padding: 20px 35px !important;
+  font-size: 16px !important;
+  width: 100%;
+}
+
+.btn-inscription-1:hover {
+  background: transparent !important;
+  color: #fff !important;
+  border: 1px solid #dedede !important;
+}
+
+.btn-inscription-2 {
+  margin: 0px !important;
+  background: transparent !important;
+  color: #fff !important;
+  border: 1px solid #dedede !important;
+  font-weight: 700 !important;
+  border-radius: 0px !important;
+  padding: 20px 35px !important;
+  font-size: 16px !important;
+  width: 100%;
+}
+
+.btn-inscription-2:hover {
+  background: #dedede !important;
+  color: var(--primary-hover) !important;
+  border: 1px solid transparent !important;
+}
+
+
+.template-btn1-dark {
+  text-transform: initial !important;
+  background: var(--primary-color) !important;
+  color: #fff !important;
+  padding: 12px !important;
+  border-radius: 15px !important;
+  font-size: small !important;
+  padding: 15px 25px !important;
+  transition: all .2s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.template-btn1-dark:hover {
+  background: var(--primary-hover) !important;
+  transform: scale(1.1);
+  transition: all .2s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.template-pagNext-dark {
+  border: 2px solid var(--primary-color) !important;
+  color: var(--primary-color) !important;
+  transition: all .2s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.template-pagNext-dark:hover {
+  border: 2px solid var(--primary-hover) !important;
+  color: var(--primary-hover) !important;
+}
+
+.template-pagPrev-dark {
+  border: 2px solid transparent !important;
+  color: var(--primary-color) !important;
+}
+
+.template-pagPrev-dark:hover {
+  border: 2px solid var(--primary-hover) !important;
+  color: var(--primary-hover) !important;
+}
+
+.pageheader-nav {
+  margin-top: -50px;
+  border-bottom: 1px solid #343a40 !important;
+}
+
+td,
+th {
+  vertical-align: middle !important;
+}
+
+tbody td img {
+  width: 25% !important;
+}
+
+tbody tr:hover {
+  background: #e9ecef;
+  cursor: pointer;
+}
+
+thead tr:hover {
+  cursor: inherit;
+}
+
+.pageheader-nav {
+  margin-top: -30px !important;
+  margin-bottom: 20px !important;
+}

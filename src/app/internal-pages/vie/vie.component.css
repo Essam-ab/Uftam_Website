@@ -1,0 +1,201 @@
+@import '../../home/home.component.css';
+
+:root {
+  --primary-color: #2a416d !important;
+  --secondary-color: black !important;
+}
+
+/* info */
+.info {
+  font-family: 'poppins', sans-serif;
+  background: #f5f6fc;
+  padding-top: 50px;
+}
+
+
+
+.default_grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  padding: 20px 20px;
+}
+
+.grid_indent_left {
+  margin-left: 20%;
+}
+
+.grid_indent_right {
+  margin-right: 20%;
+}
+
+.vie_first .side_image {
+  width: 35vw;
+  height: 100%;
+  text-align: right;
+  margin-left: 25.5%;
+}
+
+.vie_first .side_image img {
+  width: 100%;
+  height: 100%;
+}
+
+.side_text {
+  padding: 20px;
+  line-height: 20px;
+}
+
+.side_text h4 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 26px;
+}
+
+.side_text p {
+  color: #000;
+  margin-bottom: 25px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.side_text span {
+  font-size: 10px;
+  text-align: justify;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.text-bg,
+.text-bg {
+  background: var(--primary-color);
+  padding: 35px;
+  color: #fff;
+  height: 200px;
+  -webkit-box-shadow: 0px 0px 9px -2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 9px -2px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 9px -2px rgba(0, 0, 0, 0.75);
+}
+
+.text-bg h4 {
+  font-weight: 800;
+  margin-bottom: 30px;
+  font-size: 16px;
+}
+
+.text-bg p {
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.left .block_right .block_box {
+  padding-right: 0 !important;
+}
+
+.block_split {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr 1fr;
+  padding: 10px;
+}
+
+.block_split .block_box {
+  width: 100%;
+  padding-right: 20px;
+}
+
+.block_split .block_box .block_header {
+  color: var(--primary-color);
+}
+
+.block_split .block_box .block_header img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 20px;
+}
+
+.right .block_right .block_header img {
+  width: 50px;
+}
+
+
+
+.block_split .block_box .block_body h4 {
+  color: #000;
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.block_split .block_box .block_body p {
+  color: #000;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.vie_fourth {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+.uftam_animation {
+  background: #e9f1ff;
+  padding: 10%;
+  padding-left: 30%;
+  line-height: 15px;
+  height: 100%;
+}
+
+.uftam_animation h2 {
+  color: var(--primary-color);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.uftam_animation p {
+  color: #000;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 12px;
+}
+
+.side_animation {
+  padding-right: 30%;
+  padding: 10% 2%;
+  height: 100%;
+}
+
+.side_animation .side_animation_set {
+  line-height: 1px;
+}
+
+.side_animation .side_animation_set h4 {
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.side_animation .side_animation_set div {
+  background-color: var(--primary-color);
+  margin-top: 5px;
+  width: 50px;
+  height: 5px;
+  margin-bottom: 15px;
+}
+
+.side_animation .side_animation_set p {
+  color: #000;
+  font-weight: 500;
+  font-size: 12px;
+  text-indent: 00px;
+  line-height: 18px;
+  margin-bottom: 0px;
+}
+
+.side_animation .side_animation_set p.indent {
+  text-indent: 10px !important;
+}

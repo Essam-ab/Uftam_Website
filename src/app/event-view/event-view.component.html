@@ -1,0 +1,61 @@
+<div class="pageheader-nav">
+  <ol class="breadcrumb slim-breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="/admin">Home</a></li>
+    <li class="breadcrumb-item">Évènement</li>
+  </ol>
+</div>
+<div class="container text-right mb-1">
+  <a routerLink="../addEvent" class="btn btn-primary">
+    <i class="fas fa-plus"></i> Ajouter un Évènement
+  </a>
+</div>
+<table class="table table-dark">
+  <thead class="">
+    <tr class="head">
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Type</th>
+      <th scope="col">Description</th>
+      <th scope="col">Date</th>
+      <th scope="col">Image</th>
+      <th scope="col">Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let event of events" (click)="storeItem($event)">
+      <th scope="row">{{event.id}}</th>
+      <td id="{{event.id}}">{{event.lib}}</td>
+      <td id="{{event.id}}">{{event.type}}</td>
+      <td id="{{event.id}}">{{event.desc | slice:0:40}}...</td>
+      <td id="{{event.id}}">{{event.date}}</td>
+      <td class="w-25" id="{{event.id}}">
+        <img src="{{apiUrl}}handers/events/uploads/{{event.path}}" alt="">
+      </td>
+      <td>
+        <a id="{{event.id}}" (click)="storeItem($event)" routerLink="../editEvent"
+          class="btn btn-outline-info form-control-sm mr-3">
+          <i id="{{event.id}}" class="far fa-edit" (click)="storeItem($event)">
+          </i>
+        </a>
+
+        <a *ngIf="event.status === 'yes'" id="{{event.id}}" (click)="storeItem($event);disableRow($event)"
+          class="btn btn-outline-warning form-control-sm mr-3">
+          <i id="{{event.id}}" class="far fa-eye-slash">
+          </i>
+        </a>
+
+        <a *ngIf="event.status === 'no'" id="{{event.id}}" (click)="storeItem($event);enableRow($event)"
+          class="btn btn-outline-warning form-control-sm mr-3">
+          <i id="{{event.id}}" class="far fa-eye">
+          </i>
+        </a>
+
+        <a id="{{event.id}}" (click)="storeItem($event);deleteRow($event)"
+          class="btn btn-outline-danger form-control-sm">
+          <i id="{{event.id}}" class="far fa-trash-alt">
+          </i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
