@@ -464,10 +464,6 @@ header#home {
   font-size: 14px;
 }
 
-.company .f_logo_container img {
-  width: auto;
-}
-
 /* ====student==== */
 #student_link:hover {
   cursor: pointer !important;
@@ -936,7 +932,7 @@ header#home {
 }
 
 .feed_container {
-  font-family: 'poppins';
+  /* font-family: 'poppins';
   color: black;
   width: 40%;
   height: 55vh;
@@ -944,7 +940,17 @@ header#home {
   background: #fff;
   padding: 30px;
   position: relative;
+  border-radius: 15px; */
+  font-family: 'poppins';
+  color: black;
+  width: 40%;
+  height: 62vh;
+  margin-right: 20px;
+  background: #fff;
+  padding: 30px;
+  position: relative;
   border-radius: 15px;
+  line-height: 18px;
 }
 
 .feed_header {
@@ -1301,4 +1307,17 @@ ol {
   .f_slide_body p {
     font-size: 12px;
   }
+}
+
+.confiance .f_logo_container img {
+  width: auto !important;
+}
+
+
+.confiance .f_slide.container:nth-child(3) {
+  margin-left: 50px;
+}
+
+.confiance .f_slide.container:nth-child(4) {
+  margin-top: 30px;
 }

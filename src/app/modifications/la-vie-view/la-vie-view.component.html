@@ -26,7 +26,7 @@
     <tr *ngFor="let l of laVie">
       <th scope="row">{{l.id}}</th>
       <td id="{{l.id}}">{{l.lib}}</td>
-      <td id="{{l.id}}">{{l.description | slice:0:40}}</td>
+      <td class="size_fix" id="{{l.id}}">{{l.description}}</td>
       <td class="w-25" id="{{l.id}}">
         <img src="{{apiUrl}}handers/laVie/uploads/{{l.path}}" alt="user image">
       </td>
