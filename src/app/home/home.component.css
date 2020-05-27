@@ -321,6 +321,7 @@ header#home {
 
 /* slider body */
 .f_slide_body p {
+  line-height: 16px;
   font-size: 14px;
   color: #949090;
 }

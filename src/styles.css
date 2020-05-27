@@ -74,11 +74,6 @@ button:hover {
   margin-right: 0 !important;
 }
 
-nav {
-  margin-right: 8%;
-}
-
-
 .navbar-brand {
   transform: translate(80%, 0%);
   width: 20%;
@@ -299,4 +294,17 @@ thead tr:hover {
 #internal a[aria-expanded="true"] {
   color: #fff;
   background: none !important;
+}
+
+#admin-nav {
+  width: 100%;
+}
+
+#admin-nav #navbarSupportedContent a {
+  margin-left: -65% !important;
+  color: #000 !important;
+}
+
+#sidebar nav {
+  margin-right: 0% !important;
 }
