@@ -1,4 +1,5 @@
 @import '../../assets/animate/animate.css';
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 :root {
   --primary-color: #2a416d !important;
@@ -24,14 +25,14 @@
 
 header#home {
   width: 100%;
-  height: 80vh;
+  height: 100vh;
   position: relative;
 }
 
 /* sign in/up */
 .top_connect {
   margin-bottom: -35px;
-  padding-top: 10px;
+  padding-top: 30px;
   position: relative;
   z-index: 123456;
 }
@@ -102,13 +103,13 @@ header#home {
   background-size: cover;
   background-position: center;
   width: 100%;
-  height: 80vh;
+  height: 100vh;
 }
 
 #home .slider_details {
   position: absolute;
   z-index: 1;
-  top: 35%;
+  top: 45%;
   left: 15%;
   color: white;
 }
@@ -406,14 +407,12 @@ header#home {
 
 
 .f_logo_container {
-  /* background: var(--primary-color); */
   width: 100%;
-  height: 10vh;
+  height: 15vh;
 }
 
 .f_logo_container img {
-  width: 100%;
-  height: 100%;
+  width: 90%;
 }
 
 /* ====company==== */
@@ -731,6 +730,11 @@ header#home {
 
 .carousel-item.second .e_slide {
   padding: 90px 50px 60px 50px;
+}
+
+.carousel-item.second .e_slide {
+  padding: 90px 40px 60px 40px;
+  width: 280px !important;
 }
 
 .e_slide_image img {
@@ -1173,8 +1177,8 @@ ol {
 }
 
 .contact_info h4 {
-  font-weight: 700;
-
+  font-family: 'poppins';
+  font-weight: 800;
 }
 
 /* ====footer==== */
@@ -1269,6 +1273,12 @@ ol {
   .event_right {
     width: 26vw;
     height: 38vw;
+  }
+}
+
+@media (min-height: 760px) {
+  .formation .f_slide {
+    height: 52vh;
   }
 }
 

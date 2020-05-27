@@ -292,3 +292,11 @@ thead tr:hover {
   margin-top: -30px !important;
   margin-bottom: 20px !important;
 }
+
+#home #sidebar ul li.active>a,
+#home a[aria-expanded="true"],
+#internal #sidebar ul li.active>a,
+#internal a[aria-expanded="true"] {
+  color: #fff;
+  background: none !important;
+}

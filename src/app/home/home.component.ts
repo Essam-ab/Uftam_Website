@@ -7,7 +7,6 @@ import { CompanyService } from '../services/dashboard/company.service';
 import { StudentExpService } from '../services/dashboard/student-exp.service';
 import { LaVieService } from '../services/dashboard/la-vie.service';
 import { environment } from 'src/environments/environment';
-import { setInterval } from 'timers';
 
 @Component({
   selector: 'app-home',
@@ -262,11 +261,11 @@ export class HomeComponent implements OnInit {
         this.value[j] = "right";
         this.isExpand[j] = false;
       }
-      $('.student_right').css("margin-top", "1%")
+      // $('.student_right').css("margin-top", "1%")
       this.value[index] = "down";
       this.isExpand[index] = true;
     } else {
-      $('.student_right').css("margin-top", "7%")
+      // $('.student_right').css("margin-top", "7%")
       this.value[index] = "right";
       this.isExpand[index] = false;
     }

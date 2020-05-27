@@ -29,4 +29,8 @@ export class ContactComponent implements OnInit {
   ngOnInit() {
     this.apiUrl = environment.apiUrl;
   }
+
+  sendMail(event) {
+    //
+  }
 }
