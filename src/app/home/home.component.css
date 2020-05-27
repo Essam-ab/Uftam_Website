@@ -464,6 +464,10 @@ header#home {
   font-size: 14px;
 }
 
+.company .f_logo_container img {
+  width: auto;
+}
+
 /* ====student==== */
 #student_link:hover {
   cursor: pointer !important;
