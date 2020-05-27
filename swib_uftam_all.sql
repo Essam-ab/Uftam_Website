@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 27, 2020 at 02:50 PM
+-- Generation Time: May 27, 2020 at 06:31 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.3
 
@@ -65,7 +65,6 @@ INSERT INTO `t_event` (`eve_id`, `eve_img`, `eve_lib`, `eve_description`, `eve_d
 CREATE TABLE `t_formation` (
   `for_id` int(11) NOT NULL,
   `for_img` varchar(255) DEFAULT NULL,
-  `for_title` varchar(50) DEFAULT NULL,
   `for_lib` varchar(50) DEFAULT NULL,
   `for_presentation` text,
   `for_description` text,
@@ -78,13 +77,14 @@ CREATE TABLE `t_formation` (
 -- Dumping data for table `t_formation`
 --
 
-INSERT INTO `t_formation` (`for_id`, `for_img`, `for_title`, `for_lib`, `for_presentation`, `for_description`, `ttf_id`, `for_active`, `for_modification_date`) VALUES
-(14, 'Calque 4.png', 'Licence', 'Gestion de lâ€™environnement  et mÃ©tiers de lâ€™e', 'Le master Gestion de lâ€™environnement et mÃ©tiers de lâ€™eau a pour ambitions de rÃ©pondre aux enjeux de lâ€™eau, afin dâ€™assurer les besoins humains (â€ Leaving no one behind â€œ), en quantitÃ© et en qualitÃ©, tout en prÃ©servant la biodiversitÃ©.	', 'description ici', 1, 'yes', '2020-05-21 16:55:03'),
-(15, 'Calque 5.png', 'Masters', 'Gestion de lâ€™environnement  et mÃ©tiers de lâ€™e', 'Le master Gestion de lâ€™environnement et mÃ©tiers de lâ€™eau a pour ambitions de rÃ©pondre aux enjeux de lâ€™eau, afin dâ€™assurer les besoins humains (â€ Leaving no one behind â€œ), en quantitÃ© et en qualitÃ©, tout en prÃ©servant la biodiversitÃ©.', 'description ici', 1, 'yes', '2020-05-21 16:55:13'),
-(16, 'Calque 6.png', 'Certificats', 'Gestion de lâ€™environnement  et mÃ©tiers de lâ€™e', 'Le master Gestion de lâ€™environnement et mÃ©tiers de lâ€™eau a pour ambitions de rÃ©pondre aux enjeux de lâ€™eau, afin dâ€™assurer les besoins humains (â€ Leaving no one behind â€œ), en quantitÃ© et en qualitÃ©, tout en prÃ©servant la biodiversitÃ©.', 'description ici', 1, 'yes', '2020-05-21 16:55:25'),
-(17, 'Calque 4.png', 'Licence', 'Gestion de lâ€™environnement  et mÃ©tiers de lâ€™e', 'Le master Gestion de lâ€™environnement et mÃ©tiers de lâ€™eau a pour ambitions de rÃ©pondre aux enjeux de lâ€™eau, afin dâ€™assurer les besoins humains (â€ Leaving no one behind â€œ), en quantitÃ© et en qualitÃ©, tout en prÃ©servant la biodiversitÃ©.', 'description ici', 1, 'yes', '2020-05-21 16:55:09'),
-(18, 'Calque 5.png', 'Masters', 'Gestion de lâ€™environnement  et mÃ©tiers de lâ€™e', 'Le master Gestion de lâ€™environnement et mÃ©tiers de lâ€™eau a pour ambitions de rÃ©pondre aux enjeux de lâ€™eau, afin dâ€™assurer les besoins humains (â€ Leaving no one behind â€œ), en quantitÃ© et en qualitÃ©, tout en prÃ©servant la biodiversitÃ©.', 'description ici', 1, 'yes', '2020-05-21 16:55:32'),
-(19, 'Calque 6.png', 'Certificats', 'Gestion de lâ€™environnement  et mÃ©tiers de lâ€™e', 'Le master Gestion de lâ€™environnement et mÃ©tiers de lâ€™eau a pour ambitions de rÃ©pondre aux enjeux de lâ€™eau, afin dâ€™assurer les besoins humains (â€ Leaving no one behind â€œ), en quantitÃ© et en qualitÃ©, tout en prÃ©servant la biodiversitÃ©.', 'description ici', 1, 'yes', '2020-05-21 16:55:38');
+INSERT INTO `t_formation` (`for_id`, `for_img`, `for_lib`, `for_presentation`, `for_description`, `ttf_id`, `for_active`, `for_modification_date`) VALUES
+(20, 'master-gestion-envir.png', 'Gestion de lâ€™environnement et mÃ©tiers de lâ€™ea', 'Le master Gestion de lâ€™environnement et mÃ©tiers de lâ€™eau a pour ambitions de rÃ©pondre aux enjeux de lâ€™eau, afin dâ€™assurer les besoins humains (â€ Leaving no one behind â€œ), en quantitÃ© et en qualitÃ©, tout en prÃ©servant la biodiversitÃ©.', 'description ici', 3, 'yes', '2020-05-27 16:09:02'),
+(21, 'master-expertise-eco.png', 'Expertise Ã©conomique des politiques et projets de', 'Dans un contexte marquÃ© par lâ€™InstabilitÃ© Ã©conomique et financiÃ¨re mondiales, des problÃ¨mes dâ€™emploi, de nombreux conflits et les risques majeurs du changement climatique.', 'description ici', 3, 'yes', '2020-05-27 16:09:35'),
+(22, 'master-data-science.png', 'Sciences des donnÃ©es pour les nouveaux mÃ©tiers d', 'Le traitement des flux de donnÃ©es massives (big data) est aujourdâ€™hui indispensable pour apprÃ©hender les nouveaux mÃ©tiers du numÃ©rique.', 'description ici', 3, 'yes', '2020-05-27 16:10:10'),
+(23, 'master-gÃ©nie-electrique-.png', 'GÃ©nie Ã©lectrique et informatique industrielle', 'Former sur le plan disciplinaire et peÌdagogique, dans le domaine du GeÌnie Electrique et de lâ€™Informatique Industrielle, des formateurs : enseignants pour le lyceÌe, pour les ISET, pour les eÌcoles dâ€™ingeÌnieurs et lâ€™UniversiteÌ.', 'description ici', 3, 'yes', '2020-05-27 16:10:49'),
+(24, 'master-Intelligence-Economique-Africaine.png', 'Intelligence Ã©conomique africaine', 'Ce Master vise Ã  sensibiliser les futurs cadres des pouvoirs publics, des reprÃ©sentations diplomatiques, des partenaires au dÃ©veloppement, des entreprises, et du monde Ã©ducatif aux enjeux de la veille.', 'description ici', 3, 'yes', '2020-05-27 16:12:27'),
+(25, 'master-mutation-digit.png', 'Mutations Digitales', 'Ce MastÃ¨re, situÃ© au croisement du droit et du digital marketing, vise Ã  apporter une spÃ©cialisation juridique et managÃ©riale dans le domaine des mÃ©dias et de la communication, concernant lâ€™ensemble des secteursâ€¦', 'description ici', 3, 'yes', '2020-05-27 16:12:54'),
+(26, 'LICENCE.png', 'Licence Gestion de lâ€™environnement', 'Cette licence a pour objectif dâ€™offrir aux Ã©tudiants des connaissances approfondies dans la caractÃ©risation de la biodiversitÃ© et des Ã©cosystÃ¨mes, la conservation des ressources naturelles (bioressources, eau, Ã©nergie et sol),..', 'description ici', 1, 'yes', '2020-05-27 16:13:42');
 
 -- --------------------------------------------------------
 
@@ -105,10 +105,12 @@ CREATE TABLE `t_la_vie` (
 --
 
 INSERT INTO `t_la_vie` (`tlv_id`, `tlv_active`, `tlv_lib`, `tlv_description`, `tlv_img`) VALUES
-(1, 'yes', 'Lorem ipsum dolor sit amet.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua', 'person.png'),
-(4, 'yes', 'Lorem ipsum dolor sit amet.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua', 'person.png'),
-(5, 'yes', 'Lorem ipsum dolor sit amet.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua', 'person.png'),
-(6, 'yes', 'Lorem ipsum dolor sit amet.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua', 'person.png');
+(13, 'yes', 'Titre', 'L\'UFTAM offre une pÃ©dagogie originale, centrÃ©e sur le transfert dâ€™expÃ©rience dans lâ€™action, pluridisciplinaire, tournÃ©e vers l\'international pour faire Ã©merger les grands entrepreneurs et les grands projets de demain.', 'person.png'),
+(14, 'yes', 'Titre', 'Les cours qu\'on a reÃ§u jusqu\'Ã  maintenant m\'ont permis d\'enrichir mes connaissances surtout au niveau du traitement des donnÃ©es (modÃ©lisation, Ã©conomÃ©trie) et au niveau de mes connaissances macroÃ©conomique des concepts de dÃ©veloppement Ã©conomique.', 'person.png'),
+(15, 'yes', 'Titre', 'Etudier Ã  l\'UFTAM et en Tunisie, me permet de travailler et en mÃªme temps approfondir mes connaissances avec des experts internationaux mobilisÃ©s par l\'UFTAM. en plus avoir un diplÃ´me d\'une Ã©cole franÃ§aise va me faciliter le dÃ©veloppement de ma carriÃ¨re Ã  l\'international.', 'person.png'),
+(16, 'yes', 'Titre', 'J\'ai dÃ©couvert l\'UFTAM Ã  l\'occasion de la lecture d\'un article de presse portant sur son inauguration et cela m\'a amenÃ© Ã  m\'informer sur les formations proposÃ©es. J\'ai ainsi dÃ©couvert le mastÃ¨re expertise Ã©conomique qui m\'a attirÃ© Ã©tant donnÃ© mon travail actuel dans le secteur du dÃ©veloppement Ã©conomique.', 'person.png'),
+(17, 'yes', 'Titre', 'Lâ€™UniversitÃ© mâ€™a permis de dÃ©velopper mon niveau d\'autonomie ainsi que ma faÃ§on de voir les phÃ©nomÃ¨nes observables. J\'aime cette petite institution hors du commun, car ses cours en bloc, ses mÃ©thodes et ses stratÃ©gies pÃ©dagogiques ont Ã©tÃ© pour moi une expÃ©rience fantastique dans mon cursus universitaire.', 'person.png'),
+(18, 'yes', 'Titre', 'Seule lâ€™UFTAM proposait une telle formation, jâ€™ai donc dÃ©cidÃ© de relever le dÃ©fi ! Â« Ã€ l\'instar des autres UniversitÃ©s prÃ©sentent en Tunisie, lâ€™UFTAM propose des formations de trÃ¨s haut niveau, voire dâ€™un niveau supÃ©rieur Ã  celui de certaines institutions, prÃ©sentes en Europe, qui profitent dâ€™une certaine notoriÃ©tÃ©, non seulement auprÃ¨s de la communautÃ© Ã©tudiante, mais Ã©galement auprÃ¨s de nombreux recruteurs Nationaux et Internationaux.', 'person.png');
 
 -- --------------------------------------------------------
 
@@ -145,7 +147,12 @@ INSERT INTO `t_partner` (`par_id`, `par_lib`, `par_logo`, `par_ing_subpage`, `pa
 (61, 'universitÃ© de tunis', 'universitÃ© de tunis.png', 'no', 'yes'),
 (62, 'universite manar', 'universite manar.png', 'no', 'yes'),
 (63, 'universite paris saclay', 'universite paris saclay.png', 'no', 'yes'),
-(64, 'universityÃ© sorbonne', 'universityÃ© sorbonne.png', 'no', 'yes');
+(64, 'universityÃ© sorbonne', 'universityÃ© sorbonne.png', 'no', 'yes'),
+(65, 'afd', 'afd.png', 'no', 'yes'),
+(66, 'ambassade fr', 'ambassade fr.png', 'no', 'yes'),
+(67, 'ift', 'ift.png', 'no', 'yes'),
+(68, 'ird', 'ird.png', 'no', 'yes'),
+(69, 'republique tun', 'republique tun.png', 'no', 'yes');
 
 -- --------------------------------------------------------
 
@@ -189,12 +196,10 @@ CREATE TABLE `t_trust_campany` (
 --
 
 INSERT INTO `t_trust_campany` (`ttc_id`, `ttc_active`, `ttc_lib`, `ttc_logo`) VALUES
-(2, 'yes', 'new company', 'zhang_bin_girl_art_wind_100944_1366x768.jpg'),
-(4, 'yes', 'ok', '180218.jpg'),
-(5, 'yes', 'qsf', 'anime_face_hair_mask_85079_1366x768.jpg'),
-(6, 'yes', 'new', '6lgkGH.jpg'),
-(7, 'yes', 'conf', '577339.jpg'),
-(8, 'yes', 'new company', 'person.png');
+(9, 'yes', 'logo bh', 'logo bh.png'),
+(10, 'yes', 'logo-internieur', 'logo-internieur.png'),
+(11, 'yes', 'rtci logo', 'rtci logo.png'),
+(12, 'yes', 'tv5 mondelogo', 'tv5 mondelogo.png');
 
 -- --------------------------------------------------------
 
@@ -235,13 +240,9 @@ CREATE TABLE `t_type_formation` (
 --
 
 INSERT INTO `t_type_formation` (`ttf_id`, `ttf_active`, `ttf_lib`, `ttf_modification_date`) VALUES
-(1, 'yes', 'this is a new type', '2020-05-01 01:47:25'),
-(3, 'yes', 'test updated', '2020-04-30 07:47:04'),
-(4, 'yes', 'another test', '2020-04-29 12:34:13'),
-(7, 'yes', 'flash test', '2020-04-30 04:12:26'),
-(8, 'yes', 'test', '2020-04-30 04:14:37'),
-(10, 'yes', 'other new', '2020-04-30 06:05:14'),
-(11, 'yes', 'new', '2020-05-01 01:47:38');
+(1, 'yes', 'Licence', '2020-05-27 14:01:01'),
+(3, 'yes', 'Masters', '2020-05-27 14:01:15'),
+(4, 'yes', 'Certificats', '2020-05-27 14:01:24');
 
 --
 -- Indexes for dumped tables
@@ -311,19 +312,19 @@ ALTER TABLE `t_event`
 -- AUTO_INCREMENT for table `t_formation`
 --
 ALTER TABLE `t_formation`
-  MODIFY `for_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `for_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `t_la_vie`
 --
 ALTER TABLE `t_la_vie`
-  MODIFY `tlv_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `tlv_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `t_partner`
 --
 ALTER TABLE `t_partner`
-  MODIFY `par_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `par_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- AUTO_INCREMENT for table `t_student_exp`
@@ -335,7 +336,7 @@ ALTER TABLE `t_student_exp`
 -- AUTO_INCREMENT for table `t_trust_campany`
 --
 ALTER TABLE `t_trust_campany`
-  MODIFY `ttc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `ttc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `t_type_event`
