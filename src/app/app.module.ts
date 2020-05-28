@@ -56,6 +56,7 @@ import { CertificateComponent } from './internal-pages/formation/certificate/cer
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AddFormationDetailsComponent } from './add-formation-details/add-formation-details.component';
 import { FormationDetailsViewComponent } from './formation-details-view/formation-details-view.component';
+import { AddFormationDocumentComponent } from './add-formation-document/add-formation-document.component';
 
 export const dashboard_url = "dashboard";
 export const routes: Routes = [
@@ -90,6 +91,7 @@ export const routes: Routes = [
       { path: 'addTypeFormation', component: AddTypeFormationComponent },
       { path: 'addFormation', component: AddFormationComponent },
       { path: 'addFormationDetails', component: AddFormationDetailsComponent },
+      { path: 'addFormationDocument', component: AddFormationDocumentComponent },
       { path: 'formationDetailsView', component: FormationDetailsViewComponent },
       { path: 'addTypeEvent', component: AddTypeEventComponent },
       { path: 'addEvent', component: AddEventComponent },
@@ -161,7 +163,8 @@ export const routes: Routes = [
     CertificateComponent,
     AdminDashboardComponent,
     AddFormationDetailsComponent,
-    FormationDetailsViewComponent
+    FormationDetailsViewComponent,
+    AddFormationDocumentComponent
   ],
   imports: [
     BrowserModule,

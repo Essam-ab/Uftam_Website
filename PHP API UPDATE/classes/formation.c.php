@@ -7,6 +7,17 @@ class Formation extends database
         //
     }
 
+    public function setFormationDocument($path, $id)
+    {
+        $query = $this->connect()->prepare(
+            "UPDATE t_formation
+            SET for_document = ?
+            WHERE for_id = ?;"
+        );
+        $query->execute([$path, $id]);
+        return $query;
+    }
+
     public function updateFormationDetails(
         $id,
         $niveau,

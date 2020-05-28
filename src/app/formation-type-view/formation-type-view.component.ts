@@ -26,11 +26,7 @@ export class FormationTypeViewComponent implements OnInit {
         this.types = data;
       },
       error => {
-        alert('error')
-        $('#errorCode').slideToggle();
-        setTimeout(function () {
-          $('#errorCode').slideToggle();
-        }, 5000);
+        //
       }
     )
   }

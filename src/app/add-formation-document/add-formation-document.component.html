@@ -1,0 +1,32 @@
+<div class="pageheader-nav">
+  <ol class="breadcrumb slim-breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="/admin">Home</a></li>
+    <li class="breadcrumb-item">Add Brochure</li>
+  </ol>
+</div>
+<form (ngSubmit)="upload($event)">
+  <div class="form-group">
+    <label for="ormation">Formation</label>
+    <select class="form-control" id="formation">
+      <option value="Default">--- Selectionez un formation ---</option>
+      <option *ngFor="let formation of formations" value="{{formation.id}}">{{formation.lib}}</option>
+    </select>
+  </div>
+
+  <style>
+    input[type="file"] {
+      padding: 3px;
+    }
+
+  </style>
+
+  <label>Brochure( format pdf )</label>
+  <div class="input-group mb-5">
+    <input type='file' class="form-control" (change)='onFileChanged($event)'>
+  </div>
+
+  <div class="text-center">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+<app-flash-messages></app-flash-messages>
