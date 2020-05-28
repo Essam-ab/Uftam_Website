@@ -1,0 +1,64 @@
+<div class="pageheader-nav">
+  <ol class="breadcrumb slim-breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="/admin">Home</a></li>
+    <li class="breadcrumb-item">Formation Details</li>
+  </ol>
+</div>
+<div class="container text-right mb-1">
+  <a routerLink="../addFormation" class="btn btn-primary">
+    <i class="fas fa-plus"></i> Définir les détails d'un formation
+  </a>
+</div>
+<table class="table table-dark">
+  <thead class="">
+    <tr class="head">
+      <th scope="col">#</th>
+      <th scope="col">Niveau</th>
+      <th scope="col">Prérequis</th>
+      <th scope="col">Durée</th>
+      <th scope="col">Régime</th>
+      <th scope="col">Modalités d’admission</th>
+      <th scope="col">Enjeux</th>
+      <th scope="col">Programme pédagogique</th>
+      <th scope="col">Débouchés</th>
+      <th scope="col">Public Accueillis et prérequis</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let formation of formations" (click)="storeItem($event)">
+      <th scope="row">{{formation.id}}</th>
+      <td id="{{formation.id}}">{{formation.lib | slice:0:10}}...</td>
+      <td id="{{formation.id}}">{{formation.type}}</td>
+      <td id="{{formation.id}}">{{formation.pres | slice:0:20}}...</td>
+      <td id="{{formation.id}}">{{formation.desc | slice:0:20}}...</td>
+      <td class="w-25" id="{{formation.id}}">
+        <img src="{{apiUrl}}handers/formations/uploads/{{formation.path}}" alt="">
+      </td>
+      <td>
+        <a id="{{formation.id}}" (click)="storeItem($event)" routerLink="../editFormation"
+          class="btn btn-outline-info form-control-sm mr-1">
+          <i id="{{formation.id}}" class="far fa-edit" (click)="storeItem($event)">
+          </i>
+        </a>
+
+        <a *ngIf="formation.status === 'yes'" id="{{formation.id}}" (click)="storeItem($event);disableRow($event)"
+          class="btn btn-outline-warning form-control-sm mr-1">
+          <i id="{{formation.id}}" class="far fa-eye-slash">
+          </i>
+        </a>
+
+        <a *ngIf="formation.status === 'no'" id="{{formation.id}}" (click)="storeItem($event);enableRow($event)"
+          class="btn btn-outline-warning form-control-sm mr-1">
+          <i id="{{formation.id}}" class="far fa-eye">
+          </i>
+        </a>
+
+        <a id="{{formation.id}}" (click)="storeItem($event);deleteRow($event)"
+          class="btn btn-outline-danger form-control-sm">
+          <i id="{{formation.id}}" class="far fa-trash-alt">
+          </i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>

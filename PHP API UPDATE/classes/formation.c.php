@@ -7,6 +7,40 @@ class Formation extends database
         //
     }
 
+    public function updateFormationDetails(
+        $id,
+        $niveau,
+        $prerequis,
+        $duration,
+        $regime,
+        $mod_admission,
+        $enjeux,
+        $program,
+        $debouche,
+        $public_acceuil
+    ) {
+        $query = $this->connect()->prepare(
+            "UPDATE t_formation
+            SET for_niveau = ?, for_prerequis = ?, for_duration = ?,
+            for_regime = ?, for_mod_admission = ?, for_enjeux = ?, for_program = ?,
+            for_debouche = ?, for_public_acceuil = ?
+            WHERE for_id = ?;"
+        );
+        $query->execute([
+            $niveau,
+            $prerequis,
+            $duration,
+            $regime,
+            $mod_admission,
+            $enjeux,
+            $program,
+            $debouche,
+            $public_acceuil,
+            $id
+        ]);
+        return $query;
+    }
+
     public function displayFormations()
     {
         $query = $this->connect()->prepare(

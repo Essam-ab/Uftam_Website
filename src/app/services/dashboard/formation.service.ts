@@ -20,6 +20,23 @@ export class FormationService {
   ) { }
 
   /*================= Formation ================= */
+  setFormationDetails(id, niveau, prerequis, duration, regime, mod_admission, enjeux, program, debouche, public_acceuil) {
+    return this.http.post<Response>(
+      environment.apiUrl + "handers/formations/updateFormationDetails.php", {
+      id,
+      niveau,
+      prerequis,
+      duration,
+      regime,
+      mod_admission,
+      enjeux,
+      program,
+      debouche,
+      public_acceuil
+    }
+    );
+  }
+
   displayFormations() {
     return this.http.get<Formation[]>(
       environment.apiUrl + "handers/formations/displayFormations.php"

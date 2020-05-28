@@ -53,12 +53,16 @@ import { InternalNavComponent } from './internal-pages/internal-nav/internal-nav
 import { LicenseComponent } from './internal-pages/formation/license/license.component';
 import { MasterComponent } from './internal-pages/formation/master/master.component';
 import { CertificateComponent } from './internal-pages/formation/certificate/certificate.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { AddFormationDetailsComponent } from './add-formation-details/add-formation-details.component';
+import { FormationDetailsViewComponent } from './formation-details-view/formation-details-view.component';
 
+export const dashboard_url = "dashboard";
 export const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'dashboardHome', component: DashboardHomeComponent },
+  { path: dashboard_url, component: DashboardHomeComponent },
   { path: 'uftam_about', component: UftamComponent },
   {
     path: 'uftam_formation',
@@ -85,6 +89,8 @@ export const routes: Routes = [
       { path: 'editFormation', component: EditFormationComponent },
       { path: 'addTypeFormation', component: AddTypeFormationComponent },
       { path: 'addFormation', component: AddFormationComponent },
+      { path: 'addFormationDetails', component: AddFormationDetailsComponent },
+      { path: 'formationDetailsView', component: FormationDetailsViewComponent },
       { path: 'addTypeEvent', component: AddTypeEventComponent },
       { path: 'addEvent', component: AddEventComponent },
       { path: 'typeEventView', component: EventTypeViewComponent, },
@@ -152,7 +158,10 @@ export const routes: Routes = [
     InternalNavComponent,
     LicenseComponent,
     MasterComponent,
-    CertificateComponent
+    CertificateComponent,
+    AdminDashboardComponent,
+    AddFormationDetailsComponent,
+    FormationDetailsViewComponent
   ],
   imports: [
     BrowserModule,

@@ -48,7 +48,8 @@ class Event extends database
         $query = $this->connect()->prepare(
             "SELECT *
             FROM t_event join t_type_event using(tte_id)
-            WHERE eve_active = ? && tte_lib = ?;"
+            WHERE eve_active = ? && tte_lib = ?
+            ORDER BY eve_date ASC;"
         );
         $query->execute(['yes', 'first']);
         return $query;
@@ -59,7 +60,8 @@ class Event extends database
         $query = $this->connect()->prepare(
             "SELECT *
             FROM t_event join t_type_event using(tte_id)
-            WHERE eve_active = ? && tte_lib = ?;"
+            WHERE eve_active = ? && tte_lib = ?;
+            ORDER BY eve_date ASC"
         );
         $query->execute(['yes', 'second']);
         return $query;
@@ -70,7 +72,8 @@ class Event extends database
         $query = $this->connect()->prepare(
             "SELECT *
             FROM t_event join t_type_event using(tte_id)
-            WHERE eve_active = ? && tte_lib = ?;"
+            WHERE eve_active = ? && tte_lib = ?
+            ORDER BY eve_date ASC;"
         );
         $query->execute(['yes', 'third']);
         return $query;
@@ -146,8 +149,7 @@ class Event extends database
         $query = $this->connect()->prepare(
             "SELECT *
             FROM t_event join t_type_event using(tte_id)
-            ORDER BY eve_date ASC
-            LIMIT 20;"
+            ORDER BY tte_lib ASC,eve_date ASC"
         );
         // WHERE eve_active = ?
         $query->execute();

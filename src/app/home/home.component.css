@@ -197,7 +197,7 @@ header#home {
 
 .formation .section_grid {
   padding-top: 50px;
-  padding-bottom: 70px;
+  padding-bottom: 100px;
 }
 
 .formation {
@@ -489,8 +489,6 @@ header#home {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* place-items: end; */
-  /* place-items: flex-end; */
   transition: .5s all cubic-bezier(0.77, 0, 0.175, 1);
 }
 
@@ -505,6 +503,7 @@ header#home {
 
 .student_right p {
   margin-left: 25px;
+  margin-right: 80px;
 }
 
 .student_right a i {
@@ -1280,7 +1279,7 @@ ol {
 
 @media (min-height: 760px) {
   .formation .f_slide {
-    height: 52vh;
+    height: 56vh;
   }
 }
 
@@ -1311,4 +1310,19 @@ ol {
 
 .confiance .f_slide.container:nth-child(4) {
   margin-top: 30px;
+}
+
+.company_details {
+  place-items: center !important;
+}
+
+@media (min-height: 800px) {
+  .company_details {
+    line-height: 22px;
+    place-items: center;
+    /* pc height check
+    height: 6238px
+    selector: .company_details
+  */
+  }
 }
