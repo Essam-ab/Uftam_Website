@@ -6,6 +6,10 @@
   --secondary-color: black !important;
 }
 
+body {
+  font-family: 'poppins';
+}
+
 /* carousel indicator */
 .carousel-indicators {
   position: absolute;
@@ -484,7 +488,7 @@ header#home {
 }
 
 .student_right {
-  margin-top: 7%;
+  margin-top: 35px;
   margin-left: 10%;
   display: flex;
   flex-direction: column;

@@ -38,8 +38,34 @@ export class ActualityComponent implements OnInit {
   laVieLength: any;
   apiUrl: any;
 
+  //nav
+  license: Formation[];
+  master: Formation[];
+
   ngOnInit() {
     this.apiUrl = environment.apiUrl;
+
+    //nav setup
+    this._formation.displayFormations().subscribe(
+      (data: Formation[]) => {
+        this.formations = data;
+        var x = [], y = [];
+        var j = 0, k = 0;
+        for (let i = 0; i < this.formations.length; i++) {
+          if (data[i]['type'] == "Masters") {
+            x[j++] = data[i];
+          } else if (data[i]['type'] == "Licence") {
+            y[k++] = data[i];
+          }
+        }
+        this.license = y;
+        this.master = x;
+      },
+      error => {
+        console.log("there has been an error trying to get all formaions!");
+      }
+    )
+
     //formation
     this._formation.getAllFormations().subscribe(
       (data: Formation[]) => {

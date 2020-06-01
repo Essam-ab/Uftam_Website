@@ -61,28 +61,29 @@ import { AddFormationDocumentComponent } from './add-formation-document/add-form
 export const dashboard_url = "dashboard";
 export const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
   { path: dashboard_url, component: DashboardHomeComponent },
   { path: 'uftam_about', component: UftamComponent },
   {
     path: 'uftam_formation',
     component: FormationComponent,
     children: [
-      { path: 'uftam_license', component: LicenseComponent, },
-      { path: 'uftam_master', component: MasterComponent },
-      { path: 'uftam_certificate', component: CertificateComponent },
+      { path: 'uftam_license/:id/license', component: LicenseComponent },
+      { path: 'uftam_master/:id/master', component: MasterComponent },
+      { path: 'uftam_certificate/:id', component: CertificateComponent },
     ]
   },
-  { path: 'uftam_article', component: ArticleComponent },
   { path: 'uftam_contact', component: ContactComponent },
   { path: 'uftam_vie', component: VieComponent },
   { path: 'uftam_partners', component: PartnersComponent },
   { path: 'uftam_actuality', component: ActualityComponent },
+  { path: 'uftam_article', component: ArticleComponent, redirectTo: '', pathMatch: 'full' },
+  { path: 'uftam_article/:id', component: ArticleComponent },
   { path: 'uftam_admission', component: AdmissionComponent },
   {
     path: 'admin',
     component: AdminComponent,
+    redirectTo: '',
+    pathMatch: 'full',
     children: [
       { path: 'typeFormationView', component: FormationTypeViewComponent, },
       { path: 'formationView', component: FormationViewComponent },

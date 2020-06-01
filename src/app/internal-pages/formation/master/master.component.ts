@@ -7,6 +7,7 @@ import { CompanyService } from '../../../services/dashboard/company.service';
 import { StudentExpService } from '../../../services/dashboard/student-exp.service';
 import { LaVieService } from '../../../services/dashboard/la-vie.service';
 import { environment } from 'src/environments/environment';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-master',
@@ -21,7 +22,8 @@ export class MasterComponent implements OnInit {
     private _partner: PartnerService,
     private _company: CompanyService,
     private _student: StudentExpService,
-    private _laVie: LaVieService
+    private _laVie: LaVieService,
+    private _ActivatedRoute: ActivatedRoute
   ) { }
 
   formations: Formation[];
@@ -38,8 +40,75 @@ export class MasterComponent implements OnInit {
   laVieLength: any;
   apiUrl: any;
 
+  //nav
+  license: Formation[];
+  master: Formation[];
+
+  //details
+  formationDetails: Formation[];
+  idPage: any;
+  type: any;
+  lib: any;
+  niveau: any;
+  prerequis: any;
+  duration: any;
+  regime: any;
+  mod_admission: any;
+  enjeux: any;
+  program: any;
+  debouche: any;
+  public_acceuil: any;
+  document: any;
+  image: any;
+
   ngOnInit() {
     this.apiUrl = environment.apiUrl;
+    this._ActivatedRoute.paramMap.subscribe(params => {
+      this.idPage = params.get('id');
+    });
+
+    //getting formation details
+    this._formation.displayFormationDetails_Master(this.idPage).subscribe(
+      (data: Formation[]) => {
+        this.type = data[0]['type'];
+        this.lib = data[0]['lib'];
+        this.image = data[0]['img'];
+        this.document = data[0]['document'];
+        this.niveau = data[0]['niveau'];
+        this.prerequis = data[0]['prerequis'];
+        this.duration = data[0]['duration'];
+        this.regime = data[0]['regime'];
+        this.mod_admission = data[0]['mod_admission'];
+        this.enjeux = data[0]['enjeux'];
+        this.program = data[0]['program'];
+        this.debouche = data[0]['debouche'];
+        this.public_acceuil = data[0]['public_acceuil'];
+      }, error => {
+        //
+      }
+    )
+
+
+    //nav setup
+    this._formation.displayFormations().subscribe(
+      (data: Formation[]) => {
+        this.formations = data;
+        var x = [], y = [];
+        var j = 0, k = 0;
+        for (let i = 0; i < this.formations.length; i++) {
+          if (data[i]['type'] == "Masters") {
+            x[j++] = data[i];
+          } else if (data[i]['type'] == "Licence") {
+            y[k++] = data[i];
+          }
+        }
+        this.license = y;
+        this.master = x;
+      },
+      error => {
+        console.log("there has been an error trying to get all formaions!");
+      }
+    )
 
     //formation
     this._formation.getAllFormations().subscribe(

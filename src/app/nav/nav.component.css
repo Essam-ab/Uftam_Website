@@ -117,3 +117,46 @@ nav {
   transform: translate(0%, 0%) !important;
   width: 20% !important;
 }
+
+#item_drop_first,
+#item_drop_second {
+  width: 25vw;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 80%;
+  margin-left: 20%;
+  background: #fff;
+  padding: 20px 40px;
+  border-radius: 5px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  list-style: none;
+}
+
+#toggle_drop_first:hover~#item_drop_first,
+#toggle_drop_second:hover~#item_drop_second {
+  visibility: visible;
+}
+
+#item_drop_first:hover,
+#item_drop_second:hover {
+  visibility: visible;
+}
+
+#item_drop_first li,
+#item_drop_second li {
+  margin-bottom: 30px;
+}
+
+#item_drop_first li a,
+#item_drop_second li a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#item_drop_first li a:hover,
+#item_drop_second li a:hover {
+  color: #2a416d;
+  font-weight: 800;
+}

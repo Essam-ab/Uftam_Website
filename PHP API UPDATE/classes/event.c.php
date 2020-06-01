@@ -7,6 +7,17 @@ class Event extends database
         //
     }
 
+    public function getArticle($id)
+    {
+        $query = $this->connect()->prepare(
+            "SELECT *
+            FROM t_event join t_type_event using(tte_id)
+            WHERE eve_id = ?;"
+        );
+        $query->execute([$id]);
+        return $query;
+    }
+
     public function updateEventCreated($lib,  $desc, $date,  $type_id, $id)
     {
         $query = $this->connect()->prepare(

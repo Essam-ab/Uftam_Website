@@ -25,7 +25,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item" name="nav-item">
-            <a class="nav-link" routerLink='/home'>Accueil
+            <a class="nav-link" routerLink=''>Accueil
               <div class="underline"></div>
             </a>
           </li>
@@ -40,10 +40,29 @@
               Formation
 
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" routerLink='/uftam_formation/uftam_license'>Licence</a>
-              <a class="dropdown-item" routerLink='/uftam_formation/uftam_master'>Masters</a>
-              <a class="dropdown-item" routerLink='/uftam_formation/uftam_certificate'>Certificats</a>
+            <div class="dropdown-menu" id="" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" id="toggle_drop_first">
+                Licence
+              </a>
+
+              <ul id="item_drop_first">
+                <li *ngFor="let l of license">
+                  <a [routerLink]="['', 'uftam_formation', 'uftam_license', l.id,'license']" class="">
+                    {{l.lib}}
+                  </a>
+                </li>
+              </ul>
+              <a class="dropdown-item" id="toggle_drop_second">
+                Masters
+              </a>
+
+              <ul id="item_drop_second">
+                <li *ngFor="let m of master">
+                  <a [routerLink]="['', 'uftam_formation', 'uftam_master', m.id, 'master']" class="">
+                    {{m.lib}}
+                  </a>
+                </li>
+              </ul>
             </div>
           </li>
           <li class="nav-item " name="nav-item">
@@ -82,60 +101,19 @@
 
 <section class="info" id="actuality">
   <div class="info_wrapper container">
-    <div class="act_block">
+    <div class="act_block" *ngFor='let eve of activeEvents'>
       <div class="act_header">
-        <img src="../../../assets/img/test.jpg" alt="img">
+        <img src="{{apiUrl}}handers/events/uploads/{{eve.path}}" alt="img">
       </div>
       <div class="act_body">
-        <h2>Lancement officiel de l'UFTAM</h2>
-        <span>14 MARS 2020</span>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum rerum, quae quis rem alias, perferendis
-          numquam eligendi quas maiores, ipsa odit dolores. Quam eveniet vitae, id amet dicta consequuntur in!</p>
+        <h2>{{eve.lib | slice:0:20}}...</h2>
+        <span>{{eve.day}} {{eve.monthName}} {{eve.date | slice:0:4}}</span>
+        <p>{{eve.desc | slice:0:260}}...</p>
       </div>
       <div class="act_footer">
-        <button class="btn btn-primary template-btn1-dark block">Lire la suite</button>
-      </div>
-    </div>
-    <div class="act_block">
-      <div class="act_header">
-        <img src="../../../assets/img/test.jpg" alt="img">
-      </div>
-      <div class="act_body">
-        <h2>Lancement officiel de l'UFTAM</h2>
-        <span>14 MARS 2020</span>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum rerum, quae quis rem alias, perferendis
-          numquam eligendi quas maiores, ipsa odit dolores. Quam eveniet vitae, id amet dicta consequuntur in!</p>
-      </div>
-      <div class="act_footer">
-        <button class="btn btn-primary template-btn1-dark block">Lire la suite</button>
-      </div>
-    </div>
-    <div class="act_block">
-      <div class="act_header">
-        <img src="../../../assets/img/test.jpg" alt="img">
-      </div>
-      <div class="act_body">
-        <h2>Lancement officiel de l'UFTAM</h2>
-        <span>14 MARS 2020</span>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum rerum, quae quis rem alias, perferendis
-          numquam eligendi quas maiores, ipsa odit dolores. Quam eveniet vitae, id amet dicta consequuntur in!</p>
-      </div>
-      <div class="act_footer">
-        <button class="btn btn-primary template-btn1-dark block">Lire la suite</button>
-      </div>
-    </div>
-    <div class="act_block">
-      <div class="act_header">
-        <img src="../../../assets/img/test.jpg" alt="img">
-      </div>
-      <div class="act_body">
-        <h2>Lancement officiel de l'UFTAM</h2>
-        <span>14 MARS 2020</span>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum rerum, quae quis rem alias, perferendis
-          numquam eligendi quas maiores, ipsa odit dolores. Quam eveniet vitae, id amet dicta consequuntur in!</p>
-      </div>
-      <div class="act_footer">
-        <button class="btn btn-primary template-btn1-dark block">Lire la suite</button>
+        <a [routerLink]="['', 'uftam_article', eve.id]" class="btn btn-primary template-btn1-dark block">
+          Lire la suite
+        </a>
       </div>
     </div>
   </div>
@@ -209,7 +187,6 @@
         <div class="e_slide container" name="e_slide" *ngFor='let active of activeEvents'>
           <div class="e_slide_image">
             <img src="{{apiUrl}}handers/events/uploads/{{active.path}}" alt="">
-            <!-- <img src="../../assets/img/test.jpg" alt=""> -->
           </div>
           <div class="e_slide_header">
             <h2 class="font-weight-bold">A la une</h2>
@@ -233,7 +210,6 @@
         <div class="e_slide container" name="e_slide" *ngFor='let e of event'>
           <div class="e_slide_image">
             <img src="{{apiUrl}}handers/events/uploads/{{e.path}}" alt="">
-            <!-- <img src="../../assets/img/test.jpg" alt=""> -->
           </div>
           <div class="e_slide_body">
             <h2 class="font-weight-bold">{{e.lib}}</h2>

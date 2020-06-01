@@ -7,6 +7,28 @@ class Formation extends database
         //
     }
 
+    public function displayFormationDetails_Master($id)
+    {
+        $query = $this->connect()->prepare(
+            "SELECT *
+            FROM t_formation join t_type_formation using(ttf_id)
+            WHERE for_id = ? and ttf_lib = ?"
+        );
+        $query->execute([(int) $id, 'Masters']);
+        return $query;
+    }
+
+    public function displayFormationDetails_License($id)
+    {
+        $query = $this->connect()->prepare(
+            "SELECT *
+            FROM t_formation join t_type_formation using(ttf_id)
+            WHERE for_id = ? and ttf_lib = ?"
+        );
+        $query->execute([(int) $id, 'Licence']);
+        return $query;
+    }
+
     public function setFormationDocument($path, $id)
     {
         $query = $this->connect()->prepare(

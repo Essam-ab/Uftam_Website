@@ -16,10 +16,24 @@ header {
   padding-bottom: 8%;
 }
 
-
-.template-btn1-dark {
-  padding: 12px 130px !important;
+.carousel-item .e_slide {
+  width: 20vw !important;
 }
+
+.carousel-item.first .e_slide:first-child {
+  width: 35vw !important;
+}
+
+
+#top_btn .template-btn1-dark {
+  padding: 12px 115px !important;
+}
+
+#top_btn:nth-child(2) .template-btn1-dark {
+  padding: 12px 115px !important;
+  border-radius: 0px !important;
+}
+
 
 .formation_top_grid {
   display: flex;
@@ -30,8 +44,13 @@ header {
 }
 
 .formation_top_grid .right {
-  width: 40%;
+  width: 50%;
   padding-top: 25px;
+  padding-right: 25px;
+}
+
+.formation_top_grid .left {
+  width: 100% !important;
 }
 
 .formation_box {
@@ -51,6 +70,7 @@ header {
   top: 40%;
   left: 10%;
   color: var(--primary-color);
+  width: 40%;
 }
 
 .formation_top_grid .left .formation_image_text h2 {
@@ -68,6 +88,10 @@ header {
   /* height: 50px; */
   color: var(--primary-color);
   position: absolute;
+}
+
+.formation_box:first-child .box_header {
+  padding: 13px 10px;
 }
 
 .box_header img {
@@ -123,6 +147,8 @@ header {
   display: flex;
   justify-content: space-evenly;
   color: #fff;
+  padding-bottom: 30px;
+  height: 80vh;
 }
 
 .flexed h2 {
@@ -137,7 +163,7 @@ header {
 
 .under_inner_box {
   width: 100%;
-  margin-right: 70px;
+  margin-right: 30px;
 }
 
 .under_inner_box:first-child {

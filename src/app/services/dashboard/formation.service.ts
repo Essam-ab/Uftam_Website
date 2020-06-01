@@ -20,6 +20,18 @@ export class FormationService {
   ) { }
 
   /*================= Formation ================= */
+  displayFormationDetails_License(id) {
+    return this.http.get<Formation[]>(
+      environment.apiUrl + "handers/formations/displayFormationDetails_License.php?id=" + id
+    );
+  }
+
+  displayFormationDetails_Master(id) {
+    return this.http.get<Formation[]>(
+      environment.apiUrl + "handers/formations/displayFormationDetails_Master.php?id=" + id
+    );
+  }
+
   setFormationDetails(id, niveau, prerequis, duration, regime, mod_admission, enjeux, program, debouche, public_acceuil) {
     return this.http.post<Response>(
       environment.apiUrl + "handers/formations/updateFormationDetails.php", {
@@ -147,6 +159,13 @@ export class FormationService {
   }
 
   /*================= Event ================= */
+  getArticle(id) {
+    return this.http.get<Formation[]>(
+      environment.apiUrl + "handers/events/getArticle.php?id=" + id
+    );
+  }
+
+
   updateCreatedEvent(lib, date, desc, type, id) {
     return this.http.post<Response>(environment.apiUrl + "handers/events/updateEventCreated.php", {
       lib,

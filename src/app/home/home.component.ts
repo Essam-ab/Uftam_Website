@@ -167,6 +167,7 @@ export class HomeComponent implements OnInit {
         console.log("error trying to get partners");
       }
     )
+
     //company
     this._company.displayCompanies().subscribe(
       (data: Formation[]) => {
@@ -251,8 +252,8 @@ export class HomeComponent implements OnInit {
     )
   }
 
-  value = ['right', 'right', 'right', 'right', 'right'];
-  isExpand = [false, false, false, false, false];
+  value = ['down', 'right', 'right', 'right', 'right'];
+  isExpand = [true, false, false, false, false];
   expandStudentInfo(event, i) {
     const index = i;
 

@@ -25,7 +25,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item" name="nav-item">
-            <a class="nav-link" routerLink='/home'>Accueil
+            <a class="nav-link" routerLink=''>Accueil
               <div class="underline"></div>
             </a>
           </li>
@@ -40,10 +40,29 @@
               Formation
 
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" routerLink='/uftam_formation/uftam_license'>Licence</a>
-              <a class="dropdown-item" routerLink='/uftam_formation/uftam_master'>Masters</a>
-              <a class="dropdown-item" routerLink='/uftam_formation/uftam_certificate'>Certificats</a>
+            <div class="dropdown-menu" id="" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" id="toggle_drop_first">
+                Licence
+              </a>
+
+              <ul id="item_drop_first">
+                <li *ngFor="let l of license">
+                  <a [routerLink]="['', 'uftam_formation', 'uftam_license', l.id,'license']" class="">
+                    {{l.lib}}
+                  </a>
+                </li>
+              </ul>
+              <a class="dropdown-item" id="toggle_drop_second">
+                Masters
+              </a>
+
+              <ul id="item_drop_second">
+                <li *ngFor="let m of master">
+                  <a [routerLink]="['', 'uftam_formation', 'uftam_master', m.id, 'master']" class="">
+                    {{m.lib}}
+                  </a>
+                </li>
+              </ul>
             </div>
           </li>
           <li class="nav-item " name="nav-item">
@@ -84,70 +103,60 @@
 <section class="info">
   <div class="formation_top_grid">
     <div class="left">
-      <img src="../../../../assets/img/master_formation.png" alt="formation_img">
+      <img src="{{apiUrl}}handers/formations/uploads/{{image}}" alt="formation_img">
       <div class="formation_image_text">
-        <h2>Master En Gestion</h2>
-        <h2>De l'environnement</h2>
-        <h2>et Métiers de l'eau</h2>
+        <h2>{{type}}</h2>
+        <h2>{{lib}}</h2>
       </div>
     </div>
     <div class="right">
       <div class="formation_box">
         <div class="box_header">
-          <!-- <i class="fas fa-graduation-cap"></i> -->
           <img src="../../../../assets/icons/graduation-hat.png" alt="">
         </div>
         <div class="box_body">
           <h4>Niveau:</h4>
-          <p>Master Professionnel</p>
+          <p [innerHtml]="type"></p>
         </div>
       </div>
       <div class="formation_box">
         <div class="box_header">
-          <!-- <i class="fas fa-graduation-cap"></i> -->
           <img src="../../../../assets/icons/study.png" alt="">
         </div>
         <div class="box_body display_fix">
           <h4>Prérequis:</h4>
-          <p class="size_fix">Etudiants détenteurs d’une licence Fondamentale
-            ou appliquée de Chimie ou de Physique- Chimie,
-            Sciences et Vie de la Terre, ou Sciences de la Vie
-            orientées vers les Sciences de l’Univers
-            et de l’Environnement.</p>
+          <p class="size_fix" [innerHtml]="prerequis"></p>
         </div>
       </div>
       <div class="formation_box">
         <div class="box_header">
-          <!-- <i class="fas fa-graduation-cap"></i> -->
           <img src="../../../../assets/icons/calendar.png" alt="">
         </div>
         <div class="box_body">
           <h4>Durée:</h4>
-          <p class="size_fix">3 semestres et stage </p>
+          <p class="size_fix" [innerHtml]="duration"></p>
         </div>
       </div>
       <div class="formation_box">
         <div class="box_header">
-          <!-- <i class="fas fa-graduation-cap"></i> -->
           <img src="../../../../assets/icons/future.png" alt="">
         </div>
         <div class="box_body">
           <h4>Régime:</h4>
-          <p class="size_fix">Formation initiale ; plein temps</p>
+          <p class="size_fix" [innerHtml]="regime"></p>
         </div>
       </div>
       <div class="formation_box">
         <div class="box_header">
-          <!-- <i class="fas fa-graduation-cap"></i> -->
           <img src="../../../../assets/icons/future.png" alt="">
         </div>
         <div class="box_body display_fix">
           <h4>Modaliés d’admission:</h4>
-          <p class="size_fix">L’admissibilité se fait sur dossier et l’admission par un entretien.</p>
+          <p class="size_fix" [innerHtml]="mod_admission"></p>
         </div>
       </div>
-      <div class="text-center">
-        <button class="btn btn-primary template-btn1-dark block">CONDIDATER</button>
+      <div class="text-center" id="top_btn">
+        <button class="btn btn-primary template-btn1-dark block">CANDIDATER</button>
       </div>
     </div>
   </div>
@@ -158,16 +167,7 @@
           <h2>Enjeux</h2>
         </div>
         <div>
-          <p>
-            Le master Gestion de l’environnement et métiers de l’eau a pour ambitions de répondre aux enjeux de l’eau,
-            afin
-            d’assurer les besoins humains (” Leaving no one behind “), en quantité et en qualité, tout en préservant la
-            biodiversité. Résolument pluridisciplinaire, il a pour objectif de former les étudiants à maîtriser les
-            concepts
-            et techniques relevant des évolutions les plus récentes. Il s’inscrit dans une approche scientifique visant
-            le
-            fonctionnement des systèmes et écosystèmes continentaux, leur protection et leur réhabilitation, dans le
-            contexte du changement global et de la raréfaction des ressources.
+          <p [innerHTML]="enjeux">
           </p>
         </div>
       </div>
@@ -177,18 +177,7 @@
             pédagogique</h2>
         </div>
         <div>
-          <p>
-            Des enseignements au cœur de la spécialité en chimie, hydrologie, génie écologique et génie des procédés
-            <br>
-            <br>
-            Des enseignements complémentaires pour l’exercice des fonctions d’ingénieur ou de chercheur en
-            mathématiques,
-            géomatique, gestion des risques, communication de crise, gestion de projet, sociologie, géographie et
-            aménagement, droit de l’environnement <br>
-            <br>
-            Une formation laissant une large part aux activités de mise en situation : apprentissage par problème,
-            projets
-            intégrateurs, études de cas, stages de terrain, stage de 6 mois en M2
+          <p [innerHTML]="program ">
           </p>
         </div>
       </div>
@@ -199,36 +188,22 @@
             d’études</h2>
         </div>
         <div>
-          <p>
-            Exemple de métiers: <br>
-            <br>
-            -Chargé de mission/projet en bureau d’étude (impact/risques) <br>
-            -Hydrologue/hydrogéologue <br>
-            -Chargé d’études assainissement/potabilisation <br>
-            -Chargé de projet eau et milieux aquatique <br>
-            -Police de l’eau <br>
-            <br>
-            Poursuite d’études: <br>
-            -Doctorat en sciences de l’environnement<br>
-            -Conditions d’admission<br>
-            -Examen du dossier de candidature par la commission pédagogique franco-tunisienne puis entretien<br>
+          <p [innerHTML]="debouche ">
+
           </p>
         </div>
       </div>
     </div>
-    <div class="text-center">
-      <button class="btn btn-primary template-btn1-dark block mt-3 mb-2">
+    <div class="text-center" id="top_btn" style="position: relative;margin-top: 20px;">
+      <a target="_blank" href="{{apiUrl}}handers/formations/documents/{{document}}"
+        class="btn btn-primary template-btn1-dark block mt-3 mb-2">
         TÉLÉCHARGER LA BROCHURE
-      </button>
+      </a>
     </div>
   </div>
   <div class="public">
     <h2>Publics Accueillis et prérequis</h2>
-    <p>
-      Etudiant en formation initiale : 180 ECTS d’une licence Fondamentale ou appliquée de Chimie ou de Physique- Chimie
-      , Sciences et Vie de la Terre, ou Sciences de la Vie orientées vers les Sciences de l’Univers et de
-      l’Environnement. <br> <br>
-      Reprise d’études
+    <p [innerHTML]="public_acceuil">
     </p>
   </div>
   <div class="diploma">

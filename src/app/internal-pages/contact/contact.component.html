@@ -25,7 +25,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item" name="nav-item">
-            <a class="nav-link" routerLink='/home'>Accueil
+            <a class="nav-link" routerLink=''>Accueil
               <div class="underline"></div>
             </a>
           </li>
@@ -33,17 +33,36 @@
             <a class="nav-link" routerLink='/uftam_about'>uftam <span class="sr-only">(current)</span></a>
             <div class="underline"></div>
           </li>
-          <li class="nav-item dropdown">
+           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
               <div class="underline"></div>
               Formation
 
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" routerLink='/uftam_formation/uftam_license'>Licence</a>
-              <a class="dropdown-item" routerLink='/uftam_formation/uftam_master'>Masters</a>
-              <a class="dropdown-item" routerLink='/uftam_formation/uftam_certificate'>Certificats</a>
+            <div class="dropdown-menu" id="" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" id="toggle_drop_first">
+                Licence
+              </a>
+
+              <ul id="item_drop_first">
+                <li *ngFor="let l of license">
+                  <a [routerLink]="['', 'uftam_formation', 'uftam_license', l.id,'license']" class="">
+                    {{l.lib}}
+                  </a>
+                </li>
+              </ul>
+              <a class="dropdown-item" id="toggle_drop_second">
+                Masters
+              </a>
+
+              <ul id="item_drop_second">
+                <li *ngFor="let m of master">
+                  <a [routerLink]="['', 'uftam_formation', 'uftam_master', m.id, 'master']" class="">
+                    {{m.lib}}
+                  </a>
+                </li>
+              </ul>
             </div>
           </li>
           <li class="nav-item " name="nav-item">
