@@ -7,7 +7,8 @@ import { CompanyService } from '../../../services/dashboard/company.service';
 import { StudentExpService } from '../../../services/dashboard/student-exp.service';
 import { LaVieService } from '../../../services/dashboard/la-vie.service';
 import { environment } from 'src/environments/environment';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AppComponent } from '../../../app.component';
 
 @Component({
   selector: 'app-master',
@@ -23,7 +24,9 @@ export class MasterComponent implements OnInit {
     private _company: CompanyService,
     private _student: StudentExpService,
     private _laVie: LaVieService,
-    private _ActivatedRoute: ActivatedRoute
+    private _ActivatedRoute: ActivatedRoute,
+    private c_App: AppComponent,
+    private _Router: Router
   ) { }
 
   formations: Formation[];
@@ -63,9 +66,17 @@ export class MasterComponent implements OnInit {
 
   ngOnInit() {
     this.apiUrl = environment.apiUrl;
+    this.c_App.isInternal = true;
+
     this._ActivatedRoute.paramMap.subscribe(params => {
       this.idPage = params.get('id');
     });
+
+    this._Router.routeReuseStrategy.shouldReuseRoute = () => {
+      // do your task for before route
+      this.ngOnInit();
+      return false;
+    }
 
     //getting formation details
     this._formation.displayFormationDetails_Master(this.idPage).subscribe(

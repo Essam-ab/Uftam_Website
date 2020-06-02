@@ -38,8 +38,8 @@ header {
 .formation_top_grid {
   display: flex;
   justify-content: center;
-  margin-right: 105px;
-  margin-left: 105px;
+  width: 80vw;
+  margin: 0 auto;
   margin-bottom: 40px;
 }
 

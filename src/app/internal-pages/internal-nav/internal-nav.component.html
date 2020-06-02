@@ -1,4 +1,17 @@
-<header>
+<header id="internal">
+  <div class="top_connect">
+    <ul class="">
+      <li class="">
+        <a class="nav-link" href="#">Se connecter</a>
+      </li>
+      <li class="seperate">
+        |
+      </li>
+      <li class="">
+        <a class="nav-link" href="#">Créer un compte</a>
+      </li>
+    </ul>
+  </div>
   <div class="container" id="nav-bar">
     <nav class="navbar navbar-expand-lg navbar-dark">
       <a class="navbar-brand" href="#">
@@ -11,48 +24,70 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item" name="nav-item" (click)='toggleActive($event)'>
+          <li class="nav-item" name="nav-item">
             <a class="nav-link" routerLink=''>Accueil
               <div class="underline"></div>
             </a>
           </li>
-          <li class="nav-item active" name="nav-item" (click)='toggleActive($event)'>
+          <li class="nav-item " name="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
             <a class="nav-link" routerLink='/uftam_about'>uftam <span class="sr-only">(current)</span></a>
             <div class="underline"></div>
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
               <div class="underline"></div>
               Formation
 
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" routerLink='/uftam_formation/uftam_license'>Licence</a>
-          <a class="dropdown-item" routerLink='/uftam_formation/uftam_master'>Masters</a>
-          <a class="dropdown-item" routerLink='/uftam_formation/uftam_certificate'>Certificats</a>
-        </div>
+            <div class="dropdown-menu" id="" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" id="toggle_drop_first">
+                Licence
+              </a>
+
+              <ul id="item_drop_first">
+                <li *ngFor="let l of license">
+                  <a [routerLink]="['', 'uftam_formation', 'uftam_license', l.id,'license']">
+                    {{l.lib}}
+                  </a>
+                </li>
+              </ul>
+              <a class="dropdown-item" id="toggle_drop_second">
+                Masters
+              </a>
+
+              <ul id="item_drop_second">
+                <li *ngFor="let m of master">
+                  <a [routerLink]="['', 'uftam_formation', 'uftam_master', m.id, 'master']">
+                    {{m.lib}}
+                  </a>
+                </li>
+              </ul>
+            </div>
           </li>
-          <li class="nav-item" name="nav-item" (click)='toggleActive($event)'>
-            <a class="nav-link" routerLink='/uftam_partners'>
-              Partenaires
-              <div class="underline"></div>
+          <li class="nav-item " name="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <a class=" nav-link" routerLink='/uftam_partners'> Partenaires <div class="underline">
+              </div>
             </a>
           </li>
-          <li class="nav-item" name="nav-item" (click)='toggleActive($event)'>
-            <a class="nav-link" routerLink='/uftam_actuality'>Admission <div class="underline"></div></a>
+          <li class="nav-item " name="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <a class=" nav-link" routerLink='/uftam_admission'>Admission <div class="underline">
+              </div></a>
           </li>
-          <li class="nav-item" name="nav-item" (click)='toggleActive($event)'>
-            <a class="nav-link" routerLink='/uftam_vie'>Vie étudiante <div class="underline"></div></a>
+          <li class="nav-item" name="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <a class="nav-link" routerLink='/uftam_vie'>Vie étudiante <div class="underline">
+              </div></a>
           </li>
-          <li class="nav-item" name="nav-item" (click)='toggleActive($event)'>
-            <a class="nav-link" routerLink='/uftam_actuality'>Alumni <div class="underline"></div></a>
+          <li class="nav-item" name="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <a class="nav-link" routerLink='/uftam_actuality'>Actualité <div class="underline">
+              </div></a>
           </li>
-          <li class="nav-item" name="nav-item" (click)='toggleActive($event)'>
-            <a class="nav-link" routerLink='/uftam_contact'>Contact <div class="underline"></div></a>
+          <li class="nav-item" name="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <a class="nav-link" routerLink='/uftam_contact'>Contact <div class="underline">
+              </div></a>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
+        <form class="mr-5 form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2 d-none" type="search" placeholder="Search" aria-label="Search">
           <button class="my-2 my-sm-0" type="submit">
             <i class="fas fa-search fa-lg"></i>

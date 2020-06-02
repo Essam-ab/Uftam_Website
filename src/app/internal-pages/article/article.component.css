@@ -18,6 +18,7 @@ header {
 
 /* info */
 .info {
+  margin-top: 40px !important;
   font-family: 'poppins', sans-serif;
   background: #f5f6fc;
   padding-bottom: 3%;

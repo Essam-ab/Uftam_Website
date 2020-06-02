@@ -8,6 +8,7 @@ import { StudentExpService } from '../../services/dashboard/student-exp.service'
 import { LaVieService } from '../../services/dashboard/la-vie.service';
 import { environment } from 'src/environments/environment';
 import { ActivatedRoute } from '@angular/router';
+import { AppComponent } from '../../app.component';
 
 @Component({
   selector: 'app-article',
@@ -23,7 +24,8 @@ export class ArticleComponent implements OnInit {
     private _company: CompanyService,
     private _student: StudentExpService,
     private _laVie: LaVieService,
-    private _ActivatedRoute: ActivatedRoute
+    private _ActivatedRoute: ActivatedRoute,
+    private c_App: AppComponent
   ) { }
 
   formations: Formation[];
@@ -53,6 +55,7 @@ export class ArticleComponent implements OnInit {
   desc: any;
   idPage: string;
   ngOnInit() {
+    this.c_App.isInternal = true;
     this.apiUrl = environment.apiUrl;
 
     this._ActivatedRoute.paramMap.subscribe(params => {

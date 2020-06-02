@@ -1,1 +1,4 @@
-<router-outlet></router-outlet>
+<app-internal-nav *ngIf="isInternal"></app-internal-nav>
+<main [@routeAnimations]="prepareRoute(outlet)" class="page-content">
+  <router-outlet #outlet="outlet"></router-outlet>
+</main>

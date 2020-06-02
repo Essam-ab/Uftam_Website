@@ -159,6 +159,16 @@ export class FormationService {
   }
 
   /*================= Event ================= */
+
+  setEventDetails(id, content) {
+    return this.http.post<Response>(
+      environment.apiUrl + "handers/events/updateEventDetails.php", {
+      id,
+      content
+    }
+    );
+  }
+
   getArticle(id) {
     return this.http.get<Formation[]>(
       environment.apiUrl + "handers/events/getArticle.php?id=" + id

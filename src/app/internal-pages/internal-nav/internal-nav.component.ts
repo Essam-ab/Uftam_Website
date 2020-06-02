@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { HomeComponent } from '../../home/home.component';
-import { UftamComponent } from '../../internal-pages/uftam/uftam.component';
-import { FormationComponent } from '../../internal-pages/formation/formation.component';
-import { ArticleComponent } from '../../internal-pages/article/article.component';
-import { ContactComponent } from '../../internal-pages/contact/contact.component';
-import { VieComponent } from '../../internal-pages/vie/vie.component';
-import { PartnersComponent } from '../../internal-pages/partners/partners.component';
-import { ActualityComponent } from '../../internal-pages/actuality/actuality.component';
-import { AdmissionComponent } from '../../internal-pages/admission/admission.component';
+import * as $ from "jquery";
+import { FormationService } from '../../services/dashboard/formation.service';
+import { Formation } from '../../classes/formation';
+import { PartnerService } from '../../services/dashboard/partner.service';
+import { CompanyService } from '../../services/dashboard/company.service';
+import { StudentExpService } from '../../services/dashboard/student-exp.service';
+import { LaVieService } from '../../services/dashboard/la-vie.service';
 import { environment } from 'src/environments/environment';
+import { ActivatedRoute } from '@angular/router';
+
 @Component({
   selector: 'app-internal-nav',
   templateUrl: './internal-nav.component.html',
@@ -18,40 +18,57 @@ import { environment } from 'src/environments/environment';
 export class InternalNavComponent implements OnInit {
 
   constructor(
-    private c_home: HomeComponent,
-    private c_uftam: UftamComponent,
-    private c_formation: FormationComponent,
-    private c_article: ArticleComponent,
-    private c_contact: ContactComponent,
-    private c_vie: VieComponent,
-    private c_partner: PartnersComponent,
-    private c_actuality: ActualityComponent,
-    private c_admission: AdmissionComponent
+    private _formation: FormationService,
+    private formation: Formation,
+    private _partner: PartnerService,
+    private _company: CompanyService,
+    private _student: StudentExpService,
+    private _laVie: LaVieService,
+    private _ActivatedRoute: ActivatedRoute
   ) { }
-  //[ngClass]="{'message': info.priority<10}"
 
-  // activity: Object;
+
+  formations: Formation[];
+  partners: Formation[];
+  companies: Formation[];
+  firstEvents: Formation[];
+  secondEvents: Formation[];
+  activeEvents: Formation[];
+  otherEvents: any;
+  students: Formation[];
+  laVies: Formation[];
+  activeVies: Formation[];
+  otherVies: any;
+  laVieLength: any;
+  apiUrl: any;
+
+  //nav
+  license: Formation[];
+  master: Formation[];
+
+
   ngOnInit() {
-    // this.activity[
-    //   this.c_home.home_active,
-    //   this.c_uftam.uftam_active
-    // formation: this.c_formation. ,
-    //   article: this.c_article. ,
-    //     contact: this.c_contact. ,
-    //       vie: this.c_vie. ,
-    //         partner: this.c_partner. ,
-    //           actuality: this.c_actuality. ,
-    //             admission: this.c_admission.
-    // ]
-  }
-
-  toggleActive(e) {
-    console.log('toggled')
-    const target = e.target;
-    document.querySelector('[name="nav-item"]').classList.remove('active');
-    target.classList.toggle('active');
-    // if (target.classList.contains('active'))
-
+    this.apiUrl = environment.apiUrl;
+    //nav setup
+    this._formation.displayFormations().subscribe(
+      (data: Formation[]) => {
+        this.formations = data;
+        var x = [], y = [];
+        var j = 0, k = 0;
+        for (let i = 0; i < this.formations.length; i++) {
+          if (data[i]['type'] == "Masters") {
+            x[j++] = data[i];
+          } else if (data[i]['type'] == "Licence") {
+            y[k++] = data[i];
+          }
+        }
+        this.license = y;
+        this.master = x;
+      },
+      error => {
+        console.log("there has been an error trying to get all formaions!");
+      }
+    )
   }
 
 }

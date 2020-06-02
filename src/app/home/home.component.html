@@ -409,7 +409,7 @@
             </p>
           </div>
           <div class="e_slide_footer">
-            <a href="#">
+            <a [routerLink]="['', 'uftam_article', active.id]">
               <span>Plus de détails </span>
               <i class="fas fa-angle-right"></i></a>
           </div>
@@ -429,7 +429,10 @@
             </p>
           </div>
           <div class="e_slide_footer">
-            <a href="#">Plus de détails <i class="fas fa-angle-right"></i></a>
+            <a [routerLink]="['', 'uftam_article', e.id]">
+              Plus de détails
+              <i class="fas fa-angle-right"></i>
+            </a>
           </div>
         </div>
       </div>

@@ -57,6 +57,8 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { AddFormationDetailsComponent } from './add-formation-details/add-formation-details.component';
 import { FormationDetailsViewComponent } from './formation-details-view/formation-details-view.component';
 import { AddFormationDocumentComponent } from './add-formation-document/add-formation-document.component';
+import { AddEventDetailsComponent } from './add-event-details/add-event-details.component';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 
 export const dashboard_url = "dashboard";
 export const routes: Routes = [
@@ -69,12 +71,12 @@ export const routes: Routes = [
     children: [
       { path: 'uftam_license/:id/license', component: LicenseComponent },
       { path: 'uftam_master/:id/master', component: MasterComponent },
-      { path: 'uftam_certificate/:id', component: CertificateComponent },
+      { path: 'uftam_certificate/:id', component: CertificateComponent, redirectTo: '', pathMatch: 'full' },
     ]
   },
   { path: 'uftam_contact', component: ContactComponent },
   { path: 'uftam_vie', component: VieComponent },
-  { path: 'uftam_partners', component: PartnersComponent },
+  { path: 'uftam_partners', component: PartnersComponent, data: { animation: 'isRight' } },
   { path: 'uftam_actuality', component: ActualityComponent },
   { path: 'uftam_article', component: ArticleComponent, redirectTo: '', pathMatch: 'full' },
   { path: 'uftam_article/:id', component: ArticleComponent },
@@ -82,8 +84,6 @@ export const routes: Routes = [
   {
     path: 'admin',
     component: AdminComponent,
-    redirectTo: '',
-    pathMatch: 'full',
     children: [
       { path: 'typeFormationView', component: FormationTypeViewComponent, },
       { path: 'formationView', component: FormationViewComponent },
@@ -96,6 +96,7 @@ export const routes: Routes = [
       { path: 'formationDetailsView', component: FormationDetailsViewComponent },
       { path: 'addTypeEvent', component: AddTypeEventComponent },
       { path: 'addEvent', component: AddEventComponent },
+      { path: 'addEventDetails', component: AddEventDetailsComponent },
       { path: 'typeEventView', component: EventTypeViewComponent, },
       { path: 'eventView', component: EventViewComponent },
       { path: 'editTypeEvent', component: EditTypeEventComponent },
@@ -165,7 +166,8 @@ export const routes: Routes = [
     AdminDashboardComponent,
     AddFormationDetailsComponent,
     FormationDetailsViewComponent,
-    AddFormationDocumentComponent
+    AddFormationDocumentComponent,
+    AddEventDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -175,7 +177,8 @@ export const routes: Routes = [
     ReactiveFormsModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(routes),
-    BsDatepickerModule.forRoot()
+    BsDatepickerModule.forRoot(),
+    AngularEditorModule
   ],
   providers: [
     Formation,
@@ -190,7 +193,10 @@ export const routes: Routes = [
     VieComponent,
     PartnersComponent,
     ActualityComponent,
-    AdmissionComponent
+    AdmissionComponent,
+    AppComponent,
+    // MasterComponent,
+    // LicenseComponent
   ],
   bootstrap: [AppComponent]
 })

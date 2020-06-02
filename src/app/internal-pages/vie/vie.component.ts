@@ -7,6 +7,7 @@ import { CompanyService } from '../../services/dashboard/company.service';
 import { StudentExpService } from '../../services/dashboard/student-exp.service';
 import { LaVieService } from '../../services/dashboard/la-vie.service';
 import { environment } from 'src/environments/environment';
+import { AppComponent } from '../../app.component';
 
 @Component({
   selector: 'app-vie',
@@ -21,7 +22,8 @@ export class VieComponent implements OnInit {
     private _partner: PartnerService,
     private _company: CompanyService,
     private _student: StudentExpService,
-    private _laVie: LaVieService
+    private _laVie: LaVieService,
+    private c_App: AppComponent
   ) { }
 
   formations: Formation[];
@@ -44,6 +46,7 @@ export class VieComponent implements OnInit {
 
   ngOnInit() {
     this.apiUrl = environment.apiUrl;
+    this.c_App.isInternal = true;
 
     //nav setup
     this._formation.displayFormations().subscribe(

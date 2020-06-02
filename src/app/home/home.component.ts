@@ -7,6 +7,7 @@ import { CompanyService } from '../services/dashboard/company.service';
 import { StudentExpService } from '../services/dashboard/student-exp.service';
 import { LaVieService } from '../services/dashboard/la-vie.service';
 import { environment } from 'src/environments/environment';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-home',
@@ -21,7 +22,8 @@ export class HomeComponent implements OnInit {
     private _partner: PartnerService,
     private _company: CompanyService,
     private _student: StudentExpService,
-    private _laVie: LaVieService
+    private _laVie: LaVieService,
+    private c_App: AppComponent
   ) { }
 
   formations: Formation[];
@@ -63,6 +65,8 @@ export class HomeComponent implements OnInit {
 
     this.home_active = true;
     this.apiUrl = environment.apiUrl;
+    //setting internal nav display to false
+    this.c_App.isInternal = false;
     //formation
     this._formation.displayFormations().subscribe(
       (data: Formation[]) => {

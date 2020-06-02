@@ -1,9 +1,57 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* root */
 :root {
   --primary-color: #2a416d !important;
   --primary-hover: #325aa3 !important;
   --secondary-color: black !important;
 }
+
+/* scroll bar */
+:-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -o-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -ms-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+  /* border-radius: 10px; */
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  -ms-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  -o-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  background-color: var(--primary-hover);
+  ;
+}
+
+/* global */
+
+* {
+  /* font-family: "poppins"; */
+}
+
+
+/* angular class */
+.angular-editor-button,
+.ae-picker-label,
+.ae-picker-item {
+  color: #000;
+}
+
+.angular-editor-textarea {
+  height: 300px !important;
+  background: #fff !important;
+}
+
+/* end angular class */
 
 .nav-item.nav-link {
   color: #fff !important;
@@ -16,7 +64,7 @@
 }
 
 .info {
-  text-align: justify;
+  text-align: justify !important;
   text-justify: inter-word;
 }
 
@@ -58,7 +106,9 @@ header#internal .top_connect ul li a:hover {
   color: var(--primary-hover);
 }
 
-
+header#internal {
+  padding-bottom: 0% !important;
+}
 
 button:hover {
   color: var(--primary);
@@ -309,8 +359,20 @@ thead tr:hover {
   margin-right: 0% !important;
 }
 
+#sidebar ul li a {
+  padding: 10px;
+  font-size: 1.1em;
+  display: block;
+  text-align: left !important;
+}
+
 .dropdown-item {
   cursor: pointer
+}
+
+.form-group {
+  margin-bottom: 1rem;
+  text-align: left !important;
 }
 
 /* nav dropdowns */
@@ -364,4 +426,16 @@ thead tr:hover {
 
 .carousel-item.first .e_slide:first-child {
   width: 35vw !important;
+}
+
+/* navbar max width fix */
+#internal .container#nav-bar {
+  max-width: 80vw !important;
+}
+
+/* fix */
+.under_inner_box div:nth-child(2) {
+  height: 50vh;
+  overflow-y: scroll;
+  padding-right: 20px;
 }

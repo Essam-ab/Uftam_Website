@@ -7,6 +7,7 @@ import { CompanyService } from '../../services/dashboard/company.service';
 import { StudentExpService } from '../../services/dashboard/student-exp.service';
 import { LaVieService } from '../../services/dashboard/la-vie.service';
 import { environment } from 'src/environments/environment';
+import { AppComponent } from '../../app.component';
 
 @Component({
   selector: 'app-uftam',
@@ -21,7 +22,8 @@ export class UftamComponent implements OnInit {
     private _partner: PartnerService,
     private _company: CompanyService,
     private _student: StudentExpService,
-    private _laVie: LaVieService
+    private _laVie: LaVieService,
+    private c_App: AppComponent
   ) { }
 
   formations: Formation[];
@@ -43,6 +45,7 @@ export class UftamComponent implements OnInit {
   master: Formation[];
 
   ngOnInit() {
+    this.c_App.isInternal = true;
     this.apiUrl = environment.apiUrl;
 
     //nav setup
