@@ -29,6 +29,7 @@ export class ArticleComponent implements OnInit {
   ) { }
 
   formations: Formation[];
+  articleDetails: Formation[];
   partners: Formation[];
   companies: Formation[];
   firstEvents: Formation[];
@@ -61,6 +62,15 @@ export class ArticleComponent implements OnInit {
     this._ActivatedRoute.paramMap.subscribe(params => {
       this.idPage = params.get('id');
     });
+
+    this._formation.getArticleDetails(this.idPage).subscribe(
+      (data: Formation[]) => {
+        this.articleDetails = data[0]['eve_details'];
+      },
+      error => {
+        console.log("error trying to get formatoiin details")
+      }
+    )
 
     //getting formation details
     this._formation.getArticle(this.idPage).subscribe(

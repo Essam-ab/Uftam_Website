@@ -1,0 +1,23 @@
+.inscription {
+  width: 80vw;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.inscription select {
+  margin-right: 20px;
+}
+
+.inscription input {
+  margin-right: 20px;
+  padding: 25px;
+}
+
+.inscription .input-group {
+  margin-bottom: 20px;
+}
+
+.input-fix {
+  height: 50px !important;
+  width: 525px !important;
+}

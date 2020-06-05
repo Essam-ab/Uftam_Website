@@ -1,0 +1,88 @@
+<section class="inscription">
+  <form #f="ngForm" [formGroup]="userInfo" (submit)='submitCondidat(f, $event)'>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Nom</span>
+      </div>
+      <input type="text" aria-label="first name" formControlName="userInfoFirstName" [(ngModel)]="userInfo.firstName"
+        class="
+        form-control" placeholder="Nom...">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Prénom</span>
+      </div>
+      <input type="text" aria-label="Last name" formControlName="userInfoLastName" [(ngModel)]="userInfo.lastName"
+        class="form-control" placeholder="Prénom...">
+    </div>
+
+    <div class="input-group">
+      <div class="input-group-prepend" id="datepick">
+        <label class="input-group-text" for="eventDate">Date</label>
+      </div>
+      <input required type="text" class="form-control" formControlName="userInfoDate" [(ngModel)]="userInfo.date"
+        bsDatepicker id="eventDate" placeholder="Date...">
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="email">Email</label>
+      </div>
+      <input required type="email" class="form-control" formControlName="userInfoEmail" [(ngModel)]="userInfo.email"
+        id="email" placeholder="E-mail...">
+    </div>
+
+    <div class="input-group">
+      <ngx-intl-tel-input [cssClass]="'custom'" [preferredCountries]="preferredCountries"
+        [enableAutoCountrySelect]="false" [enablePlaceholder]="true" [searchCountryFlag]="true"
+        [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]" [selectFirstCountry]="false"
+        [selectedCountryISO]="CountryISO.India" [maxLength]="15" [tooltipField]="TooltipLabel.Name"
+        [phoneValidation]="true" [separateDialCode]="separateDialCode" formControlName="userInfoPhone"
+        [(ngModel)]="userInfo.phone">
+      </ngx-intl-tel-input>
+
+      <select class="form-control" id="typeFormation" formControlName="userInfoFormation"
+        [(ngModel)]="userInfo.formation">
+        <option value="Default" selected>--- Choisir un Formation ---</option>
+        <option *ngFor="let formation of formations" value="{{formation.id}}">{{formation.type}} {{formation.lib}}
+        </option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="file1"> Formulaire de candidature rempli</label>
+        <input type="file" name="form_cond" id="file1" required (change)='onFileChanged_1($event)'>
+      </div>
+
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="file2">Pièce d'identité</label>
+        <input type="file" name="form_cond" id="file2" required (change)='onFileChanged_2($event)'>
+      </div>
+
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="file3">Derniers relevés de notes depuis Licence 1 (Sauf pour certificats)
+        </label>
+        <input type="file" name="form_cond" id="file3" required (change)='onFileChanged_3($event)'>
+      </div>
+
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="file4">CV </label>
+        <input type="file" name="form_cond" id="file4" required (change)='onFileChanged_4($event)'>
+      </div>
+
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="file5">Lettre de motivation</label>
+        <input type="file" name="form_cond" id="file5" required (change)='onFileChanged_5($event)'>
+      </div>
+
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="file6">Lettre de recommandation </label>
+        <input type="file" name="form_cond" id="file6" required (change)='onFileChanged_6($event)'>
+      </div>
+
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="file7">Autres documents complémentaires</label>
+        <input type="file" name="form_cond" id="file7" required (change)='onFileChanged_7($event)'>
+      </div>
+
+      <button type="submit" class="form-control btn-outline-primary btn">Submit</button>
+
+    </div>
+  </form>
+</section>

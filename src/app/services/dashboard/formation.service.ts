@@ -169,6 +169,12 @@ export class FormationService {
     );
   }
 
+  getArticleDetails(id) {
+    return this.http.get<Formation[]>(
+      environment.apiUrl + "handers/events/getArticleDetails.php?id=" + id
+    );
+  }
+
   getArticle(id) {
     return this.http.get<Formation[]>(
       environment.apiUrl + "handers/events/getArticle.php?id=" + id

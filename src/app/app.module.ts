@@ -10,7 +10,7 @@ import { NavComponent } from './nav/nav.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { AdminComponent } from './admin/admin.component';
 import { AddFormationComponent } from './add-formation/add-formation.component';
 import { AddTypeFormationComponent } from './add-type-formation/add-type-formation.component';
@@ -59,6 +59,8 @@ import { FormationDetailsViewComponent } from './formation-details-view/formatio
 import { AddFormationDocumentComponent } from './add-formation-document/add-formation-document.component';
 import { AddEventDetailsComponent } from './add-event-details/add-event-details.component';
 import { AngularEditorModule } from '@kolkov/angular-editor';
+import { InscriptionComponent } from './internal-pages/inscription/inscription.component';
+import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 
 export const dashboard_url = "dashboard";
 export const routes: Routes = [
@@ -81,6 +83,7 @@ export const routes: Routes = [
   { path: 'uftam_article', component: ArticleComponent, redirectTo: '', pathMatch: 'full' },
   { path: 'uftam_article/:id', component: ArticleComponent },
   { path: 'uftam_admission', component: AdmissionComponent },
+  { path: 'uftam_inscription', component: InscriptionComponent },
   {
     path: 'admin',
     component: AdminComponent,
@@ -167,7 +170,8 @@ export const routes: Routes = [
     AddFormationDetailsComponent,
     FormationDetailsViewComponent,
     AddFormationDocumentComponent,
-    AddEventDetailsComponent
+    AddEventDetailsComponent,
+    InscriptionComponent
   ],
   imports: [
     BrowserModule,
@@ -176,9 +180,11 @@ export const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    NoopAnimationsModule,
     RouterModule.forRoot(routes),
     BsDatepickerModule.forRoot(),
-    AngularEditorModule
+    AngularEditorModule,
+    NgxIntlTelInputModule
   ],
   providers: [
     Formation,
@@ -194,9 +200,7 @@ export const routes: Routes = [
     PartnersComponent,
     ActualityComponent,
     AdmissionComponent,
-    AppComponent,
-    // MasterComponent,
-    // LicenseComponent
+    AppComponent
   ],
   bootstrap: [AppComponent]
 })
