@@ -7,17 +7,14 @@ class Event extends database
         //
     }
 
-    public function updateEventDetails($id, $content)
+    public function getArticleDetails($id)
     {
         $query = $this->connect()->prepare(
-            "UPDATE t_event
-            SET eve_details = ?
+            "SELECT eve_details
+            FROM t_event
             WHERE eve_id = ?;"
         );
-        $query->execute([
-            $content,
-            $id
-        ]);
+        $query->execute([$id]);
         return $query;
     }
 
@@ -29,6 +26,20 @@ class Event extends database
             WHERE eve_id = ?;"
         );
         $query->execute([$id]);
+        return $query;
+    }
+
+    public function updateEventDetails($id, $content)
+    {
+        $query = $this->connect()->prepare(
+            "UPDATE t_event
+            SET eve_details = ?
+            WHERE eve_id = ?;"
+        );
+        $query->execute([
+            $content,
+            $id
+        ]);
         return $query;
     }
 

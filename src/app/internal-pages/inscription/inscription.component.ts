@@ -8,8 +8,15 @@ import { SearchCountryField, TooltipLabel, CountryISO } from 'ngx-intl-tel-input
 import Swal from 'sweetalert2';
 import { HttpClient } from '@angular/common/http';
 import { CondidatService } from 'src/app/services/site/condidat.service';
+import { resolve } from 'url';
 
 interface Response {
+  success: boolean,
+  message: string,
+  id: any
+}
+
+interface condidat {
   success: boolean,
   message: string,
   id: any
@@ -100,7 +107,6 @@ export class InscriptionComponent implements OnInit {
   onFileChanged_1(e) {
     let target = e.target;
     this.selectedFile_1 = target.files[0];
-    console.log(`first file changed: ${this.selectedFile_1}`)
   }
   onFileChanged_2(e) {
     let target = e.target;
@@ -172,10 +178,27 @@ export class InscriptionComponent implements OnInit {
         });
       }
 
+      const getLastCreated = () => {
+        return new Promise((resolve, reject) => {
+          this.http.get<condidat>(environment.apiUrl + 'handers/condidat/getLastAdded.php').subscribe(
+            (data: condidat) => {
+              if (data.success)
+                resolve(data);
+              else
+                reject(0);
+            }
+          )
+        })
+      }
+
       async function startSteps() {
 
         try {
           const conditat = await createConditat(first_name, last_name, date, email, formation, dial_code, country_code, number);
+          if (conditat) {
+            const id = await startSteps();
+
+          }
         } catch (err) {
           console.log("error trying to create new conditat:" + err);
         }
