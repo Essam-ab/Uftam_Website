@@ -1,5 +1,5 @@
 <header id="home" class="carousel">
-  <div class="top_connect">
+  <!-- <div class="top_connect">
     <ul class="">
       <li class="">
         <a class="nav-link" href="#">Se connecter</a>
@@ -11,11 +11,13 @@
         <a class="nav-link" href="#">Créer un compte</a>
       </li>
     </ul>
-  </div>
+  </div> -->
   <app-nav></app-nav>
   <div class="slider_wrapper carousel-inner">
     <div class="slider_first carousel-item active">
-      <div class="slider_background"></div>
+      <div class="slider_background">
+        <img src="../../assets/img/banner_slide_1.png" alt="">
+      </div>
       <div class="slider_details">
         <h1>
           La sélection pour l'année <br>
@@ -27,28 +29,30 @@
         </h4>
         <div class="buttons">
           <button class="btn btn-primary mr-3 template-btn1-dark block">Télécharger les brochures</button>
-          <button class="btn btn-primary template-btn1-dark block">Pré-inscription</button>
+          <button class="btn btn-primary template-btn1-dark block"
+            routerLink="uftam_inscription">Pré-inscription</button>
         </div>
       </div>
     </div>
     <div class="slider_second carousel-item">
-      <div class="slider_background"></div>
+      <div class="slider_background">
+        <img src="../../assets/img/banner_slide_2.png" alt="">
+      </div>
       <div class="slider_details">
         <h1>
-          Lorem ipsum dolor sit amet consectetur <br> adipisicing elit. Laboriosam, culpa.
+          Bénéficiez de diplômes <br> binationaux reconnus à <br> l'échelle internationale
         </h1>
-        <h4>
-          Lorem ipsum dolor sit amet. <br>
-          Lorem, ipsum dolor.
-        </h4>
         <div class="buttons">
           <button class="btn btn-primary mr-3 template-btn1-dark block">Télécharger les brochures</button>
-          <button class="btn btn-primary template-btn1-dark block">Pré-inscription</button>
+          <button class="btn btn-primary template-btn1-dark block"
+            routerLink="uftam_inscription">Pré-inscription</button>
         </div>
       </div>
     </div>
     <div class="slider_third carousel-item">
-      <div class="slider_background"></div>
+      <div class="slider_background">
+        <img src="../../assets/img/banner_slide_1.png" alt="">
+      </div>
       <div class="slider_details">
         <h1>
           Lorem ipsum dolor sit amet consectetur <br> adipisicing elit. Laboriosam, culpa.
@@ -59,7 +63,8 @@
         </h4>
         <div class="buttons">
           <button class="btn btn-primary mr-3 template-btn1-dark block">Télécharger les brochures</button>
-          <button class="btn btn-primary template-btn1-dark block">Pré-inscription</button>
+          <button class="btn btn-primary template-btn1-dark block"
+            routerLink="uftam_inscription">Pré-inscription</button>
         </div>
       </div>
     </div>
@@ -76,7 +81,7 @@
     <div class="f_slider_pagination">
       <h4>
         Nos <br>
-        Formation <br>
+        Formations <br>
         d'excellence
       </h4>
       <div class="f_buttons">
@@ -108,20 +113,24 @@
                 <div class="f_slide container f_slide_show animated">
                   <div class="f_slide_header">
                     <div class="f_slide_image">
-                      <img src="{{apiUrl}}handers/formations/uploads/{{formation.path}}" alt="">
+                      <img src="{{apiUrl}}handers/formations/slide/{{formation.slide}}" alt="">
                     </div>
                     <h4>{{formation.type}}</h4>
-                    <h6>
-                      {{formation.lib}}
-                    </h6>
+                    <h6>{{formation.lib}}</h6>
                   </div>
                   <div class=" f_slide_body">
                     <p>
                       {{formation.pres | slice:0:180}}...
                     </p>
                   </div>
-                  <div class="f_slide_footer">
-                    <a href="#">
+                  <div class="f_slide_footer" *ngIf="formation.type == 'Licence'" id="license">
+                    <a [routerLink]="['uftam_formation', 'uftam_license', formation.id,'license']">
+                      <h6>Savoir plus sur la formation</h6>
+                      <i class="fas fa-plus"></i>
+                    </a>
+                  </div>
+                  <div class="f_slide_footer" *ngIf="formation.type == 'Masters'">
+                    <a [routerLink]="['uftam_formation', 'uftam_master', formation.id,'master']" id="masters">
                       <h6>Savoir plus sur la formation</h6>
                       <i class="fas fa-plus"></i>
                     </a>
@@ -138,7 +147,7 @@
                 <div class="f_slide container f_slide_show animated">
                   <div class="f_slide_header">
                     <div class="f_slide_image">
-                      <img src="{{apiUrl}}handers/formations/uploads/{{formation.path}}" alt="">
+                      <img src="{{apiUrl}}handers/formations/slide/{{formation.slide}}" alt="">
                     </div>
                     <h4>{{formation.type}}</h4>
                     <h6>
@@ -239,7 +248,7 @@
       </div>
       <div class="company_read_more text-center">
         <button class="btn mt-3 template-btn1-dark block">
-          Plus de détails sure Uftam
+          Plus de détails sur l'UFTAM
         </button>
       </div>
     </div>
@@ -275,9 +284,9 @@
       <h2 class="text-center font-weight-bold">Découvrir l'Uftam</h2>
     </div>
     <div class="doc_body">
-      <p class="text-center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. In, ab.</p>
+      <p class="text-center"></p>
       <div class="video">
-        <iframe id="video_documentation" src="https://www.youtube.com/embed/gurZcyLwybI" frameborder="0"
+        <iframe id="video_documentation" src="https://www.youtube.com/embed/WrVBUbI9gsU" frameborder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <a class="video_player" (click)='videoReveal($event)' href="#">
           <i class="fas fa-play"></i>
@@ -342,30 +351,32 @@
           </div>
           <div class="event_details">
             <div class="event_header">
-              <h4 class="font-weight-bold">Nom de l’event : {{event.lib}}</h4>
+              <h4 class="font-weight-bold">{{event.lib}}</h4>
             </div>
             <div class="event_body">
-              <p>
-                {{event.desc}}
+              <p [innerHtml]="event.desc">
+
               </p>
             </div>
             <div class="event_read_more">
-              <a href="#" class=""> Plus de détails <i class="fas fa-caret-right"></i> </a>
+              <!-- <a [routerLink]="['uftam_formation', 'uftam_master', formation.id,'master']"  class=""> Plus de détails <i class="fas fa-caret-right"></i> </a> -->
+              <a [routerLink]="['', 'uftam_event', event.id]" class=""> Plus de détails <i
+                  class="fas fa-caret-right"></i> </a>
             </div>
           </div>
         </div>
       </div>
-      <div class="event_read_more text-center">
+      <!-- <div class="event_read_more text-center">
         <button class="btn btn-primary mt-3 template-btn1-dark block">
           Voir tous les évènements
         </button>
-      </div>
+      </div> -->
     </div>
     <div class="event_right">
       <div class="event_inscription_container">
         <div class="inscription_header">
           <h2>
-            Inscirvez-vous <br>
+            Inscriver-vous <br>
             au prochain <br>
             évènement!
           </h2>
@@ -382,7 +393,7 @@
           <button class="btn btn-primary btn-lg btn-inscription-1">
             Inscrivez-vous
           </button> <br>
-          <button class="btn btn-primary btn-lg btn-inscription-2">
+          <button [routerLink]="['uftam_event']" class="btn btn-primary btn-lg btn-inscription-2">
             Plus de détails
           </button>
         </div>
@@ -405,7 +416,7 @@
           <div class="e_slide_body">
             <h2 class="font-weight-bold">{{active.lib}}</h2>
             <p>
-              {{active.desc}}
+              {{active.desc | slice:0:200}}
             </p>
           </div>
           <div class="e_slide_footer">
@@ -424,8 +435,8 @@
           </div>
           <div class="e_slide_body">
             <h2 class="font-weight-bold">{{e.lib}}</h2>
-            <p>
-              {{e.desc}}
+            <p [innerHtml]="e.desc | slice:0:250">
+
             </p>
           </div>
           <div class="e_slide_footer">
@@ -558,11 +569,11 @@
   <div class="footer_top">
     <div class="container">
       <ul>
-        <li><a href="#">A propos de l'Uftam</a></li>
-        <li><a href="#">Nos formations</a></li>
-        <li><a href="#">Contactez-nous</a></li>
+        <li><a routerLink="uftam_about">A propos de l'Uftam</a></li>
+        <li><a routerLink="uftam_admission">Admission</a></li>
+        <li><a routerLink="uftam_contact">Contactez-nous</a></li>
         <li>
-          <a href="#">
+          <a target="_blank" href="https://www.facebook.com/UFTAMUniversite/">
             <i class="fab fa-facebook-f"></i>
           </a>
           <a href="#">

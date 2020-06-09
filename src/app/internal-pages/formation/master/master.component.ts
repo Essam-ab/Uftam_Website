@@ -63,6 +63,7 @@ export class MasterComponent implements OnInit {
   public_acceuil: any;
   document: any;
   image: any;
+  diplome_logos: any;
 
   ngOnInit() {
     this.apiUrl = environment.apiUrl;
@@ -94,6 +95,7 @@ export class MasterComponent implements OnInit {
         this.program = data[0]['program'];
         this.debouche = data[0]['debouche'];
         this.public_acceuil = data[0]['public_acceuil'];
+        this.diplome_logos = data;
       }, error => {
         //
       }

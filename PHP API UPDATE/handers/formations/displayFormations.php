@@ -14,6 +14,7 @@ if ($query->rowCount()) {
         $d[$i]['type'] = $val->ttf_lib;
         $d[$i]['status'] = $val->for_active;
         $d[$i]['path'] = $val->for_img;
+        $d[$i]['slide'] = $val->for_slide;
         $i++;
     }
     echo json_encode($d);

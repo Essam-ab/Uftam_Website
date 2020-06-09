@@ -61,6 +61,8 @@ import { AddEventDetailsComponent } from './add-event-details/add-event-details.
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { InscriptionComponent } from './internal-pages/inscription/inscription.component';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
+import { UftamEventComponent } from './internal-pages/uftam-event/uftam-event.component';
+import { UftamEventViewComponent } from './internal-pages/uftam-event/uftam-event-view/uftam-event-view.component';
 
 export const dashboard_url = "dashboard";
 export const routes: Routes = [
@@ -84,6 +86,8 @@ export const routes: Routes = [
   { path: 'uftam_article/:id', component: ArticleComponent },
   { path: 'uftam_admission', component: AdmissionComponent },
   { path: 'uftam_inscription', component: InscriptionComponent },
+  { path: 'uftam_event', component: UftamEventComponent },
+  { path: 'uftam_event/:id', component: UftamEventViewComponent },
   {
     path: 'admin',
     component: AdminComponent,
@@ -171,7 +175,9 @@ export const routes: Routes = [
     FormationDetailsViewComponent,
     AddFormationDocumentComponent,
     AddEventDetailsComponent,
-    InscriptionComponent
+    InscriptionComponent,
+    UftamEventComponent,
+    UftamEventViewComponent
   ],
   imports: [
     BrowserModule,

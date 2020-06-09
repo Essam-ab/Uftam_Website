@@ -10,22 +10,24 @@ class Formation extends database
     public function displayFormationDetails_Master($id)
     {
         $query = $this->connect()->prepare(
-            "SELECT *
-            FROM t_formation join t_type_formation using(ttf_id)
-            WHERE for_id = ? and ttf_lib = ?"
+            "SELECT f.*, dip_logo, ttf_lib
+            FROM  t_type_formation JOIN t_formation f USING(ttf_id)
+            JOIN  t_diplome d USING (for_id)
+            WHERE f.for_id = ? AND ttf_lib = ? AND d.for_id = ?"
         );
-        $query->execute([(int) $id, 'Masters']);
+        $query->execute([(int) $id, 'Masters', (int) $id]);
         return $query;
     }
 
     public function displayFormationDetails_License($id)
     {
         $query = $this->connect()->prepare(
-            "SELECT *
-            FROM t_formation join t_type_formation using(ttf_id)
-            WHERE for_id = ? and ttf_lib = ?"
+            "SELECT f.*, dip_logo, ttf_lib
+            FROM  t_type_formation JOIN t_formation f USING(ttf_id)
+            JOIN  t_diplome d USING (for_id)
+            WHERE f.for_id = ? AND ttf_lib = ? AND d.for_id = ?"
         );
-        $query->execute([(int) $id, 'Licence']);
+        $query->execute([(int) $id, 'Licence', (int) $id]);
         return $query;
     }
 

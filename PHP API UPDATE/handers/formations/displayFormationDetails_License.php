@@ -8,6 +8,7 @@ if (isset($_GET)) {
     if ($query->rowCount()) {
         $events = $query->fetchAll(PDO::FETCH_OBJ);
         $i = 0;
+        $k = 0;
         foreach ($events as $val) {
             $d[$i]['id'] = $val->for_id;
             $d[$i]['type'] = $val->ttf_lib;
@@ -23,6 +24,7 @@ if (isset($_GET)) {
             $d[$i]['program'] = $val->for_program;
             $d[$i]['debouche'] = $val->for_debouche;
             $d[$i]['public_acceuil'] = $val->for_public_acceuil;
+            $d[$i]['logo'] = $val->dip_logo;
 
             $i++;
         }

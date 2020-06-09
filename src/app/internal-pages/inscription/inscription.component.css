@@ -1,7 +1,11 @@
+@import '../../home/home.component.css';
+
 .inscription {
   width: 80vw;
   margin: 0 auto;
   margin-top: 50px;
+  background: #f5f6fc;
+  padding: 60px 80px !important;
 }
 
 .inscription select {
@@ -20,4 +24,66 @@
 .input-fix {
   height: 50px !important;
   width: 525px !important;
+}
+
+.inputBox {
+  margin-bottom: 50px;
+}
+
+input {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 25px;
+  border-bottom: 2px solid var(--primary-color);
+  border-radius: 0px !important;
+}
+
+.inputText {
+  position: absolute;
+  line-height: 50px;
+  font-size: 16px;
+  transition: .5s;
+  color: var(--primary-color);
+  font-family: 'poppins';
+}
+
+.focus .inputText {
+  transform: translateY(-30px);
+  position: absolute;
+  font-size: 12px;
+  opacity: 1;
+  color: var(--primary);
+}
+
+.pre {
+  display: flex;
+  justify-content: space-between;
+  width: 80vw;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.pre .text h1 {
+  font-family: 'poppins';
+  font-weight: 300;
+  color: var(--primary-color);
+  font-size: 28px;
+}
+
+.pre .text h2 {
+  font-family: 'poppins black';
+  font-weight: 800;
+  color: var(--primary-color);
+  font-size: 22px;
+}
+
+.userForm>h1 {
+  font-size: 24px;
+  color: var(--primary-color);
+  font-family: 'poppins black';
+  margin-bottom: 50px;
 }

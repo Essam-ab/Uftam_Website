@@ -1,105 +1,3 @@
-<!-- <header id="internal">
-  <div class="top_connect">
-    <ul class="">
-      <li class="">
-        <a class="nav-link" href="#">Se connecter</a>
-      </li>
-      <li class="seperate">
-        |
-      </li>
-      <li class="">
-        <a class="nav-link" href="#">Créer un compte</a>
-      </li>
-    </ul>
-  </div>
-  <div class="container" id="nav-bar">
-    <nav class="navbar navbar-expand-lg navbar-dark">
-      <a class="navbar-brand" href="#">
-        <img src="../../assets/img/uftam_logo.png" alt="uftam_logo">
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item" name="nav-item">
-            <a class="nav-link" routerLink=''>Accueil
-              <div class="underline"></div>
-            </a>
-          </li>
-          <li class="nav-item " name="nav-item">
-            <a class="nav-link" routerLink='/uftam_about'>uftam <span class="sr-only">(current)</span></a>
-            <div class="underline"></div>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-              <div class="underline"></div>
-              Formation
-
-            </a>
-            <div class="dropdown-menu" id="" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" id="toggle_drop_first">
-                Licence
-              </a>
-
-              <ul id="item_drop_first">
-                <li *ngFor="let l of license">
-                  <a [routerLink]="['', 'uftam_formation', 'uftam_license', l.id,'license']" class="">
-                    {{l.lib}}
-                  </a>
-                </li>
-              </ul>
-              <a class="dropdown-item" id="toggle_drop_second">
-                Masters
-              </a>
-
-              <ul id="item_drop_second">
-                <li *ngFor="let m of master">
-                  <a [routerLink]="['', 'uftam_formation', 'uftam_master', m.id, 'master']" class="">
-                    {{m.lib}}
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item " name="nav-item">
-            <a class="nav-link" routerLink='/uftam_partners'> Partenaires <div class="underline">
-              </div>
-            </a>
-          </li>
-          <li class="nav-item active" name="nav-item">
-            <a class="nav-link" routerLink='/uftam_actuality'>Admission <div class="underline">
-              </div></a>
-          </li>
-          <li class="nav-item" name="nav-item">
-            <a class="nav-link" routerLink='/uftam_vie'>Vie étudiante <div class="underline">
-              </div></a>
-          </li>
-          <li class="nav-item" name="nav-item">
-            <a class="nav-link" routerLink='/uftam_actuality'>Actualité <div class="underline">
-              </div></a>
-          </li>
-          <li class="nav-item" name="nav-item">
-            <a class="nav-link" routerLink='/uftam_contact'>Contact <div class="underline">
-              </div></a>
-          </li>
-        </ul>
-        <form class="mr-5 form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2 d-none" type="search" placeholder="Search" aria-label="Search">
-          <button class="my-2 my-sm-0" type="submit">
-            <i class="fas fa-search fa-lg"></i>
-          </button>
-        </form>
-      </div>
-    </nav>
-
-  </div>
-</header> -->
-<!-- <app-internal-nav></app-internal-nav> -->
-
 <section class="info" id="admission">
   <div class="info_wrapper container">
     <h2 class="admission_header">
@@ -127,7 +25,7 @@
           <li id="choise_6" (click)="change_choice($event)">
             Après avoir été admis
           </li>
-          <li id="choise_7" (click)="change_choice($event)">
+          <li id="choise_7" class="d-none" (click)="change_choice($event)">
             Questions fréquentes
           </li>
         </ul>
@@ -255,7 +153,8 @@
             </li>
           </ul>
           <div class="text-center mt-5">
-            <button class="btn btn-primary template-btn1-dark block">Canditature</button>
+            <button class="btn btn-primary template-btn1-dark block"
+              [routerLink]="['', 'uftam_inscription']">Canditature</button>
           </div>
         </div>
         <div class="split_right_items d-none" id="display_choice_4">
@@ -507,7 +406,7 @@
       <div class="event_inscription_container">
         <div class="inscription_header">
           <h2>
-            Inscirvez-vous <br>
+            Inscrivez-vous <br>
             au prochain <br>
             évènement!
           </h2>
@@ -637,7 +536,6 @@
     <ol class="carousel-indicators">
       <li data-target="#feedCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#feedCarousel" data-slide-to="1"></li>
-      <li data-target="#feedCarousel" data-slide-to="2"></li>
     </ol>
     <div class="feed_pagination">
       <div class="feed_buttons">

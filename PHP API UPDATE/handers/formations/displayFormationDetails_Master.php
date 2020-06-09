@@ -23,6 +23,7 @@ if (isset($_GET)) {
             $d[$i]['program'] = $val->for_program;
             $d[$i]['debouche'] = $val->for_debouche;
             $d[$i]['public_acceuil'] = $val->for_public_acceuil;
+            $d[$i]['logo'] = $val->dip_logo;
 
             $i++;
         }

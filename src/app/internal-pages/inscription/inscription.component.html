@@ -1,30 +1,46 @@
-<section class="inscription">
-  <form #f="ngForm" [formGroup]="userInfo" (submit)='submitCondidat(f, $event)'>
-    <div class="input-group">
-      <div class="input-group-prepend">
-        <span class="input-group-text">Nom</span>
+<div class="pre">
+  <div class="text">
+    <h1>Formulaire</h1>
+    <h2>de pré-inscription 2020-2021</h2>
+  </div>
+  <div>
+    <button class="btn btn-primary template-btn1-dark block">Télécharger</button>
+  </div>
+</div>
+<!-- <section class="inscription">
+  <form #f="ngForm" [formGroup]="userInfo" (submit)='submitCondidat(f, $event)' class="userForm">
+    <h1>Vos coordonnées</h1>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="inputBox">
+          <div class="inputText">Nom*</div>
+          <input type="text" aria-label="first name" formControlName="userInfoFirstName"
+            [(ngModel)]="userInfo.firstName" class="input" (click)='setFocus($event)'>
+        </div>
       </div>
-      <input type="text" aria-label="first name" formControlName="userInfoFirstName" [(ngModel)]="userInfo.firstName"
-        class="
-        form-control" placeholder="Nom...">
-      <div class="input-group-prepend">
-        <span class="input-group-text">Prénom</span>
+      <div class="col-md-6">
+        <div class="inputBox">
+          <div class="inputText">Prénom*</div>
+          <input type="text" aria-label="Last name" formControlName="userInfoLastName" [(ngModel)]="userInfo.lastName"
+            class="input" (click)='setFocus($event)'>
+        </div>
       </div>
-      <input type="text" aria-label="Last name" formControlName="userInfoLastName" [(ngModel)]="userInfo.lastName"
-        class="form-control" placeholder="Prénom...">
     </div>
-
-    <div class="input-group">
-      <div class="input-group-prepend" id="datepick">
-        <label class="input-group-text" for="eventDate">Date</label>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="inputBox">
+          <div class="inputText">Email*</div>
+          <input required type="email" class="input" formControlName="userInfoEmail" [(ngModel)]="userInfo.email"
+            id="email" (click)='setFocus($event)'>
+        </div>
       </div>
-      <input required type="text" class="form-control" formControlName="userInfoDate" [(ngModel)]="userInfo.date"
-        bsDatepicker id="eventDate" placeholder="Date...">
-      <div class="input-group-prepend">
-        <label class="input-group-text" for="email">Email</label>
+      <div class="col-md-6">
+        <div class="inputBox">
+          <div class="inputText">Date de naissance*</div>
+          <input required type="text" class="input" formControlName="userInfoDate" [(ngModel)]="userInfo.date"
+            bsDatepicker id="eventDate" (click)='setFocus($event)'>
+        </div>
       </div>
-      <input required type="email" class="form-control" formControlName="userInfoEmail" [(ngModel)]="userInfo.email"
-        id="email" placeholder="E-mail...">
     </div>
 
     <div class="input-group">
@@ -39,11 +55,13 @@
       <select class="form-control" id="typeFormation" formControlName="userInfoFormation"
         [(ngModel)]="userInfo.formation">
         <option value="Default" selected>--- Choisir un Formation ---</option>
-        <option *ngFor="let formation of formations" value="{{formation.id}}">{{formation.type}} {{formation.lib}}
+        <option *ngFor="let formation of formations_select" value="{{formation.id}}">{{formation.type}}
+          {{formation.lib}}
         </option>
       </select>
     </div>
 
+    <h1>Vos documents</h1>
     <div class="input-group">
       <div class="input-group-prepend">
         <label class="input-group-text" for="file1"> Formulaire de candidature rempli</label>
@@ -85,4 +103,194 @@
 
     </div>
   </form>
+</section> -->
+
+<section id="eventCarousel" class="carousel slide event_slider" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active first">
+      <div class="e_slider_wrapper">
+        <div class="e_slide container" name="e_slide" *ngFor='let active of activeEvents'>
+          <div class="e_slide_image">
+            <img src="{{apiUrl}}handers/events/uploads/{{active.path}}" alt="">
+          </div>
+          <div class="e_slide_header">
+            <h2 class="font-weight-bold">A la une</h2>
+          </div>
+          <div class="e_slide_body">
+            <h2 class="font-weight-bold">{{active.lib}}</h2>
+            <p>
+              {{active.desc}}
+            </p>
+          </div>
+          <div class="e_slide_footer">
+            <a [routerLink]="['', 'uftam_article', active.id]">
+              <span>Plus de détails </span>
+              <i class="fas fa-angle-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item second" *ngFor='let event of otherEvents, let i = index, let c = count'>
+      <div class="e_slider_wrapper">
+        <div class="e_slide container" name="e_slide" *ngFor='let e of event'>
+          <div class="e_slide_image">
+            <img src="{{apiUrl}}handers/events/uploads/{{e.path}}" alt="">
+          </div>
+          <div class="e_slide_body">
+            <h2 class="font-weight-bold">{{e.lib}}</h2>
+            <p>
+              {{e.desc}}
+            </p>
+          </div>
+          <div class="e_slide_footer">
+            <a [routerLink]="['', 'uftam_article', e.id]">
+              Plus de détails
+              <i class="fas fa-angle-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="e_slider_pagination">
+    <div class="e_buttons">
+      <a style="color:black" class="carousel-control-prev" href="#eventCarousel" role="button" data-slide="prev">
+        <span id="left" class="carousel-control-prev template-pagPrev-dark">
+          <i class=" fas fa-caret-left"></i>
+        </span>
+      </a>
+      <a style="color:black" class=" carousel-control-next" href="#eventCarousel" role="button" data-slide="next">
+        <span id="right" class="carousel-control-next template-pagNext-dark">
+          <i class="fas fa-caret-right"></i>
+        </span>
+      </a>
+    </div>
+  </div>
 </section>
+
+<div class="section_shape">
+  <section id="feedCarousel" class="carousel slide feed mb-5" data-ride="carousel">
+    <img src="../../assets/img/studentExpIcon.png" class="student_icon" alt="">
+    <div class="container carousel-inner">
+      <div class="carousel-item active">
+        <div class="feed_wrapper row-cols-3">
+          <div class="feed_container" *ngFor="let vie of activeVies, let i = index, let c = count">
+            <div class="feed_picture">
+              <img src="{{apiUrl}}handers/laVie/uploads/{{vie.path}}" alt="img">
+            </div>
+            <div class="feed_header">
+              <h2>{{vie.lib}}</h2>
+            </div>
+            <div class="feed_body">
+              <p>
+                {{vie.description}}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item" *ngFor='let laVies of otherVies, let i = index, let c = count'>
+        <div class="feed_wrapper row-cols-3">
+          <div class="feed_container" *ngFor="let vie of laVies, let i = index, let c = count">
+            <div class="feed_picture">
+              <img src="{{apiUrl}}handers/laVie/uploads/{{vie.path}}" alt="img">
+            </div>
+            <div class="feed_header">
+              <h2>{{vie.lib}}</h2>
+            </div>
+            <div class="feed_body">
+              <p>
+                {{vie.description}}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ol class="carousel-indicators">
+      <li data-target="#feedCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#feedCarousel" data-slide-to="1"></li>
+    </ol>
+    <div class="feed_pagination">
+      <div class="feed_buttons">
+        <a style="color:black" class="carousel-control-prev" href="#feedCarousel" role="button" data-slide="prev">
+          <span id="left" class="carousel-control-prev">
+            <i class=" fas fa-caret-left"></i>
+          </span>
+        </a>
+        <a style="color:black" class=" carousel-control-next" href="#feedCarousel" role="button" data-slide="next">
+          <span id="right" class="carousel-control-next">
+            <i class="fas fa-caret-right"></i>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<section class="conatct">
+  <div class="newsletter">
+    <div class="newsletter_left">
+      <h2>Commencez à nos suivre</h2>
+      <p>Inscrivez-vous à notre newsletter</p>
+    </div>
+    <div class="newsletter_right">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Insérez votre adresse mail" aria-describedby="subscribe">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" id="subscribe">S'abonner</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="contact_info">
+    <div class="contact_map">
+      <a target="_blank"
+        href="https://www.google.com/maps/place/L'Universit%C3%A9+franco-tunisienne+pour+l'Afrique+et+la+M%C3%A9diterran%C3%A9e+(UFTAM)/@36.7208792,10.2353453,15z/data=!4m2!3m1!1s0x0:0x217e55ddb0636451?sa=X&ved=2ahUKEwjK35qcosXpAhUnxoUKHfFRCd8Q_BIwFnoECAsQCA"><img
+          src="../../assets/img/location.png" alt=" map"></a>
+    </div>
+    <div class="contact_details">
+      <div class="contact_email">
+        <h4>Email</h4>
+        <p>contact@uftam.net</p>
+      </div>
+      <div class="contact_address">
+        <h4>Adresse</h4>
+        <p>UFTAM(prés de Marché de Gros, Bir El <br> Kasaa) El Mourouj 2074, TUNISIE</p>
+      </div>
+      <div class="phone">
+        <h4>Appelez-nous</h4>
+        <p>71 100 100 / 71 666 666</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer_top">
+    <div class="container">
+      <ul>
+        <li><a href="#">A propos de l'Uftam</a></li>
+        <li><a href="#">Nos formations</a></li>
+        <li><a href="#">Contactez-nous</a></li>
+        <li>
+          <a href="#">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer_bottom">
+    <div class="footer_bootom_left">
+      <p> Tous les droits sont reservés pour UFTAM</p>
+    </div>
+    <div class="footer_bootom_right">
+      <p> Powred by Digilinks</p>
+    </div>
+  </div>
+</footer>

@@ -85,7 +85,7 @@ class Event extends database
             "SELECT *
             FROM t_event join t_type_event using(tte_id)
             WHERE eve_active = ? && tte_lib = ?
-            ORDER BY eve_date ASC;"
+            ORDER BY eve_date DESC;"
         );
         $query->execute(['yes', 'first']);
         return $query;
