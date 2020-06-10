@@ -230,3 +230,56 @@ header {
   width: 90px;
   margin-right: 30px;
 }
+
+@media (max-width: 700px) {
+  .flexed {
+    display: flex !important;
+    flex-direction: column !important;
+    height: auto !important;
+  }
+
+  .under_inner_box:first-child {
+    margin-left: 0% !important;
+  }
+
+  .under_inner_box div {
+    height: auto !important;
+    overflow-y: none !important;
+    margin-bottom: 50px !important;
+  }
+
+  .under_inner_box div:nth-child(2) {
+    height: auto;
+    overflow: hidden;
+    padding-right: 20px;
+    margin-bottom: 50px;
+  }
+
+  .under_inner_box div:nth-child(2) {
+    height: 50vh;
+    overflow-y: hidden;
+    padding-right: 20px;
+  }
+
+  #top_btn .template-btn1-dark {
+    padding: 15px 40px !important;
+    width: 90% !important;
+  }
+
+  #top_btn:nth-child(2) .template-btn1-dark {
+    padding: 12px 50px !important;
+  }
+
+  .diploma {
+    display: -webkit-box;
+    display: inherit;
+    margin: 0 auto;
+    width: 100%;
+    margin-top: 30px;
+    margin-left: 50px;
+  }
+
+  .formation_top_grid img {
+    width: 100%;
+  }
+}

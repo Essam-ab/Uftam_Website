@@ -26,22 +26,33 @@ export class HomeComponent implements OnInit {
     private c_App: AppComponent
   ) { }
 
+  isMobile: boolean = false;
+
   formations: Formation[];
   activeFormations: Formation[];
   otherFormations: any;
+  m_activeFormations: Formation[];
+  m_otherFormations: any;
 
   partners: Formation[];
   otherPartners: any;
   activePartners: Formation[];
+  m_otherPartners: any;
+  m_activePartners: Formation[];
 
   companies: Formation[];
   otherCompanies: any;
   activeCompanies: Formation[];
+  m_otherCompanies: any;
+  m_activeCompanies: Formation[];
 
   firstEvents: Formation[];
   secondEvents: Formation[];
   activeEvents: Formation[];
   otherEvents: any;
+  m_secondEvents: Formation[];
+  m_activeEvents: Formation[];
+  m_otherEvents: any;
 
   students: Formation[];
 
@@ -50,11 +61,15 @@ export class HomeComponent implements OnInit {
   otherVies: any;
   laVieLength: any;
   vie_indicators: any;
+  m_activeVies: Formation[];
+  m_otherVies: any;
 
   apiUrl: any;
 
   home_active: any = false;
   ngOnInit() {
+    if (window.innerWidth <= 700)
+      this.isMobile = true;
     var i = 0;
     setInterval(() => {
       $('[data-slide-to=' + i + ']').trigger('click');
@@ -93,6 +108,30 @@ export class HomeComponent implements OnInit {
         }
         this.otherFormations = x;
         this.activeFormations = a[0];
+
+        //mobile version
+        var x = [], y = [], a = [];
+        var j = 0, k = 0;
+        var active = true;
+        for (let i = 0; i < data.length; i++) {
+          y[j] = this.formations[i];
+          j++;
+          if (j == 1 || (i + 1) == data.length) {
+            if (active === true) {
+              a[0] = y;
+              y = [];
+              j = 0;
+              active = false;
+            } else {
+              x[k] = y;
+              k++;
+              y = [];
+              j = 0;
+            }
+          }
+        }
+        this.m_otherFormations = x;
+        this.m_activeFormations = a[0];
       },
       error => {
         console.log("error trying to get formations");
@@ -166,6 +205,30 @@ export class HomeComponent implements OnInit {
         }
         this.otherPartners = x;
         this.activePartners = a[0];
+
+        //mobile 
+        var x = [], y = [], a = [];
+        var j = 0, k = 0;
+        var active = true;
+        for (let i = 0; i < data.length; i++) {
+          y[j] = this.partners[i];
+          j++;
+          if (j == 2 || (i + 1) == data.length) {
+            if (active === true) {
+              a[0] = y;
+              y = [];
+              j = 0;
+              active = false;
+            } else {
+              x[k] = y;
+              k++;
+              y = [];
+              j = 0;
+            }
+          }
+        }
+        this.m_otherPartners = x;
+        this.m_activePartners = a[0];
       },
       error => {
         console.log("error trying to get partners");
@@ -198,6 +261,30 @@ export class HomeComponent implements OnInit {
         }
         this.otherCompanies = x;
         this.activeCompanies = a[0];
+
+        //mobile
+        var x = [], y = [], a = [];
+        var j = 0, k = 0;
+        var active = true;
+        for (let i = 0; i < data.length; i++) {
+          y[j] = this.companies[i];
+          j++;
+          if (j == 2 || (i + 1) == data.length) {
+            if (active === true) {
+              a[0] = y;
+              y = [];
+              j = 0;
+              active = false;
+            } else {
+              x[k] = y;
+              k++;
+              y = [];
+              j = 0;
+            }
+          }
+        }
+        this.m_otherCompanies = x;
+        this.m_activeCompanies = a[0];
       },
       error => {
         console.log("error trying to get companies");
@@ -254,6 +341,14 @@ export class HomeComponent implements OnInit {
         console.log("error trying to get studentsExp");
       }
     )
+  }
+
+  onResize(event) {
+    const windowWidth = event.target.innerWidth;
+    if (windowWidth <= 700)
+      this.isMobile = true;
+    else
+      this.isMobile = false
   }
 
   value = ['down', 'right', 'right', 'right', 'right'];

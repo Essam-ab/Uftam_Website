@@ -7,7 +7,7 @@ if ($query != false) {
     {
     "success": true,
     "message": "id has been imported successfully!",
-    "id": <?php echo $query; ?>
+    "id": <?php echo ++$query; ?>
     }
 <?php
 } else {

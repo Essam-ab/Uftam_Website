@@ -1,594 +1,804 @@
-<header id="home" class="carousel">
-  <!-- <div class="top_connect">
-    <ul class="">
-      <li class="">
-        <a class="nav-link" href="#">Se connecter</a>
-      </li>
-      <li class="seperate">
-        |
-      </li>
-      <li class="">
-        <a class="nav-link" href="#">Créer un compte</a>
-      </li>
-    </ul>
-  </div> -->
-  <app-nav></app-nav>
-  <div class="slider_wrapper carousel-inner">
-    <div class="slider_first carousel-item active">
-      <div class="slider_background">
-        <img src="../../assets/img/banner_slide_1.png" alt="">
+<div class="homePage" (window:resize)="onResize($event)">
+  <header id="home" class="carousel">
+    <!-- <div class="top_connect">
+      <ul class="">
+        <li class="">
+          <a class="nav-link" href="#">Se connecter</a>
+        </li>
+        <li class="seperate">
+          |
+        </li>
+        <li class="">
+          <a class="nav-link" href="#">Créer un compte</a>
+        </li>
+      </ul>
+    </div> -->
+    <app-nav></app-nav>
+    <div class="slider_wrapper carousel-inner">
+      <div class="slider_first carousel-item active">
+        <div class="slider_background">
+          <img src="../../assets/img/banner_slide_1.png" alt="">
+        </div>
+        <div class="slider_details">
+          <h1>
+            La sélection pour l'année <br>
+            2020-2021 est ouverte
+          </h1>
+          <h4>
+            Déposez votre dossier de condidature complet <br>
+            avant le 30 Juin 2020
+          </h4>
+          <div class="buttons">
+            <button class="btn btn-primary mr-3 template-btn1-dark block">Télécharger les brochures</button>
+            <button class="btn btn-primary template-btn1-dark block"
+              routerLink="uftam_inscription">Pré-inscription</button>
+          </div>
+        </div>
       </div>
-      <div class="slider_details">
-        <h1>
-          La sélection pour l'année <br>
-          2020-2021 est ouverte
-        </h1>
+      <div class="slider_second carousel-item">
+        <div class="slider_background">
+          <img src="../../assets/img/banner_slide_2.png" alt="">
+        </div>
+        <div class="slider_details">
+          <h1>
+            Bénéficiez de diplômes <br> binationaux reconnus à <br> l'échelle internationale
+          </h1>
+          <div class="buttons">
+            <button class="btn btn-primary mr-3 template-btn1-dark block">Télécharger les brochures</button>
+            <button class="btn btn-primary template-btn1-dark block"
+              routerLink="uftam_inscription">Pré-inscription</button>
+          </div>
+        </div>
+      </div>
+      <div class="slider_third carousel-item">
+        <div class="slider_background">
+          <img src="../../assets/img/banner_slide_1.png" alt="">
+        </div>
+        <div class="slider_details">
+          <h1>
+            Lorem ipsum dolor sit amet consectetur <br> adipisicing elit. Laboriosam, culpa.
+          </h1>
+          <h4>
+            Lorem ipsum dolor sit amet. <br>
+            Lorem, ipsum dolor.
+          </h4>
+          <div class="buttons">
+            <button class="btn btn-primary mr-3 template-btn1-dark block">Télécharger les brochures</button>
+            <button class="btn btn-primary template-btn1-dark block"
+              routerLink="uftam_inscription">Pré-inscription</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slider_pagination carousel-indicators" id="header_pagination">
+      <span data-target="#home" data-slide-to="0" class="target active" id="first"></span>
+      <span data-target="#home" data-slide-to="1" class="target" id="second"></span>
+      <span data-target="#home" data-slide-to="2" class="target" id="third"></span>
+    </div>
+  </header>
+
+  <section class="formation" *ngIf="!isMobile">
+    <div class="section_grid">
+      <div class="f_slider_pagination">
         <h4>
-          Déposez votre dossier de condidature complet <br>
-          avant le 30 Juin 2020
+          Nos <br>
+          Formations <br>
+          d'excellence
         </h4>
-        <div class="buttons">
-          <button class="btn btn-primary mr-3 template-btn1-dark block">Télécharger les brochures</button>
-          <button class="btn btn-primary template-btn1-dark block"
-            routerLink="uftam_inscription">Pré-inscription</button>
-        </div>
-      </div>
-    </div>
-    <div class="slider_second carousel-item">
-      <div class="slider_background">
-        <img src="../../assets/img/banner_slide_2.png" alt="">
-      </div>
-      <div class="slider_details">
-        <h1>
-          Bénéficiez de diplômes <br> binationaux reconnus à <br> l'échelle internationale
-        </h1>
-        <div class="buttons">
-          <button class="btn btn-primary mr-3 template-btn1-dark block">Télécharger les brochures</button>
-          <button class="btn btn-primary template-btn1-dark block"
-            routerLink="uftam_inscription">Pré-inscription</button>
-        </div>
-      </div>
-    </div>
-    <div class="slider_third carousel-item">
-      <div class="slider_background">
-        <img src="../../assets/img/banner_slide_1.png" alt="">
-      </div>
-      <div class="slider_details">
-        <h1>
-          Lorem ipsum dolor sit amet consectetur <br> adipisicing elit. Laboriosam, culpa.
-        </h1>
-        <h4>
-          Lorem ipsum dolor sit amet. <br>
-          Lorem, ipsum dolor.
-        </h4>
-        <div class="buttons">
-          <button class="btn btn-primary mr-3 template-btn1-dark block">Télécharger les brochures</button>
-          <button class="btn btn-primary template-btn1-dark block"
-            routerLink="uftam_inscription">Pré-inscription</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="slider_pagination carousel-indicators" id="header_pagination">
-    <span data-target="#home" data-slide-to="0" class="target active" id="first"></span>
-    <span data-target="#home" data-slide-to="1" class="target" id="second"></span>
-    <span data-target="#home" data-slide-to="2" class="target" id="third"></span>
-  </div>
-</header>
-
-<section class="formation">
-  <div class="section_grid">
-    <div class="f_slider_pagination">
-      <h4>
-        Nos <br>
-        Formations <br>
-        d'excellence
-      </h4>
-      <div class="f_buttons">
-        <a style="color:black" class="carousel-control-prev" href="#formationCarousel" role="button" data-slide="prev">
-          <span id="left" class="carousel-control-prev template-pagPrev-dark">
-            <i class=" fas fa-caret-left"></i>
-          </span>
-        </a>
-        <a style="color:black" class="carousel-control-next" href="#formationCarousel" role="button" data-slide="next">
-          <span id="right" class="carousel-control-next template-pagNext-dark">
-            <i class="fas fa-caret-right"></i>
-          </span>
-        </a>
-      </div>
-    </div>
-    <div id="formationCarousel" class="f_slider_container carousel slide" data-ride="carousel">
-      <div class="back_bond"></div>
-      <div class="f_slider_wrapper carousel-inner">
-        <style>
-          .f_slide_view {
-            display: flex
-          }
-
-        </style>
-        <div class="carousel-item active">
-          <div class="row">
-            <div class="f_slide_view " id="active" name="f_slide_view" pointer="1">
-              <div name="f_slide_show" *ngFor="let formation of activeFormations, let i = index, let c = count">
-                <div class="f_slide container f_slide_show animated">
-                  <div class="f_slide_header">
-                    <div class="f_slide_image">
-                      <img src="{{apiUrl}}handers/formations/slide/{{formation.slide}}" alt="">
-                    </div>
-                    <h4>{{formation.type}}</h4>
-                    <h6>{{formation.lib}}</h6>
-                  </div>
-                  <div class=" f_slide_body">
-                    <p>
-                      {{formation.pres | slice:0:180}}...
-                    </p>
-                  </div>
-                  <div class="f_slide_footer" *ngIf="formation.type == 'Licence'" id="license">
-                    <a [routerLink]="['uftam_formation', 'uftam_license', formation.id,'license']">
-                      <h6>Savoir plus sur la formation</h6>
-                      <i class="fas fa-plus"></i>
-                    </a>
-                  </div>
-                  <div class="f_slide_footer" *ngIf="formation.type == 'Masters'">
-                    <a [routerLink]="['uftam_formation', 'uftam_master', formation.id,'master']" id="masters">
-                      <h6>Savoir plus sur la formation</h6>
-                      <i class="fas fa-plus"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item" *ngFor="let formations of otherFormations, let i = index">
-          <div class="row">
-            <div class="f_slide_view " id="active" name="f_slide_view" pointer="1">
-              <div name="f_slide_show" *ngFor="let formation of formations, let i = index, let c = count">
-                <div class="f_slide container f_slide_show animated">
-                  <div class="f_slide_header">
-                    <div class="f_slide_image">
-                      <img src="{{apiUrl}}handers/formations/slide/{{formation.slide}}" alt="">
-                    </div>
-                    <h4>{{formation.type}}</h4>
-                    <h6>
-                      {{formation.lib}}
-                    </h6>
-                  </div>
-                  <div class="f_slide_body">
-                    <p>
-                      {{formation.pres | slice:0:180}}...
-                    </p>
-                  </div>
-                  <div class="f_slide_footer">
-                    <a href="#">
-                      <h6>Savoir plus sur la formation</h6>
-                      <i class="fas fa-plus"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="partners">
-  <div class="section_grid">
-    <div class="f_slider_pagination">
-      <h4>
-        Nos Partenaires<br>
-        de Formation
-      </h4>
-      <div class="f_buttons">
-        <a style="color:black" class="carousel-control-prev" href="#partnersCarousel" role="button" data-slide="prev">
-          <span id="left" class="carousel-control-prev template-pagPrev-dark">
-            <i class=" fas fa-caret-left"></i>
-          </span>
-        </a>
-        <a style="color:black" class=" carousel-control-next" href="#partnersCarousel" role="button" data-slide="next">
-          <span id="right" class="carousel-control-next template-pagNext-dark">
-            <i class="fas fa-caret-right"></i>
-          </span>
-        </a>
-      </div>
-    </div>
-    <div id="partnersCarousel" class="carousel slide f_slider_container" data-ride="carousel">
-      <div class="f_slider_wrapper carousel-inner">
-        <div class="carousel-item active">
-          <div class="row">
-            <div class="f_slide container" *ngFor="let partner of activePartners, let i = index, let c = count">
-              <div class="f_logo_container">
-                <img src="{{apiUrl}}upload/{{partner.path}}" alt="">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item" *ngFor="let partners of otherPartners, let i = index">
-          <div class="row">
-            <div class="f_slide container" *ngFor="let partner of partners, let i = index, let c = count">
-              <div class="f_logo_container">
-                <img src="{{apiUrl}}upload/{{partner.path}}" alt="">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="company">
-  <div class="section_grid">
-    <div class="company_picture">
-      <img src="../../assets/img/mo de bienvenu.png" alt="img">
-    </div>
-    <div class="company_details">
-      <div class="company_header">
-        <h4 class="font-weight-bold">
-          L'Université Franco-Tunisienne <br>
-          pour l'Afrique et la Méditerranée (UFTAM) <br>
-        </h4>
-      </div>
-      <div class="company_body">
-        <h4 class="font-weight-bold">
-          Mot de Bienvenue:
-        </h4>
-        <p>
-          L’Université Franco-Tunisienne pour l’Afrique et la Méditerranée (UFTAM) a ouvert ses portes à la rentrée 2019
-          pour offrir à des étudiants de l’Afrique Sub-saharienne autant qu’à des étudiants tunisiens, français ou
-          méditerranéens un panel de formations d’excellence co-construites par de très grandes universités publiques
-          françaises et tunisiennes. Annoncée conjointement par la Tunisie et la France lors de la visite officielle du
-          Président Macron à Tunis en janvier 2018, l’UFTAM illustre la volonté des deux pays de constituer en Tunisie
-          un hub régional d’enseignement supérieur, pour former les futures générations d’entrepreneurs et de cadres
-          supérieurs et de salariés dont l’Afrique et l’espace méditerranéen ont besoin.
-        </p>
-      </div>
-      <div class="company_read_more text-center">
-        <button class="btn mt-3 template-btn1-dark block">
-          Plus de détails sur l'UFTAM
-        </button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="student">
-  <div class="section_grid">
-    <div class="student_left">
-      <h2 class="font-weight-bold">Vie éstudiant</h2>
-    </div>
-    <div class="student_right">
-      <div class="student_container" *ngFor="let student of students, let i = index, let c = count">
-        <div class="student_header" *ngIf="student.status == 'yes'">
-          <a class="collapse-1" id="student_link" (click)="expandStudentInfo($event, i)">
-            <i class="fas fa-caret-{{value[i]}}"></i>
-            <span>{{student.lib}}</span>
+        <div class="f_buttons">
+          <a style="color:black" class="carousel-control-prev" href="#formationCarousel" role="button"
+            data-slide="prev">
+            <span id="left" class="carousel-control-prev template-pagPrev-dark">
+              <i class=" fas fa-caret-left"></i>
+            </span>
           </a>
-          <div class="student_body" *ngIf="isExpand[i]">
-            <p>
-              {{student.desc}}
-            </p>
-          </div>
+          <a style="color:black" class="carousel-control-next" href="#formationCarousel" role="button"
+            data-slide="next">
+            <span id="right" class="carousel-control-next template-pagNext-dark">
+              <i class="fas fa-caret-right"></i>
+            </span>
+          </a>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+      <div id="formationCarousel" class="f_slider_container carousel slide" data-ride="carousel">
+        <div class="back_bond"></div>
+        <div class="f_slider_wrapper carousel-inner">
+          <style>
+            .f_slide_view {
+              display: flex
+            }
 
-<section class="documentation">
-  <div class="doc_wrapper">
-    <div class="doc_header">
-      <h2 class="text-center font-weight-bold">Découvrir l'Uftam</h2>
-    </div>
-    <div class="doc_body">
-      <p class="text-center"></p>
-      <div class="video">
-        <iframe id="video_documentation" src="https://www.youtube.com/embed/WrVBUbI9gsU" frameborder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <a class="video_player" (click)='videoReveal($event)' href="#">
-          <i class="fas fa-play"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="confiance">
-  <div class="section_grid">
-    <div class="f_slider_pagination">
-      <h4>
-        Nous ont fait<br>
-        Confiance
-      </h4>
-      <div class="f_buttons">
-        <a style="color:black" class="carousel-control-prev" h ref="#confianceCarousel" role="button" data-slide="prev">
-          <span id="left" class="carousel-control-prev template-pagPrev-dark">
-            <i class=" fas fa-caret-left"></i>
-          </span>
-        </a>
-        <a style="color:black" class=" carousel-control-next" href="#confianceCarousel" role="button" data-slide="next">
-          <span id="right" class="carousel-control-next template-pagNext-dark">
-            <i class="fas fa-caret-right"></i>
-          </span>
-        </a>
-      </div>
-    </div>
-    <div id="confianceCarousel" class="carousel slide f_slider_container" data-ride="carousel">
-      <div class="f_slider_wrapper carousel-inner">
-        <div class="carousel-item active">
-          <div class="row">
-            <div class="f_slide container" *ngFor="let company of activeCompanies, let i = index, let c = count">
-              <div class="f_logo_container">
-                <img src="{{apiUrl}}handers/company/uploads/{{company.path}}" alt="">
+          </style>
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="f_slide_view " id="active" name="f_slide_view" pointer="1">
+                <div name="f_slide_show" *ngFor="let formation of activeFormations, let i = index, let c = count">
+                  <div class="f_slide container f_slide_show animated">
+                    <div class="f_slide_header">
+                      <div class="f_slide_image">
+                        <img src="{{apiUrl}}handers/formations/slide/{{formation.slide}}" alt="">
+                      </div>
+                      <h4>{{formation.type}}</h4>
+                      <h6>{{formation.lib}}</h6>
+                    </div>
+                    <div class=" f_slide_body">
+                      <p>
+                        {{formation.pres | slice:0:180}}...
+                      </p>
+                    </div>
+                    <div class="f_slide_footer" *ngIf="formation.type == 'Licence'" id="license">
+                      <a [routerLink]="['uftam_formation', 'uftam_license', formation.id,'license']">
+                        <h6>Savoir plus sur la formation</h6>
+                        <i class="fas fa-plus"></i>
+                      </a>
+                    </div>
+                    <div class="f_slide_footer" *ngIf="formation.type == 'Masters'">
+                      <a [routerLink]="['uftam_formation', 'uftam_master', formation.id,'master']" id="masters">
+                        <h6>Savoir plus sur la formation</h6>
+                        <i class="fas fa-plus"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item" *ngFor="let formations of otherFormations, let i = index">
+            <div class="row">
+              <div class="f_slide_view " id="active" name="f_slide_view" pointer="1">
+                <div name="f_slide_show" *ngFor="let formation of formations, let i = index, let c = count">
+                  <div class="f_slide container f_slide_show animated">
+                    <div class="f_slide_header">
+                      <div class="f_slide_image">
+                        <img src="{{apiUrl}}handers/formations/slide/{{formation.slide}}" alt="">
+                      </div>
+                      <h4>{{formation.type}}</h4>
+                      <h6>
+                        {{formation.lib}}
+                      </h6>
+                    </div>
+                    <div class="f_slide_body">
+                      <p>
+                        {{formation.pres | slice:0:180}}...
+                      </p>
+                    </div>
+                    <div class="f_slide_footer">
+                      <a href="#">
+                        <h6>Savoir plus sur la formation</h6>
+                        <i class="fas fa-plus"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="carousel-item" *ngFor="let companies of otherCompanies, let i = index">
-          <div class="row">
-            <div class="f_slide container" *ngFor="let company of companies, let i = index, let c = count">
-              <div class="f_logo_container">
-                <img src="{{apiUrl}}handers/company/uploads/{{company.path}}" alt="">
+      </div>
+    </div>
+  </section>
+
+  <section class="formation" *ngIf="isMobile">
+    <div class="section_grid">
+      <div class="f_slider_pagination">
+        <h4>
+          Nos Formations <br>
+          d'excellence
+        </h4>
+        <div class="f_buttons">
+          <a style="color:black" class="carousel-control-prev" href="#formationCarousel" role="button"
+            data-slide="prev">
+            <span id="left" class="carousel-control-prev template-pagPrev-dark">
+              <i class=" fas fa-caret-left"></i>
+            </span>
+          </a>
+          <a style="color:black" class="carousel-control-next" href="#formationCarousel" role="button"
+            data-slide="next">
+            <span id="right" class="carousel-control-next template-pagNext-dark">
+              <i class="fas fa-caret-right"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+      <div id="formationCarousel" class="f_slider_container carousel slide" data-ride="carousel">
+        <div class="back_bond"></div>
+        <div class="f_slider_wrapper carousel-inner">
+          <style>
+            .f_slide_view {
+              display: flex
+            }
+
+          </style>
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="f_slide_view " id="active" name="f_slide_view" pointer="1">
+                <div name="f_slide_show" *ngFor="let formation of m_activeFormations, let i = index, let c = count">
+                  <div class="f_slide container f_slide_show animated">
+                    <div class="f_slide_header">
+                      <div class="f_slide_image">
+                        <img src="{{apiUrl}}handers/formations/slide/{{formation.slide}}" alt="">
+                      </div>
+                      <h4>{{formation.type}}</h4>
+                      <h6>{{formation.lib}}</h6>
+                    </div>
+                    <div class=" f_slide_body">
+                      <p>
+                        {{formation.pres | slice:0:180}}...
+                      </p>
+                    </div>
+                    <div class="f_slide_footer" *ngIf="formation.type == 'Licence'" id="license">
+                      <a [routerLink]="['uftam_formation', 'uftam_license', formation.id,'license']">
+                        <h6>Savoir plus sur la formation</h6>
+                        <i class="fas fa-plus"></i>
+                      </a>
+                    </div>
+                    <div class="f_slide_footer" *ngIf="formation.type == 'Masters'">
+                      <a [routerLink]="['uftam_formation', 'uftam_master', formation.id,'master']" id="masters">
+                        <h6>Savoir plus sur la formation</h6>
+                        <i class="fas fa-plus"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item" *ngFor="let formations of m_otherFormations, let i = index">
+            <div class="row">
+              <div class="f_slide_view " id="active" name="f_slide_view" pointer="1">
+                <div name="f_slide_show" *ngFor="let formation of formations, let i = index, let c = count">
+                  <div class="f_slide container f_slide_show animated">
+                    <div class="f_slide_header">
+                      <div class="f_slide_image">
+                        <img src="{{apiUrl}}handers/formations/slide/{{formation.slide}}" alt="">
+                      </div>
+                      <h4>{{formation.type}}</h4>
+                      <h6>
+                        {{formation.lib}}
+                      </h6>
+                    </div>
+                    <div class="f_slide_body">
+                      <p>
+                        {{formation.pres | slice:0:180}}...
+                      </p>
+                    </div>
+                    <div class="f_slide_footer">
+                      <a href="#">
+                        <h6>Savoir plus sur la formation</h6>
+                        <i class="fas fa-plus"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="event">
-  <div class="section_grid">
-    <div class="event_left">
-      <div class="event_container" *ngFor="let event of firstEvents, let i = index, let c = count">
-        <div class="event_grid" *ngIf="i < 3">
-          <div class="event_date">
-            <h4>{{event.day}} <br> <span>{{event.monthName}}</span></h4>
+  <section class="partners" *ngIf="!isMobile">
+    <div class="section_grid">
+      <div class="f_slider_pagination">
+        <h4>
+          Nos Partenaires<br>
+          de Formation
+        </h4>
+        <div class="f_buttons">
+          <a style="color:black" class="carousel-control-prev" href="#partnersCarousel" role="button" data-slide="prev">
+            <span id="left" class="carousel-control-prev template-pagPrev-dark">
+              <i class=" fas fa-caret-left"></i>
+            </span>
+          </a>
+          <a style="color:black" class=" carousel-control-next" href="#partnersCarousel" role="button"
+            data-slide="next">
+            <span id="right" class="carousel-control-next template-pagNext-dark">
+              <i class="fas fa-caret-right"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+      <div id="partnersCarousel" class="carousel slide f_slider_container" data-ride="carousel">
+        <div class="f_slider_wrapper carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="f_slide container" *ngFor="let partner of activePartners, let i = index, let c = count">
+                <div class="f_logo_container">
+                  <img src="{{apiUrl}}upload/{{partner.path}}" alt="">
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="event_details">
-            <div class="event_header">
-              <h4 class="font-weight-bold">{{event.lib}}</h4>
-            </div>
-            <div class="event_body">
-              <p [innerHtml]="event.desc">
-
-              </p>
-            </div>
-            <div class="event_read_more">
-              <!-- <a [routerLink]="['uftam_formation', 'uftam_master', formation.id,'master']"  class=""> Plus de détails <i class="fas fa-caret-right"></i> </a> -->
-              <a [routerLink]="['', 'uftam_event', event.id]" class=""> Plus de détails <i
-                  class="fas fa-caret-right"></i> </a>
+          <div class="carousel-item" *ngFor="let partners of otherPartners, let i = index">
+            <div class="row">
+              <div class="f_slide container" *ngFor="let partner of partners, let i = index, let c = count">
+                <div class="f_logo_container">
+                  <img src="{{apiUrl}}upload/{{partner.path}}" alt="">
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- <div class="event_read_more text-center">
-        <button class="btn btn-primary mt-3 template-btn1-dark block">
-          Voir tous les évènements
-        </button>
-      </div> -->
     </div>
-    <div class="event_right">
-      <div class="event_inscription_container">
-        <div class="inscription_header">
-          <h2>
-            Inscriver-vous <br>
-            au prochain <br>
-            évènement!
-          </h2>
-          <div class="inscription_separator"></div>
+  </section>
+
+  <section class="partners" *ngIf="isMobile">
+    <div class="section_grid">
+      <div class="f_slider_pagination">
+        <h4>
+          Nos Partenaires<br>
+          de Formation
+        </h4>
+      </div>
+
+      <div id="partnersCarousel" class="carousel slide f_slider_container" data-ride="carousel">
+        <div class="f_slider_wrapper carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="f_slide container" *ngFor="let partner of m_activePartners, let i = index, let c = count">
+                <div class="f_logo_container">
+                  <img src="{{apiUrl}}upload/{{partner.path}}" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item" *ngFor="let partners of m_otherPartners, let i = index">
+            <div class="row">
+              <div class="f_slide container" *ngFor="let partner of partners, let i = index, let c = count">
+                <div class="f_logo_container">
+                  <img src="{{apiUrl}}upload/{{partner.path}}" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="inscription_body mb-3 mt-3">
+      </div>
+
+      <div class="f_slider_pagination">
+        <div class="f_buttons">
+          <a style="color:black" class="carousel-control-prev" href="#partnersCarousel" role="button" data-slide="prev">
+            <span id="left" class="carousel-control-prev template-pagPrev-dark">
+              <i class=" fas fa-caret-left"></i>
+            </span>
+          </a>
+          <a style="color:black" class=" carousel-control-next" href="#partnersCarousel" role="button"
+            data-slide="next">
+            <span id="right" class="carousel-control-next template-pagNext-dark">
+              <i class="fas fa-caret-right"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="company" *ngIf="!isMobile">
+    <div class="section_grid">
+      <div class="company_picture">
+        <img src="../../assets/img/mo de bienvenu.png" alt="img">
+      </div>
+      <div class="company_details">
+        <div class="company_header">
+          <h4 class="font-weight-bold">
+            L'Université Franco-Tunisienne <br>
+            pour l'Afrique et la Méditerranée (UFTAM) <br>
+          </h4>
+        </div>
+        <div class="company_body">
+          <h4 class="font-weight-bold">
+            Mot de Bienvenue:
+          </h4>
           <p>
-            Nous vous attendons nombreux ‼ <br>
-            Vidéoconférences de nos enseignants chercheurs tunisiens et français et questions
-            personnalisées à notre équipe pédagogique
+            L’Université Franco-Tunisienne pour l’Afrique et la Méditerranée (UFTAM) a ouvert ses portes à la rentrée
+            2019
+            pour offrir à des étudiants de l’Afrique Sub-saharienne autant qu’à des étudiants tunisiens, français ou
+            méditerranéens un panel de formations d’excellence co-construites par de très grandes universités publiques
+            françaises et tunisiennes. Annoncée conjointement par la Tunisie et la France lors de la visite officielle
+            du
+            Président Macron à Tunis en janvier 2018, l’UFTAM illustre la volonté des deux pays de constituer en Tunisie
+            un hub régional d’enseignement supérieur, pour former les futures générations d’entrepreneurs et de cadres
+            supérieurs et de salariés dont l’Afrique et l’espace méditerranéen ont besoin.
           </p>
         </div>
-        <div class="inscription_footer">
-          <button class="btn btn-primary btn-lg btn-inscription-1">
-            Inscrivez-vous
-          </button> <br>
-          <button [routerLink]="['uftam_event']" class="btn btn-primary btn-lg btn-inscription-2">
-            Plus de détails
+        <div class="company_read_more text-center">
+          <button class="btn mt-3 template-btn1-dark block">
+            Plus de détails sur l'UFTAM
           </button>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="eventCarousel" class="carousel slide event_slider" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active first">
-      <div class="e_slider_wrapper">
-        <div class="e_slide container" name="e_slide" *ngFor='let active of activeEvents'>
-          <div class="e_slide_image">
-            <img src="{{apiUrl}}handers/events/uploads/{{active.path}}" alt="">
-          </div>
-          <div class="e_slide_header">
-            <h2 class="font-weight-bold">A la une</h2>
-          </div>
-          <div class="e_slide_body">
-            <h2 class="font-weight-bold">{{active.lib}}</h2>
-            <p>
-              {{active.desc | slice:0:200}}
-            </p>
-          </div>
-          <div class="e_slide_footer">
-            <a [routerLink]="['', 'uftam_article', active.id]">
-              <span>Plus de détails </span>
-              <i class="fas fa-angle-right"></i></a>
-          </div>
-        </div>
+  <section class="student">
+    <div class="section_grid">
+      <div class="student_left">
+        <h2 class="font-weight-bold">Vie éstudiant</h2>
       </div>
-    </div>
-    <div class="carousel-item second" *ngFor='let event of otherEvents, let i = index, let c = count'>
-      <div class="e_slider_wrapper">
-        <div class="e_slide container" name="e_slide" *ngFor='let e of event'>
-          <div class="e_slide_image">
-            <img src="{{apiUrl}}handers/events/uploads/{{e.path}}" alt="">
-          </div>
-          <div class="e_slide_body">
-            <h2 class="font-weight-bold">{{e.lib}}</h2>
-            <p [innerHtml]="e.desc | slice:0:250">
-
-            </p>
-          </div>
-          <div class="e_slide_footer">
-            <a [routerLink]="['', 'uftam_article', e.id]">
-              Plus de détails
-              <i class="fas fa-angle-right"></i>
+      <div class="student_right">
+        <div class="student_container" *ngFor="let student of students, let i = index, let c = count">
+          <div class="student_header" *ngIf="student.status == 'yes'">
+            <a class="collapse-1" id="student_link" (click)="expandStudentInfo($event, i)">
+              <i class="fas fa-caret-{{value[i]}}"></i>
+              <span>{{student.lib}}</span>
             </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="e_slider_pagination">
-    <div class="e_buttons">
-      <a style="color:black" class="carousel-control-prev" href="#eventCarousel" role="button" data-slide="prev">
-        <span id="left" class="carousel-control-prev template-pagPrev-dark">
-          <i class=" fas fa-caret-left"></i>
-        </span>
-      </a>
-      <a style="color:black" class=" carousel-control-next" href="#eventCarousel" role="button" data-slide="next">
-        <span id="right" class="carousel-control-next template-pagNext-dark">
-          <i class="fas fa-caret-right"></i>
-        </span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<div class="section_shape">
-  <section id="feedCarousel" class="carousel slide feed mb-5" data-ride="carousel">
-    <img src="../../assets/img/studentExpIcon.png" class="student_icon" alt="">
-    <div class="container carousel-inner">
-      <div class="carousel-item active">
-        <div class="feed_wrapper row-cols-3">
-          <div class="feed_container" *ngFor="let vie of activeVies, let i = index, let c = count">
-            <div class="feed_picture">
-              <img src="{{apiUrl}}handers/laVie/uploads/{{vie.path}}" alt="img">
-            </div>
-            <div class="feed_header">
-              <h2>{{vie.lib}}</h2>
-            </div>
-            <div class="feed_body">
+            <div class="student_body" *ngIf="isExpand[i]">
               <p>
-                {{vie.description}}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="carousel-item" *ngFor='let laVies of otherVies, let i = index, let c = count'>
-        <div class="feed_wrapper row-cols-3">
-          <div class="feed_container" *ngFor="let vie of laVies, let i = index, let c = count">
-            <div class="feed_picture">
-              <img src="{{apiUrl}}handers/laVie/uploads/{{vie.path}}" alt="img">
-            </div>
-            <div class="feed_header">
-              <h2>{{vie.lib}}</h2>
-            </div>
-            <div class="feed_body">
-              <p>
-                {{vie.description}}
+                {{student.desc}}
               </p>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <ol class="carousel-indicators">
-      <li data-target="#feedCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#feedCarousel" data-slide-to="1"></li>
-      <!-- <li data-target="#feedCarousel" data-slide-to="2"></li> -->
-    </ol>
-    <div class="feed_pagination">
-      <div class="feed_buttons">
-        <a style="color:black" class="carousel-control-prev" href="#feedCarousel" role="button" data-slide="prev">
-          <span id="left" class="carousel-control-prev">
+  </section>
+
+  <section class="documentation" *ngIf="!isMobile">
+    <div class="doc_wrapper">
+      <div class="doc_header">
+        <h2 class="text-center font-weight-bold">Découvrir l'Uftam</h2>
+      </div>
+      <div class="doc_body">
+        <p class="text-center"></p>
+        <div class="video">
+          <iframe id="video_documentation" src="https://www.youtube.com/embed/WrVBUbI9gsU" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <a class="video_player" (click)='videoReveal($event)' href="#">
+            <i class="fas fa-play"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="confiance" *ngIf="!isMobile">
+    <div class="section_grid">
+      <div class="f_slider_pagination">
+        <h4>
+          Nous ont fait<br>
+          Confiance
+        </h4>
+        <div class="f_buttons">
+          <a style="color:black" class="carousel-control-prev" h ref="#confianceCarousel" role="button"
+            data-slide="prev">
+            <span id="left" class="carousel-control-prev template-pagPrev-dark">
+              <i class=" fas fa-caret-left"></i>
+            </span>
+          </a>
+          <a style="color:black" class=" carousel-control-next" href="#confianceCarousel" role="button"
+            data-slide="next">
+            <span id="right" class="carousel-control-next template-pagNext-dark">
+              <i class="fas fa-caret-right"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+      <div id="confianceCarousel" class="carousel slide f_slider_container" data-ride="carousel">
+        <div class="f_slider_wrapper carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="f_slide container" *ngFor="let company of activeCompanies, let i = index, let c = count">
+                <div class="f_logo_container">
+                  <img src="{{apiUrl}}handers/company/uploads/{{company.path}}" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item" *ngFor="let companies of otherCompanies, let i = index">
+            <div class="row">
+              <div class="f_slide container" *ngFor="let company of companies, let i = index, let c = count">
+                <div class="f_logo_container">
+                  <img src="{{apiUrl}}handers/company/uploads/{{company.path}}" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="confiance" *ngIf="isMobile">
+    <div class="section_grid">
+      <div class="f_slider_pagination">
+        <h4>
+          Nous ont fait<br>
+          Confiance
+        </h4>
+      </div>
+      <div id="confianceCarousel" class="carousel slide f_slider_container" data-ride="carousel">
+        <div class="f_slider_wrapper carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="f_slide container" *ngFor="let company of m_activeCompanies, let i = index, let c = count">
+                <div class="f_logo_container">
+                  <img src="{{apiUrl}}handers/company/uploads/{{company.path}}" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item" *ngFor="let companies of m_otherCompanies, let i = index">
+            <div class="row">
+              <div class="f_slide container" *ngFor="let company of companies, let i = index, let c = count">
+                <div class="f_logo_container">
+                  <img src="{{apiUrl}}handers/company/uploads/{{company.path}}" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="f_slider_pagination">
+        <div class="f_buttons">
+          <a style="color:black" class="carousel-control-prev" h ref="#confianceCarousel" role="button"
+            data-slide="prev">
+            <span id="left" class="carousel-control-prev template-pagPrev-dark">
+              <i class=" fas fa-caret-left"></i>
+            </span>
+          </a>
+          <a style="color:black" class=" carousel-control-next" href="#confianceCarousel" role="button"
+            data-slide="next">
+            <span id="right" class="carousel-control-next template-pagNext-dark">
+              <i class="fas fa-caret-right"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="event" *ngIf="isMobile">
+    <div class="section_grid">
+      <div class="event_left">
+        <div class="event_container" *ngFor="let event of firstEvents, let i = index, let c = count">
+          <div class="event_grid" *ngIf="i < 3">
+            <div class="event_date">
+              <h4>{{event.day}} <br> <span>{{event.monthName}}</span></h4>
+            </div>
+            <div class="event_details">
+              <div class="event_header">
+                <h4 class="font-weight-bold">{{event.lib}}</h4>
+              </div>
+              <div class="event_body">
+                <p [innerHtml]="event.desc">
+
+                </p>
+              </div>
+              <div class="event_read_more">
+                <!-- <a [routerLink]="['uftam_formation', 'uftam_master', formation.id,'master']"  class=""> Plus de détails <i class="fas fa-caret-right"></i> </a> -->
+                <a [routerLink]="['', 'uftam_event', event.id]" class=""> Plus de détails <i
+                    class="fas fa-caret-right"></i> </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="event_read_more text-center">
+          <button class="btn btn-primary mt-3 template-btn1-dark block">
+            Voir tous les évènements
+          </button>
+        </div> -->
+      </div>
+      <div class="event_right">
+        <div class="event_inscription_container">
+          <div class="inscription_header">
+            <h2>
+              Inscriver-vous <br>
+              au prochain <br>
+              évènement!
+            </h2>
+            <div class="inscription_separator"></div>
+          </div>
+          <div class="inscription_body mb-3 mt-3">
+            <p>
+              Nous vous attendons nombreux ‼ <br>
+              Vidéoconférences de nos enseignants chercheurs tunisiens et français et questions
+              personnalisées à notre équipe pédagogique
+            </p>
+          </div>
+          <div class="inscription_footer">
+            <button class="btn btn-primary btn-lg btn-inscription-1">
+              Inscrivez-vous
+            </button> <br>
+            <button [routerLink]="['uftam_event']" class="btn btn-primary btn-lg btn-inscription-2">
+              Plus de détails
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="eventCarousel" class="carousel slide event_slider" data-ride="carousel" *ngIf="!isMobile">
+    <div class="carousel-inner">
+      <div class="carousel-item active first">
+        <div class="e_slider_wrapper">
+          <div class="e_slide container" name="e_slide" *ngFor='let active of activeEvents'>
+            <div class="e_slide_image">
+              <img src="{{apiUrl}}handers/events/uploads/{{active.path}}" alt="">
+            </div>
+            <div class="e_slide_header">
+              <h2 class="font-weight-bold">A la une</h2>
+            </div>
+            <div class="e_slide_body">
+              <h2 class="font-weight-bold">{{active.lib}}</h2>
+              <p>
+                {{active.desc | slice:0:200}}
+              </p>
+            </div>
+            <div class="e_slide_footer">
+              <a [routerLink]="['', 'uftam_article', active.id]">
+                <span>Plus de détails </span>
+                <i class="fas fa-angle-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item second" *ngFor='let event of otherEvents, let i = index, let c = count'>
+        <div class="e_slider_wrapper">
+          <div class="e_slide container" name="e_slide" *ngFor='let e of event'>
+            <div class="e_slide_image">
+              <img src="{{apiUrl}}handers/events/uploads/{{e.path}}" alt="">
+            </div>
+            <div class="e_slide_body">
+              <h2 class="font-weight-bold">{{e.lib}}</h2>
+              <p [innerHtml]="e.desc | slice:0:250">
+
+              </p>
+            </div>
+            <div class="e_slide_footer">
+              <a [routerLink]="['', 'uftam_article', e.id]">
+                Plus de détails
+                <i class="fas fa-angle-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="e_slider_pagination">
+      <div class="e_buttons">
+        <a style="color:black" class="carousel-control-prev" href="#eventCarousel" role="button" data-slide="prev">
+          <span id="left" class="carousel-control-prev template-pagPrev-dark">
             <i class=" fas fa-caret-left"></i>
           </span>
         </a>
-        <a style="color:black" class=" carousel-control-next" href="#feedCarousel" role="button" data-slide="next">
-          <span id="right" class="carousel-control-next">
+        <a style="color:black" class=" carousel-control-next" href="#eventCarousel" role="button" data-slide="next">
+          <span id="right" class="carousel-control-next template-pagNext-dark">
             <i class="fas fa-caret-right"></i>
           </span>
         </a>
       </div>
     </div>
   </section>
-</div>
 
-<section class="conatct">
-  <div class="newsletter">
-    <div class="newsletter_left">
-      <h2>Commencez à nos suivre</h2>
-      <p>Inscrivez-vous à notre newsletter</p>
-    </div>
-    <div class="newsletter_right">
-      <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Insérez votre adresse mail" aria-describedby="subscribe">
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button" id="subscribe">S'abonner</button>
+  <div class="section_shape" *ngIf="!isMobile">
+    <section id="feedCarousel" class="carousel slide feed mb-5" data-ride="carousel">
+      <img src="../../assets/img/studentExpIcon.png" class="student_icon" alt="">
+      <div class="container carousel-inner">
+        <div class="carousel-item active">
+          <div class="feed_wrapper row-cols-3">
+            <div class="feed_container" *ngFor="let vie of activeVies, let i = index, let c = count">
+              <div class="feed_picture">
+                <img src="{{apiUrl}}handers/laVie/uploads/{{vie.path}}" alt="img">
+              </div>
+              <div class="feed_header">
+                <h2>{{vie.lib}}</h2>
+              </div>
+              <div class="feed_body">
+                <p>
+                  {{vie.description}}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item" *ngFor='let laVies of otherVies, let i = index, let c = count'>
+          <div class="feed_wrapper row-cols-3">
+            <div class="feed_container" *ngFor="let vie of laVies, let i = index, let c = count">
+              <div class="feed_picture">
+                <img src="{{apiUrl}}handers/laVie/uploads/{{vie.path}}" alt="img">
+              </div>
+              <div class="feed_header">
+                <h2>{{vie.lib}}</h2>
+              </div>
+              <div class="feed_body">
+                <p>
+                  {{vie.description}}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ol class="carousel-indicators">
+        <li data-target="#feedCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#feedCarousel" data-slide-to="1"></li>
+        <!-- <li data-target="#feedCarousel" data-slide-to="2"></li> -->
+      </ol>
+      <div class="feed_pagination">
+        <div class="feed_buttons">
+          <a style="color:black" class="carousel-control-prev" href="#feedCarousel" role="button" data-slide="prev">
+            <span id="left" class="carousel-control-prev">
+              <i class=" fas fa-caret-left"></i>
+            </span>
+          </a>
+          <a style="color:black" class=" carousel-control-next" href="#feedCarousel" role="button" data-slide="next">
+            <span id="right" class="carousel-control-next">
+              <i class="fas fa-caret-right"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="conatct">
+    <div class="newsletter">
+      <div class="newsletter_left">
+        <h2>Commencez à nos suivre</h2>
+        <p>Inscrivez-vous à notre newsletter</p>
+      </div>
+      <div class="newsletter_right">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Insérez votre adresse mail" aria-describedby="subscribe">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" id="subscribe">S'abonner</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="contact_info">
-    <div class="contact_map">
-      <a target="_blank"
-        href="https://www.google.com/maps/place/L'Universit%C3%A9+franco-tunisienne+pour+l'Afrique+et+la+M%C3%A9diterran%C3%A9e+(UFTAM)/@36.7208792,10.2353453,15z/data=!4m2!3m1!1s0x0:0x217e55ddb0636451?sa=X&ved=2ahUKEwjK35qcosXpAhUnxoUKHfFRCd8Q_BIwFnoECAsQCA"><img
-          src="../../assets/img/location.png" alt=" map"></a>
+    <div class="contact_info">
+      <div class="contact_map" *ngIf="!isMobile">
+        <a target="_blank"
+          href="https://www.google.com/maps/place/L'Universit%C3%A9+franco-tunisienne+pour+l'Afrique+et+la+M%C3%A9diterran%C3%A9e+(UFTAM)/@36.7208792,10.2353453,15z/data=!4m2!3m1!1s0x0:0x217e55ddb0636451?sa=X&ved=2ahUKEwjK35qcosXpAhUnxoUKHfFRCd8Q_BIwFnoECAsQCA"><img
+            src="../../assets/img/location.png" alt=" map"></a>
+      </div>
+      <div class="contact_details">
+        <div class="contact_email">
+          <h4>Email</h4>
+          <p>contact@uftam.net</p>
+        </div>
+        <div class="phone">
+          <h4>Appelez-nous</h4>
+          <p>71 100 100 / 71 666 666</p>
+        </div>
+        <div class="contact_address">
+          <h4>Adresse</h4>
+          <p>UFTAM(prés de Marché de Gros, Bir El <br> Kasaa) El Mourouj 2074, TUNISIE</p>
+        </div>
+      </div>
     </div>
-    <div class="contact_details">
-      <div class="contact_email">
-        <h4>Email</h4>
-        <p>contact@uftam.net</p>
-      </div>
-      <div class="contact_address">
-        <h4>Adresse</h4>
-        <p>UFTAM(prés de Marché de Gros, Bir El <br> Kasaa) El Mourouj 2074, TUNISIE</p>
-      </div>
-      <div class="phone">
-        <h4>Appelez-nous</h4>
-        <p>71 100 100 / 71 666 666</p>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<footer>
-  <div class="footer_top">
-    <div class="container">
-      <ul>
-        <li><a routerLink="uftam_about">A propos de l'Uftam</a></li>
-        <li><a routerLink="uftam_admission">Admission</a></li>
-        <li><a routerLink="uftam_contact">Contactez-nous</a></li>
-        <li>
-          <a target="_blank" href="https://www.facebook.com/UFTAMUniversite/">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="#">
-            <i class="fab fa-instagram"></i>
-          </a>
-        </li>
-      </ul>
+  <footer>
+    <div class="footer_top">
+      <div class="container">
+        <ul>
+          <li><a routerLink="uftam_about">A propos de l'Uftam</a></li>
+          <li><a routerLink="uftam_admission">Admission</a></li>
+          <li><a routerLink="uftam_contact">Contactez-nous</a></li>
+          <li>
+            <a target="_blank" href="https://www.facebook.com/UFTAMUniversite/">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-  <div class="footer_bottom">
-    <div class="footer_bootom_left">
-      <p> Tous les droits sont reservés pour UFTAM</p>
+    <div class="footer_bottom">
+      <div class="footer_bootom_left">
+        <p> Tous les droits sont reservés pour UFTAM</p>
+      </div>
+      <div class="footer_bootom_right">
+        <p> Powred by Digilinks</p>
+      </div>
     </div>
-    <div class="footer_bootom_right">
-      <p> Powred by Digilinks</p>
-    </div>
-  </div>
-</footer>
+  </footer>
+
+</div>

@@ -20,28 +20,11 @@ export class CondidatService {
 
   addCondidat(
     uploadData,
-    first_name,
-    last_name,
-    date,
-    email,
-    selectedFormation,
-    dial_code,
-    country_code,
-    number,
+    id
   ) {
     return this.http.put<Response>(
-      environment.apiUrl + "handers/condidat/addCondidat.php",
-      {
-        uploadData,
-        first_name,
-        last_name,
-        date,
-        email,
-        selectedFormation,
-        dial_code,
-        country_code,
-        number,
-      }
+      environment.apiUrl + "handers/condidat/addCondidat.php?id=" + id,
+      uploadData
     );
   }
 }

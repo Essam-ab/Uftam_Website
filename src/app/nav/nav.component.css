@@ -160,3 +160,59 @@ nav {
   color: #2a416d;
   font-weight: 800;
 }
+
+
+@media (max-width: 700px) {
+  #navbarSupportedContent {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    z-index: 123;
+    margin-left: 50px !important;
+    background: rgb(196, 194, 195) !important;
+    padding: 50px !important;
+    text-align: center !important;
+    color: #000;
+  }
+
+  #navbarSupportedContent ul li a {
+    color: #000 !important;
+  }
+
+  #navbarSupportedContent ul li.active a {
+    color: var(--primary-color) !important;
+  }
+
+  #navbarSupportedContent ul li a:hover {
+    background: var(--primary-color) !important;
+    color: #fff !important;
+  }
+
+  .nav-item:hover div.underline,
+  .nav-item.active div.underline {
+    bottom: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+    transform: rotate(90deg) translateX(-15px);
+    background: transparent !important;
+  }
+
+  #item_drop_first,
+  #item_drop_second {
+    z-index: 123456;
+    width: 100vw;
+    visibility: hidden;
+    position: absolute;
+    top: 20%;
+    left: 0%;
+    margin-left: 0%;
+    background: #fff;
+    padding: 20px 40px;
+    border-radius: 5px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    list-style: none;
+  }
+
+}

@@ -42,11 +42,12 @@ export class PartnersComponent implements OnInit {
   master: Formation[];
   apiUrl: any;
 
-
-
+  isMobile: boolean = false;
   ngOnInit() {
     this.apiUrl = environment.apiUrl;
     this.c_App.isInternal = true;
+    if (window.innerWidth <= 700)
+      this.isMobile = true;
 
     //nav setup
     this._formation.displayFormations().subscribe(

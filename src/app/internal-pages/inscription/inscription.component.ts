@@ -113,8 +113,8 @@ export class InscriptionComponent implements OnInit {
       }
     )
 
-    // document.querySelector('ngx-intl-tel-input input').classList.add('form-control');
-    // document.querySelector('ngx-intl-tel-input input').classList.add('input-fix');
+    document.querySelector('ngx-intl-tel-input input').classList.add('form-control');
+    document.querySelector('ngx-intl-tel-input input').classList.add('input-fix');
 
     //formation
     this._formation.displayFormations().subscribe(
@@ -241,7 +241,7 @@ export class InscriptionComponent implements OnInit {
     )
   }
 
-  /*
+
   setFocus(e) {
     $(".input").parent().addClass('focus');
     $(".input").focus(function () {
@@ -260,10 +260,16 @@ export class InscriptionComponent implements OnInit {
     userInfoLastName: new FormControl({ value: '' }, Validators.compose([Validators.required])),
     userInfoDate: new FormControl({ value: '' }, Validators.compose([Validators.required])),
     userInfoEmail: new FormControl({ value: '' }, Validators.compose([Validators.required])),
-    userInfoFormation: new FormControl({ value: '' }, Validators.compose([Validators.required]))
+    userInfoFormation: new FormControl({ value: 'Default' }, Validators.compose([Validators.required]))
   });
 
   selectedFile_1: File;
+  onFileChanged_1(e) {
+    let target = e.target;
+    this.selectedFile_1 = target.files[0];
+    console.log("target changed: " + this.selectedFile_1);
+  }
+
   selectedFile_2: File;
   selectedFile_3: File;
   selectedFile_4: File;
@@ -271,10 +277,7 @@ export class InscriptionComponent implements OnInit {
   selectedFile_6: File;
   selectedFile_7: File;
 
-  onFileChanged_1(e) {
-    let target = e.target;
-    this.selectedFile_1 = target.files[0];
-  }
+
   onFileChanged_2(e) {
     let target = e.target;
     this.selectedFile_2 = target.files[1];
@@ -301,19 +304,20 @@ export class InscriptionComponent implements OnInit {
   }
 
   submitCondidat(f, e) {
+    // e.target.querySelector('#typeFormation').selectedIndex = 0
+    console.log(e.target.querySelector('#typeFormation').selectedIndex)
     e.preventDefault();
-    const phone = this.userInfo.value.phone;
 
+    const phone = this.userInfo.value.phone;
     const selector = this.userInfo.value;
-    const first_name = selector.userInfoFirstNam;
+    const first_name = selector.userInfoFirstName;
     const last_name = selector.userInfoLastName;
     const date = selector.userInfoDate;
     const email = selector.userInfoEmail;
     const formation = selector.userInfoFormation;
-
-    if (this.selectedFile_1 === undefined || this.selectedFile_2 === undefined || this.selectedFile_3 === undefined ||
-      this.selectedFile_4 === undefined || this.selectedFile_5 === undefined || this.selectedFile_6 === undefined ||
-      this.selectedFile_7 === undefined || selector.userInfoDate === undefined || selector.userInfoEmail === undefined ||
+    if (this.selectedFile_1 === undefined || this.selectedFile_2 === undefined || this.selectedFile_3 === undefined || this.selectedFile_4 === undefined ||
+      this.selectedFile_5 === undefined || this.selectedFile_6 === undefined || this.selectedFile_7 === undefined || selector.userInfoDate === undefined ||
+      selector.userInfoEmail === undefined ||
       selector.userInfoFirstName === undefined || selector.userInfoFormation === undefined || selector.userInfoLastName === undefined ||
       selector.userInfoPhone === null) {
       Swal.fire(
@@ -322,101 +326,56 @@ export class InscriptionComponent implements OnInit {
         'error'
       )
     } else {
-
-      const createConditat = (first_name, last_name, date, email, formation, dial_code, country_code, number) => {
-        return new Promise((resolve, reject) => {
-          this.http.post<Response>(environment.apiUrl + 'handers/condidat/insertCondidat.php', {
-            first_name,
-            last_name,
-            date,
-            email,
-            formation,
-            dial_code,
-            country_code,
-            number
-          }).subscribe(
-            (data: Response) => {
-              if (data.success) {
-                resolve(data);
-              } else
-                reject('error trying to insert new condidat!');
-            }
-          )
-        });
-      }
-
-      const getLastCreated = () => {
-        return new Promise((resolve, reject) => {
-          this.http.get<condidat>(environment.apiUrl + 'handers/condidat/getLastAdded.php').subscribe(
-            (data: condidat) => {
-              if (data.success)
-                resolve(data);
-              else
-                reject(0);
-            }
-          )
-        })
-      }
-
-      async function startSteps() {
-
-        try {
-          const conditat = await createConditat(first_name, last_name, date, email, formation, dial_code, country_code, number);
-          if (conditat) {
-            const id = await startSteps();
-
-          }
-        } catch (err) {
-          console.log("error trying to create new conditat:" + err);
-        }
-
-      }
-
-      const uploadData = new FormData();
-      uploadData.append('File_1', this.selectedFile_1, this.selectedFile_1.name);
-      uploadData.append('File_2', this.selectedFile_2, this.selectedFile_2.name);
-      uploadData.append('File_3', this.selectedFile_3, this.selectedFile_3.name);
-      uploadData.append('File_4', this.selectedFile_4, this.selectedFile_4.name);
-      uploadData.append('File_5', this.selectedFile_5, this.selectedFile_5.name);
-      uploadData.append('File_6', this.selectedFile_6, this.selectedFile_6.name);
-      uploadData.append('File_7', this.selectedFile_7, this.selectedFile_7.name);
       const dial_code = selector.userInfoPhone.dialCode;
       const country_code = selector.userInfoPhone.countryCode;
       const number = selector.userInfoPhone.number;
-
-      function roll(index) {
-        const uploadData = new FormData();
-        uploadData.append(`File_${index}`, this.selectedFile_ + index, this.selectedFile_ + index.name);
-      }
-
-
-      this._Condidat.addCondidat(
-        uploadData,
-        selector.userInfoFirstName,
-        selector.userInfoLastName,
-        selector.userInfoDate,
-        selector.userInfoEmail,
-        selector.userInfoFormation,
+      var newCondidate;
+      this.http.post<Response>(environment.apiUrl + 'handers/condidat/insertCondidat.php', {
+        first_name,
+        last_name,
+        date,
+        email,
+        formation,
         dial_code,
         country_code,
-        number,
-      ).subscribe(
-        data => {
-          Swal.fire(
-            'Téléchargement Terminé!',
-            '',
-            'success'
-          )
-        },
-        error => {
-          Swal.fire(
-            'There has been an error!',
-            '',
-            'error'
+        number
+      }).subscribe(
+        (data: Response) => {
+          if (data.success) {
+            newCondidate = data;
+          } else
+            newCondidate = 0;
+          newCondidate = data;
+        }
+      )
+
+      this.http.get<condidat>(environment.apiUrl + 'handers/condidat/getLastAdded.php').subscribe(
+        (data: condidat) => {
+          console.log(data)
+
+          const uploadData = new FormData();
+          uploadData.append('File_1', this.selectedFile_1, this.selectedFile_1.name);
+          this.http.post<condidat>(
+            environment.apiUrl + "handers/condidat/addCondidat.php?id=" + data.id,
+            uploadData
+          ).subscribe(
+            data => {
+              Swal.fire(
+                'Terminé!',
+                '',
+                'success'
+              )
+            },
+            error => {
+              Swal.fire(
+                'There has been an error!',
+                '',
+                'error'
+              )
+            }
           )
         }
       )
     }
-  }*/
-
+  }
 }

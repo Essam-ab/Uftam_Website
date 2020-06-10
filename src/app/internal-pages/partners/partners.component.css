@@ -77,3 +77,27 @@ div#partners {
   flex-wrap: wrap;
   flex-grow: 1;
 }
+
+@media (max-width: 700px) {
+  .info article>p {
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 40px;
+  }
+
+  .partners .f_logo_container img {
+    margin-top: 22px;
+    padding: 0 !important;
+    background: #fff;
+    width: 100%;
+  }
+
+  .f_logo_container img {
+    width: 100% !important;
+    transform: scale(1.5);
+  }
+
+  .partners {
+    margin-bottom: 0px !important;
+  }
+}

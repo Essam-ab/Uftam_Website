@@ -1,2 +1,55 @@
 @import '../../home/home.component.css';
 @import '../admission/admission.component.css';
+
+@media (max-width: 700px) {
+  #navbarSupportedContent {
+    width: 100%;
+    z-index: 123;
+    margin-left: 50px !important;
+    padding: 50px !important;
+    text-align: left !important;
+    color: #fff;
+    margin-left: -30px !important;
+  }
+
+  #navbarSupportedContent ul li a {
+    padding-left: 20px;
+  }
+
+  #navbarSupportedContent ul li.active a {
+    background: var(--primary-hover) !important;
+    color: #fff !important;
+  }
+
+  #navbarSupportedContent ul li a:hover {
+    background: var(--primary-hover) !important;
+    color: #fff !important;
+  }
+
+  .nav-item:hover div.underline,
+  .nav-item.active div.underline {
+    bottom: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+    transform: rotate(90deg) translateX(-15px);
+    background: transparent !important;
+  }
+
+  #item_drop_first,
+  #item_drop_second {
+    z-index: 123456;
+    width: 100vw;
+    visibility: hidden;
+    position: absolute;
+    top: 20%;
+    left: 0%;
+    margin-left: 0%;
+    background: #fff;
+    padding: 20px 40px;
+    border-radius: 5px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    list-style: none;
+  }
+}

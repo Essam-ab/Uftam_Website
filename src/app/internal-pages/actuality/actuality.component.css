@@ -31,6 +31,7 @@ header {
 
 .info_wrapper {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
   width: 100%;
@@ -83,4 +84,19 @@ header {
 .act_load {
   margin: 0 auto;
   text-align: center;
+}
+
+@media (max-width: 700px) {
+  .info_wrapper {
+    display: -webkit-box;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .act_block {
+    width: 100%;
+  }
 }

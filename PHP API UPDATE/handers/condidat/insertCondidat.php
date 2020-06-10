@@ -10,7 +10,7 @@ if (!empty($_POST)) {
     $date = date("Y-m-d", strtotime($date));
     $email = $_POST['email'];
     $phone = $_POST['number'];
-    $selectedFormation = $_POST['selectedFormation'];
+    $selectedFormation = (int) $_POST['formation'];
     $dial_code = $_POST['dial_code'];
     $country_code = $_POST['country_code'];
 

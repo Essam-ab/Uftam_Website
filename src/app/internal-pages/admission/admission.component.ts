@@ -63,9 +63,12 @@ export class AdmissionComponent implements OnInit {
     'display_choise_7',
   ];
 
+  isMobile: boolean = false;
   ngOnInit() {
     this.c_App.isInternal = true;
     this.apiUrl = environment.apiUrl;
+    if (window.innerWidth <= 700)
+      this.isMobile = true;
 
     //nav setup
     this._formation.displayFormations().subscribe(

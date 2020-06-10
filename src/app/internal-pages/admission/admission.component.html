@@ -373,7 +373,7 @@
   </div>
 </section>
 
-<section class="event">
+<section class="event" *ngIf="isMobile">
   <div class="section_grid">
     <div class="event_left">
       <div class="event_container" *ngFor="let event of firstEvents, let i = index, let c = count">
@@ -386,27 +386,29 @@
               <h4 class="font-weight-bold">{{event.lib}}</h4>
             </div>
             <div class="event_body">
-              <p>
-                {{event.desc}}
+              <p [innerHtml]="event.desc">
+
               </p>
             </div>
             <div class="event_read_more">
-              <a href="#" class=""> Plus de détails <i class="fas fa-caret-right"></i> </a>
+              <!-- <a [routerLink]="['uftam_formation', 'uftam_master', formation.id,'master']"  class=""> Plus de détails <i class="fas fa-caret-right"></i> </a> -->
+              <a [routerLink]="['', 'uftam_event', event.id]" class=""> Plus de détails <i
+                  class="fas fa-caret-right"></i> </a>
             </div>
           </div>
         </div>
       </div>
-      <div class="event_read_more text-center">
+      <!-- <div class="event_read_more text-center">
         <button class="btn btn-primary mt-3 template-btn1-dark block">
           Voir tous les évènements
         </button>
-      </div>
+      </div> -->
     </div>
     <div class="event_right">
       <div class="event_inscription_container">
         <div class="inscription_header">
           <h2>
-            Inscrivez-vous <br>
+            Inscriver-vous <br>
             au prochain <br>
             évènement!
           </h2>
@@ -414,15 +416,16 @@
         </div>
         <div class="inscription_body mb-3 mt-3">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum expedita sed reprehenderit? Odit in consectetur
-            dolorum dolor nihil, quisquam sunt.
+            Nous vous attendons nombreux ‼ <br>
+            Vidéoconférences de nos enseignants chercheurs tunisiens et français et questions
+            personnalisées à notre équipe pédagogique
           </p>
         </div>
         <div class="inscription_footer">
           <button class="btn btn-primary btn-lg btn-inscription-1">
             Inscrivez-vous
           </button> <br>
-          <button class="btn btn-primary btn-lg btn-inscription-2">
+          <button [routerLink]="['uftam_event']" class="btn btn-primary btn-lg btn-inscription-2">
             Plus de détails
           </button>
         </div>
@@ -431,14 +434,13 @@
   </div>
 </section>
 
-<section id="eventCarousel" class="carousel slide event_slider" data-ride="carousel">
+<section id="eventCarousel" class="carousel slide event_slider" data-ride="carousel" *ngIf="!isMobile">
   <div class="carousel-inner">
     <div class="carousel-item active first">
       <div class="e_slider_wrapper">
         <div class="e_slide container" name="e_slide" *ngFor='let active of activeEvents'>
           <div class="e_slide_image">
             <img src="{{apiUrl}}handers/events/uploads/{{active.path}}" alt="">
-            <!-- <img src="../../assets/img/test.jpg" alt=""> -->
           </div>
           <div class="e_slide_header">
             <h2 class="font-weight-bold">A la une</h2>
@@ -446,32 +448,34 @@
           <div class="e_slide_body">
             <h2 class="font-weight-bold">{{active.lib}}</h2>
             <p>
-              {{active.desc}}
+              {{active.desc | slice:0:200}}
             </p>
           </div>
           <div class="e_slide_footer">
-            <a href="#">
+            <a [routerLink]="['', 'uftam_article', active.id]">
               <span>Plus de détails </span>
               <i class="fas fa-angle-right"></i></a>
           </div>
         </div>
       </div>
     </div>
-    <div class="carousel-item" *ngFor='let event of otherEvents, let i = index, let c = count'>
+    <div class="carousel-item second" *ngFor='let event of otherEvents, let i = index, let c = count'>
       <div class="e_slider_wrapper">
         <div class="e_slide container" name="e_slide" *ngFor='let e of event'>
           <div class="e_slide_image">
             <img src="{{apiUrl}}handers/events/uploads/{{e.path}}" alt="">
-            <!-- <img src="../../assets/img/test.jpg" alt=""> -->
           </div>
           <div class="e_slide_body">
             <h2 class="font-weight-bold">{{e.lib}}</h2>
-            <p>
-              {{e.desc}}
+            <p [innerHtml]="e.desc | slice:0:250">
+
             </p>
           </div>
           <div class="e_slide_footer">
-            <a href="#">Plus de détails <i class="fas fa-angle-right"></i></a>
+            <a [routerLink]="['', 'uftam_article', e.id]">
+              Plus de détails
+              <i class="fas fa-angle-right"></i>
+            </a>
           </div>
         </div>
       </div>
@@ -493,7 +497,7 @@
   </div>
 </section>
 
-<div class="section_shape">
+<div class="section_shape" *ngIf="!isMobile">
   <section id="feedCarousel" class="carousel slide feed mb-5" data-ride="carousel">
     <img src="../../assets/img/studentExpIcon.png" class="student_icon" alt="">
     <div class="container carousel-inner">
@@ -536,6 +540,7 @@
     <ol class="carousel-indicators">
       <li data-target="#feedCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#feedCarousel" data-slide-to="1"></li>
+      <!-- <li data-target="#feedCarousel" data-slide-to="2"></li> -->
     </ol>
     <div class="feed_pagination">
       <div class="feed_buttons">
@@ -570,7 +575,7 @@
     </div>
   </div>
   <div class="contact_info">
-    <div class="contact_map">
+    <div class="contact_map" *ngIf="!isMobile">
       <a target="_blank"
         href="https://www.google.com/maps/place/L'Universit%C3%A9+franco-tunisienne+pour+l'Afrique+et+la+M%C3%A9diterran%C3%A9e+(UFTAM)/@36.7208792,10.2353453,15z/data=!4m2!3m1!1s0x0:0x217e55ddb0636451?sa=X&ved=2ahUKEwjK35qcosXpAhUnxoUKHfFRCd8Q_BIwFnoECAsQCA"><img
           src="../../assets/img/location.png" alt=" map"></a>
@@ -580,13 +585,13 @@
         <h4>Email</h4>
         <p>contact@uftam.net</p>
       </div>
-      <div class="contact_address">
-        <h4>Adresse</h4>
-        <p>UFTAM(prés de Marché de Gros, Bir El <br> Kasaa) El Mourouj 2074, TUNISIE</p>
-      </div>
       <div class="phone">
         <h4>Appelez-nous</h4>
         <p>71 100 100 / 71 666 666</p>
+      </div>
+      <div class="contact_address">
+        <h4>Adresse</h4>
+        <p>UFTAM(prés de Marché de Gros, Bir El <br> Kasaa) El Mourouj 2074, TUNISIE</p>
       </div>
     </div>
   </div>
@@ -596,11 +601,11 @@
   <div class="footer_top">
     <div class="container">
       <ul>
-        <li><a href="#">A propos de l'Uftam</a></li>
-        <li><a href="#">Nos formations</a></li>
-        <li><a href="#">Contactez-nous</a></li>
+        <li><a routerLink="uftam_about">A propos de l'Uftam</a></li>
+        <li><a routerLink="uftam_admission">Admission</a></li>
+        <li><a routerLink="uftam_contact">Contactez-nous</a></li>
         <li>
-          <a href="#">
+          <a target="_blank" href="https://www.facebook.com/UFTAMUniversite/">
             <i class="fab fa-facebook-f"></i>
           </a>
           <a href="#">

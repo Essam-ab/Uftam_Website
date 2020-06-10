@@ -326,3 +326,49 @@ table.table-admission tbody {
   margin-left: 25px;
   background: var(--primary-color);
 }
+
+@media (max-width: 700px) {
+  .info_wrapper {
+    width: 80vw !important;
+  }
+
+
+  #display_choice_2 {
+    padding: 0 30px !important;
+  }
+
+  .split_right_items {
+    padding-left: 10px !important;
+    padding-right: 20px !important;
+  }
+
+  .info_grid_split {
+    display: unset !important;
+  }
+
+  .demand_list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .table-admission {
+    margin-left: 0px;
+  }
+
+  .table-admission tbody tr td {
+    padding-top: 30px;
+    padding-left: 0px !important;
+  }
+
+  .bourse_desc p {
+    font-size: 11px;
+  }
+
+  .bourse_desc h2 {
+    font-size: 18px;
+  }
+
+  .card-body {
+    font-size: 12px;
+  }
+}

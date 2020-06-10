@@ -8,6 +8,23 @@ class Condidat extends database
     }
 
     public function addCondidat(
+        $upload_data,
+        $id
+    ) {
+        $query = $this->connect()->prepare(
+            "UPDATE t_condidat
+            SET con_form_condidat = ?
+            WHERE con_id = ?;"
+        );
+        $query->execute([
+            $upload_data,
+            $id
+        ]);
+        return $query;
+    }
+
+    /*
+    public function addCondidat(
         $first_name,
         $last_name,
         $date,
@@ -15,13 +32,7 @@ class Condidat extends database
         $phone,
         $dial_code,
         $country,
-        $first_path,
-        $second_path,
-        $third_path,
-        $fourth_path,
-        $fifth_path,
-        $sixth_path,
-        $seventh_path
+        $first_path
     ) {
         $query = $this->connect()->prepare(
             "INSERT INTO t_condidat(
@@ -32,16 +43,10 @@ class Condidat extends database
                 con_number,
                 con_dial_code,
                 con_country,
-                con_form_condidat,
-                con_identity,
-                con_releve_note,
-                con_cv,
-                con_motivation_letter,
-                con_recommendation_letter,
-                con_document
+                con_form_condidat
 
             )
-            VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?);"
+            VALUES(?,?,?,?,?,?,?,?):"
         );
         $query->execute([
             $first_name,
@@ -51,40 +56,35 @@ class Condidat extends database
             $phone,
             $dial_code,
             $country,
-            $first_path,
-            $second_path,
-            $third_path,
-            $fourth_path,
-            $fifth_path,
-            $sixth_path,
-            $seventh_path
+            $first_path
         ]);
         return $query;
-    }
+    }*/
 
     public function insertCondidat($first_name, $last_name, $date, $email, $phone, $for_id, $dial_code, $country)
     {
+        // echo ($first_name . " " . $last_name . " " . $date . " " . $email . " " . $phone . " " . $for_id . " " . $dial_code . " " . $country);
         $query = $this->connect()->prepare(
             "INSERT INTO t_condidat(
                	con_f_name,
                 con_l_name,
                 con_date,
                 con_email,
-                con_number,
                 for_id,
+                con_number,
                 con_dial_code,
-                con_country,
+                con_country
 
             )
-            VALUES(?,?,?,?,?,?,?);"
+            VALUES(?,?,?,?,?,?,?,?);"
         );
         $query->execute([
             $first_name,
             $last_name,
             $date,
             $email,
+            (int) $for_id,
             $phone,
-            $for_id,
             $dial_code,
             $country
         ]);

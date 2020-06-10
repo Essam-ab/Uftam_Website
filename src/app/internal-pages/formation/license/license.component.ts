@@ -65,9 +65,12 @@ export class LicenseComponent implements OnInit {
   image: any;
   diplome_logos: any;
 
+  isMobile: boolean = false;
   ngOnInit() {
     this.apiUrl = environment.apiUrl;
     this.c_App.isInternal = true;
+    if (window.innerWidth <= 700)
+      this.isMobile = true;
 
     this._ActivatedRoute.paramMap.subscribe(params => {
       this.idPage = params.get('id');

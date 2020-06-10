@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 09, 2020 at 03:49 AM
+-- Generation Time: Jun 10, 2020 at 08:50 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.3
 
@@ -34,7 +34,7 @@ CREATE TABLE `t_condidat` (
   `con_l_name` varchar(50) DEFAULT NULL,
   `con_email` varchar(100) DEFAULT NULL,
   `con_date` date DEFAULT NULL,
-  `con_number` int(11) NOT NULL,
+  `con_number` varchar(50) DEFAULT NULL,
   `for_id` int(11) NOT NULL,
   `con_dial_code` varchar(10) DEFAULT NULL,
   `con_country` varchar(50) DEFAULT NULL,
@@ -46,6 +46,13 @@ CREATE TABLE `t_condidat` (
   `con_recommendation_letter` varchar(255) DEFAULT NULL,
   `con_document` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `t_condidat`
+--
+
+INSERT INTO `t_condidat` (`con_id`, `con_f_name`, `con_l_name`, `con_email`, `con_date`, `con_number`, `for_id`, `con_dial_code`, `con_country`, `con_form_condidat`, `con_identity`, `con_releve_note`, `con_cv`, `con_motivation_letter`, `con_recommendation_letter`, `con_document`) VALUES
+(37, 'qsfd', 'qsdf', 'essam@gmail.com', '2020-04-18', '5165', 26, '+91', 'IN', '180218.jpg', NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -409,7 +416,7 @@ ALTER TABLE `t_type_formation`
 -- AUTO_INCREMENT for table `t_condidat`
 --
 ALTER TABLE `t_condidat`
-  MODIFY `con_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `con_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `t_diplome`
