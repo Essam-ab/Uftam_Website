@@ -1,0 +1,16 @@
+*remove top-nav => done
+*routerLink formation => done
+*les brochure slide button pop up => done
+*fill all articles  + article page => done
+*remove bienvenue => done
+*check events not showing in home page => done
+*more details buttons => done
+*partner will become 'sous menu' of uftam => done
+*change button telecharger with candidater in the admission page=>done
+*decrease etape pour déposer votre demande icons size page admission => done
+*navbar change condidature with inscription. => done
+*page uftam content will be in mot de bienvenue => done
+*border round 0 in every single button => done
+*set sabonner mails in database => done
+---------------------
+*add newsletter subscribers in dashboard

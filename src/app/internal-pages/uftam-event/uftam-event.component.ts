@@ -45,6 +45,10 @@ export class UftamEventComponent implements OnInit {
   otherCompanies: any;
   activeCompanies: Formation[];
 
+  indexedEventsLength: number;
+  indexedEvents: Formation[];
+  start: number = 1;
+  limit: number = 4;
   firstEvents: Formation[];
   secondEvents: Formation[];
   activeEvents: Formation[];
@@ -65,6 +69,37 @@ export class UftamEventComponent implements OnInit {
   license: Formation[];
   master: Formation[];
 
+  loadEvents(event) {
+    const target = event.target;
+    if (this.limit < this.indexedEventsLength) {
+      this.limit += 2;
+      this._formation.displayFirstEvents_indexed(this.start, this.limit).subscribe(
+        (data: Formation[]) => {
+          this.indexedEvents = data;
+        },
+        error => {
+          console.log("error trying to get indexed events");
+        }
+      )
+    } else {
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        onOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+
+      Toast.fire({
+        icon: 'info',
+        title: "Il n'y a plus d'évènement!"
+      })
+    }
+  }
   ngOnInit() {
     this.apiUrl = environment.apiUrl;
     this.c_App.isInternal = true;
@@ -132,10 +167,20 @@ export class UftamEventComponent implements OnInit {
       }
     )
     //events
+    //indexd events
+    this._formation.displayFirstEvents_indexed(this.start, this.limit).subscribe(
+      (data: Formation[]) => {
+        this.indexedEvents = data;
+      },
+      error => {
+        console.log("error trying to get indexed events");
+      }
+    )
     //event 1
     this._formation.displayFirstEvents().subscribe(
       (data: Formation[]) => {
         this.firstEvents = data;
+        this.indexedEventsLength = data.length + 1;
       },
       error => {
         console.log("error trying to get events");

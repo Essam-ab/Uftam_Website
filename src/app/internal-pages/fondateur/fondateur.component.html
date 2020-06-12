@@ -1,0 +1,286 @@
+<section class="info">
+  <div class="info_wrapper container">
+    <article class="container-sm p-5">
+      <div class="split-text">
+        <div class="split-left">
+          <h4>Fondée sur</h4>
+          <p>
+            l’interdisciplinarité entre sciences humaines et sociales et sciences pour l’ingénieur, l’UFTAM propose dès
+            la rentrée 2019 des diplômes de master en « Expertise économique des politiques et projets de développement
+            » (Paris 1 Panthéon Sorbonne / IHEC), en « Gestion de l’environnement et métiers de l’eau » (Aix-Marseille
+            université / FST / ISSBAT), en « Sciences des données et nouveaux métiers du numérique » (ENSTA Paris Tech /
+            ENIT / SUPCOM) et en « Formation de formateurs en génie informatique, traitement du signal, automatique,
+            énergie, électronique et télécom » (ENS Paris Saclay / IPEST / ENSIT).
+          </p>
+        </div>
+        <div class="split-right">
+          <p>
+            A ces programmes de master s’ajoute une offre certifiante (universités Côte d’Azur / Tunis El Manar /
+            Carthage) en ingénierie de projets euro-méditerranéens ainsi qu’une formation aux soft skills et à
+            l’entrepreneuriat, qui sont aujourd’hui des compétences indispensables pour une insertion et une évolution
+            réussie sur le marché de l’emploi.
+          </p>
+          <p>
+            Rassemblant des étudiants de plusieurs nationalités sur un campus installé à 15 minutes du centre de Tunis,
+            l’UFTAM permettra la constitution progressive d’un groupe d’alumni mobilisés autour du développement
+            économique et social de l’Afrique et de sa capacité à relever les défis du monde de demain.
+
+          </p>
+          <img src="../../../assets/img/speaker_logo.png" alt="speaker_logo">
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="event">
+  <div class="section_grid">
+    <div class="event_left">
+      <div class="event_container" *ngFor="let event of firstEvents, let i = index, let c = count">
+        <div class="event_grid" *ngIf="i < 3">
+          <div class="event_date">
+            <h4>{{event.day}} <br> <span>{{event.monthName}}</span></h4>
+          </div>
+          <div class="event_details">
+            <div class="event_header">
+              <h4 class="font-weight-bold">{{event.lib}}</h4>
+            </div>
+            <div class="event_body">
+              <p [innerHtml]="event.desc">
+
+              </p>
+            </div>
+            <div class="event_read_more">
+              <!-- <a [routerLink]="['uftam_formation', 'uftam_master', formation.id,'master']"  class=""> Plus de détails <i class="fas fa-caret-right"></i> </a> -->
+              <a [routerLink]="['', 'uftam_event', event.id]" class=""> Plus de détails <i
+                  class="fas fa-caret-right"></i> </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="event_read_more text-center">
+          <button class="btn btn-primary mt-3 template-btn1-dark block">
+            Voir tous les évènements
+          </button>
+        </div> -->
+    </div>
+    <div class="event_right">
+      <div class="event_inscription_container">
+        <div class="inscription_header">
+          <h2>
+            Inscrivez-vous <br>
+            au prochain <br>
+            évènement!
+          </h2>
+          <div class="inscription_separator"></div>
+        </div>
+        <div class="inscription_body mb-3 mt-3">
+          <p>
+            Nous vous attendons nombreux ‼ <br>
+            Vidéoconférences de nos enseignants chercheurs tunisiens et français et questions
+            personnalisées à notre équipe pédagogique
+          </p>
+        </div>
+        <div class="inscription_footer">
+          <button class="btn btn-primary btn-lg btn-inscription-1">
+            Inscrivez-vous
+          </button> <br>
+          <button [routerLink]="['uftam_event']" class="btn btn-primary btn-lg btn-inscription-2">
+            Plus de détails
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="eventCarousel" class="carousel slide event_slider" data-ride="carousel" *ngIf="!isMobile">
+  <div class="carousel-inner">
+    <div class="carousel-item active first">
+      <div class="e_slider_wrapper">
+        <div class="e_slide container" name="e_slide" *ngFor='let active of activeEvents'>
+          <div class="e_slide_image">
+            <img src="{{apiUrl}}handers/events/uploads/{{active.path}}" alt="">
+          </div>
+          <div class="e_slide_header">
+            <h2 class="font-weight-bold">A la une</h2>
+          </div>
+          <div class="e_slide_body">
+            <h2 class="font-weight-bold">{{active.lib}}</h2>
+            <!-- <p>
+                {{active.desc | slice:0:200}}
+              </p> -->
+          </div>
+          <div class="e_slide_footer">
+            <a [routerLink]="['', 'uftam_article', active.id]">
+              <span>Plus de détails </span>
+              <i class="fas fa-angle-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item second" *ngFor='let event of otherEvents, let i = index, let c = count'>
+      <div class="e_slider_wrapper">
+        <div class="e_slide container" name="e_slide" *ngFor='let e of event'>
+          <div class="e_slide_image">
+            <img src="{{apiUrl}}handers/events/uploads/{{e.path}}" alt="">
+          </div>
+          <div class="e_slide_body">
+            <h2 class="font-weight-bold">{{e.lib}}</h2>
+            <!-- <p [innerHtml]="e.desc | slice:0:250">
+
+              </p> -->
+          </div>
+          <div class="e_slide_footer">
+            <a [routerLink]="['', 'uftam_article', e.id]">
+              Plus de détails
+              <i class="fas fa-angle-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="e_slider_pagination">
+    <div class="e_buttons">
+      <a style="color:black" class="carousel-control-prev" href="#eventCarousel" role="button" data-slide="prev">
+        <span id="left" class="carousel-control-prev template-pagPrev-dark">
+          <i class=" fas fa-caret-left"></i>
+        </span>
+      </a>
+      <a style="color:black" class=" carousel-control-next" href="#eventCarousel" role="button" data-slide="next">
+        <span id="right" class="carousel-control-next template-pagNext-dark">
+          <i class="fas fa-caret-right"></i>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="section_shape" *ngIf="!isMobile">
+  <section id="feedCarousel" class="carousel slide feed mb-5" data-ride="carousel">
+    <img src="../../assets/img/studentExpIcon.png" class="student_icon" alt="">
+    <div class="container carousel-inner">
+      <div class="carousel-item active">
+        <div class="feed_wrapper row-cols-3">
+          <div class="feed_container" *ngFor="let vie of activeVies, let i = index, let c = count">
+            <div class="feed_picture">
+              <img src="{{apiUrl}}handers/laVie/uploads/{{vie.path}}" alt="img">
+            </div>
+            <div class="feed_header">
+              <h2>{{vie.lib}}</h2>
+            </div>
+            <div class="feed_body">
+              <p>
+                {{vie.description}}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item" *ngFor='let laVies of otherVies, let i = index, let c = count'>
+        <div class="feed_wrapper row-cols-3">
+          <div class="feed_container" *ngFor="let vie of laVies, let i = index, let c = count">
+            <div class="feed_picture">
+              <img src="{{apiUrl}}handers/laVie/uploads/{{vie.path}}" alt="img">
+            </div>
+            <div class="feed_header">
+              <h2>{{vie.lib}}</h2>
+            </div>
+            <div class="feed_body">
+              <p>
+                {{vie.description}}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ol class="carousel-indicators">
+      <li data-target="#feedCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#feedCarousel" data-slide-to="1"></li>
+      <!-- <li data-target="#feedCarousel" data-slide-to="2"></li> -->
+    </ol>
+    <div class="feed_pagination">
+      <div class="feed_buttons">
+        <a style="color:black" class="carousel-control-prev" href="#feedCarousel" role="button" data-slide="prev">
+          <span id="left" class="carousel-control-prev">
+            <i class=" fas fa-caret-left"></i>
+          </span>
+        </a>
+        <a style="color:black" class=" carousel-control-next" href="#feedCarousel" role="button" data-slide="next">
+          <span id="right" class="carousel-control-next">
+            <i class="fas fa-caret-right"></i>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<section class="conatct">
+  <div class="newsletter">
+    <div class="newsletter_left">
+      <h2>Commencez à nos suivre</h2>
+      <p>Inscrivez-vous à notre newsletter</p>
+    </div>
+    <div class="newsletter_right">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Insérez votre adresse mail" aria-describedby="subscribe">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" id="subscribe">S'abonner</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="contact_info">
+    <div class="contact_map" *ngIf="!isMobile">
+      <a target="_blank"
+        href="https://www.google.com/maps/place/L'Universit%C3%A9+franco-tunisienne+pour+l'Afrique+et+la+M%C3%A9diterran%C3%A9e+(UFTAM)/@36.7208792,10.2353453,15z/data=!4m2!3m1!1s0x0:0x217e55ddb0636451?sa=X&ved=2ahUKEwjK35qcosXpAhUnxoUKHfFRCd8Q_BIwFnoECAsQCA"><img
+          src="../../assets/img/location.png" alt=" map"></a>
+    </div>
+    <div class="contact_details">
+      <div class="contact_email">
+        <h4>Email</h4>
+        <p>contact@uftam.net</p>
+      </div>
+      <div class="phone">
+        <h4>Appelez-nous</h4>
+        <p>71 100 100 / 71 666 666</p>
+      </div>
+      <div class="contact_address">
+        <h4>Adresse</h4>
+        <p>UFTAM(prés de Marché de Gros, Bir El <br> Kasaa) El Mourouj 2074, TUNISIE</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer_top">
+    <div class="container">
+      <ul>
+        <li><a [routerLink]='["", "uftam_about" ]'>A propos de l'Uftam</a></li>
+        <li><a [routerLink]='["", "uftam_admission" ]'>Admission</a></li>
+        <li><a [routerLink]='["", "uftam_contact" ]'>Contactez-nous</a></li>
+        <li>
+          <a target="_blank" href="https://www.facebook.com/UFTAMUniversite/">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer_bottom">
+    <div class="footer_bootom_left">
+      <p> Tous les droits sont reservés pour UFTAM</p>
+    </div>
+    <div class="footer_bootom_right">
+      <p> Powred by Digilinks</p>
+    </div>
+  </div>
+</footer>

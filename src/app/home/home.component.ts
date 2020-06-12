@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewEncapsulation } from '@angular/core';
 import * as $ from "jquery";
+import Swal from 'sweetalert2';
 import { FormationService } from '../services/dashboard/formation.service';
 import { Formation } from '../classes/formation';
 import { PartnerService } from '../services/dashboard/partner.service';
@@ -8,11 +9,15 @@ import { StudentExpService } from '../services/dashboard/student-exp.service';
 import { LaVieService } from '../services/dashboard/la-vie.service';
 import { environment } from 'src/environments/environment';
 import { AppComponent } from '../app.component';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { SiteService } from '../services/site/site.service';
+import { FormControl, FormGroup, AbstractControl, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class HomeComponent implements OnInit {
 
@@ -23,7 +28,9 @@ export class HomeComponent implements OnInit {
     private _company: CompanyService,
     private _student: StudentExpService,
     private _laVie: LaVieService,
-    private c_App: AppComponent
+    private c_App: AppComponent,
+    private modalService: BsModalService,
+    private _site: SiteService
   ) { }
 
   isMobile: boolean = false;
@@ -76,7 +83,7 @@ export class HomeComponent implements OnInit {
       i++;
       if (i >= 3)
         i = 0;
-    }, 10000)
+    }, 20000)
 
     this.home_active = true;
     this.apiUrl = environment.apiUrl;
@@ -319,20 +326,23 @@ export class HomeComponent implements OnInit {
         var active = true;
         for (let i = 0; i < data.length; i++) {
           y[j] = this.laVies[i];
-          j++;
-          if (j == 3 || (i + 1) == data.length) {
-            if (active === true) {
-              a[0] = y;
-              y = [];
-              j = 0;
-              active = false;
-            } else {
-              x[k] = y;
-              k++;
-              y = [];
-              j = 0;
+          if (y[j]['status'] == "yes") {
+            j++;
+            if (j == 3 || (i + 1) == data.length) {
+              if (active === true) {
+                a[0] = y;
+                y = [];
+                j = 0;
+                active = false;
+              } else {
+                x[k] = y;
+                k++;
+                y = [];
+                j = 0;
+              }
             }
-          }
+          } else
+            continue;
         }
         this.otherVies = x;
         this.activeVies = a[0];
@@ -351,6 +361,22 @@ export class HomeComponent implements OnInit {
       this.isMobile = false
   }
 
+  modalRef: BsModalRef;
+  documents: Formation[];
+  openModalWithClass(template: TemplateRef<any>) {
+    this._formation.getAllDocuments().subscribe(
+      data => {
+        this.documents = data;
+      }
+    )
+    this.modalRef = this.modalService.show(
+      template,
+      Object.assign({}, { class: 'gray modal-lg' })
+    );
+  }
+
+
+
   value = ['down', 'right', 'right', 'right', 'right'];
   isExpand = [true, false, false, false, false];
   expandStudentInfo(event, i) {
@@ -361,25 +387,44 @@ export class HomeComponent implements OnInit {
         this.value[j] = "right";
         this.isExpand[j] = false;
       }
-      // $('.student_right').css("margin-top", "1%")
       this.value[index] = "down";
       this.isExpand[index] = true;
     } else {
-      // $('.student_right').css("margin-top", "7%")
       this.value[index] = "right";
       this.isExpand[index] = false;
     }
   }
 
-  videoReveal(e) {
-    e.preventDefault();
-    var video = $('.video video');
-    if (!video.attr('controls')) {
-      video.attr({
-        'controls': 'true'
-      })
-      video.trigger('play');
-      $('.video .video_player').remove();
+  userInfo = new FormGroup({
+    userInfoEmail: new FormControl('', [Validators.required])
+  });
+  setNewsletter(event) {
+    event.preventDefault();
+    const email = this.userInfo.value.userInfoEmail;
+    if (email == "") {
+      Swal.fire(
+        'Error!',
+        "SVP! remplizer le formulaire.",
+        'error'
+      )
+    } else {
+      this._site.subscribeToNewsletter(email).subscribe(
+        data => {
+          if (data.success) {
+            Swal.fire(
+              'Terminé!',
+              "thank you for subscribing to our newsletter!",
+              'success'
+            )
+          } else {
+            Swal.fire(
+              'Error!',
+              "SVP! remplizer le formulaire.",
+              'error'
+            )
+          }
+        }
+      )
     }
   }
 

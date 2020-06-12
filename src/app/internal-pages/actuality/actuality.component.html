@@ -1,6 +1,6 @@
 <section class="info" id="actuality">
   <div class="info_wrapper container">
-    <div class="act_block" *ngFor='let eve of activeEvents'>
+    <div class="act_block" *ngFor='let eve of indexedEvents'>
       <div class="act_header">
         <img src="{{apiUrl}}handers/events/uploads/{{eve.path}}" alt="img">
       </div>
@@ -17,11 +17,12 @@
     </div>
   </div>
   <div class="act_load">
-    <button class="btn btn-primary template-btn1-dark block">Voir plus d'acticles</button>
+    <button class="btn btn-primary template-btn1-dark block" (click)="loadArticles($event)">Voir plus
+      d'acticles</button>
   </div>
 </section>
 
-<section class="event" *ngIf="isMobile">
+<section class="event">
   <div class="section_grid">
     <div class="event_left">
       <div class="event_container" *ngFor="let event of firstEvents, let i = index, let c = count">
@@ -56,7 +57,7 @@
       <div class="event_inscription_container">
         <div class="inscription_header">
           <h2>
-            Inscriver-vous <br>
+            Inscrivez-vous <br>
             au prochain <br>
             évènement!
           </h2>
@@ -78,69 +79,6 @@
           </button>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<section id="eventCarousel" class="carousel slide event_slider" data-ride="carousel" *ngIf="!isMobile">
-  <div class="carousel-inner">
-    <div class="carousel-item active first">
-      <div class="e_slider_wrapper">
-        <div class="e_slide container" name="e_slide" *ngFor='let active of activeEvents'>
-          <div class="e_slide_image">
-            <img src="{{apiUrl}}handers/events/uploads/{{active.path}}" alt="">
-          </div>
-          <div class="e_slide_header">
-            <h2 class="font-weight-bold">A la une</h2>
-          </div>
-          <div class="e_slide_body">
-            <h2 class="font-weight-bold">{{active.lib}}</h2>
-            <p>
-              {{active.desc | slice:0:200}}
-            </p>
-          </div>
-          <div class="e_slide_footer">
-            <a [routerLink]="['', 'uftam_article', active.id]">
-              <span>Plus de détails </span>
-              <i class="fas fa-angle-right"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="carousel-item second" *ngFor='let event of otherEvents, let i = index, let c = count'>
-      <div class="e_slider_wrapper">
-        <div class="e_slide container" name="e_slide" *ngFor='let e of event'>
-          <div class="e_slide_image">
-            <img src="{{apiUrl}}handers/events/uploads/{{e.path}}" alt="">
-          </div>
-          <div class="e_slide_body">
-            <h2 class="font-weight-bold">{{e.lib}}</h2>
-            <p [innerHtml]="e.desc | slice:0:250">
-
-            </p>
-          </div>
-          <div class="e_slide_footer">
-            <a [routerLink]="['', 'uftam_article', e.id]">
-              Plus de détails
-              <i class="fas fa-angle-right"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="e_slider_pagination">
-    <div class="e_buttons">
-      <a style="color:black" class="carousel-control-prev" href="#eventCarousel" role="button" data-slide="prev">
-        <span id="left" class="carousel-control-prev template-pagPrev-dark">
-          <i class=" fas fa-caret-left"></i>
-        </span>
-      </a>
-      <a style="color:black" class=" carousel-control-next" href="#eventCarousel" role="button" data-slide="next">
-        <span id="right" class="carousel-control-next template-pagNext-dark">
-          <i class="fas fa-caret-right"></i>
-        </span>
-      </a>
     </div>
   </div>
 </section>
@@ -249,9 +187,9 @@
   <div class="footer_top">
     <div class="container">
       <ul>
-        <li><a routerLink="uftam_about">A propos de l'Uftam</a></li>
-        <li><a routerLink="uftam_admission">Admission</a></li>
-        <li><a routerLink="uftam_contact">Contactez-nous</a></li>
+        <li><a [routerLink]='["", "uftam_about" ]'>A propos de l'Uftam</a></li>
+        <li><a [routerLink]='["", "uftam_admission" ]'>Admission</a></li>
+        <li><a [routerLink]='["", "uftam_contact" ]'>Contactez-nous</a></li>
         <li>
           <a target="_blank" href="https://www.facebook.com/UFTAMUniversite/">
             <i class="fab fa-facebook-f"></i>

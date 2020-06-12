@@ -1,6 +1,16 @@
 @import '../../home/home.component.css';
 @import '../admission/admission.component.css';
 
+.navbar-nav.mr-auto {
+  position: fixed;
+  right: 20%;
+}
+
+.navbar-nav.mr-auto+form {
+  position: fixed;
+  right: 8%;
+}
+
 @media (max-width: 700px) {
   #navbarSupportedContent {
     width: 100%;

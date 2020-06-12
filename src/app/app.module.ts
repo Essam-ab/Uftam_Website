@@ -63,12 +63,21 @@ import { InscriptionComponent } from './internal-pages/inscription/inscription.c
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { UftamEventComponent } from './internal-pages/uftam-event/uftam-event.component';
 import { UftamEventViewComponent } from './internal-pages/uftam-event/uftam-event-view/uftam-event-view.component';
+import { WelcomeComponent } from './internal-pages/welcome/welcome.component';
+import { FondateurComponent } from './internal-pages/fondateur/fondateur.component';
+import { TeamComponent } from './internal-pages/team/team.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { SearchEngineComponent } from './search-engine/search-engine.component';
 
 export const dashboard_url = "dashboard";
 export const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: dashboard_url, component: DashboardHomeComponent },
   { path: 'uftam_about', component: UftamComponent },
+  { path: 'uftam_welcome', component: WelcomeComponent },
+  { path: 'uftam_team', component: TeamComponent },
+  { path: 'uftam_founder', component: FondateurComponent },
+  { path: 'uftam_partners', component: PartnersComponent, data: { animation: 'isRight' } },
   {
     path: 'uftam_formation',
     component: FormationComponent,
@@ -80,7 +89,6 @@ export const routes: Routes = [
   },
   { path: 'uftam_contact', component: ContactComponent },
   { path: 'uftam_vie', component: VieComponent },
-  { path: 'uftam_partners', component: PartnersComponent, data: { animation: 'isRight' } },
   { path: 'uftam_actuality', component: ActualityComponent },
   { path: 'uftam_article', component: ArticleComponent, redirectTo: '', pathMatch: 'full' },
   { path: 'uftam_article/:id', component: ArticleComponent },
@@ -177,7 +185,11 @@ export const routes: Routes = [
     AddEventDetailsComponent,
     InscriptionComponent,
     UftamEventComponent,
-    UftamEventViewComponent
+    UftamEventViewComponent,
+    WelcomeComponent,
+    FondateurComponent,
+    TeamComponent,
+    SearchEngineComponent
   ],
   imports: [
     BrowserModule,
@@ -190,7 +202,8 @@ export const routes: Routes = [
     RouterModule.forRoot(routes),
     BsDatepickerModule.forRoot(),
     AngularEditorModule,
-    NgxIntlTelInputModule
+    NgxIntlTelInputModule,
+    ModalModule.forRoot(),
   ],
   providers: [
     Formation,

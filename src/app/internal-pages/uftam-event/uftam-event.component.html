@@ -1,6 +1,6 @@
 <section class="event_articles">
   <div class="eve_wrapper">
-    <div class="flex_layout" *ngFor="let event of firstEvents">
+    <div class="flex_layout" *ngFor="let event of indexedEvents">
       <div class="image">
         <img src="{{apiUrl}}handers/events/uploads/{{event.path}}" alt="img">
       </div>
@@ -15,7 +15,8 @@
       </div>
     </div>
     <div class="act_load">
-      <button class="btn btn-primary template-btn1-dark block">Voir plus d'acticles</button>
+      <button class="btn btn-primary template-btn1-dark block" (click)="loadEvents($event)">Voir plus
+        d'acticles</button>
     </div>
   </div>
 </section>

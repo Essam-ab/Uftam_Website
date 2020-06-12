@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 10, 2020 at 08:50 PM
+-- Generation Time: Jun 12, 2020 at 09:16 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.3
 
@@ -125,13 +125,12 @@ CREATE TABLE `t_event` (
 
 INSERT INTO `t_event` (`eve_id`, `eve_img`, `eve_lib`, `eve_description`, `eve_date`, `tte_id`, `eve_details`, `eve_active`) VALUES
 (5, 'event1.png', 'Bourses dâ€™excellence', ' Pour le dÃ©marrage de lâ€™UFTAM, Lâ€™Institut FranÃ§ais de Tunisie et le ministÃ¨re de lâ€™enseignement supÃ©rieur tunisien ont attribuÃ© 12 bourses aux Ã©tudiants tunisiens les plus mÃ©ritants. La sÃ©lection des Ã©tudiants boursiers sâ€™est basÃ©e sur lâ€™excellence acadÃ©mique, le lieu de rÃ©sidence ainsi que sur la situation familiale et financiÃ¨re.  Les 12 Ã©tudiants sÃ©lectionnÃ©s ont donc pu profiter de lâ€™exonÃ©ration totale de leur frais de scolaritÃ©.', '2020-05-01', 3, '<div><b>s:qdkfj mqls</b></div>', 'yes'),
-(7, 'event1.png', 'Les Vendredis de l\'Orientation Ã  l\'Uftam : JournÃ©e Virtuelle', 'Vous n\'avez pas pu assister Ã  la journÃ©e de l\'orientation Ã  l\'UFTAM le vendredi 22 mai!? Nous vous donnons un deuxiÃ¨me rendez-vous en ligne â€¦', '2020-05-29', 1, NULL, 'yes'),
+(7, 'event1.png', 'Les Vendredis de l\'Orientation Ã  l\'Uftam : JournÃ©e Virtuelle', 'Vous n\'avez pas pu assister Ã  la journÃ©e de l\'orientation Ã  l\'UFTAM le vendredi 22 mai!? Nous vous donnons un deuxiÃ¨me rendez-vous en ligne â€¦', '2020-05-29', 1, NULL, 'no'),
 (10, 'event2.png', 'Sortie dâ€™Ã©tudes pour nos Ã©tudiants en master gestion de lâ€™eau Ã  Oued Meliane', 'Les Ã©tudiants de la premiÃ¨re annÃ©e master Gestion de lâ€™environnement et mÃ©tiers de lâ€™eau, accompagnÃ©s de leur enseignant Pascal Wong, ont eu la chance de partir en visite Ã  lâ€™Institut SupÃ©rieur des Sciences et Technologies de lâ€™Environnement situÃ© Ã  Borj Cedria.', '2020-05-27', 3, '<div><div>Lorem&#160;ipsum,&#160;dolor&#160;sit&#160;amet&#160;consectetur&#160;adipisicing&#160;elit.&#160;Mollitia&#160;ducimus&#160;blanditiis&#160;unde&#160;doloremque&#160;modi&#160;accusantium</div><div>omnis?&#160;Non&#160;consequuntur&#160;rerum&#160;asperiores&#160;alias,&#160;beatae,&#160;praesentium&#160;iusto&#160;dolore&#160;hic&#160;maiores&#160;ipsa&#160;fugiat&#160;voluptatum!</div></div>', 'yes'),
 (16, 'event3.png', 'JournÃ©e Portes Ouvertes Virtuelle', 'Au cours de cette journÃ©e, vous pourrez assister Ã  des confÃ©rences, posez vos questions Ã  lâ€™Ã©quipe pÃ©dagogique, tÃ©lÃ©charger nos brochuresâ€¦', '2020-04-18', 1, NULL, 'yes'),
 (17, 'event2.png', 'Lancement officiel de lâ€™UFTAM', 'Une confÃ©rence sur le thÃ¨me Â« Quels mÃ©tiers nÃ©cessaires pour lâ€™Afrique de demain ? Â» a Ã©tÃ© organisÃ©e avec lâ€™intervention introductive de Aziz Mebarek, co-fondateur, directeur gÃ©nÃ©ral Tuninvest, AfricInvest, et avec la participation de Youssef Fennira, directeur gÃ©nÃ©ral de lâ€™ANETI, Emna Khrouf, prÃ©sidente de lâ€™Atuge Atuge, Badreddine Ouali, PDG de Vermeg, Fethi Sellaouti,â€¦', '2020-05-15', 3, NULL, 'yes'),
 (27, 'event2.png', 'Tunisie : premiÃ¨re promotion du master en Ã©tudes du dÃ©veloppement de lâ€™UFTAM', 'Lâ€™universitÃ© Paris 1 PanthÃ©on-Sorbonne est lâ€™une des universitÃ©s fondatrices de lâ€™UniversitÃ© Franco-Tunisienne pour lâ€™Afrique et la MÃ©diterranÃ©e (UFTAM), qui se donne comme objectif principal dâ€™offrir aux jeunes Tunisiens, et plus gÃ©nÃ©ralement aux jeunes Africains, des parcours dÃ©bouchant sur lâ€™employabilitÃ© immÃ©diate des Ã©tudiants diplÃ´mÃ©s.', '2020-05-31', 3, NULL, 'yes'),
 (28, '', 'Foire Study in Europe', 'OrganisÃ©e par lâ€™Union EuropÃ©enne, cette foire a visÃ© la promotion les Ã©tudes en Europe pour les Ã©tudiants Tunisiens (accords avec les UniversitÃ©s europÃ©ennes, diffÃ©rents programmes et bourses pour les Tunisiens).', '2019-11-28', 3, '<div> &#10;<p class=\"MsoNormal\"><span>Lieu&#160;: </span><span>Cit&#233; de la culture </span></p>&#10;&#10;<p class=\"MsoNormal\"><span>Autres&#10;participants&#160;: </span><span>Erasmus +, Ambassade du Su&#232;de, SEPIE Espagne, ambassade de&#10;Finlande, Institut Stralang France, ambassade de la r&#233;publique de Malte, ISAG&#10;European Business School, Portugal, Universit&#233; de Cracovie Roumanie, Institut&#10;Fran&#231;ais de Tunisie, British Council Tunisie, Wallonie Bruxelles Campus, DAAD&#10;Tunisie&#8230;&#160;</span></p>&#10;</div>&#10;', 'yes'),
-(29, 'salon_virtuel.png', 'Salon Virtuel de  Campus France SÃ©nÃ©gal ', '1 er salon virtuel des Ã©tudes en  France ! Salon 100% Virtuel ! <br> Les 4 et 5 juin 2020 : Un lieu de rencontres et dâ€™Ã©changesâ€¼ï¸ <br> Profitez de confÃ©rences, de discussion, de halls en ligne. Le salon reproduira en ligne lâ€™ambiance et lâ€™environnement dâ€™un salon traditionnel dans un confort de visites en ligne avec lâ€™interactivitÃ© en plus.', '2020-06-20', 1, NULL, 'yes'),
 (30, 'Campus France Tunisie.jpg', 'JournÃ©e Campus France Tunisie ', 'Pour le lancement de sa nouvelle campagne de candidature 2019-2020, Campus France Tunisie  a organisÃ© Â«Les journÃ©es Campus France Â» avec une tournÃ©e dans 06 villes tunisiennes qui a dÃ©butÃ© Ã  lâ€™Institut FranÃ§ais de Tunis le samedi 07 dÃ©cembre. ', '2019-12-07', 3, '<div> &#10;<p class=\"MsoNormal\"><span>Au programme&#10;: </span></p>&#10;&#10;<p class=\"MsoNormal\"><span>- Pr&#233;sentation de la proc&#233;dure&#10;de candidature pour &#233;tudier en France <br>&#10;- Pr&#233;sentation &#34;Cr&#233;ation du dossier de candidature Campus France&#34;<br>&#10;- Pr&#233;sentation &#34;Comment pr&#233;parer et r&#233;ussir son entretien de&#10;motivation&#34;<br>&#10;- Pr&#233;sentation &#34;R&#233;daction d&#8217;un CV et d&#8217;une lettre de motivation&#34;&#160;</span></p><p class=\"MsoNormal\"><span><br></span></p><p class=\"MsoNormal\"><span>Lieu&#160;: </span><span>Institut Fran&#231;ais de&#10;Tunisie </span></p><p class=\"MsoNormal\">&#10;&#10;</p><p class=\"MsoNormal\"><span>Autres&#10;participants&#160;: </span><span>Centre de langue de l&#8217;Institut Fran&#231;ais et Campus France&#160;</span></p>&#10;</div>&#10;', 'yes'),
 (31, 'Salon.jpg', NULL, NULL, NULL, NULL, NULL, 'yes'),
 (32, 'Salon.jpg', 'Salon des Ã©tudes en France ', 'Le salon des Ã©tudes en France est une opportunitÃ© dâ€™avoir toutes les informations nÃ©cessaires pour rÃ©pondre facilement aux questions posÃ©es par les Ã©tudiants sur le choix dâ€™une licence, BTS, bachelor, Ã©cole dâ€™ingÃ©nieur ou de commerce. En dÃ©couvrant les diffÃ©rents Ã©tablissements de la France et en comparant leurs programmes, les Ã©tudiants auront toutes les clÃ©s en main pour dÃ©cider sereinement de leur avenir', '2020-01-31', 3, '&#10;<p class=\"MsoNormal\"><span>Lieu&#160;: </span><span>L&#8217;UTICA</span></p>&#10;&#10;<p class=\"MsoNormal\"><span>Autres&#10;participants&#160;: </span><span>Universit&#233; internationale de Casablanca, l\'&#233;cole EDHEC, l\'&#233;cole&#10;KEDGE, ECAM Lyon, Glion, PSB Paris School of Business, ELITECH &#233;cole des &#233;lites&#10;en commerce et informatique, L\'EDHEC France, les &#233;coles du P&#244;le L&#233;onard de&#10;Vinci, Efrei Paris, Autograf, Essca school of management, L&#8217;ESM-A management&#10;school, 3iL, Studely, L&#8217;&#201;cole Sup&#233;rieure de Commerce de La Rochelle, KEDGE&#10;Business School, L&#8217;Universit&#233; Priv&#233;e de Marrakech, Pr&#233;pa La r&#233;sidence, SKEMA&#10;Business School&#8230;</span></p>&#10;', 'yes'),
@@ -139,7 +138,8 @@ INSERT INTO `t_event` (`eve_id`, `eve_img`, `eve_lib`, `eve_description`, `eve_d
 (34, 'Khotwa.jpg', 'Khotwa, le salon de lâ€™Ã©tudiant et des nouvelles perspectives', 'Ce grand Ã©vÃ©nement est un vaste espace dâ€™Ã©change sur les choix dâ€™Ã©tudes, les formations et les opportunitÃ©s Ã  saisir pour bÃ¢tir un avenir prometteur pour toute la jeunesse algÃ©rienne. Les dizaines de milliers de jeunes visiteurs ont ainsi Ã©tÃ© orientÃ©s de faÃ§on efficace, grÃ¢ce Ã  la prÃ©sence des professionnels de la formation, des acteurs de lâ€™enseignement supÃ©rieur et de la formation professionnelle, les organismes de soutien Ã  lâ€™entrepreneuriat et les recruteurs ont apportÃ© un Ã©clairage pertinent aux visiteurs sur leurs plans de carriÃ¨re et leurs projets futurs.', '2020-02-16', 3, '&#10;<p class=\"MsoNormal\"><span>Dates&#160;: </span><span>Les 15 et 16 F&#233;vrier 2020 &#224; Alger </span></p>&#10;&#10;<p class=\"MsoNormal\"><span>Lieu&#160;: </span><span>Palais de la culture Moufdi Zakaria &#224; Alger </span></p>&#10;&#10;<p class=\"MsoNormal\"><span>Autres participants&#160;: </span><span>EduCanda,&#10;Cesi Alg&#233;rie Formation et conseil, Education USA, ESHRA, Coll&#232;ge Canada,&#10;Sky&#160;Training aviation, France International Graduate Schools, Ecole&#10;Sup&#233;rieure Alg&#233;rienne des Affaires, AIESEC, eftg Business School, IMAA,&#10;Iracademy, Wise master, NAS, ALMAS, Education First, Royal School, Ecole&#10;Nationale Sup&#233;rieure de Management, DSIA, Campus Start @Innov Alg&#233;rie, IFEG,&#10;Ecole DHEB param&#233;dicale, Algerian Learning Centers, RACUS, Al-ILM, In-tuition ,&#10;ANSEJ, IMS, Agence Nationale de l&#8217;Emploi et&#160;&#10;Yassir.&#160;</span></p>&#10;', 'yes'),
 (35, 'Forum International des Realites.jpg', 'Forum International des RÃ©alitÃ©s : SantÃ© numÃ©rique ', 'Ce workshop sâ€™est tenu en marge du 5Ã©me forum international de la santÃ© numÃ©rique de rÃ©alitÃ©s. Cet atelier a cherchÃ© Ã  comprendre le processus de digitalisation du secteur de la santÃ© et des impacts de celui-ci sur lâ€™efficacitÃ© des soins, les couts de prise en charge et lâ€™efficience des opÃ©rateurs de la santÃ© en gÃ©nÃ©ral. Les objectifs de ce forum Ã©taient dâ€™identifier les premiÃ¨res Ã©valuations rÃ©alisÃ©es et Ã©valuer les retours dâ€™expertise par les Ã©conomistes, les gestionnaires et les autres disciplines scientifiques. ', '2020-02-29', 3, '&#10;<p class=\"MsoNormal\"><span>Dates&#160;: </span><span>Les 27,28 et 29 F&#233;vrier 2020 </span></p>&#10;&#10;<p class=\"MsoNormal\"><span>Lieu&#160;: </span><span>&#160;Alhambra Thalasso &#224;&#10;Hammamet</span></p>&#10;&#10;<p class=\"MsoNormal\"><span>Autres participants&#160;: </span><span>STB,&#10;Universit&#233; Centrale, Centre Informatique du Minist&#232;re de la Sant&#233;, Tunisie&#10;Telecom, Sanofi, Laboratoires Saiph, Industrie Pharmaceutique Said, Taha&#10;Pharma,&#160;</span></p>&#10;', 'yes'),
 (36, 'Salon virtuel.jpg', 'Salon virtuel de lâ€™orientation et des Ã©tudes Ã  lâ€™Ã©tranger ', 'Lâ€™UFTAM a eu un stand virtuel dans Ce salon 100% en ligne qui a compris plusieurs espaces: <br> -Espace Orientation et Formation: <br> Dans cet espace le visiteur a eu lâ€™occasion dâ€™entrer en contact avec lâ€™exposant via un outil de chat en ligne pour lui poser toutes ses questions , consulter ses brochures, regarder ses vidÃ©os et lui envoyer un Email. <br> -Espace ConfÃ©rence: <br> Cette espace a permis dâ€™animer des confÃ©rences live avec interaction avec les visiteurs -Espace Coaching: <br> Il sâ€™agissait dâ€™un espace rÃ©servÃ© au conseillers dâ€™orientation pour donner tous les dÃ©tails qui concernent les dÃ©marches Ã  suivre pour choisir la bonne formation et rÃ©ussir son orientation.', '2020-03-28', 3, '&#10;<p class=\"MsoNormal\"><span>2 conf&#233;rences anim&#233;es par monsieur Adel Ben Youssef ont&#10;&#233;t&#233; pr&#233;sent&#233;es au cours de ce salon;&#160;</span></p>&#10;', 'yes'),
-(37, 'Journee portes ouvertes virtuelle.png', 'JournÃ©e portes ouvertes virtuelle ', 'Cette journÃ©e a Ã©tÃ© une occasion pour les participants de dÃ©couvrir les filiÃ¨res de lâ€™UFTAM Ã  travers des visioconfÃ©rences animÃ©es par les enseignants chercheurs de lâ€™UFTAM ainsi que de poser toutes leurs questions Ã  lâ€™Ã©quipe pÃ©dagogique. ', '2020-04-18', 3, '&#10;<p class=\"MsoNormal\"><span>Lieu&#160;: </span><span>&#160;En ligne&#160;</span></p>&#10;', 'yes');
+(37, 'Journee portes ouvertes virtuelle.png', 'JournÃ©e portes ouvertes virtuelle ', 'Cette journÃ©e a Ã©tÃ© une occasion pour les participants de dÃ©couvrir les filiÃ¨res de lâ€™UFTAM Ã  travers des visioconfÃ©rences animÃ©es par les enseignants chercheurs de lâ€™UFTAM ainsi que de poser toutes leurs questions Ã  lâ€™Ã©quipe pÃ©dagogique. ', '2020-04-18', 3, '&#10;<p class=\"MsoNormal\"><span>Lieu&#160;: </span><span>&#160;En ligne&#160;</span></p>&#10;', 'yes'),
+(39, 'salon_virtuel.png', 'Salon Virtuel de  Campus France SÃ©nÃ©gal ', '1 er salon virtuel des Ã©tudes en  France ! Salon 100% Virtuel ! <br> Les 4 et 5 juin 2020 : Un lieu de rencontres et dâ€™Ã©changesâ€¼ï¸ <br> Profitez de confÃ©rences, de discussion, de halls en ligne. Le salon reproduira en ligne lâ€™ambiance et lâ€™environnement dâ€™un salon traditionnel dans un confort de visites en ligne avec lâ€™interactivitÃ© en plus.', '2020-06-20', 1, NULL, 'yes');
 
 -- --------------------------------------------------------
 
@@ -202,11 +202,23 @@ CREATE TABLE `t_la_vie` (
 
 INSERT INTO `t_la_vie` (`tlv_id`, `tlv_active`, `tlv_lib`, `tlv_description`, `tlv_img`) VALUES
 (19, 'yes', 'Talel SAHMIM', 'J\'ai dÃ©couvert l\'UFTAM Ã  l\'occasion de la lecture d\'un article de presse portant sur son inauguration et cela m\'a amenÃ© Ã  m\'informer sur les formations proposÃ©es...(2Ã©me annÃ©e master expertise Ã©conomique des politiques et projets de dÃ©veloppement)', 'first.png'),
-(20, 'yes', 'Parfait BEUGRE', 'L\'UFTAM offre une pÃ©dagogie originale, centrÃ©e sur le transfert dâ€™expÃ©rience dans lâ€™action, pluridisciplinaire, tournÃ©e vers l\'international pour faire Ã©merger les grands entrepreneurs et les grands projets de demain. (2Ã©me annÃ©e master expertise Ã©conomique des politiques et projets de dÃ©veloppement)', 'second.png'),
+(20, 'no', 'Parfait BEUGRE', 'L\'UFTAM offre une pÃ©dagogie originale, centrÃ©e sur le transfert dâ€™expÃ©rience dans lâ€™action, pluridisciplinaire, tournÃ©e vers l\'international pour faire Ã©merger les grands entrepreneurs et les grands projets de demain. (2Ã©me annÃ©e master expertise Ã©conomique des politiques et projets de dÃ©veloppement)', 'second.png'),
 (21, 'yes', 'Mehdi EL BATTI', 'J\'ai dÃ©couvert l\'UFTAM Ã  l\'occasion de la lecture d\'un article de presse portant sur son inauguration et cela m\'a amenÃ© Ã  m\'informer sur les formations proposÃ©s. J\'ai ainsi dÃ©couvert le mastÃ¨re expertise Ã©conomique qui m\'a attirÃ© Ã©tant...', 'third.png'),
-(22, 'yes', 'Parfait BEUGRE', 'Seule lâ€™UFTAM proposait une telle formation, jâ€™ai donc dÃ©cidÃ© de relever le dÃ©fi ! Â« Ã€ l\'instar des autres UniversitÃ©s prÃ©sentent en Tunisie, lâ€™UFTAM propose des formations de trÃ¨s haut niveau, voire dâ€™un niveau (2Ã©me annÃ©e master expertise Ã©conomique des politiques et projets de dÃ©veloppement)...', 'fourth.png'),
+(22, 'no', 'Parfait BEUGRE', 'Seule lâ€™UFTAM proposait une telle formation, jâ€™ai donc dÃ©cidÃ© de relever le dÃ©fi ! Â« Ã€ l\'instar des autres UniversitÃ©s prÃ©sentent en Tunisie, lâ€™UFTAM propose des formations de trÃ¨s haut niveau, voire dâ€™un niveau (2Ã©me annÃ©e master expertise Ã©conomique des politiques et projets de dÃ©veloppement)...', 'fourth.png'),
 (23, 'yes', 'Wadii JELASSI', 'J\'aime cette petite institution hors du commun, car ses cours en bloc, ses mÃ©thodes et ses stratÃ©gies pÃ©dagogiques ont Ã©tÃ© pour moi une expÃ©rience fantastique dans mon cursus universitaire...(2Ã©me annÃ©e master expertise Ã©conomique des politiques et projets de dÃ©veloppement)', 'fifth.png'),
 (24, 'yes', ' Maria Gravari Barbas', 'Madame Maria Gravari Barbas, enseignante Ã  Paris 1 PanthÃ©on Sorbonne de son expÃ©rience Ã  l\'UFTAM: \"Ma mission dans le cadre de lâ€™UFTAM (UniversitÃ© Franco-Tunisienne pour lâ€™Afrique et la MÃ©diterranÃ©e) vient de se terminer. Jâ€™ai eu le plaisir de travailler pendant 4 jours avec 16 Ã©tudiants trÃ¨s engagÃ©s qui suivent le diplÃ´me M2 Expertise Ã©conomique des politiques et projets de dÃ©veloppement co-habilitÃ© entre Paris 1 PanthÃ©on-Sorbonne et lâ€™UniversitÃ© de Tunis.\r\n', 'sixth.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `t_newsletter`
+--
+
+CREATE TABLE `t_newsletter` (
+  `new_id` int(11) NOT NULL,
+  `new_email` varchar(50) NOT NULL,
+  `new_submit_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -248,7 +260,8 @@ INSERT INTO `t_partner` (`par_id`, `par_lib`, `par_logo`, `par_ing_subpage`, `pa
 (66, 'ambassade fr', 'ambassade fr.png', 'no', 'yes'),
 (67, 'ift', 'ift.png', 'no', 'yes'),
 (68, 'ird', 'ird.png', 'no', 'yes'),
-(69, 'republique tun', 'republique tun.png', 'no', 'yes');
+(69, 'republique tun', 'republique tun.png', 'no', 'yes'),
+(70, 'zzqsdf', 'allef-vinicius-fJTqyZMOh18-unsplash.jpg', 'no', 'yes');
 
 -- --------------------------------------------------------
 
@@ -271,8 +284,7 @@ INSERT INTO `t_student_exp` (`tse_id`, `tse_active`, `tse_lib`, `tse_description
 (6, 'yes', 'AccessibilitÃ© du campus et transport en commun', 'Les Frais dâ€™abonnement aux transports en commun (bus, mÃ©tro et train) sont variables  en fonction du trajet et du moyen de transport concernÃ© (bus ; mÃ©tro et train) : de 12dt Ã  130dt annuels.'),
 (11, 'yes', 'Bourses dâ€™Ã©tudes', 'Les bourses dâ€™Ã©tude du MinistÃ¨re de lâ€™Enseignement SupÃ©rieur Tunisien sont offertes aux Ã©tudiants tunisiens sÃ©lectionnÃ©s Ã  lâ€™une des formations de lâ€™UFTAM. Un dossier sera Ã  constituer Ã  la rentrÃ©e en parallÃ¨le du dossier dâ€™inscription.'),
 (12, 'yes', 'La restauration universitaire', 'Les Ã©tudiants de UFTAM sont accueillis au restaurant universitaire du Campus au sein des locaux et qui est sous la tutelle de l\'Office des Å’uvres Universitaires pour le Nord ils peuvent prendre leur dÃ®ner Ã  la CitÃ© Universitaire Morouj et Montfleuri.'),
-(13, 'yes', 'Le logement universitaire', 'Les Ã©tudiants de lâ€™UFTAM disposent dâ€™un accÃ¨s rÃ©servÃ© aux logements des citÃ©s universitaires de Mourouj pour les filles et pour les garÃ§ons Montfleuri.'),
-(14, 'yes', 'La santÃ© Assistance psychologique et mÃ©dicale', 'La prÃ©sence pÃ©riodique d\'un psychologue et d\'un mÃ©decin sur le site est assurÃ©e pour les Ã©tudiants de lâ€™UFTAM.');
+(13, 'yes', 'Le logement universitaire', 'Les Ã©tudiants de lâ€™UFTAM disposent dâ€™un accÃ¨s rÃ©servÃ© aux logements des citÃ©s universitaires de Mourouj pour les filles et pour les garÃ§ons Montfleuri.');
 
 -- --------------------------------------------------------
 
@@ -295,7 +307,8 @@ INSERT INTO `t_trust_campany` (`ttc_id`, `ttc_active`, `ttc_lib`, `ttc_logo`) VA
 (9, 'yes', 'logo bh', 'logo bh.png'),
 (10, 'yes', 'logo-internieur', 'logo-internieur.png'),
 (11, 'yes', 'rtci logo', 'rtci logo.png'),
-(12, 'yes', 'tv5 mondelogo', 'tv5 mondelogo.png');
+(12, 'yes', 'tv5 mondelogo', 'tv5 mondelogo.png'),
+(13, 'yes', 'PNUD', 'PNUD_Logo-Bleu-Tagline_Noir FRENCH.png');
 
 -- --------------------------------------------------------
 
@@ -379,6 +392,12 @@ ALTER TABLE `t_la_vie`
   ADD PRIMARY KEY (`tlv_id`);
 
 --
+-- Indexes for table `t_newsletter`
+--
+ALTER TABLE `t_newsletter`
+  ADD PRIMARY KEY (`new_id`);
+
+--
 -- Indexes for table `t_partner`
 --
 ALTER TABLE `t_partner`
@@ -428,7 +447,7 @@ ALTER TABLE `t_diplome`
 -- AUTO_INCREMENT for table `t_event`
 --
 ALTER TABLE `t_event`
-  MODIFY `eve_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `eve_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `t_formation`
@@ -443,10 +462,16 @@ ALTER TABLE `t_la_vie`
   MODIFY `tlv_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
+-- AUTO_INCREMENT for table `t_newsletter`
+--
+ALTER TABLE `t_newsletter`
+  MODIFY `new_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT for table `t_partner`
 --
 ALTER TABLE `t_partner`
-  MODIFY `par_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `par_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 
 --
 -- AUTO_INCREMENT for table `t_student_exp`
@@ -458,7 +483,7 @@ ALTER TABLE `t_student_exp`
 -- AUTO_INCREMENT for table `t_trust_campany`
 --
 ALTER TABLE `t_trust_campany`
-  MODIFY `ttc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `ttc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `t_type_event`

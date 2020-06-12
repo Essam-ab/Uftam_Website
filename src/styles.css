@@ -32,6 +32,31 @@
   ;
 }
 
+
+/* global */
+#student_link {
+  color: #fff;
+}
+
+.modal-open .modal {
+  z-index: 684166516 !important;
+}
+
+.navbar {
+  box-shadow: none !important;
+}
+
+alertBorder {
+  border: 5px solid red !important;
+}
+
+button,
+a {
+  border-radius: 0px !important;
+}
+
+/* end global */
+
 /* angular class */
 .angular-editor-button,
 .ae-picker-label,
@@ -110,6 +135,7 @@ button:hover {
 
 #navbarSupportedContent {
   justify-content: flex-end;
+  width: 100% !important;
 }
 
 .mr-auto,
@@ -162,7 +188,7 @@ button:hover {
 .nav-item:nth-child(2):hover div.underline,
 .nav-item.active:nth-child(2) div.underline {
   bottom: 0;
-  right: 10px;
+  right: 20px !important;
 }
 
 .nav-item:nth-child(3):hover div.underline,
@@ -186,19 +212,29 @@ button:hover {
 .nav-item:nth-child(6):hover div.underline,
 .nav-item.active:nth-child(6) div.underline {
   bottom: 0;
-  right: 32px;
+  right: 18px !important;
 }
 
 .nav-item:nth-child(7):hover div.underline,
 .nav-item.active:nth-child(7) div.underline {
   bottom: 0;
-  right: 18px;
+  right: 30px !important;
 }
 
 .nav-item:nth-child(8):hover div.underline,
 .nav-item.active:nth-child(8) div.underline {
   bottom: 0;
+  right: 30px !important;
+}
+
+.nav-item:nth-child(9):hover div.underline,
+.nav-item.active:nth-child(9) div.underline {
+  bottom: 0;
   right: 18px;
+}
+
+.nav-link {
+  cursor: pointer !important;
 }
 
 .nav-item.active div.underline {
@@ -270,7 +306,6 @@ button.block {
   background: var(--primary-color) !important;
   color: #fff !important;
   padding: 12px !important;
-  border-radius: 15px !important;
   font-size: small !important;
   padding: 15px 25px !important;
   transition: all .2s cubic-bezier(0.77, 0, 0.175, 1);
@@ -432,4 +467,163 @@ thead tr:hover {
   height: 50vh;
   overflow-y: scroll;
   padding-right: 20px;
+}
+
+
+/* loader */
+#loader {
+  bottom: 0;
+  height: 175px;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  transform: translateY(150%);
+  width: 175px;
+}
+
+#loader {
+  bottom: 0;
+  height: 175px;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 175px;
+}
+
+#loader .dot {
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 87.5px;
+}
+
+#loader .dot::before {
+  border-radius: 100%;
+  content: "";
+  height: 87.5px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: scale(0);
+  width: 87.5px;
+}
+
+#loader .dot:nth-child(7n+1) {
+  transform: rotate(45deg);
+}
+
+#loader .dot:nth-child(7n+1)::before {
+  animation: 0.8s linear 0.1s normal none infinite running load;
+  background: #00ff80 none repeat scroll 0 0;
+}
+
+#loader .dot:nth-child(7n+2) {
+  transform: rotate(90deg);
+}
+
+#loader .dot:nth-child(7n+2)::before {
+  animation: 0.8s linear 0.2s normal none infinite running load;
+  background: #00ffea none repeat scroll 0 0;
+}
+
+#loader .dot:nth-child(7n+3) {
+  transform: rotate(135deg);
+}
+
+#loader .dot:nth-child(7n+3)::before {
+  animation: 0.8s linear 0.3s normal none infinite running load;
+  background: #00aaff none repeat scroll 0 0;
+}
+
+#loader .dot:nth-child(7n+4) {
+  transform: rotate(180deg);
+}
+
+#loader .dot:nth-child(7n+4)::before {
+  animation: 0.8s linear 0.4s normal none infinite running load;
+  background: #0040ff none repeat scroll 0 0;
+}
+
+#loader .dot:nth-child(7n+5) {
+  transform: rotate(225deg);
+}
+
+#loader .dot:nth-child(7n+5)::before {
+  animation: 0.8s linear 0.5s normal none infinite running load;
+  background: #2a00ff none repeat scroll 0 0;
+}
+
+#loader .dot:nth-child(7n+6) {
+  transform: rotate(270deg);
+}
+
+#loader .dot:nth-child(7n+6)::before {
+  animation: 0.8s linear 0.6s normal none infinite running load;
+  background: #9500ff none repeat scroll 0 0;
+}
+
+#loader .dot:nth-child(7n+7) {
+  transform: rotate(315deg);
+}
+
+#loader .dot:nth-child(7n+7)::before {
+  animation: 0.8s linear 0.7s normal none infinite running load;
+  background: magenta none repeat scroll 0 0;
+}
+
+#loader .dot:nth-child(7n+8) {
+  transform: rotate(360deg);
+}
+
+#loader .dot:nth-child(7n+8)::before {
+  animation: 0.8s linear 0.8s normal none infinite running load;
+  background: #ff0095 none repeat scroll 0 0;
+}
+
+#loader .loading {
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  bottom: -40px;
+  height: 20px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  width: 180px;
+}
+
+@keyframes load {
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+@keyframes load {
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+.spinner-message {
+  text-align: center;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }

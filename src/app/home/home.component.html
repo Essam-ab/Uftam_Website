@@ -20,17 +20,20 @@
           <img src="../../assets/img/banner_slide_1.png" alt="">
         </div>
         <div class="slider_details">
-          <h1>
+          <h1 class="animate__animated animate__backInLeft animate__delay-1s">
             La sélection pour l'année <br>
             2020-2021 est ouverte
           </h1>
-          <h4>
+          <h4 class="animate__animated animate__backInLeft animate__delay-2s">
             Déposez votre dossier de condidature complet <br>
             avant le 30 Juin 2020
           </h4>
           <div class="buttons">
-            <button class="btn btn-primary mr-3 template-btn1-dark block">Télécharger les brochures</button>
-            <button class="btn btn-primary template-btn1-dark block"
+            <button type="button"
+              class="btn btn-primary mr-3 template-btn1-dark block animate__animated animate__bounce animate__delay-3s"
+              (click)="openModalWithClass(template)">Télécharger les brochures</button>
+            <button
+              class="btn btn-primary template-btn1-dark block  animate__animated animate__bounce animate__delay-3s"
               routerLink="uftam_inscription">Pré-inscription</button>
           </div>
         </div>
@@ -44,7 +47,8 @@
             Bénéficiez de diplômes <br> binationaux reconnus à <br> l'échelle internationale
           </h1>
           <div class="buttons">
-            <button class="btn btn-primary mr-3 template-btn1-dark block">Télécharger les brochures</button>
+            <button type="button" class="btn btn-primary mr-3 template-btn1-dark block"
+              (click)="openModalWithClass(template)">Télécharger les brochures</button>
             <button class="btn btn-primary template-btn1-dark block"
               routerLink="uftam_inscription">Pré-inscription</button>
           </div>
@@ -63,7 +67,10 @@
             Lorem, ipsum dolor.
           </h4>
           <div class="buttons">
-            <button class="btn btn-primary mr-3 template-btn1-dark block">Télécharger les brochures</button>
+            <button type="button" type="button" class="btn btn-primary mr-3 template-btn1-dark block"
+              (click)="openModalWithClass(template)">
+              Télécharger les brochures
+            </button>
             <button class="btn btn-primary template-btn1-dark block"
               routerLink="uftam_inscription">Pré-inscription</button>
           </div>
@@ -76,6 +83,26 @@
       <span data-target="#home" data-slide-to="2" class="target" id="third"></span>
     </div>
   </header>
+
+  <!-- Modal -->
+  <ng-template #template>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">UFTAM</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+
+    <div class="modal-body">
+      <h3 class="text-center">les brochures</h3>
+      <ul>
+        <li *ngFor="let doc of documents">
+          <a target="_blank" href="{{apiUrl}}handers/formations/documents/{{doc.path}}">{{doc.lib}}</a>
+        </li>
+      </ul>
+    </div>
+
+  </ng-template>
 
   <section class="formation" *ngIf="!isMobile">
     <div class="section_grid">
@@ -282,8 +309,7 @@
     <div class="section_grid">
       <div class="f_slider_pagination">
         <h4>
-          Nos Partenaires<br>
-          de Formation
+          Membres Fondateurs
         </h4>
         <div class="f_buttons">
           <a style="color:black" class="carousel-control-prev" href="#partnersCarousel" role="button" data-slide="prev">
@@ -375,49 +401,12 @@
     </div>
   </section>
 
-  <section class="company" *ngIf="!isMobile">
-    <div class="section_grid">
-      <div class="company_picture">
-        <img src="../../assets/img/mo de bienvenu.png" alt="img">
-      </div>
-      <div class="company_details">
-        <div class="company_header">
-          <h4 class="font-weight-bold">
-            L'Université Franco-Tunisienne <br>
-            pour l'Afrique et la Méditerranée (UFTAM) <br>
-          </h4>
-        </div>
-        <div class="company_body">
-          <h4 class="font-weight-bold">
-            Mot de Bienvenue:
-          </h4>
-          <p>
-            L’Université Franco-Tunisienne pour l’Afrique et la Méditerranée (UFTAM) a ouvert ses portes à la rentrée
-            2019
-            pour offrir à des étudiants de l’Afrique Sub-saharienne autant qu’à des étudiants tunisiens, français ou
-            méditerranéens un panel de formations d’excellence co-construites par de très grandes universités publiques
-            françaises et tunisiennes. Annoncée conjointement par la Tunisie et la France lors de la visite officielle
-            du
-            Président Macron à Tunis en janvier 2018, l’UFTAM illustre la volonté des deux pays de constituer en Tunisie
-            un hub régional d’enseignement supérieur, pour former les futures générations d’entrepreneurs et de cadres
-            supérieurs et de salariés dont l’Afrique et l’espace méditerranéen ont besoin.
-          </p>
-        </div>
-        <div class="company_read_more text-center">
-          <button class="btn mt-3 template-btn1-dark block">
-            Plus de détails sur l'UFTAM
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="student">
     <div class="section_grid">
-      <div class="student_left">
-        <h2 class="font-weight-bold">Vie éstudiant</h2>
+      <div class="student_left animate__animated animate__bounceInLeft animate__delay-1s">
+        <h2 class="font-weight-bold"> Vie étudiante</h2>
       </div>
-      <div class="student_right">
+      <div class="student_right animate__animated animate__bounceInRight animate__delay-1s">
         <div class="student_container" *ngFor="let student of students, let i = index, let c = count">
           <div class="student_header" *ngIf="student.status == 'yes'">
             <a class="collapse-1" id="student_link" (click)="expandStudentInfo($event, i)">
@@ -440,14 +429,11 @@
       <div class="doc_header">
         <h2 class="text-center font-weight-bold">Découvrir l'Uftam</h2>
       </div>
-      <div class="doc_body">
+      <div class="doc_body animate__animated animate__fadeIn animate__delay-1s">
         <p class="text-center"></p>
         <div class="video">
-          <iframe id="video_documentation" src="https://www.youtube.com/embed/WrVBUbI9gsU" frameborder="0"
+          <iframe id="video_documentation" src="https://www.youtube.com/embed/5y4aERYBApY" frameborder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <a class="video_player" (click)='videoReveal($event)' href="#">
-            <i class="fas fa-play"></i>
-          </a>
         </div>
       </div>
     </div>
@@ -549,11 +535,11 @@
     </div>
   </section>
 
-  <section class="event" *ngIf="isMobile">
+  <section class="event">
     <div class="section_grid">
       <div class="event_left">
         <div class="event_container" *ngFor="let event of firstEvents, let i = index, let c = count">
-          <div class="event_grid" *ngIf="i < 3">
+          <div class="event_grid animate__animated animate__fadeInUp animate__delay-1s" *ngIf="i < 3">
             <div class="event_date">
               <h4>{{event.day}} <br> <span>{{event.monthName}}</span></h4>
             </div>
@@ -580,11 +566,11 @@
           </button>
         </div> -->
       </div>
-      <div class="event_right">
+      <div class="event_right animate__animated animate__slideInRight">
         <div class="event_inscription_container">
           <div class="inscription_header">
             <h2>
-              Inscriver-vous <br>
+              Inscrivez-vous <br>
               au prochain <br>
               évènement!
             </h2>
@@ -623,9 +609,9 @@
             </div>
             <div class="e_slide_body">
               <h2 class="font-weight-bold">{{active.lib}}</h2>
-              <p>
+              <!-- <p>
                 {{active.desc | slice:0:200}}
-              </p>
+              </p> -->
             </div>
             <div class="e_slide_footer">
               <a [routerLink]="['', 'uftam_article', active.id]">
@@ -643,9 +629,9 @@
             </div>
             <div class="e_slide_body">
               <h2 class="font-weight-bold">{{e.lib}}</h2>
-              <p [innerHtml]="e.desc | slice:0:250">
+              <!-- <p [innerHtml]="e.desc | slice:0:250">
 
-              </p>
+              </p> -->
             </div>
             <div class="e_slide_footer">
               <a [routerLink]="['', 'uftam_article', e.id]">
@@ -738,16 +724,19 @@
   <section class="conatct">
     <div class="newsletter">
       <div class="newsletter_left">
-        <h2>Commencez à nos suivre</h2>
+        <h2>Commencez à nous suivre</h2>
         <p>Inscrivez-vous à notre newsletter</p>
       </div>
       <div class="newsletter_right">
-        <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Insérez votre adresse mail" aria-describedby="subscribe">
+        <form #f="ngForm" [formGroup]="userInfo" (submit)="setNewsletter($event)" class="input-group mb-3">
+          <input type="email" class="form-control" placeholder="Insérez votre adresse mail"
+            formControlName="userInfoEmail" [email]="true" [(ngModel)]="userInfo.email" aria-describedby="subscribe"
+            required>
           <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="button" id="subscribe">S'abonner</button>
+            <button class="btn btn-outline-secondary animate__animated" type="submit" id="subscribe"
+              [disabled]="f.invalid">S'abonner</button>
           </div>
-        </div>
+        </form>
       </div>
     </div>
     <div class="contact_info">
@@ -777,15 +766,18 @@
     <div class="footer_top">
       <div class="container">
         <ul>
-          <li><a routerLink="uftam_about">A propos de l'Uftam</a></li>
-          <li><a routerLink="uftam_admission">Admission</a></li>
-          <li><a routerLink="uftam_contact">Contactez-nous</a></li>
+          <li><a [routerLink]='["", "uftam_about" ]'>A propos de l'Uftam</a></li>
+          <li><a [routerLink]='["", "uftam_admission" ]'>Admission</a></li>
+          <li><a [routerLink]='["", "uftam_contact" ]'>Contactez-nous</a></li>
           <li>
             <a target="_blank" href="https://www.facebook.com/UFTAMUniversite/">
               <i class="fab fa-facebook-f"></i>
             </a>
-            <a href="#">
+            <a href="#" target="_blank">
               <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/universit%C3%A9-uftam-8814541a5/" target="_blank">
+              <i class="fab fa-linkedin-in"></i>
             </a>
           </li>
         </ul>
@@ -800,5 +792,6 @@
       </div>
     </div>
   </footer>
+
 
 </div>

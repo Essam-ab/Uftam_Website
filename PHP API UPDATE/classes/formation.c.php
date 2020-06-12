@@ -7,6 +7,16 @@ class Formation extends database
         //
     }
 
+    public function getAllDocuments()
+    {
+        $query = $this->connect()->prepare(
+            "SELECT for_id, for_lib, for_document
+            FROM t_formation"
+        );
+        $query->execute();
+        return $query;
+    }
+
     public function displayFormationDetails_Master($id)
     {
         $query = $this->connect()->prepare(
@@ -194,8 +204,7 @@ class Formation extends database
     {
         $query = $this->connect()->prepare(
             "SELECT *
-            FROM t_formation join t_type_formation using(ttf_id)
-           LIMIT 20;"
+            FROM t_formation join t_type_formation using(ttf_id)"
         );
         $query->execute();
         return $query;

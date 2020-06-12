@@ -8,6 +8,7 @@ import { StudentExpService } from '../../services/dashboard/student-exp.service'
 import { LaVieService } from '../../services/dashboard/la-vie.service';
 import { environment } from 'src/environments/environment';
 import { AppComponent } from '../../app.component';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-actuality',
@@ -29,10 +30,17 @@ export class ActualityComponent implements OnInit {
   formations: Formation[];
   partners: Formation[];
   companies: Formation[];
+
+  indexedEvents: Formation[];
+  indexedEventsLength: number;
+  limit: number = 4;
+  start: number = 1;
+
   firstEvents: Formation[];
   secondEvents: Formation[];
   activeEvents: Formation[];
   otherEvents: any;
+
   students: Formation[];
   laVies: Formation[];
   activeVies: Formation[];
@@ -45,6 +53,38 @@ export class ActualityComponent implements OnInit {
   master: Formation[];
 
   isMobile: boolean = false;
+
+  loadArticles(event) {
+    const target = event.target;
+    if (this.limit < this.indexedEventsLength) {
+      this.limit += 2;
+      this._formation.displaySecondEvents_indexed(this.start, this.limit).subscribe(
+        (data: Formation[]) => {
+          this.indexedEvents = data;
+        },
+        error => {
+          console.log("error trying to get indexed events");
+        }
+      )
+    } else {
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        onOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+
+      Toast.fire({
+        icon: 'info',
+        title: "Il n'y a plus d'articles"
+      })
+    }
+  }
   ngOnInit() {
     this.c_App.isInternal = true;
     this.apiUrl = environment.apiUrl;
@@ -82,6 +122,15 @@ export class ActualityComponent implements OnInit {
       }
     )
     //events
+    //indexed event
+    this._formation.displaySecondEvents_indexed(this.start, this.limit).subscribe(
+      (data: Formation[]) => {
+        this.indexedEvents = data;
+      },
+      error => {
+        console.log("error trying to get indexed events");
+      }
+    )
     //event 1
     this._formation.displayFirstEvents().subscribe(
       (data: Formation[]) => {
@@ -95,6 +144,7 @@ export class ActualityComponent implements OnInit {
     this._formation.displaySecondEvents().subscribe(
       (data: Formation[]) => {
         this.secondEvents = data;
+        this.indexedEventsLength = data.length;
         var x = [], y = [], a = [];
         var j = 0, k = 0;
         var active = true;

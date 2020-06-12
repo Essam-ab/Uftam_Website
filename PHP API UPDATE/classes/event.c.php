@@ -91,6 +91,21 @@ class Event extends database
         return $query;
     }
 
+    public function displayFirstEvents_indexed($start, $limit)
+    {
+        $query = $this->connect()->prepare(
+            "SELECT *
+            FROM t_event join t_type_event using(tte_id)
+            ORDER BY tte_lib ASC
+            LIMIT :start, :limit;"
+        );
+        $query->bindParam(':start', $start, PDO::PARAM_INT);
+        $query->bindParam(':limit', $limit, PDO::PARAM_INT);
+        $query->execute();
+        return $query;
+    }
+
+
     public function displaySecondEvents()
     {
         $query = $this->connect()->prepare(
@@ -100,6 +115,20 @@ class Event extends database
             ORDER BY eve_date ASC"
         );
         $query->execute(['yes', 'second']);
+        return $query;
+    }
+
+    public function displaySecondEvents_indexed($start, $limit)
+    {
+        $query = $this->connect()->prepare(
+            "SELECT *
+            FROM t_event join t_type_event using(tte_id)
+            ORDER BY tte_lib DESC, eve_date DESC
+            LIMIT :start, :limit;"
+        );
+        $query->bindParam(':start', $start, PDO::PARAM_INT);
+        $query->bindParam(':limit', $limit, PDO::PARAM_INT);
+        $query->execute();
         return $query;
     }
 

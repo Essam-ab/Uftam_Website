@@ -29,9 +29,26 @@
               <div class="underline"></div>
             </a>
           </li>
-          <li class="nav-item " name="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-            <a class="nav-link" routerLink='/uftam_about'>uftam <span class="sr-only">(current)</span></a>
-            <div class="underline"></div>
+          <li class="nav-item">
+            <a class="nav-link  dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <div class="underline"></div>
+              uftam
+            </a>
+            <div class="dropdown-menu" id="" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" [routerLink]="['', 'uftam_welcome']">
+                Mot de bienvenue
+              </a>
+              <a class="dropdown-item" [routerLink]="['', 'uftam_founder']">
+                Membres fondateurs
+              </a>
+              <a class="dropdown-item" [routerLink]="['', 'uftam_team']">
+                Équipe uftam
+              </a>
+              <a class="dropdown-item" [routerLink]="['','uftam_partners']">
+                Partenaires
+              </a>
+            </div>
           </li>
           <li class="nav-item dropdown" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -66,11 +83,6 @@
             </div>
           </li>
           <li class="nav-item " name="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-            <a class=" nav-link" routerLink='/uftam_partners'> Partenaires <div class="underline">
-              </div>
-            </a>
-          </li>
-          <li class="nav-item " name="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
             <a class=" nav-link" routerLink='/uftam_admission'>Admission <div class="underline">
               </div></a>
           </li>
@@ -81,6 +93,9 @@
           <li class="nav-item" name="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
             <a class="nav-link" routerLink='/uftam_actuality'>Actualité <div class="underline">
               </div></a>
+          </li>
+          <li class="nav-item" name="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <a class="nav-link" routerLink='/uftam_inscription'>Inscription <div class="underline"></div></a>
           </li>
           <li class="nav-item" name="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
             <a class="nav-link" routerLink='/uftam_contact'>Contact <div class="underline">

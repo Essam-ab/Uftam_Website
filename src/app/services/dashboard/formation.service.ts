@@ -19,6 +19,12 @@ export class FormationService {
     private http: HttpClient
   ) { }
 
+  getAllDocuments() {
+    return this.http.get<Formation[]>(
+      environment.apiUrl + "handers/formations/getAllDocuments.php"
+    );
+  }
+
   /*================= Formation ================= */
   displayFormationDetails_License(id) {
     return this.http.get<Formation[]>(
@@ -199,9 +205,21 @@ export class FormationService {
     );
   }
 
+  displayFirstEvents_indexed(start, limit) {
+    return this.http.get<Formation[]>(
+      environment.apiUrl + `handers/events/displayFirstEvents_indexed.php?start=${start}&limit=${limit}`
+    );
+  }
+
   displaySecondEvents() {
     return this.http.get<Formation[]>(
       environment.apiUrl + "handers/events/displaySecondEvents.php"
+    );
+  }
+
+  displaySecondEvents_indexed(start, limit) {
+    return this.http.get<Formation[]>(
+      environment.apiUrl + `handers/events/displaySecondEvents_indexed.php?start=${start}&limit=${limit}`
     );
   }
 

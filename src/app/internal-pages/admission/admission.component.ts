@@ -222,7 +222,7 @@ export class AdmissionComponent implements OnInit {
   }
 
   change_choice(e) {
-    for (let i = 1; i < this.display_choices.length + 1; i++) {
+    for (let i = 1; i < this.display_choices.length; i++) {
       document.querySelector('#choise_' + i).classList.remove('active');
       document.querySelector('#display_choice_' + i).classList.add('d-none');
     }

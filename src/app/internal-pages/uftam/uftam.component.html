@@ -57,7 +57,7 @@
   </div>
 </section>
 
-<section class="event" *ngIf="isMobile">
+<section class="event">
   <div class="section_grid">
     <div class="event_left">
       <div class="event_container" *ngFor="let event of firstEvents, let i = index, let c = count">
@@ -92,7 +92,7 @@
       <div class="event_inscription_container">
         <div class="inscription_header">
           <h2>
-            Inscriver-vous <br>
+            Inscrivez-vous <br>
             au prochain <br>
             évènement!
           </h2>
@@ -285,9 +285,9 @@
   <div class="footer_top">
     <div class="container">
       <ul>
-        <li><a routerLink="uftam_about">A propos de l'Uftam</a></li>
-        <li><a routerLink="uftam_admission">Admission</a></li>
-        <li><a routerLink="uftam_contact">Contactez-nous</a></li>
+        <li><a [routerLink]='["", "uftam_about" ]'>A propos de l'Uftam</a></li>
+        <li><a [routerLink]='["", "uftam_admission" ]'>Admission</a></li>
+        <li><a [routerLink]='["", "uftam_contact" ]'>Contactez-nous</a></li>
         <li>
           <a target="_blank" href="https://www.facebook.com/UFTAMUniversite/">
             <i class="fab fa-facebook-f"></i>

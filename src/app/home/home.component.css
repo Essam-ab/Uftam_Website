@@ -322,7 +322,7 @@ header#home {
 /* slider body */
 .f_slide_body p {
   line-height: 16px;
-  font-size: 14px;
+  font-size: 12px;
   color: #949090;
 }
 
@@ -346,7 +346,7 @@ header#home {
 .formation .f_slide_footer h6 {
   color: #000;
   text-decoration: none;
-  font-size: 14px !important;
+  font-size: 12px !important;
   margin-right: 20px !important;
   margin-top: 10px !important;
 }
@@ -366,7 +366,7 @@ header#home {
   border: 2px solid var(--primary-color);
   color: white;
   border-radius: 50px;
-  padding: 12px 13px;
+  padding: 10px 11px;
   /* display: inline-table; */
 }
 
@@ -386,6 +386,7 @@ header#home {
 .partners {
   margin-top: -3%;
   height: 30vh;
+  margin-bottom: 50px;
 }
 
 .partners .f_slide {
@@ -484,7 +485,7 @@ header#home {
 }
 
 .student_right {
-  margin-top: 35px;
+  margin-top: 60px;
   margin-left: 10%;
   display: flex;
   flex-direction: column;
@@ -565,6 +566,10 @@ header#home {
 }
 
 /* ====confiance==== */
+.confiance img[src="http://localhost/UFTAM%20WEBSITE%20API/handers/company/uploads/PNUD_Logo-Bleu-Tagline_Noir FRENCH.png"] {
+  height: 120px;
+}
+
 .confiance {
   background: #f5f6fc;
   padding-bottom: 5%;
@@ -776,7 +781,8 @@ header#home {
 }
 
 .e_slide .e_slide_body h2 {
-  font-size: 18px;
+  /* font-size: 18px; */
+  font-size: 24px;
 }
 
 .e_slide .e_slide_body p {
@@ -1246,9 +1252,8 @@ ol {
 
 @media (min-width:1500px) {
   .formation .f_slide {
-    /* height: 40vh; */
     width: 20vw;
-    padding: 40px;
+    padding: 30px;
   }
 
   .f_slide_header .f_slide_image {
@@ -1265,7 +1270,7 @@ ol {
   }
 
   .formation .f_slide_footer h6 {
-    font-size: 17px !important;
+    font-size: 15px !important;
   }
 
   .feed_container {
@@ -1663,4 +1668,10 @@ ol {
     padding-top: 25px;
     padding-right: 25px;
   }
+}
+
+
+.conatct button:hover {
+  animation-name: headShake;
+  animation-duration: 1s;
 }
