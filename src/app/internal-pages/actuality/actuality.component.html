@@ -26,7 +26,7 @@
   <div class="section_grid">
     <div class="event_left">
       <div class="event_container" *ngFor="let event of firstEvents, let i = index, let c = count">
-        <div class="event_grid" *ngIf="i < 3">
+        <div class="event_grid animate__animated animate__fadeInUp animate__delay-1s" *ngIf="i < 3">
           <div class="event_date">
             <h4>{{event.day}} <br> <span>{{event.monthName}}</span></h4>
           </div>
@@ -48,12 +48,12 @@
         </div>
       </div>
       <!-- <div class="event_read_more text-center">
-        <button class="btn btn-primary mt-3 template-btn1-dark block">
-          Voir tous les évènements
-        </button>
-      </div> -->
+          <button class="btn btn-primary mt-3 template-btn1-dark block">
+            Voir tous les évènements
+          </button>
+        </div> -->
     </div>
-    <div class="event_right">
+    <div class="event_right animate__animated animate__slideInRight">
       <div class="event_inscription_container">
         <div class="inscription_header">
           <h2>
@@ -71,9 +71,9 @@
           </p>
         </div>
         <div class="inscription_footer">
-          <button class="btn btn-primary btn-lg btn-inscription-1">
-            Inscrivez-vous
-          </button> <br>
+          <!-- <button class="btn btn-primary btn-lg btn-inscription-1">
+              Inscrivez-vous
+            </button> <br> -->
           <button [routerLink]="['uftam_event']" class="btn btn-primary btn-lg btn-inscription-2">
             Plus de détails
           </button>
@@ -83,81 +83,82 @@
   </div>
 </section>
 
-<div class="section_shape" *ngIf="!isMobile">
-  <section id="feedCarousel" class="carousel slide feed mb-5" data-ride="carousel">
-    <img src="../../assets/img/studentExpIcon.png" class="student_icon" alt="">
-    <div class="container carousel-inner">
-      <div class="carousel-item active">
-        <div class="feed_wrapper row-cols-3">
-          <div class="feed_container" *ngFor="let vie of activeVies, let i = index, let c = count">
-            <div class="feed_picture">
-              <img src="{{apiUrl}}handers/laVie/uploads/{{vie.path}}" alt="img">
+<section id="event" data-column="eventCarousel" class="event_slider">
+  <div class="carousel-wrapper" *ngIf="!isMobile">
+    <div class="carousel-inner-wrapper">
+      <owl-carousel-o [options]="otherOptions">
+        <ng-container>
+          <ng-template carouselSlide *ngFor='let eve of secondEvents, let i = index, let c = count'>
+            <!-- <div class="e_slider_wrapper"> -->
+            <div class="e_slide container tester_slide" name="e_slide" *ngIf="i==1">
+              <div class="e_slide_image">
+                <img src="{{apiUrl}}handers/events/uploads/{{eve.path}}" alt="">
+              </div>
+              <div class="e_slide_body">
+                <h2 class="font-weight-bold">{{eve.lib}} {{i}}</h2>
+              </div>
+              <div class="e_slide_footer">
+                <a [routerLink]="['', 'uftam_article', eve.id]">
+                  <span>Plus de détails </span>
+                  <i class="fas fa-angle-right"></i></a>
+              </div>
             </div>
-            <div class="feed_header">
-              <h2>{{vie.lib}}</h2>
-            </div>
-            <div class="feed_body">
-              <p>
-                {{vie.description}}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="carousel-item" *ngFor='let laVies of otherVies, let i = index, let c = count'>
-        <div class="feed_wrapper row-cols-3">
-          <div class="feed_container" *ngFor="let vie of laVies, let i = index, let c = count">
-            <div class="feed_picture">
-              <img src="{{apiUrl}}handers/laVie/uploads/{{vie.path}}" alt="img">
+            <div class="e_slide container tester_slide_full" style="width: 30vw !important;" name="e_slide"
+              *ngIf="i == 0">
+              <div class="e_slide_image">
+                <img src="{{apiUrl}}handers/events/uploads/{{eve.path}}" alt="">
+              </div>
+              <div class="e_slide_header" *ngIf="i==0">
+                <h2 class="font-weight-bold">A la une</h2>
+              </div>
+              <div class="e_slide_body">
+                <h2 class="font-weight-bold">{{eve.lib}}</h2>
+              </div>
+              <div class="e_slide_footer">
+                <a [routerLink]="['', 'uftam_article', eve.id]">
+                  <span>Plus de détails </span>
+                  <i class="fas fa-angle-right"></i></a>
+              </div>
             </div>
-            <div class="feed_header">
-              <h2>{{vie.lib}}</h2>
+
+            <div class="e_slide container" name="e_slide" *ngIf="i!=0 && i!=1">
+              <div class="e_slide_image">
+                <img src="{{apiUrl}}handers/events/uploads/{{eve.path}}" alt="">
+              </div>
+              <div class="e_slide_body">
+                <h2 class="font-weight-bold">{{eve.lib}} {{i}}</h2>
+              </div>
+              <div class="e_slide_footer">
+                <a [routerLink]="['', 'uftam_article', eve.id]">
+                  <span>Plus de détails </span>
+                  <i class="fas fa-angle-right"></i></a>
+              </div>
             </div>
-            <div class="feed_body">
-              <p>
-                {{vie.description}}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+            <!-- </div> -->
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
     </div>
-    <ol class="carousel-indicators">
-      <li data-target="#feedCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#feedCarousel" data-slide-to="1"></li>
-      <!-- <li data-target="#feedCarousel" data-slide-to="2"></li> -->
-    </ol>
-    <div class="feed_pagination">
-      <div class="feed_buttons">
-        <a style="color:black" class="carousel-control-prev" href="#feedCarousel" role="button" data-slide="prev">
-          <span id="left" class="carousel-control-prev">
-            <i class=" fas fa-caret-left"></i>
-          </span>
-        </a>
-        <a style="color:black" class=" carousel-control-next" href="#feedCarousel" role="button" data-slide="next">
-          <span id="right" class="carousel-control-next">
-            <i class="fas fa-caret-right"></i>
-          </span>
-        </a>
-      </div>
-    </div>
-  </section>
-</div>
+  </div>
+</section>
 
 <section class="conatct">
   <div class="newsletter">
     <div class="newsletter_left">
-      <h2>Commencez à nos suivre</h2>
+      <h2>Commencez à nous suivre</h2>
       <p>Inscrivez-vous à notre newsletter</p>
     </div>
     <div class="newsletter_right">
-      <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Insérez votre adresse mail" aria-describedby="subscribe">
+      <form #f="ngForm" [formGroup]="userInfo" (submit)="setNewsletter($event)" class="input-group mb-3">
+        <input type="email" class="form-control" placeholder="Insérez votre adresse mail"
+          formControlName="userInfoEmail" [email]="true" [(ngModel)]="userInfo.email" aria-describedby="subscribe"
+          required>
         <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button" id="subscribe">S'abonner</button>
+          <button class="btn btn-outline-secondary animate__animated" type="submit" id="subscribe"
+            [disabled]="f.invalid">S'abonner</button>
         </div>
-      </div>
+      </form>
     </div>
   </div>
   <div class="contact_info">
@@ -194,8 +195,11 @@
           <a target="_blank" href="https://www.facebook.com/UFTAMUniversite/">
             <i class="fab fa-facebook-f"></i>
           </a>
-          <a href="#">
+          <a href="#" target="_blank">
             <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/universit%C3%A9-uftam-8814541a5/" target="_blank">
+            <i class="fab fa-linkedin-in"></i>
           </a>
         </li>
       </ul>

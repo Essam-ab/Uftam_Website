@@ -279,3 +279,34 @@
     padding-bottom: 50px !important;
   }
 }
+
+.accord {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.accord>h1 {
+  color: var(--primary-color);
+  font-family: 'poppins black';
+  margin-bottom: 20px;
+}
+
+.accord button {
+  color: var(--primary-color) !important;
+  font-family: 'poppins black';
+  font-weight: 800px;
+}
+
+.accord i {
+  position: absolute;
+  right: 6%;
+  font-size: 29px;
+}
+
+.accord .card {
+  background: #e9f1ff;
+}
+
+.accord a {
+  text-decoration: none !important;
+}

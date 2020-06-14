@@ -31,6 +31,12 @@ export class SiteService {
     );
   }
 
+  fetchSubscribers() {
+    return this.http.get<Formation[]>(
+      environment.apiUrl + "handers/fetchNewsletter.hand.php"
+    );
+  }
+
   filter(data, hint) {
     return this.http.post<Formation[]>(
       environment.apiUrl + "handers/filter.hand.php", {

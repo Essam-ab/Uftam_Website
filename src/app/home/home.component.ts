@@ -1,4 +1,4 @@
-import { Component, OnInit, TemplateRef, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewEncapsulation, ViewChild } from '@angular/core';
 import * as $ from "jquery";
 import Swal from 'sweetalert2';
 import { FormationService } from '../services/dashboard/formation.service';
@@ -12,6 +12,7 @@ import { AppComponent } from '../app.component';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { SiteService } from '../services/site/site.service';
 import { FormControl, FormGroup, AbstractControl, FormBuilder, Validators } from '@angular/forms';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-home',
@@ -99,7 +100,7 @@ export class HomeComponent implements OnInit {
         for (let i = 0; i < data.length; i++) {
           y[j] = this.formations[i];
           j++;
-          if (j == 3 || (i + 1) == data.length) {
+          if (j == 1 || (i + 1) == data.length) {
             if (active === true) {
               a[0] = y;
               y = [];
@@ -309,7 +310,7 @@ export class HomeComponent implements OnInit {
     )
 
     //laVie
-    this._laVie.getAllVie().subscribe(
+    this._laVie.displayVie().subscribe(
       (data: Formation[]) => {
         this.laVies = data;
         this.laVieLength = data.length - 1;
@@ -375,8 +376,6 @@ export class HomeComponent implements OnInit {
     );
   }
 
-
-
   value = ['down', 'right', 'right', 'right', 'right'];
   isExpand = [true, false, false, false, false];
   expandStudentInfo(event, i) {
@@ -428,4 +427,119 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  logoOptions: OwlOptions = {
+    loop: true,
+    margin: 200,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: false,
+    navSpeed: 700,
+    navText: [
+      '<a style="color:black" class="carousel-control-prev" href="#formationCarousel" role="button"data-slide="prev"><span id="left" class="carousel-control-prev template-pagPrev-dark"><i class=" fas fa-caret-left"></i></span></a>',
+      '<a style="color:black" class="carousel-control-next" href="#formationCarousel" role="button"data-slide="next"><span id="right" class="carousel-control-next template-pagNext-dark"><i class="fas fa-caret-right"></i></span></a>'
+    ],
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 2
+      },
+      740: {
+        items: 4
+      },
+      940: {
+        items: 5
+      }
+    },
+    nav: true
+  }
+
+  customOptions: OwlOptions = {
+    loop: true,
+    margin: 200,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: false,
+    navSpeed: 700,
+    navText: [
+      '<a style="color:black" class="carousel-control-prev" href="#formationCarousel" role="button"data-slide="prev"><span id="left" class="carousel-control-prev template-pagPrev-dark"><i class=" fas fa-caret-left"></i></span></a>',
+      '<a style="color:black" class="carousel-control-next" href="#formationCarousel" role="button"data-slide="next"><span id="right" class="carousel-control-next template-pagNext-dark"><i class="fas fa-caret-right"></i></span></a>'
+    ],
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 2
+      },
+      740: {
+        items: 3
+      },
+      940: {
+        items: 4
+      }
+    },
+    nav: true
+  }
+
+  otherOptions: OwlOptions = {
+    loop: true,
+    margin: 50,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: false,
+    navSpeed: 700,
+    navText: [
+      '<a style="color:black" class="carousel-control-prev" href="#formationCarousel" role="button"data-slide="prev"><span id="left" class="carousel-control-prev template-pagPrev-dark"><i class=" fas fa-caret-left"></i></span></a>',
+      '<a style="color:black" class="carousel-control-next" href="#formationCarousel" role="button"data-slide="next"><span id="right" class="carousel-control-next template-pagNext-dark"><i class="fas fa-caret-right"></i></span></a>'
+    ],
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 2
+      },
+      740: {
+        items: 3
+      },
+      940: {
+        items: 4
+      }
+    },
+    nav: true
+  }
+
+  lastOptions: OwlOptions = {
+    loop: true,
+    margin: 40,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: true,
+    navSpeed: 700,
+    navText: [
+      '<a style="color:black" class="carousel-control-prev" href="#formationCarousel" role="button"data-slide="prev"><span id="left" class="carousel-control-prev template-pagPrev-dark"><i class=" fas fa-caret-left"></i></span></a>',
+      '<a style="color:black" class="carousel-control-next" href="#formationCarousel" role="button"data-slide="next"><span id="right" class="carousel-control-next template-pagNext-dark"><i class="fas fa-caret-right"></i></span></a>'
+    ],
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 2
+      },
+      740: {
+        items: 3
+      },
+      940: {
+        items: 3
+      }
+    },
+    nav: true
+  }
 }

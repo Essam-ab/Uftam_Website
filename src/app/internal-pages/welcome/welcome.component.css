@@ -11,117 +11,41 @@
   padding-top: 20px;
   padding-bottom: 50px;
   margin-top: 0%;
+  width: 100vw;
+  padding-left: 150px;
+  padding-right: 150px;
 }
 
-.company .section_grid {
-  margin-top: 5%;
-  margin-left: 12%;
-  display: grid;
-  grid-auto-flow: column;
-  grid-template-columns: 2fr 3fr;
+h1,
+h2 {
+  font-family: 'poppins black';
 }
 
-.company_picture {
-  height: 55vh;
-  width: 90%;
-}
-
-.company_picture img {
-  height: 100%;
-  width: 100%;
-}
-
-.company_details {
-  margin-right: 15%;
-  line-height: 1rem;
-}
-
-.company_details h4 {
-  font-size: 27px;
-
-}
-
-.company_details p {
-  font-weight: 400 !important;
-}
-
-.company_header {
-  margin-bottom: 20px;
-}
-
-.company_body {
-  font-size: 14px;
-}
-
-
-/* info */
-.info {
-  /* position: relative;
-  z-index: -1; */
-  font-family: 'poppins', sans-serif;
-  background: #f5f6fc;
-}
-
-.info article h4 {
-  font-weight: 700;
+h1 {
+  font-size: 26px;
   color: var(--primary-color);
 }
 
-.info article>p {
-  font-size: 14px;
+h2 {
+  font-size: 24px;
+  color: #000;
+}
+
+p {
+  font-family: 'poppins regular';
+  font-size: 16px;
   font-weight: 500;
-  padding-right: 5%;
-  padding-left: 5%;
+  text-align: left;
 }
 
-
-.info article>h4 {
-  padding-right: 5%;
-  padding-left: 5%;
+.company .float-left {
+  width: 40%;
+  height: 400px;
+  margin-right: 20px;
+  margin-bottom: 40px;
 }
 
-.info article .welcome_image img {
-  width: 100%;
-  height: 80vh;
-}
-
-.info article .text-bg {
-  background: var(--primary-color);
-  color: #fff;
-  padding: 30px;
-  margin-top: 30px;
-}
-
-.info article .split-text {
-  display: grid;
-  grid-auto-flow: column;
-  grid-template-columns: 1fr 2fr;
-  grid-gap: 30px;
-  margin-top: 5%;
-}
-
-.info article .split-text .split-right {
-  position: relative;
-  background: #fff;
-  box-shadow: 0px 0px 9px -2px rgba(0, 0, 0, 0.25);
-  padding: 10%;
-  font-style: italic;
-}
-
-.info article .split-text .split-right img {
-  position: absolute;
-  height: 200px;
-  width: 200px;
-  bottom: 70px;
-  left: 70px;
-}
-
-.info article .split-text .split-left {
-  color: #2a416d;
-  font-weight: 800;
-  margin-left: 30px;
-}
-
-.info article .split-text .split-left h4 {
-  font-weight: bolder;
+.company .float-right {
+  width: 55%;
+  height: 400px;
 }

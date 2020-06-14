@@ -79,7 +79,6 @@ export class InscriptionComponent implements OnInit {
   master: Formation[];
 
   ngOnInit() {
-    this.c_App.isInternal = true;
     this.apiUrl = environment.apiUrl;
 
     //nav setup
@@ -200,7 +199,7 @@ export class InscriptionComponent implements OnInit {
     )
 
     //laVie
-    this._laVie.getAllVie().subscribe(
+    this._laVie.displayVie().subscribe(
       (data: Formation[]) => {
         this.laVies = data;
         this.laVieLength = data.length - 1;

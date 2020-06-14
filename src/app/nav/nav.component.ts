@@ -26,7 +26,7 @@ export class NavComponent implements OnInit {
     private formation: Formation,
     private _ActivatedRoute: ActivatedRoute,
     private modalService: BsModalService,
-    private _site: SiteService
+    private _site: SiteService,
   ) { }
 
   formations: Formation[];
@@ -73,10 +73,14 @@ export class NavComponent implements OnInit {
 
   fieldvalue: string = "";
   selectedHint: string = "formation";
+  index: number = 0;
   searchData: Formation[];
+  setHint(event) {
+    this.index = event.target.selectedIndex;
+  }
   triggerEngine(data) {
     var hint = document.querySelector('#selectedHint');
-    if (hint.selectedIndex == 0) {
+    if (this.index == 0) {
       this.selectedHint = "formation";
     } else
       this.selectedHint = "event";

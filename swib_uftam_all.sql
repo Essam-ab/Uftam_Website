@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2020 at 09:16 PM
+-- Generation Time: Jun 15, 2020 at 01:40 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.3
 
@@ -219,6 +219,14 @@ CREATE TABLE `t_newsletter` (
   `new_email` varchar(50) NOT NULL,
   `new_submit_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `t_newsletter`
+--
+
+INSERT INTO `t_newsletter` (`new_id`, `new_email`, `new_submit_date`) VALUES
+(1, 'jqsml@gmail.com', '2020-06-13 12:05:28'),
+(2, 'qposiduifj@gmialqjsf.com', '2020-06-14 22:36:06');
 
 -- --------------------------------------------------------
 
@@ -447,7 +455,7 @@ ALTER TABLE `t_diplome`
 -- AUTO_INCREMENT for table `t_event`
 --
 ALTER TABLE `t_event`
-  MODIFY `eve_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `eve_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `t_formation`
@@ -465,7 +473,7 @@ ALTER TABLE `t_la_vie`
 -- AUTO_INCREMENT for table `t_newsletter`
 --
 ALTER TABLE `t_newsletter`
-  MODIFY `new_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `new_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `t_partner`
@@ -477,7 +485,7 @@ ALTER TABLE `t_partner`
 -- AUTO_INCREMENT for table `t_student_exp`
 --
 ALTER TABLE `t_student_exp`
-  MODIFY `tse_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `tse_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `t_trust_campany`

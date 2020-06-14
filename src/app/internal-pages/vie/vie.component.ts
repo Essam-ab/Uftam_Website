@@ -47,7 +47,7 @@ export class VieComponent implements OnInit {
   isMobile: boolean = false;
   ngOnInit() {
     this.apiUrl = environment.apiUrl;
-    this.c_App.isInternal = true;
+    // this.c_App.isInternal = true;
     if (window.innerWidth <= 700)
       this.isMobile = true;
 
@@ -153,7 +153,7 @@ export class VieComponent implements OnInit {
     )
 
     //laVie
-    this._laVie.getAllVie().subscribe(
+    this._laVie.displayVie().subscribe(
       (data: Formation[]) => {
         this.laVies = data;
         this.laVieLength = data.length - 1;
@@ -185,6 +185,20 @@ export class VieComponent implements OnInit {
       }
     )
   }
+  value = ['left', 'left', 'left', 'left', 'left', 'left', 'left', 'left'];
+  isExpand = [false, false, false, false, false, false, false, false];
+  expandStudentInfo(event, i) {
+    const index = i;
 
+    if (this.value[index] == "left") {
+      $('.student_right').css("margin-top", "1%")
+      this.value[index] = "down";
+      this.isExpand[index] = true;
+    } else {
+      $('.student_right').css("margin-top", "7%")
+      this.value[index] = "left";
+      this.isExpand[index] = false;
+    }
+  }
 
 }

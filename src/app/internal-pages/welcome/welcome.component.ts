@@ -47,7 +47,6 @@ export class WelcomeComponent implements OnInit {
 
   isMobile: boolean = false;
   ngOnInit() {
-    this.c_App.isInternal = true;
     this.apiUrl = environment.apiUrl;
     if (window.innerWidth <= 700)
       this.isMobile = true;
@@ -154,7 +153,7 @@ export class WelcomeComponent implements OnInit {
     )
 
     //laVie
-    this._laVie.getAllVie().subscribe(
+    this._laVie.displayVie().subscribe(
       (data: Formation[]) => {
         this.laVies = data;
         this.laVieLength = data.length - 1;

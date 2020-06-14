@@ -87,6 +87,9 @@
         <a class="nav-link" routerLink='/uftam_actuality'>Actualité <div class="underline"></div></a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" routerLink='/uftam_research'>Recherche <div class="underline"></div></a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" routerLink='/uftam_inscription'>Inscription <div class="underline"></div></a>
       </li>
       <li class="nav-item">
@@ -113,7 +116,7 @@
   <div class="modal-body">
     <h3 class="text-center">Filtre</h3>
     <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2 mb-5">
-      <select class="form-control" [value]="selectedHint" id="selectedHint">
+      <select class="form-control" [value]="selectedHint" id="selectedHint" (change)="setHint($event)">
         <option value="formation">Formation</option>
         <option value="event">Évènement</option>
       </select>

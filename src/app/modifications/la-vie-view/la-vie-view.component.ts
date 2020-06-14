@@ -27,7 +27,7 @@ export class LaVieViewComponent implements OnInit {
 
   ngOnInit() {
     this.apiUrl = environment.apiUrl;
-    this._laVie.getAllVie().subscribe(
+    this._laVie.displayVie().subscribe(
       (data: Formation[]) => {
         this.laVie = data;
       }

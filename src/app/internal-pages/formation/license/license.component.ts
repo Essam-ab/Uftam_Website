@@ -68,7 +68,6 @@ export class LicenseComponent implements OnInit {
   isMobile: boolean = false;
   ngOnInit() {
     this.apiUrl = environment.apiUrl;
-    this.c_App.isInternal = true;
     if (window.innerWidth <= 700)
       this.isMobile = true;
 
@@ -206,7 +205,7 @@ export class LicenseComponent implements OnInit {
     )
 
     //laVie
-    this._laVie.getAllVie().subscribe(
+    this._laVie.displayVie().subscribe(
       (data: Formation[]) => {
         this.laVies = data;
         this.laVieLength = data.length - 1;

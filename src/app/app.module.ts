@@ -68,6 +68,10 @@ import { FondateurComponent } from './internal-pages/fondateur/fondateur.compone
 import { TeamComponent } from './internal-pages/team/team.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { SearchEngineComponent } from './search-engine/search-engine.component';
+import { NewsletterViewComponent } from './newsletter-view/newsletter-view.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { ResearchComponent } from './internal-pages/research/research.component';
+import { FooterComponent } from './footer/footer.component';
 
 export const dashboard_url = "dashboard";
 export const routes: Routes = [
@@ -87,6 +91,7 @@ export const routes: Routes = [
       { path: 'uftam_certificate/:id', component: CertificateComponent, redirectTo: '', pathMatch: 'full' },
     ]
   },
+  { path: 'uftam_research', component: ResearchComponent },
   { path: 'uftam_contact', component: ContactComponent },
   { path: 'uftam_vie', component: VieComponent },
   { path: 'uftam_actuality', component: ActualityComponent },
@@ -100,6 +105,7 @@ export const routes: Routes = [
     path: 'admin',
     component: AdminComponent,
     children: [
+      { path: 'newsletter', component: NewsletterViewComponent, },
       { path: 'typeFormationView', component: FormationTypeViewComponent, },
       { path: 'formationView', component: FormationViewComponent },
       { path: 'editTypeFormation', component: EditTypeFormationComponent },
@@ -189,7 +195,10 @@ export const routes: Routes = [
     WelcomeComponent,
     FondateurComponent,
     TeamComponent,
-    SearchEngineComponent
+    SearchEngineComponent,
+    NewsletterViewComponent,
+    ResearchComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -204,6 +213,7 @@ export const routes: Routes = [
     AngularEditorModule,
     NgxIntlTelInputModule,
     ModalModule.forRoot(),
+    CarouselModule
   ],
   providers: [
     Formation,

@@ -65,4 +65,14 @@ class Shared extends database
         }
         return $d;
     }
+
+    public function fetchSubscribers()
+    {
+        $query = $this->connect()->prepare(
+            "SELECT *
+            FROM t_newsletter;"
+        );
+        $query->execute();
+        return $query;
+    }
 }

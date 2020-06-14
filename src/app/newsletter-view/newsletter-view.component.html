@@ -1,0 +1,25 @@
+<div class="pageheader-nav">
+  <ol class="breadcrumb slim-breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="/admin">Home</a></li>
+    <li class="breadcrumb-item">Newsletter</li>
+  </ol>
+</div>
+<table class="table table-dark">
+  <thead class="">
+    <tr class="head">
+      <th scope="col">#</th>
+      <th scope="col">Email</th>
+      <th scope="col">Date</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="!noSubscribers">
+    <tr *ngFor="let newsletter of newsletters" (click)="storeItem($event)">
+      <th scope="row">{{newsletter.id}}</th>
+      <td id="{{newsletter.id}}">{{newsletter.email}}</td>
+      <td id="{{newsletter.id}}">{{newsletter.date}}</td>
+    </tr>
+  </tbody>
+  <tbody *ngIf="noSubscribers">
+    <p class="text-warning text-center mt-5">There are no subscribers at the moment</p>
+  </tbody>
+</table>

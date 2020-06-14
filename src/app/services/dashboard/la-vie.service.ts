@@ -34,6 +34,12 @@ export class LaVieService {
     );
   }
 
+  displayVie() {
+    return this.http.get<Formation[]>(
+      environment.apiUrl + "handers/laVie/displayLaVie.php"
+    );
+  }
+
   updateLaVieStatus(id, status) {
     return this.http.post<Response>(
       environment.apiUrl + "handers/LaVie/changeLaVieStatus.php", {

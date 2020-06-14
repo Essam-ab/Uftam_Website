@@ -7,13 +7,23 @@ class LaVie extends database
         //
     }
 
+    public function displayVie()
+    {
+        $query = $this->connect()->prepare(
+            " SELECT * 
+            FROM t_la_vie
+           WHERE tlv_active = ?;"
+        );
+        $query->execute(['yes']);
+        return $query;
+    }
 
     public function displayLaVie()
     {
         $query = $this->connect()->prepare(
             "SELECT *
             FROM t_la_vie
-            WHERE tlv_status = ?;"
+            WHERE tlv_active = ?;"
         );
         $query->execute(['yes']);
         return $query;

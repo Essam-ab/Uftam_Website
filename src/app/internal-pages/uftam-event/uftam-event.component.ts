@@ -8,6 +8,9 @@ import { Formation } from 'src/app/classes/formation';
 import { PartnerService } from 'src/app/services/dashboard/partner.service';
 import { CompanyService } from 'src/app/services/dashboard/company.service';
 import { StudentExpService } from 'src/app/services/dashboard/student-exp.service';
+import { SiteService } from '../../services/site/site.service';
+import { FormControl, FormGroup, AbstractControl, FormBuilder, Validators } from '@angular/forms';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 
 interface Response {
   success: boolean,
@@ -30,7 +33,8 @@ export class UftamEventComponent implements OnInit {
     private _laVie: LaVieService,
     private _partner: PartnerService,
     private _company: CompanyService,
-    private _student: StudentExpService
+    private _student: StudentExpService,
+    private _site: SiteService
   ) { }
 
   formations: Formation[];
@@ -102,7 +106,6 @@ export class UftamEventComponent implements OnInit {
   }
   ngOnInit() {
     this.apiUrl = environment.apiUrl;
-    this.c_App.isInternal = true;
 
     //nav setup
     this._formation.displayFormations().subscribe(
@@ -229,7 +232,7 @@ export class UftamEventComponent implements OnInit {
     )
 
     //laVie
-    this._laVie.getAllVie().subscribe(
+    this._laVie.displayVie().subscribe(
       (data: Formation[]) => {
         this.laVies = data;
         this.laVieLength = data.length - 1;
@@ -268,6 +271,155 @@ export class UftamEventComponent implements OnInit {
         console.log("error trying to get studentsExp");
       }
     )
+  }
+
+  userInfo = new FormGroup({
+    userInfoEmail: new FormControl('', [Validators.required])
+  });
+  setNewsletter(event) {
+    event.preventDefault();
+    const email = this.userInfo.value.userInfoEmail;
+    if (email == "") {
+      Swal.fire(
+        'Error!',
+        "SVP! remplizer le formulaire.",
+        'error'
+      )
+    } else {
+      this._site.subscribeToNewsletter(email).subscribe(
+        data => {
+          if (data.success) {
+            Swal.fire(
+              'Terminé!',
+              "thank you for subscribing to our newsletter!",
+              'success'
+            )
+          } else {
+            Swal.fire(
+              'Error!',
+              "SVP! remplizer le formulaire.",
+              'error'
+            )
+          }
+        }
+      )
+    }
+  }
+
+  logoOptions: OwlOptions = {
+    loop: true,
+    margin: 200,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: false,
+    navSpeed: 700,
+    navText: [
+      '<a style="color:black" class="carousel-control-prev" href="#formationCarousel" role="button"data-slide="prev"><span id="left" class="carousel-control-prev template-pagPrev-dark"><i class=" fas fa-caret-left"></i></span></a>',
+      '<a style="color:black" class="carousel-control-next" href="#formationCarousel" role="button"data-slide="next"><span id="right" class="carousel-control-next template-pagNext-dark"><i class="fas fa-caret-right"></i></span></a>'
+    ],
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 2
+      },
+      740: {
+        items: 4
+      },
+      940: {
+        items: 5
+      }
+    },
+    nav: true
+  }
+
+  customOptions: OwlOptions = {
+    loop: true,
+    margin: 200,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: false,
+    navSpeed: 700,
+    navText: [
+      '<a style="color:black" class="carousel-control-prev" href="#formationCarousel" role="button"data-slide="prev"><span id="left" class="carousel-control-prev template-pagPrev-dark"><i class=" fas fa-caret-left"></i></span></a>',
+      '<a style="color:black" class="carousel-control-next" href="#formationCarousel" role="button"data-slide="next"><span id="right" class="carousel-control-next template-pagNext-dark"><i class="fas fa-caret-right"></i></span></a>'
+    ],
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 2
+      },
+      740: {
+        items: 3
+      },
+      940: {
+        items: 4
+      }
+    },
+    nav: true
+  }
+
+  otherOptions: OwlOptions = {
+    loop: true,
+    margin: 50,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: false,
+    navSpeed: 700,
+    navText: [
+      '<a style="color:black" class="carousel-control-prev" href="#formationCarousel" role="button"data-slide="prev"><span id="left" class="carousel-control-prev template-pagPrev-dark"><i class=" fas fa-caret-left"></i></span></a>',
+      '<a style="color:black" class="carousel-control-next" href="#formationCarousel" role="button"data-slide="next"><span id="right" class="carousel-control-next template-pagNext-dark"><i class="fas fa-caret-right"></i></span></a>'
+    ],
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 2
+      },
+      740: {
+        items: 3
+      },
+      940: {
+        items: 4
+      }
+    },
+    nav: true
+  }
+
+  lastOptions: OwlOptions = {
+    loop: true,
+    margin: 40,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: true,
+    navSpeed: 700,
+    navText: [
+      '<a style="color:black" class="carousel-control-prev" href="#formationCarousel" role="button"data-slide="prev"><span id="left" class="carousel-control-prev template-pagPrev-dark"><i class=" fas fa-caret-left"></i></span></a>',
+      '<a style="color:black" class="carousel-control-next" href="#formationCarousel" role="button"data-slide="next"><span id="right" class="carousel-control-next template-pagNext-dark"><i class="fas fa-caret-right"></i></span></a>'
+    ],
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 2
+      },
+      740: {
+        items: 3
+      },
+      940: {
+        items: 3
+      }
+    },
+    nav: true
   }
 
 }
