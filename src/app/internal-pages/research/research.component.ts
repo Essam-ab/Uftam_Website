@@ -9,7 +9,6 @@ import { LaVieService } from '../../services/dashboard/la-vie.service';
 import { environment } from 'src/environments/environment';
 import { AppComponent } from '../../app.component';
 import { FormControl, FormGroup, AbstractControl, FormBuilder, Validators } from '@angular/forms';
-import * as $ from "jquery";
 import { SiteService } from '../../services/site/site.service';
 import Swal from 'sweetalert2';
 

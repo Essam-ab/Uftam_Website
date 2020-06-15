@@ -436,8 +436,8 @@ export class HomeComponent implements OnInit {
     dots: false,
     navSpeed: 700,
     navText: [
-      '<a style="color:black" class="carousel-control-prev" href="#formationCarousel" role="button"data-slide="prev"><span id="left" class="carousel-control-prev template-pagPrev-dark"><i class=" fas fa-caret-left"></i></span></a>',
-      '<a style="color:black" class="carousel-control-next" href="#formationCarousel" role="button"data-slide="next"><span id="right" class="carousel-control-next template-pagNext-dark"><i class="fas fa-caret-right"></i></span></a>'
+      '<a style="color:black" class="carousel-control-prev"  role="button"data-slide="prev"><span id="left" class="carousel-control-prev template-pagPrev-dark"><i class=" fas fa-caret-left"></i></span></a>',
+      '<a style="color:black" class="carousel-control-next"  role="button"data-slide="next"><span id="right" class="carousel-control-next template-pagNext-dark"><i class="fas fa-caret-right"></i></span></a>'
     ],
     responsive: {
       0: {
@@ -465,8 +465,8 @@ export class HomeComponent implements OnInit {
     dots: false,
     navSpeed: 700,
     navText: [
-      '<a style="color:black" class="carousel-control-prev" href="#formationCarousel" role="button"data-slide="prev"><span id="left" class="carousel-control-prev template-pagPrev-dark"><i class=" fas fa-caret-left"></i></span></a>',
-      '<a style="color:black" class="carousel-control-next" href="#formationCarousel" role="button"data-slide="next"><span id="right" class="carousel-control-next template-pagNext-dark"><i class="fas fa-caret-right"></i></span></a>'
+      '<a style="color:black" class="carousel-control-prev" role="button"data-slide="prev"><span id="left" class="carousel-control-prev template-pagPrev-dark"><i class=" fas fa-caret-left"></i></span></a>',
+      '<a style="color:black" class="carousel-control-next"  role="button"data-slide="next"><span id="right" class="carousel-control-next template-pagNext-dark"><i class="fas fa-caret-right"></i></span></a>'
     ],
     responsive: {
       0: {
@@ -494,8 +494,8 @@ export class HomeComponent implements OnInit {
     dots: false,
     navSpeed: 700,
     navText: [
-      '<a style="color:black" class="carousel-control-prev" href="#formationCarousel" role="button"data-slide="prev"><span id="left" class="carousel-control-prev template-pagPrev-dark"><i class=" fas fa-caret-left"></i></span></a>',
-      '<a style="color:black" class="carousel-control-next" href="#formationCarousel" role="button"data-slide="next"><span id="right" class="carousel-control-next template-pagNext-dark"><i class="fas fa-caret-right"></i></span></a>'
+      '<a style="color:black" class="carousel-control-prev"  role="button"data-slide="prev"><span id="left" class="carousel-control-prev template-pagPrev-dark"><i class=" fas fa-caret-left"></i></span></a>',
+      '<a style="color:black" class="carousel-control-next"  role="button"data-slide="next"><span id="right" class="carousel-control-next template-pagNext-dark"><i class="fas fa-caret-right"></i></span></a>'
     ],
     responsive: {
       0: {
@@ -523,8 +523,8 @@ export class HomeComponent implements OnInit {
     dots: true,
     navSpeed: 700,
     navText: [
-      '<a style="color:black" class="carousel-control-prev" href="#formationCarousel" role="button"data-slide="prev"><span id="left" class="carousel-control-prev template-pagPrev-dark"><i class=" fas fa-caret-left"></i></span></a>',
-      '<a style="color:black" class="carousel-control-next" href="#formationCarousel" role="button"data-slide="next"><span id="right" class="carousel-control-next template-pagNext-dark"><i class="fas fa-caret-right"></i></span></a>'
+      '<a style="color:black" class="carousel-control-prev"  role="button"data-slide="prev"><span id="left" class="carousel-control-prev template-pagPrev-dark"><i class=" fas fa-caret-left"></i></span></a>',
+      '<a style="color:black" class="carousel-control-next"  role="button"data-slide="next"><span id="right" class="carousel-control-next template-pagNext-dark"><i class="fas fa-caret-right"></i></span></a>'
     ],
     responsive: {
       0: {

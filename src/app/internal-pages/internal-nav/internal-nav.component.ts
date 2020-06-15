@@ -8,6 +8,7 @@ import { StudentExpService } from '../../services/dashboard/student-exp.service'
 import { LaVieService } from '../../services/dashboard/la-vie.service';
 import { environment } from 'src/environments/environment';
 import { ActivatedRoute } from '@angular/router';
+import './script.js';
 
 @Component({
   selector: 'app-internal-nav',

@@ -3418,6 +3418,7 @@ section[data-column="eventCarousel"] .event_slider {
 
 #feedCarousel[data-column="temoignage"] .feed_container .feed_picture {
   top: -15px !important;
+  right: -10px !important;
 }
 
 #feedCarousel[data-column="temoignage"] .owl-prev {
@@ -3868,4 +3869,47 @@ section[data-column="eventCarousel"] .event_slider {
 
 .modal-body ul li a {
   color: var(--primary-color);
+}
+
+.footer_top {
+  height: auto !important;
+}
+
+.footer_top .container>ul:nth-child(1)>li {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer_top .container>ul:nth-child(1)>li>a {
+  margin-right: 20px;
+}
+
+.footer_top .container>ul:nth-child(4)>li {
+  display: flex;
+  flex-direction: row;
+}
+
+.footer_top .container>ul:nth-child(4)>li>a {
+  margin-right: 20px;
+}
+
+.footer_top .container>ul:nth-child(1)>li:first-child {
+  /* transform: translateX(-100%); */
+
+}
+
+.footer_top .container>ul:nth-child(4)>li:nth-child(2) {
+  /* transform: translateX(100%); */
+}
+
+.footer_top .container>ul:nth-child(1)>li,
+.footer_top .container>ul:nth-child(4)>li {
+  font-family: 'poppins regular';
+  font-size: 14px;
+}
+
+.footer_top .container>ul:nth-child(4)>li:first-child h2 {
+  margin-right: 50px;
+  color: #fff;
+  font-family: 'poppins black';
 }

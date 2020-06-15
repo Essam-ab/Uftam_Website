@@ -132,6 +132,7 @@
               </div>
               <div class="feed_header">
                 <h2>{{vie.lib}}</h2>
+                <small [innerHtml]="vie.spe"></small>
               </div>
               <div class="feed_body">
                 <p>
@@ -191,6 +192,15 @@
   <div class="footer_top">
     <div class="container">
       <ul>
+        <li>
+          <a [routerLink]="['', '/uftam_admission']">Admission </a>
+          <a [routerLink]="['', '/uftam_vie']">Vie étudiante </a>
+          <a [routerLink]="['', '/uftam_actuality']">Actualité </a>
+          <a [routerLink]="['', '/uftam_research']">Recherche </a>
+          <a [routerLink]="['', '/uftam_inscription']">Inscription </a>
+        </li>
+      </ul>
+      <ul>
         <li><a [routerLink]='["", "uftam_about" ]'>A propos de l'Uftam</a></li>
         <li><a [routerLink]='["", "uftam_admission" ]'>Admission</a></li>
         <li><a [routerLink]='["", "uftam_contact" ]'>Contactez-nous</a></li>
@@ -206,6 +216,27 @@
           </a>
         </li>
       </ul>
+      <hr>
+      <ul>
+        <li>
+          <h2 class="navbar-text">
+            uftam
+          </h2>
+          <a [routerLink]="['', 'uftam_welcome']">
+            Mot de bienvenue
+          </a>
+          <a [routerLink]="['', 'uftam_founder']">
+            Membres fondateurs
+          </a>
+          <a [routerLink]="['', 'uftam_team']">
+            Équipe uftam
+          </a>
+          <a [routerLink]="['','uftam_partners']">
+            Partenaires
+          </a>
+        </li>
+      </ul>
+
     </div>
   </div>
   <div class="footer_bottom">
