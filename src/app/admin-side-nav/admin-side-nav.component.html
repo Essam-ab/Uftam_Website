@@ -1,0 +1,84 @@
+<nav id="sidebar" class="{{collapse}}">
+  <div class="sidebar-header">
+    <h3 class="text-center">UFTAM</h3>
+  </div>
+
+  <ul class="list-unstyled components">
+    <p class="text-center">Menu</p>
+    <li name="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+      <a routerLink="/dashboard">Home</a>
+    </li>
+    <li>
+      <a href="#formationSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" name="nav-item"
+        routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><i class="fas fa-list"></i> Formation</a>
+      <ul class="collapse list-unstyled" id="formationSubmenu">
+        <li name="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a routerLink="/admin/typeFormationView"><i class="far fa-eye"></i> Type Formation</a>
+        </li>
+        <li name="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a routerLink="/admin/formationView"><i class="fas fa-id-badge"></i> Formation</a>
+        </li>
+        <li name="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a routerLink="/admin/addFormationDocument"><i class="fas fa-file"></i> Formation Brochure </a>
+        </li>
+        <li name="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a routerLink="/admin/addFormationDetails"><i class="fas fa-info-circle"></i> Définir les détails d'un
+            formation </a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="#eventSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" name="nav-item"
+        routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <i class="fas fa-list"></i> Évènement</a>
+      <ul class="collapse list-unstyled" id="eventSubmenu">
+        <li name="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a routerLink="/admin/typeEventView"><i class="far fa-eye"></i> Type Évènement</a>
+        </li>
+        <li name="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a routerLink="/admin/eventView"><i class="fas fa-calendar-alt"></i> Évènement</a>
+        </li>
+        <li name="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a routerLink="/admin/addEventDetails"><i class="fas fa-info-circle"></i> Définir les détails d'un évènement
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="#editSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" name="nav-item"
+        routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><i class="fas fa-list"></i> Modification</a>
+      <ul class="collapse list-unstyled" id="editSubmenu">
+        <li name="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a routerLink="/admin/modification/partners"><i class="far fa-eye"></i> Partenaire</a>
+        </li>
+        <li name="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a routerLink="/admin/modification/confCompaniesView"><i class="far fa-eye"></i> Confiance Company</a>
+        </li>
+        <li name="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a routerLink="/admin/modification/laVieView"><i class="far fa-eye"></i> La Vie</a>
+        </li>
+        <li name="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a routerLink="/admin/modification/studentExpView"><i class="far fa-eye"></i> Vie Étudiant</a>
+        </li>
+      </ul>
+    </li>
+    <li name="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+      <a routerLink="/admin/newsletter" class="">
+        <i class="fas fa-newspaper"></i>
+        Newsletter
+      </a>
+    </li>
+    <li name="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+      <a routerLink="/admin/candidatView" class="">
+        <i class="fas fa-users"></i>
+        Condidat
+      </a>
+    </li>
+  </ul>
+
+  <ul class="list-unstyled CTAs">
+    <li>
+      <a routerLink="/" class="article btn btn-primary">Back to Site</a>
+    </li>
+  </ul>
+</nav>

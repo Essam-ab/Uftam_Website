@@ -1,0 +1,79 @@
+<div class="pageheader-nav">
+  <ol class="breadcrumb slim-breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="/dashboard">Home</a></li>
+    <li class="breadcrumb-item">Candidats</li>
+  </ol>
+</div>
+
+<div class="d-flex justify-content-between flex-wrap p-3 container" *ngIf="!noCandidates">
+  <div class="card border-secondary mr-5" *ngFor="let candidate of candidates">
+    <div class="card-header bg-primary text-light d-flex justify-content-between">
+      <p>{{candidate.con_f_name}} | {{candidate.con_l_name}}</p>
+      <p>{{candidate.con_email}}</p>
+      <button class="btn-outline-secondary" (click)="Expand($event)" data-toggle="collapse"
+        data-target="#collapseCandidate" aria-expanded="false" aria-controls="collapseCandidate">
+        <i class="far fa-caret-square-down"></i></button>
+    </div>
+    <div class="card-body" id="collapseCandidate">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <h6>Date:</h6>
+          <p>{{candidate.con_date}}</p>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <h6>Formation:</h6>
+          <p> {{candidate.for_type}} {{candidate.for_lib}} (+{{candidate.con_dial_code}})</p>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <h6>Numéro:</h6>
+          <p>{{candidate.con_number}}</p>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <h6>Pay:</h6>
+          <p>{{candidate.con_country}}</p>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <h6>Form Condidat:</h6>
+          <a target="_blank" class="btn btn-info"
+            href="{{apiUrl}}handers/condidat/uploads/{{candidate.con_form_condidat}}">Télècharger</a>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <h6>Identité:</h6>
+          <a target="_blank" class="btn btn-info"
+            href="{{apiUrl}}handers/condidat/uploads/{{candidate.con_identity}}">Télècharger</a>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <h6>Releve de note:</h6>
+          <a target="_blank" class="btn btn-info"
+            href="{{apiUrl}}handers/condidat/uploads/{{candidate.con_releve_note}}">Télècharger</a>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <h6>Cv:</h6>
+          <a target="_blank" class="btn btn-info"
+            href="{{apiUrl}}handers/condidat/uploads/{{candidate.con_cv}}">Télècharger</a>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <h6>Lettre de motivation:</h6>
+          <a target="_blank" class="btn btn-info"
+            href="{{apiUrl}}handers/condidat/uploads/{{candidate.con_motivation_letter}}">Télècharger</a>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <h6>Lettre de recommendation:</h6>
+          <a target="_blank" class="btn btn-info"
+            href="{{apiUrl}}handers/condidat/uploads/{{candidate.con_recommendation_letter}}">Télècharger</a>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <h6>Document:</h6>
+          <a target="_blank" class="btn btn-info"
+            href="{{apiUrl}}handers/condidat/uploads/{{candidate.con_document}}">Télècharger</a>
+        </li>
+      </ul>
+    </div>
+    <div class="card-footer text-muted">
+      Candidat id: {{candidate.con_id}}
+    </div>
+  </div>
+</div>
+<div class="container" *ngIf="noCandidates">
+  <p class="text-danger text-center mt-5">Il n'y a pas de candidats à l'instant</p>
+</div>

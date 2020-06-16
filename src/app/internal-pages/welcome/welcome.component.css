@@ -1,0 +1,55 @@
+@import '../../home/home.component.css';
+
+:root {
+  --primary-color: #2a416d !important;
+  --secondary-color: black !important;
+}
+
+/* ====company==== */
+.company {
+  background: #f5f6fc;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  margin-top: 0%;
+  width: 100vw;
+  padding-left: 150px;
+  padding-right: 150px;
+}
+
+h1,
+h2 {
+  font-family: 'poppins black';
+}
+
+h1 {
+  font-size: 26px;
+  color: var(--primary-color);
+  font-weight: 800;
+  font-family: 'poppins';
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 800;
+  font-family: 'poppins';
+}
+
+p {
+  font-family: 'poppins regular';
+  font-family: 'poppins';
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+}
+
+.company .float-left {
+  width: 44%;
+  height: 400px;
+  margin-right: 5px;
+  margin-bottom: 40px;
+}
+
+.company .float-right {
+  width: 55%;
+  height: 400px;
+}

@@ -1,0 +1,53 @@
+<div class="pageheader-nav">
+  <ol class="breadcrumb slim-breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="/dashboard">Home</a></li>
+    <li class="breadcrumb-item">laVie</li>
+  </ol>
+</div>
+<div class="container text-right mb-1">
+  <a routerLink="../addLaVie" class="btn btn-primary">
+    <i class="fas fa-plus"></i> Ajouter un Vie
+  </a>
+</div>
+<table class="table table-dark">
+  <thead class="">
+    <tr class="head">
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Description</th>
+      <th scope="col">Logo</th>
+      <th scope="col">Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <style>
+
+    </style>
+    <tr *ngFor="let l of laVie">
+      <th scope="row">{{l.id}}</th>
+      <td id="{{l.id}}">{{l.lib}}</td>
+      <td class="size_fix" id="{{l.id}}">{{l.description}}</td>
+      <td class="w-25" id="{{l.id}}">
+        <img src="{{apiUrl}}handers/laVie/uploads/{{l.path}}" alt="user image">
+      </td>
+      <td>
+        <a *ngIf="l.status === 'yes'" id="{{l.id}}" (click)="storeItem($event);disableRow($event)"
+          class="btn btn-outline-warning form-control-sm mr-3">
+          <i id="{{l.id}}" class="far fa-eye-slash">
+          </i>
+        </a>
+
+        <a *ngIf="l.status === 'no'" id="{{l.id}}" (click)="storeItem($event);enableRow($event)"
+          class="btn btn-outline-warning form-control-sm mr-3">
+          <i id="{{l.id}}" class="far fa-eye">
+          </i>
+        </a>
+
+        <a id="{{l.id}}" (click)="storeItem($event);deleteRow($event)" class="btn btn-outline-danger form-control-sm">
+          <i id="{{l.id}}" class="far fa-trash-alt">
+          </i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>

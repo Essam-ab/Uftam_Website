@@ -1,0 +1,182 @@
+<app-internal-nav></app-internal-nav>
+
+<section class="info" id="actuality">
+  <div class="info_wrapper container">
+    <div class="act_block" *ngFor='let eve of indexedEvents' data-aos="fade-up">
+      <div class="act_header">
+        <img src="{{apiUrl}}handers/events/uploads/{{eve.path}}" alt="img">
+      </div>
+      <div class="act_body">
+        <h2 [innerHtml]="eve.lib ">...</h2>
+        <span>{{eve.day}} {{eve.monthName}} {{eve.date | slice:0:4}}</span>
+        <p [innerHtml]="eve.desc | slice:0:260">...</p>
+      </div>
+      <div class="act_footer">
+        <a [routerLink]="['', 'uftam_article', eve.id]" class="btn btn-primary template-btn1-dark block">
+          Lire la suite
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="act_load">
+    <button class="btn btn-primary template-btn1-dark block" (click)="loadArticles($event)">Voir plus
+      d'acticles</button>
+  </div>
+</section>
+
+<section class="event">
+  <div class="section_grid">
+    <div class="event_left">
+      <div class="event_container" *ngFor="let event of firstEvents, let i = index, let c = count">
+        <div class="event_grid" *ngIf="i < 3" data-aos="fade-up">
+          <div class="event_date">
+            <h4>{{event.day}} <br> <span>{{event.monthName}}</span></h4>
+          </div>
+          <div class="event_details">
+            <div class="event_header">
+              <h4 class="font-weight-bold" [innerHtml]="event.lib"></h4>
+            </div>
+            <div class="event_body">
+              <p [innerHtml]="event.desc | slice:0:200">
+
+              </p>
+            </div>
+            <div class="event_read_more">
+              <!-- <a [routerLink]="['uftam_formation', 'uftam_master', formation.id,'master']"  class=""> Plus de détails <i class="fas fa-caret-right"></i> </a> -->
+              <a [routerLink]="['', 'uftam_event', event.id]" class=""> Plus de détails <i
+                  class="fas fa-caret-right"></i> </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="event_read_more text-center">
+          <button class="btn btn-primary mt-3 template-btn1-dark block">
+            Voir tous les évènements
+          </button>
+        </div> -->
+    </div>
+    <div class="event_right" data-aos="silde-right">
+      <div class="event_inscription_container">
+        <div class="inscription_header">
+          <h2>
+            Inscrivez-vous <br> au prochain <br> évènement!
+          </h2>
+          <div class="inscription_separator"></div>
+        </div>
+        <div class="inscription_body mb-3 mt-3">
+          <p>
+            Nous vous attendons nombreux ‼ <br> Vidéoconférences de nos enseignants chercheurs tunisiens et français et
+            questions personnalisées à notre équipe pédagogique
+          </p>
+        </div>
+        <div class="inscription_footer">
+          <!-- <button class="btn btn-primary btn-lg btn-inscription-1">
+              Inscrivez-vous
+            </button> <br> -->
+          <button [routerLink]="['', 'uftam_event']" class="btn btn-primary btn-lg btn-inscription-2">
+            Plus de détails
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="feedCarousel" data-column="temoignage" data-aos="fade-up">
+  <img alt="" class="student_icon" src="../../assets/img/studentExpIcon.png">
+  <div class="carousel-wrapper" *ngIf="!isMobile">
+    <div class="carousel-inner-wrapper">
+      <owl-carousel-o [options]="lastOptions">
+        <ng-container>
+          <ng-template carouselSlide *ngFor='let vie of laVies, let i = index, let c = count'>
+            <div class="feed_container">
+              <div class="feed_picture">
+                <img src="{{apiUrl}}handers/laVie/uploads/{{vie.path}}" alt="img">
+              </div>
+              <div class="feed_header">
+                <h2>{{vie.lib}}</h2>
+                <small [innerHtml]="vie.spe"></small>
+              </div>
+              <div class="feed_body">
+                <p>
+                  {{vie.description}}
+                </p>
+              </div>
+            </div>
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
+    </div>
+  </div>
+</section>
+
+<section class="conatct">
+  <div class="newsletter" data-aos="zoom-in">
+    <div class="newsletter_left">
+      <h2>Commencez à nous suivre</h2>
+      <p>Inscrivez-vous à notre newsletter</p>
+    </div>
+    <div class="newsletter_right">
+      <form #f="ngForm" [formGroup]="userInfo" (submit)="setNewsletter($event)" class="input-group mb-3">
+        <input type="email" class="form-control" placeholder="Insérez votre adresse mail"
+          formControlName="userInfoEmail" [email]="true" aria-describedby="subscribe" required>
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary animate__animated" type="submit" id="subscribe"
+            [disabled]="f.invalid">S'abonner</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="contact_info">
+    <div class="contact_map" *ngIf="!isMobile" data-aos="slide-right">
+      <a target="_blank"
+        href="https://www.google.com/maps/place/L'Universit%C3%A9+franco-tunisienne+pour+l'Afrique+et+la+M%C3%A9diterran%C3%A9e+(UFTAM)/@36.7208792,10.2353453,15z/data=!4m2!3m1!1s0x0:0x217e55ddb0636451?sa=X&ved=2ahUKEwjK35qcosXpAhUnxoUKHfFRCd8Q_BIwFnoECAsQCA"><img
+          src="../../assets/img/location.png" alt=" map"></a>
+    </div>
+    <div class="contact_details" data-aos="fade-left">
+      <div class="contact_email">
+        <h4>Email</h4>
+        <p>contact@uftam.net</p>
+      </div>
+      <div class="phone">
+        <h4>Appelez-nous</h4>
+        <p>71 100 100 / 71 666 666</p>
+      </div>
+      <div class="contact_address">
+        <h4>Adresse</h4>
+        <p>UFTAM(prés de Marché de Gros, Bir El <br> Kasaa) El Mourouj 2074, TUNISIE</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer_top">
+    <div class="container">
+      <ul>
+        <li><a [routerLink]='["", "uftam_welcome" ]'>A propos de l'Uftam</a></li>
+        <li><a [routerLink]='["", "uftam_admission" ]'>Admission</a></li>
+        <li><a [routerLink]='["", "uftam_contact" ]'>Contactez-nous</a></li>
+        <li>
+          <a target="_blank" href="https://www.facebook.com/UFTAMUniversite/">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" target="_blank">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/universit%C3%A9-uftam-8814541a5/" target="_blank">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer_bottom">
+    <div class="footer_bootom_left">
+      <p> Tous les droits sont reservés pour UFTAM</p>
+    </div>
+    <div class="footer_bootom_right">
+      <p> Powred by Digilinks</p>
+    </div>
+  </div>
+</footer>

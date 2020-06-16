@@ -1,0 +1,46 @@
+<app-internal-nav></app-internal-nav>
+
+<section class="info" id="actuality">
+  <div class="info-wrapper container">
+    <div class="info-header">
+      <img src="{{apiUrl}}handers/events/uploads/{{path}}" alt="img">
+    </div>
+    <div class="info-body" data-aos="fade-in">
+      <article class="info-block">
+        <h1 [innerHtml]="lib"></h1>
+        <span>{{day}} {{monthName}} {{date | slice:0:4}}</span>
+        <p [innerHtml]="desc"></p>
+        <div [innerHtml]="articleDetails">
+
+        </div>
+      </article>
+    </div>
+    <!-- <div class="share">
+      <h4>
+        Partage sur:
+      </h4>
+      <div class="icon_block">
+        <a href="">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </div>
+      <div class="icon_block">
+        <a href="">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+      <div class="icon_block">
+        <a href="">
+          <i class="fab fa-facebook-messenger"></i>
+        </a>
+      </div>
+      <div class="icon_block">
+        <a href="">
+          <i class="far fa-envelope"></i>
+        </a>
+      </div>
+    </div> -->
+  </div>
+</section>
+
+<app-footer></app-footer>

@@ -1,0 +1,110 @@
+<app-internal-nav></app-internal-nav>
+
+<section class="info" id="actuality">
+  <div class="info_wrapper container">
+    <div class="contact_form">
+      <form id="contact" (submit)='sendMail($event)'>
+        <div class="contact_left">
+          <h4>Contactez-nous</h4>
+          <div class="inputs-group">
+            <label for="contact_name">Nom</label> <br>
+            <input type="text" name="contact_name" id="contact_name" class="contact_name"
+              placeholder="Insérez votre nom" [(ngModel)]="contactName" required>
+          </div>
+          <div class="inputs-group">
+            <label for="contact_email">E-mail</label> <br>
+            <input type="email" name="contact_email" [(ngModel)]="contactEmail" id="contact_email" class="contact_email"
+              placeholder="Insérez votre e-mail" required>
+          </div>
+          <div class="inputs-group" id="robot">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" class="d-none contact_robot" [(ngModel)]="contactRobot" name="contact_robot"
+                  id="contact_robot">
+                <span class="cr"><i class="cr-icon fas fa-check"></i></span>
+                Je ne suis pas un robot
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="saperate"></div>
+        <div class="contact_right">
+          <div class="inputs-group input_top">
+            <label for="contact_message">Message</label> <br>
+            <textarea name="contact_message" id="contact_message" [(ngModel)]="contactMsg" class="contact_message"
+              placeholder="Insérez votre texte"></textarea>
+          </div>
+          <div class="btn-block">
+            <button class="btn btn-primary mr-3 template-btn1-dark block" type="submit">Envoyer votre message</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="conatct">
+  <div class="newsletter">
+    <div class="newsletter_left">
+      <h2>Commencez à nosu suivre</h2>
+      <p>Inscrivez-vous à notre newsletter</p>
+    </div>
+    <div class="newsletter_right">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Insérez votre adresse mail" aria-describedby="subscribe">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" id="subscribe">S'abonner</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="contact_info">
+    <div class="contact_map">
+      <a target="_blank"
+        href="https://www.google.com/maps/place/L'Universit%C3%A9+franco-tunisienne+pour+l'Afrique+et+la+M%C3%A9diterran%C3%A9e+(UFTAM)/@36.7208792,10.2353453,15z/data=!4m2!3m1!1s0x0:0x217e55ddb0636451?sa=X&ved=2ahUKEwjK35qcosXpAhUnxoUKHfFRCd8Q_BIwFnoECAsQCA"><img
+          src="../../assets/img/location.png" alt=" map"></a>
+    </div>
+    <div class="contact_details">
+      <div class="contact_email">
+        <h4>Email</h4>
+        <p>contact@uftam.net</p>
+      </div>
+      <div class="contact_address">
+        <h4>Adresse</h4>
+        <p>UFTAM(prés de Marché de Gros, Bir El <br> Kasaa) El Mourouj 2074, TUNISIE</p>
+      </div>
+      <div class="phone">
+        <h4>Appelez-nous</h4>
+        <p>71 100 100 / 71 666 666</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer_top">
+    <div class="container">
+      <ul>
+        <li><a [routerLink]='["", "uftam_welcome" ]'>A propos de l'Uftam</a></li>
+        <li><a [routerLink]='["", "uftam_admission" ]'>Admission</a></li>
+        <li><a [routerLink]='["", "uftam_contact" ]'>Contactez-nous</a></li>
+        <li>
+          <a target="_blank" href="https://www.facebook.com/UFTAMUniversite/">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer_bottom">
+    <div class="footer_bootom_left">
+      <p> Tous les droits sont reservés pour UFTAM</p>
+    </div>
+    <div class="footer_bootom_right">
+      <p> Powred by Digilinks</p>
+    </div>
+  </div>
+</footer>

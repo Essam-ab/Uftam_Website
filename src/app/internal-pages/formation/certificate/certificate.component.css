@@ -1,0 +1,64 @@
+@import '../../../home/home.component.css';
+
+.main-formation {
+  background: #f5f6fc;
+  font-family: 'Poppins', sans-serif;
+}
+
+section.banner .buttons {
+  position: absolute;
+  margin-top: -30px !important;
+  text-align: center;
+  width: 100% !important;
+  font-weight: bold;
+}
+
+section.title {
+  font-size: 1.2rem !important;
+}
+
+section.content {
+  font-size: 1rem !important;
+  background: #ffffff;
+}
+
+section.content .card {
+  background: none;
+  border: none;
+}
+
+section.content .card-header {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  color: #2a416d !important;
+  font-size: 1.5rem !important;
+  border-bottom: 1px solid #2a416d !important;
+}
+
+section.content .card-body {
+  background: none;
+  border: none;
+  color: #2a416d !important;
+  font-size: 1rem !important;
+  text-align: justify;
+}
+
+section.program h1 {
+  font-weight: bold;
+  color: #2a416d !important;
+  font-size: 1.5rem !important;
+}
+
+.logos {
+  background: #ffffff !important;
+  text-align: center !important;
+}
+
+section.logos h1 {
+  font-weight: bold;
+  color: #2a416d !important;
+  font-size: 1.5rem !important;
+  text-transform: uppercase;
+}

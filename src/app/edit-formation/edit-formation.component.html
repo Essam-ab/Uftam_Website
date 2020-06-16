@@ -1,0 +1,45 @@
+<div class="pageheader-nav">
+  <ol class="breadcrumb slim-breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="/dashboard">Home</a></li>
+    <li class="breadcrumb-item"><a routerLink="/admin/formationView">Formation</a></li>
+    <li class="breadcrumb-item">Edit Formation</li>
+  </ol>
+</div>
+<form (ngSubmit)="updateFormation($event)" *ngFor="let f of formation">
+  <div class="form-group">
+    <label for="formationName">Nom</label>
+    <input required type="text" class="form-control" id="formationName" aria-describedby="emailHelp"
+      placeholder="Nom Formation.." value="{{f.lib}}">
+    <!-- <small id="formationHelp" class="form-text text-muted">exemple.</small> -->
+  </div>
+
+  <div class="form-group">
+    <label for="formationPresentation">Presentation(brève description)</label>
+    <input value="{{f.pres}}" required type="text" class="form-control" id="formationPresentation"
+      placeholder="Presentation Formation..">
+  </div>
+
+  <div class="form-group">
+    <label for="formationDescription">Description</label>
+    <input value="{{f.desc}}" required type="text" class="form-control" id="formationDescription"
+      placeholder="Description Formation..">
+  </div>
+
+  <div class="form-group">
+    <label for="typeFormation">Type</label>
+    <div *ngFor="let allFor of allFormationTypes; let i = index">
+      <select class="form-control" id="typeFormation" *ngIf="i<1">
+        <!-- <option value="{{allFor.id}}" *ngIf="allFor.lib === idFormation" selected>
+          {{allFor.lib}}
+        </option> -->
+        <option *ngFor="let allFor of allFormationTypes" value="{{allFor.id}}">
+          {{allFor.lib}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="text-center">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+ 

@@ -1,0 +1,46 @@
+<div class="pageheader-nav">
+  <ol class="breadcrumb slim-breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="/dashboard">Home</a></li>
+    <li class="breadcrumb-item">Vie Étudiant</li>
+  </ol>
+</div>
+<div class="container text-right mb-1">
+  <a routerLink="../studentExp" class="btn btn-primary">
+    <i class="fas fa-plus"></i> Ajouter un Vie Étudiant
+  </a>
+</div>
+<table class="table table-dark">
+  <thead class="">
+    <tr class="head">
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Description</th>
+      <th scope="col">Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let s of studentExp">
+      <th scope="row">{{s.id}}</th>
+      <td id="{{s.id}}">{{s.lib}}</td>
+      <td id="{{s.id}}">{{s.desc | slice:0:100}}</td>
+      <td>
+        <a *ngIf="s.status === 'yes'" id="{{s.id}}" (click)="storeItem($event);disableRow($event)"
+          class="btn btn-outline-warning form-control-sm mr-3">
+          <i id="{{s.id}}" class="far fa-eye-slash">
+          </i>
+        </a>
+
+        <a *ngIf="s.status === 'no'" id="{{s.id}}" (click)="storeItem($event);enableRow($event)"
+          class="btn btn-outline-warning form-control-sm mr-3">
+          <i id="{{s.id}}" class="far fa-eye">
+          </i>
+        </a>
+
+        <a id="{{s.id}}" (click)="storeItem($event);deleteRow($event)" class="btn btn-outline-danger form-control-sm">
+          <i id="{{s.id}}" class="far fa-trash-alt">
+          </i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>

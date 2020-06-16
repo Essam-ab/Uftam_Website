@@ -1,0 +1,128 @@
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <a class="navbar-brand" href="#">
+    <img src="../../assets/img/uftam_logo.png" alt="uftam_logo">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink=''>Accueil <span class="sr-only">(current)</span>
+          <div class="underline"></div>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link  dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <div class="underline"></div>
+          uftam
+        </a>
+        <div class="dropdown-menu" id="" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" [routerLink]="['', 'uftam_welcome']">
+            Mot de bienvenue
+          </a>
+          <a class="dropdown-item" [routerLink]="['', 'uftam_team']">
+            Équipe uftam
+          </a>
+          <a class="dropdown-item" [routerLink]="['','uftam_partners']">
+            Membres fondateurs
+          </a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <div class="underline"></div>
+          Formation
+
+        </a>
+        <div class="dropdown-menu" id="" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" id="toggle_drop_first">
+            Licence
+          </a>
+          <ul id="item_drop_first">
+            <li *ngFor="let l of license">
+              <a [routerLink]="['', 'uftam_formation', 'uftam_license', l.id,'license']" class="">
+                {{l.lib}}
+              </a>
+            </li>
+          </ul>
+
+          <a class="dropdown-item" id="toggle_drop_second">
+            Masters
+          </a>
+          <ul id="item_drop_second">
+            <li *ngFor="let m of master">
+              <a [routerLink]="['', 'uftam_formation', 'uftam_master', m.id, 'master']" class="" [innerHtml]="m.lib">
+              </a>
+            </li>
+          </ul>
+
+          <a class="dropdown-item" id="toggle_drop_third">
+            Certificats
+          </a>
+          <ul id="item_drop_third">
+            <li *ngFor="let c of certificate">
+              <a [routerLink]="['', 'uftam_formation', 'uftam_certificate', c.id, 'certificate']" class=""
+                [innerHtml]="c.lib">
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink='/uftam_admission'>Admission <div class="underline"></div></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink='/uftam_vie'>Vie étudiante <div class="underline"></div></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink='/uftam_actuality'>Actualité <div class="underline"></div></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink='/uftam_research'>Recherche <div class="underline"></div></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink='/uftam_inscription'>Inscription <div class="underline"></div></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink='/uftam_contact'>Contact <div class="underline"></div></a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2 d-none" type="search" placeholder="Search" aria-label="Search">
+      <button class="my-2 my-sm-0" type="submit" (click)="searchEngine(search)">
+        <i class="fas fa-search fa-lg"></i>
+      </button>
+    </form>
+  </div>
+</nav>
+
+<ng-template #search>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">UFTAM</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+
+  <div class="modal-body">
+    <h3 class="text-center">Filtre</h3>
+    <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2 mb-5">
+      <select class="form-control" (change)="changeSelectedHint($event)" id="selectedHint">
+        <option value="formation">Formation</option>
+        <option value="event">Évènement</option>
+      </select>
+      <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Recherche ici..."
+        aria-label="Search" [value]="fieldvalue" (keyup)="triggerEngine($event.target.value)">
+      <i class="fas fa-search" aria-hidden="true"></i>
+    </form>
+    <hr>
+    <div class="search_result">
+
+    </div>
+  </div>
+</ng-template>

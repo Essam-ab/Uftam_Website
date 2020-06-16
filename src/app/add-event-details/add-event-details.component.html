@@ -1,0 +1,22 @@
+<div class="pageheader-nav">
+  <ol class="breadcrumb slim-breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="/dashboard">Home</a></li>
+    <li class="breadcrumb-item">Évenement Details</li>
+  </ol>
+</div>
+<form (ngSubmit)="addEventDetails()">
+  <div class="form-group">
+    <label for="typeFormation">Article</label>
+    <select class="form-control" id="typeFormation" [(ngModel)]="selectedEvent" name="article">
+      <option value="Default" aria-selected="true">--- Choisir un Event ---</option>
+      <option *ngFor="let event of events" value="{{event.id}}">{{event.lib}}</option>
+    </select>
+  </div>
+
+  <label>Détails:</label>
+  <angular-editor [(ngModel)]="htmlContent" [ngModelOptions]="{standalone: true}"></angular-editor>
+
+  <div class="text-center">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>

@@ -1,0 +1,13 @@
+<div class="file-drop-area">
+    <span class="fake-btn btn">
+        <p>Faites glisser et déposez les fichiers ici</p>
+        <p>ou</p>
+        <p>Parcourir les fichiers</p>
+    </span>
+    <span class="file-msg">
+        <span *ngFor="let item of file">
+            {{item ? item.name : '' }},
+        </span>
+    </span>
+    <input class="file-input" type="file" multiple>
+</div>

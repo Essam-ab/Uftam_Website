@@ -1,0 +1,131 @@
+<app-internal-nav></app-internal-nav>
+
+<div class="pre">
+  <div class="text">
+    <h1>Formulaire</h1>
+    <h2>de pré-inscription 2020-2021</h2>
+  </div>
+  <div>
+    <a target="_blank" href="{{apiUrl}}handers/condidat/document/Formulaire-de-candidature.docx"
+      class="btn btn-primary template-btn1-dark block">Télécharger</a>
+  </div>
+</div>
+<section class="inscription">
+  <form #f="ngForm" [formGroup]="userInfo" (submit)='submitCondidat(f, $event)' class="userForm">
+    <h1>Vos coordonnées</h1>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="inputBox">
+          <div class="inputText">Nom*</div>
+          <input type="text" aria-label="first name" formControlName="userInfoFirstName" class="input"
+            (click)='setFocus($event)'>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="inputBox">
+          <div class="inputText">Prénom*</div>
+          <input type="text" aria-label="Last name" formControlName="userInfoLastName" class="input"
+            (click)='setFocus($event)'>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="inputBox">
+          <div class="inputText">Email*</div>
+          <input required type="email" class="input" formControlName="userInfoEmail" id="email"
+            (click)='setFocus($event)'>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="inputBox">
+          <div class="inputText">Date de naissance*</div>
+          <input required type="text" class="input" formControlName="userInfoDate" bsDatepicker id="eventDate"
+            (click)='setFocus($event)'>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="inputBox">
+          <div class="inputText">Pays de résidence *</div>
+          <input required type="text" class="input" formControlName="userInfoPays" id="pays" (click)='setFocus($event)'>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="inputBox">
+          <div class="inputText">Numéro de téléphone*</div>
+          <input required type="tel" class="input" formControlName="userInfoTel" id="eventDate"
+            (click)='setFocus($event)'>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col" data-aos="fade-up">
+        <select class="form-control" id="typeFormation" formControlName="userInfoFormation">
+          <option value="Default" selected>--- Choisir un Formation ---</option>
+          <option *ngFor="let formation of formations_select" value="{{formation.id}}">
+            <span [innerHtml]="formation.type"></span> : <span [innerHtml]="formation.lib"></span>
+          </option>
+        </select>
+      </div>
+    </div>
+
+
+
+    <h1 class="my-5">Vos documents</h1>
+    <div class="row" data-aos="fade-up">
+      <div class="col-md-12">
+        <label class="form-label">Formulaire de candidature rempli * (Taille maximale des fichiers:
+          1,5M)</label>
+        <app-file-upload formControlName="File"></app-file-upload>
+      </div>
+    </div>
+    <div class="row mt-3" data-aos="fade-up">
+      <div class="col-md-12">
+        <label class="form-label">Pièce d'identité * (Taille maximale des fichiers: 1,5M)</label>
+        <app-file-upload formControlName="File"></app-file-upload>
+      </div>
+    </div>
+    <div class="row mt-3" data-aos="fade-up">
+      <div class="col-md-12">
+        <label class="form-label">Derniers relevés de notes depuis Licence 1 (Sauf pour certificats) (Taille
+          maximale des fichiers: 1,5M)</label>
+        <app-file-upload formControlName="File"></app-file-upload>
+      </div>
+    </div>
+    <div class="row mt-3" data-aos="fade-up">
+      <div class="col-md-12">
+        <label class="form-label">CV * (Taille maximale des fichiers: 1,5M)</label>
+        <app-file-upload formControlName="File"></app-file-upload>
+      </div>
+    </div>
+    <div class="row mt-3" data-aos="fade-up">
+      <div class="col-md-12">
+        <label class="form-label">Lettre de motivation * (Taille maximale des fichiers: 1,5M)</label>
+        <app-file-upload formControlName="File"></app-file-upload>
+      </div>
+    </div>
+    <div class="row mt-3" data-aos="fade-up">
+      <div class="col-md-12">
+        <label class="form-label">Lettre de recommandation (Taille maximale des fichiers: 1,5M)</label>
+        <app-file-upload formControlName="File"></app-file-upload>
+      </div>
+    </div>
+    <div class="row mt-3" data-aos="fade-up">
+      <div class="col-md-12">
+        <label class="form-label">Autres documents complémentaires (Taille maximale des fichiers: 1,5M)</label>
+        <app-file-upload formControlName="File"></app-file-upload>
+      </div>
+    </div>
+    <div class="row mt-3 text-center" data-aos="fade-in">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <button type="submit" class="btn btn-primary template-btn1-dark block">Inscription</button>
+      </div>
+    </div>
+
+  </form>
+</section>
+
+<app-footer></app-footer>

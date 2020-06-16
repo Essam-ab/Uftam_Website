@@ -1,0 +1,33 @@
+<div class="wrapper" style="height: 100vh !important;">
+  <!-- Sidebar Holder -->
+  <nav id="sidebar">
+    <app-admin-side-nav></app-admin-side-nav>
+  </nav>
+  <!-- Page Content Holder -->
+  <div id="content">
+    <app-admin-top-nav></app-admin-top-nav>
+    <div class="container jumbotron">
+
+      <div class="d-flex justify-content-between">
+        <div class="card transition">
+          <h2 class="transition">Ajouter un formation</h2>
+          <p>La Formation est divisée en 3 catégories (licences, certificats, masters)</p>
+          <div class="cta-container transition"><a routerLink='/admin/addFormation' class="cta">visiter</a></div>
+          <div class="card_circle transition"></div>
+        </div>
+
+        <div class="card transition">
+          <h2 class="transition">Ajouter un évènement ou actualité</h2>
+          <p>
+            Un événement est divisé en 2 types: <br>
+            - First: les Événements <br>
+            - Second: Actualité <br>
+          </p>
+          <div class="cta-container transition"><a routerLink='/admin/addEvent' class="cta">visiter</a></div>
+          <div class="card_circle transition"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

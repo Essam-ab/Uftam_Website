@@ -1,0 +1,448 @@
+<app-internal-nav></app-internal-nav>
+
+<section class="info">
+  <div class="vie_first default_grid">
+    <div class="left">
+      <div class="side_image grid_indent_left">
+        <img src="../../../assets/img/vie_page_image.png" alt="img">
+      </div>
+    </div>
+    <div class="right">
+      <div class="side_text grid_indent_right">
+        <h4> Le site </h4>
+        <p>Le campus de l’UFTAM partage le Campus de la Tunisian
+          Business School près de Marché de Gros, Bir El Kasaa,
+          El Mourouj 2074, TUNISIE</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="vie_third default_grid">
+    <div class="left">
+      <div class="block_split grid_indent_left">
+        <div class="block_left">
+          <div class="block_box">
+            <div class="block_header">
+              <img src="../../../assets/img/vie_logo_4.png" alt="img">
+            </div>
+            <div class="block_body">
+              <h4>Accessibilité du campus <br> et transport en commun</h4>
+              <p>
+                Les Frais d’abonnement aux transports en commun (bus, métro et train) sont variables en fonction du
+                trajet et du moyen de transport concerné (bus ; métro et train) : de 12dt à 130dt annuels.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="block_right">
+          <div class="block_box">
+            <div class="block_header">
+              <img src="../../../assets/img/vie_logo_3.png" alt="img">
+
+            </div>
+            <div class="block_body">
+              <h4>La restauration <br>
+                universitaire</h4>
+              <p>
+                Les étudiants de UFTAM sont accueillis au restaurant universitaire du Campus au sein des locaux et qui
+                est sous la tutelle de l'Office des Œuvres Universitaires pour le Nord ils peuvent prendre leur dîner à
+                la Cité Universitaire Morouj et Montfleuri. Frais de restauration : tous les étudiants bénéficient du
+                repas auprès des restaurants universitaires contre l’achat d’un ticket restaurant de 0,200dt.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="right">
+      <div class="block_split grid_indent_right ">
+        <div class="block_left">
+          <div class="block_box">
+            <div class="block_header">
+              <img src="../../../assets/img/vie_logo_2.png" alt="img">
+
+            </div>
+            <div class="block_body">
+              <h4>Le logement <br>
+                universitaire</h4>
+              <p>
+                Les étudiants de l’UFTAM disposent d’un accès réservé aux logements des cités universitaires de Mourouj
+                pour les filles et pour les garçons Montfleuri. Ces deux établissements sont proches du campus de
+                l’UFTAM et accessibles par les transports en commun. Les frais d’hébergement aux foyers et aux cités
+                universitaires gérées par le service public sont de : • 10dt par mois • 20dt de caution.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="block_right">
+          <div class="block_box">
+            <div class="block_header">
+              <img src="../../../assets/img/vie_logo_1.png" alt="img">
+
+            </div>
+            <div class="block_body">
+              <h4>La santé Assistance <br>
+                psychologique et médicale</h4>
+              <p>
+                La présence périodique d'un psychologue et d'un médecin sur le site est assurée pour les étudiants de
+                l’UFTAM.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="accord">
+    <style>
+      hr {
+        width: 95%;
+        margin-left: 0px;
+        margin-top: 0px;
+        background: var(--primary-color);
+      }
+
+    </style>
+    <h1 class="text-center">Etudiants internationaux</h1>
+    <div class="accordion" id="accordionFirst">
+      <div class="card" data-aos="fade-right">
+        <div class="card-header" id="headingOne">
+
+          <h2 class="mb-0">
+            <button class="btn btn-link" (click)="expandStudentInfo($event, 0)" type="button" data-toggle="collapse"
+              data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              La demande de visa <i class="fas fa-caret-{{value[0]}}"></i>
+            </button>
+            <hr>
+          </h2>
+        </div>
+
+        <div id="collapseOne" class="collapse hide bourse_collapse" aria-labelledby="headingOne"
+          data-parent="#accordionFirst">
+          <div class="card-body">
+            Est considéré étudiant étranger toute personne inscrite à l’Université et qui n’a pas le statut de citoyen
+            tunisien ou résident permanent au sens de la loi sur l’immigration. Cet étudiant est soumis à un programme
+            d’études régulier ou participe à un programme d’échanges. L’étudiant étranger doit détenir à son arrivée à
+            l’Université un passeport valide et un visa d’entrée. Le visa n’est pas exigé pour les ressortissants de
+            certains pays étrangers.<br>
+            Vous devez donc avant votre départ vous renseigner auprès du Consulat de Tunisie dans votre pays d’origine
+            ou à défaut dans un pays voisin ayant une représentation tunisienne.<br>
+            Les documents à fournir pour la demande de visa sont les suivants :<br>
+            - Photocopie des 3 premières pages de votre passepo <br>
+            - 3 formulaires de visa remis par le Consulat tunisien,<br>
+            - 2 photos d’identité,<br>
+            - photocopie de l’attestation d’inscription et du reçu de paiement.
+          </div>
+        </div>
+      </div>
+      <div class="card" data-aos="fade-left">
+        <div class="card-header" id="headingTwo">
+
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" (click)="expandStudentInfo($event, 1)" type="button"
+              data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              La carte de séjour <i class="fas fa-caret-{{value[1]}}"></i>
+            </button>
+            <hr>
+          </h2>
+        </div>
+
+        <div id="collapseTwo" class="collapse hide bourse_collapse" aria-labelledby="headingTwo"
+          data-parent="#accordionFirst">
+          <div class="card-body">
+            Les documents à fournir : <br>
+            Le certificat d’inscription délivré par l’université et le reçu de paiement de vos frais de scolarité <br>
+            Le contrat de location ou dans le cas où vous logez en foyer : une attestation de résidence <br>
+            2 photos d’identité <br>
+            2 timbres fiscaux de 10 DT à acquérir auprès de la Recette des Finances <br>
+            Un justificatif des ressources en Banque et/ou une attestation de prise en charge <br>
+            Un justificatif d’assurance maladie/accident<br>
+            La carte de séjour n’est délivrée qu’après 2 ou 3 mois de la date de dépôt de la demande. Elle sera
+            valable<br>
+            une année (jusqu’au 30 septembre de l’année) renouvelable chaque année. En attendant, le commissariat
+            vous<br>
+            délivre une carte provisoire qui vous permet d’être en situation régulière sur tout le territoire tunisien.
+          </div>
+        </div>
+      </div>
+      <div class="card" data-aos="fade-right">
+        <div class="card-header" id="headingThree">
+
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" (click)="expandStudentInfo($event, 2)" type="button"
+              data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Les transferts d’argent <i class="fas fa-caret-{{value[2]}}"></i>
+            </button>
+            <hr>
+          </h2>
+        </div>
+
+        <div id="collapseThree" class="collapse hide bourse_collapse" aria-labelledby="headingThree"
+          data-parent="#accordionFirst">
+          <div class="card-body">
+            L’unité monétaire en Tunisie est le dinar. <br>
+            1 dinar = 1000 millimes. <br>
+            Un euro = 3,1609 dinars (Septembre 2019)
+          </div>
+        </div>
+      </div>
+      <div class="card" data-aos="fade-left">
+        <div class="card-header" id="headingFour">
+
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" (click)="expandStudentInfo($event, 3)" type="button"
+              data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              Transferts de fonds <i class="fas fa-caret-{{value[3]}}"></i>
+            </button>
+            <hr>
+          </h2>
+        </div>
+
+        <div id="collapseFour" class="collapse hide bourse_collapse" aria-labelledby="headingFour"
+          data-parent="#accordionFirst">
+          <div class="card-body">
+            Un des moyens de recevoir des fonds en Tunisie est de faire effectuer des virements bancaires à une banque
+            de la ville de Tunis dans un compte ouvert à votre nom. Les grandes banques étrangères ont des
+            correspondants bancaires tunisiens où vous pourrez recevoir des fonds. Le transfert par Western Union est
+            plus rapide mais plus onéreux.
+          </div>
+        </div>
+      </div>
+      <div class="card" data-aos="fade-right">
+        <div class="card-header" id="headingFive">
+
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" (click)="expandStudentInfo($event, 4)" type="button"
+              data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+              Ouvrir un compte bancaire <i class="fas fa-caret-{{value[4]}}"></i>
+            </button>
+            <hr>
+          </h2>
+        </div>
+
+        <div id="collapseFive" class="collapse hide bourse_collapse" aria-labelledby="headingFive"
+          data-parent="#accordionFirst">
+          <div class="card-body">
+            Pour ouvrir un compte bancaire, vous devez vous présenter à l’agence de la banque que vous aurez choisie
+            muni des documents suivants : <br>
+            La photocopie de la 1ère page de votre passeport <br>
+            La copie de votre attestation d’inscription à l’université, la carte d’étudiant ou la copie de votre carte
+            de séjour définitive ou provisoire
+          </div>
+        </div>
+      </div>
+      <div class="card" data-aos="fade-left">
+        <div class="card-header" id="headingSix">
+
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" (click)="expandStudentInfo($event, 5)" type="button"
+              data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+              La téléphonie et Internet<i class="fas fa-caret-{{value[5]}}"></i>
+            </button>
+            <hr>
+          </h2>
+        </div>
+
+        <div id="collapseSix" class="collapse hide bourse_collapse" aria-labelledby="headingSix"
+          data-parent="#accordionFirst">
+          <div class="card-body">
+            <h4>Mobiles</h4>
+            <p>
+              Vous pouvez soit utiliser un téléphone portable que vous apportez de l’étranger (presque tous les
+              téléphones fonctionnent en Tunisie), soit acheter un nouveau téléphone. <br>
+              Dans la plupart des cas, les fournisseurs de services mobiles tunisiens vous offriront un nouveau
+              téléphone pour une fraction de leur prix normal lorsque vous vous engagez à utiliser un plan d’abonnement
+              mensuel auprès de cette société pendant au moins 12 mois. <br>
+              Conseil pour économiser : Si vous avez décidé de garder votre téléphone portable de l’étranger, tous les
+              opérateurs vous proposent des formules prépayées. Cette option offre également l’avantage de mieux
+              contrôler ses dépenses et de ne pas avoir d’engagements envers l’opérateur, donc si vous avez un budget
+              limité, c’est idéal pour vous.
+            </p>
+
+            <h4>Carte SIM</h4>
+            <p>
+              Vous devrez décider quel fournisseur de téléphonie mobile et quelle formule choisir. Une fois votre choix
+              fait, vous pouvez vous rendre dans n’importe quel magasin de téléphone et acquérir votre carte SIM.
+            </p>
+
+            <h4> Quel opérateur choisir?</h4>
+            <p>
+              Il existe 3 principaux opérateurs en Tunisie: <br>
+              – Tunisie Télécom <br>
+              – Ooredoo <br>
+              – Orange <br>
+              Chaque opérateur offre des abonnements et des formules post et prépayées
+            </p>
+
+            <h4>Documents utiles</h4>
+            <p>
+              Pour vous abonner, vous devez apporter les documents suivants avec vous :
+              -Carte d’identité ou passeport <br>
+              -Titre de séjour pour les étrangers <br>
+              -Justificatif de domicile (pour les formules post-payées) <br>
+              -Coordonnées de votre carte de crédit et de votre compte bancaire (pour les formules post-payées) <br>
+              -Preuve d’adresse: <br>
+              facture (électricité, gaz….) Il se peut que l’on vous demande de payer un acompte ou d’effectuer vos
+              paiements par prélèvement automatique..
+            </p>
+
+            <h4> Poste payé avec Facture</h4>
+            <p>
+              Vous payez une facture mensuelle en fonction de l’utilisation que vous faites de votre téléphone.
+              *Avantages (par rapport aux plans Prépayés) : <br> Pas besoin de recharger avec des crédits Meilleures
+              offres sur les nouveaux téléphones lorsque vous vous engagez sur des forfaits de 12 à 24 mois
+            </p>
+
+            <h4> Abonnement mensuel avec limite de coût</h4>
+            <p>
+              Vous payez un forfait mensuel qui comprend un crédit que vous pouvez utiliser pour vos appels et SMS. <br>
+              Cette solution combine les avantages d’un abonnement avec le prépaiement pour vous permettre de contrôler
+              vos
+              coûts. Vous pouvez également recharger manuellement comme un prépaiement standard. Avantages :
+              – Frais mensuels bas, crédit inclus <br>
+              – Le crédit peut être rechargé à tout moment <br>
+              – Des téléphones mobiles attrayants <br>
+              avec des conditions avantageuses
+            </p>
+
+            <h4>Poste Prépayé</h4>
+            <p>
+              Vous chargez votre téléphone avec des crédits et vous pouvez ensuite l’utiliser jusqu’à épuisement. <br>
+              Lorsque vous n’en avez plus, vous devez recharger vos crédits. Il n’y a pas d’engagement contractuel ni de
+              forfait mensuel. L’avantage c’est qu’il n y a pas d’engagement / contrat à long terme, donc idéal si vous
+              restez moins d’un an. L’inconvénient majeur est que vous aurez besoin de recharger avec des crédits.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-aos="fade-right">
+        <div class="card-header" id="headingSeven">
+
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" (click)="expandStudentInfo($event, 6)" type="button"
+              data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+              La téléphonie et Internet fixe <i class="fas fa-caret-{{value[6]}}"></i>
+            </button>
+            <hr>
+          </h2>
+        </div>
+
+        <div id="collapseSeven" class="collapse hide bourse_collapse" aria-labelledby="headingSeven"
+          data-parent="#accordionFirst">
+          <div class="card-body">
+            <h4>Fixe filaire et ADSL</h4>
+            <p>
+              Pour disposer de l’ADSL chez soi il faut installer au préalable une ligne de téléphonie fixe d’où
+              l’obligation de passer par Tunisie télécom vu qu’elle a le monopole des lignes filaires. <br>
+              Une fois que vous avez installé la ligne fixe, vous pouvez soit opter pour l’une des offres ADSL de
+              Tunisie Télécom soit opter pour un autre fournisseur d’accès internet comme: GlobalNet, HexaByte, Orange,
+              Topnet, Ooredoo Tunisie… <br>
+              L’inconvénient majeur est que vous serez tenus de payer deux factures par mois, une pour Tunisie télécom
+              et l’autre pour le fournisseur d’accès internet, ce qui n’est pas très pratique
+            </p>
+
+            <h4> Box internet + téléphonie IP</h4>
+            <p>
+              Tous les opérateurs proposent des offres internet et téléphonie fixe qui ne nécessitent pas une connexion
+              filaire mais il faut savoir que les forfaits mensuels en data sont plafonnés, donc si vous utilisez des
+              services gourmands en Data, votre forfait sera vite épuisé.
+            </p>
+
+            <h4> Le climat</h4>
+            <h4>
+              La Tunisie bénéficie d’un climat méditerranéen dans la quasi-totalité du pays, sauf dans la partie sud où
+              le climat est plus désertique. Les hivers en Tunisie sont plutôt doux et humides avec des températures
+              comprises entre 8°C et 15°C et les étés chauds et secs avec des températures entre 22°C et 35°C pouvant
+              même dépasser en août les 40°C dans la région de Tozeur.
+            </h4>
+
+            <h4>Religion et langue</h4>
+            <p>
+              La religion en Tunisie se caractérise par la prédominance de l’islam qui est la religion principale et
+              officielle de la Tunisie et la langue maternelle des tunisiens est l’arabe.
+            </p>
+
+            <h4>Prix des produits alimentaires subventionnés :</h4>
+            <p>
+              -Le sucre destiné à la consommation familiale : 970 millimes/kilo <br>
+              -L’huile végétale subventionnée : 900 millimes le litre <br>
+              -Le pain (400 grammes) :230 millimes <br>
+              -Le pain (220 grammes) :190 millimes <br>
+              -La farine pâtissière (ps-67):700 millimes/Kg. <br>
+              -La semoule : 450 millimes/Kg <br>
+              -Les pâtes alimentaires : 805 millimes/Kg.<br>
+              -Le couscous : 795 millimes/Kg<br>
+              -Le lait demi-écrémé emballé dans des boîtes : 1,120 dinar/litre.<br>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-aos="fade-left">
+        <div class="card-header" id="headingEight">
+
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" (click)="expandStudentInfo($event, 7)" type="button"
+              data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+              Les moyens de transport <i class="fas fa-caret-{{value[7]}}"></i>
+            </button>
+            <hr>
+          </h2>
+        </div>
+
+        <div id="collapseEight" class="collapse hide bourse_collapse" aria-labelledby="headingEight"
+          data-parent="#accordionFirst">
+          <div class="card-body">
+            <h4> Taxi</h4>
+            <p>
+              Ils sont de couleur jaune et sont équipés d’un compteur. Ils ne prennent en charge que les déplacements à
+              l’intérieur d’une commune. Les taxis peuvent être arrêtés en tout lieu. Le tarif est d’environ 1Dt/km.
+              Après 21h, les tarifs doublent.
+            </p>
+
+            <h4> Taxi Collectif inter-villes ou Louage</h4>
+            <p>
+              C’est un moyen de transport fréquent et assez rapide. Sans horaires précis, les “louages” lient les villes
+              et partent une fois pleins. <br>
+              Les taxis collectifs sont reconnaissables grâce à un système de couleur : <br>
+              le bleu est pour les taxis spécialisés dans les dessertes régionales <br>
+              le blanc avec une rayure rouge pour les taxis spécialisés dans les trajets longue distance <br>
+              le jaune pour les taxis spécialisés dans les dessertes locales ou rurales.
+            </p>
+
+            <h4>Le bus</h4>
+            <p>
+              La Société nationale du transport rural et interurbain (SNTRI) vous permet de voyager entre les grandes,
+              moyennes, et petites villes du pays confortablement et en toute sécurité. Elle opère sur tout le
+              territoire tunisien.
+            </p>
+
+            <h4> Le métro</h4>
+            <p>
+              Le métro léger est un tramway qui relie la capitale de Tunis aux banlieues. C’est un moyen très économique
+              et avec une fréquence régulière et donc très avantageux si vous vous déplacez à Tunis. La principale
+              station de métro se trouve au niveau de la gare centrale de Tunis.
+            </p>
+
+            <h4> Le train</h4>
+            <p>
+              Exploité par la Société nationale des chemins de fer tunisiens (SNCFT), le réseau de trains tunisien est
+              moderne, et vous voyagerez confortablement. À Tunis, la gare se trouve place de Barcelone, 300 m au sud de
+              l’avenue Habib Bourguiba. Elle est couramment nommée la « gare Barcelone ». <br>
+              Il existe trois classes : la seconde, la première et la classe confort, cette dernière est recommandée,
+              car on y voyage au calme.
+            </p>
+
+            <h4> L’avion</h4>
+            <p>
+              Des lignes aériennes desservent l’intérieur et le sud du pays. Les compagnies principales effectuant les
+              trajets de manière régulière sont Tunisair, Tunisair express et Nouvelair.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-footer></app-footer>

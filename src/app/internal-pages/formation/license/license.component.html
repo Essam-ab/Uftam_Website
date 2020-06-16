@@ -1,0 +1,86 @@
+<app-internal-nav></app-internal-nav>
+<div class="main-formation">
+  <div class="container">
+    <div class="row">
+      <section class="banner">
+        <img [src]="image" class="img-fluid" />
+        <div class="buttons">
+          <a [routerLink]="[ '/uftam_contact']"
+            class="btn btn-primary template-btn1-dark block animate__animated animate__bounce animate__delay-3s text-uppercase">
+            Contactez-nous
+          </a>
+          <a [href]="document" target="_blank"
+            class="btn btn-primary template-btn1-dark block animate__animated animate__bounce animate__delay-3s text-uppercase">
+            Télécharger les brochures
+          </a>
+          <a [routerLink]="[ '/uftam_inscription']"
+            class="btn btn-primary template-btn1-dark block animate__animated animate__bounce animate__delay-3s text-uppercase">
+            Candidater
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <section class="title mt-5" [innerHtml]="public_acceuil">
+    </section>
+
+    <section class="content p-3 mb-5">
+      <div id="accordion" class="accordion">
+        <div class="card mb-0">
+          <div class="card-header collapsed" data-toggle="collapse" href="#collapseOne" data-aos="fade-up">
+            <a class="card-title"> Prérequis </a>
+            <i class="fas fa-caret-down float-right"></i>
+          </div>
+          <div id="collapseOne" class="card-body collapse show" data-parent="#accordion" [innerHtml]="prerequis"
+            data-aos="fade-up">
+          </div>
+          <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"
+            data-aos="fade-up">
+            <a class="card-title"> Objectifs de la formation </a>
+            <i class="fas fa-caret-down float-right"></i>
+          </div>
+          <div id="collapseTwo" class="card-body collapse" data-parent="#accordion" [innerHtml]="enjeux"
+            data-aos="fade-up">
+
+          </div>
+          <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree"
+            data-aos="fade-up">
+            <a class="card-title"> Débouchés professionnels </a>
+            <i class="fas fa-caret-down float-right"></i>
+          </div>
+          <div id="collapseThree" class="card-body collapse" data-parent="#accordion" [innerHtml]="debouche"
+            data-aos="fade-up">
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="program mt-5 mb-5" data-aos="fade-in">
+      <h1 class="ml-5">Programme Prévisionnel</h1>
+      <div [innerHtml]="program"></div>
+    </section>
+  </div>
+</div>
+<section class="logos my-5" data-aos="fade-in">
+  <div class="container">
+    <h1>La licence est porté par :</h1>
+    <div class="row mt-3 mb-5">
+      <ng-container *ngFor="let item of diplome_logos">
+        <div class="col text-center" *ngIf="item.type_logo == 1">
+          <img src="{{apiUrl}}upload/{{item.logo}}" class="img-fluid">
+        </div>
+      </ng-container>
+    </div>
+    <h1>Réseau institutionnel et Partenaires :</h1>
+    <div class="row mt-3 mb-5">
+      <ng-container *ngFor="let item of diplome_logos">
+        <div class="col text-center" *ngIf="item.type_logo == 2">
+          <img src="{{apiUrl}}upload/{{item.logo}}" class="img-fluid">
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</section>
+
+<app-footer></app-footer>

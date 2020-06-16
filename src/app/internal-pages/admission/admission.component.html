@@ -1,0 +1,474 @@
+<app-internal-nav></app-internal-nav>
+
+<section class="info" id="admission">
+  <div class="info_wrapper container">
+    <div style="display: flex; justify-content: space-between;">
+      <h2 class="admission_header">
+        Pré-inscription 2020-2021 ! <br>
+        Candidature en ligne du 10 mars au 30 juin 2020 !
+      </h2>
+      <div style="place-self: center;">
+        <a [routerLink]="['', 'uftam_inscription']" class="btn btn-primary template-btn1-dark block">Candidater</a>
+      </div>
+    </div>
+    <div class="info_grid_split">
+      <div class="info_split_left">
+        <ul class="split_left_items">
+          <li class="active" id="choise_1" (click)="change_choice($event)">
+            Etapes pour déposer votre demande
+          </li>
+          <li id="choise_2" (click)="change_choice($event)">
+            Formulaire en ligne
+          </li>
+          <li id="choise_3" (click)="change_choice($event)">
+            Pièces requises
+          </li>
+          <li id="choise_4" (click)="change_choice($event)">
+            Frais d'admission
+          </li>
+          <li id="choise_5" (click)="change_choice($event)">
+            Bourse
+          </li>
+          <li id="choise_6" (click)="change_choice($event)">
+            Après avoir été admis
+          </li>
+          <li id="choise_7" class="d-none" (click)="change_choice($event)">
+            Questions fréquentes
+          </li>
+        </ul>
+      </div>
+      <div class="info_split_right">
+        <ul class="split_right_items" id="display_choice_1">
+          <li class="" id="for_choise_1">
+            <div class="demand_list">
+              <div class="demand_list_left animate__animated animate__zoomIn">
+                <span>
+                  <p>1</p>
+                </span>
+              </div>
+              <div class="demand_list_right animate__animated animate__fadeInUp">
+                <h4>Faire le choix de programme d’études ou de la formation
+                  Vous pouvez télécharger sur notre site nos brochures contenant toutes les informations nécessaires sur
+                  nos filières
+                </h4>
+              </div>
+            </div>
+          </li>
+          <li class="" id="for_choise_2">
+            <div class="demand_list">
+              <div class="demand_list_left animate__animated animate__zoomIn animate__delay-1s">
+                <span>
+                  <p>2</p>
+                </span>
+              </div>
+              <div class="demand_list_right animate__animated animate__fadeInUp animate__delay-1s">
+                <h4>
+                  Vérifier les conditions d’admissibilité pour chaque choix de programme
+                  Les prérequis pour chaque filière sont mentionnés au niveau de la plaquette dédiée à la formation
+                </h4>
+              </div>
+            </div>
+          </li>
+          <li class="" id="for_choise_3">
+            <div class="demand_list">
+              <div class="demand_list_left animate__animated animate__zoomIn animate__delay-2s">
+                <span>
+                  <p>3</p>
+                </span>
+              </div>
+              <div class="demand_list_right animate__animated animate__fadeInUp animate__delay-2s">
+                <h4> Respecter les dates du dépôt des dossiers
+                  le dernier délai pour l’envoi du dossier est fixé pour le 30 juin
+                </h4>
+              </div>
+            </div>
+          </li>
+          <li class="" id="for_choise_4">
+            <div class="demand_list">
+              <div class="demand_list_left animate__animated animate__zoomIn animate__delay-3s">
+                <span>
+                  <p>4</p>
+                </span>
+              </div>
+              <div class="demand_list_right animate__animated animate__fadeInUp animate__delay-3s">
+                <h4>Préparer les documents
+                  Tous les documents à joindre sont mentionnés sur le site
+                </h4>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="split_right_items d-none" id="display_choice_2">
+          <div class="container">
+            <h4>Formulaire de condidature à télécharger</h4>
+            <p>Veuillez télécharger le formulaire, le remplir soigneusement et
+              l'envoyer avec les autres documents:
+            </p>
+
+            <a target="_blank" href="{{apiUrl}}handers/condidat/document/Formulaire-de-candidature.docx">
+              <i class="fas fa-download"></i>
+              Formulaire-de-condidature-2020-2021
+            </a>
+          </div>
+        </div>
+        <div class="split_right_items d-none" id="display_choice_3">
+          <ul class="split_right_items">
+            <li class="">
+              <p>Formulaire de condidature replit *</p>
+            </li>
+            <li class="">
+              <p>Pièce d'identité *</p>
+            </li>
+            <li class="">
+              <p>Derniers relevés de notes depuis License 1 (Souf pour certificats) *</p>
+            </li>
+            <li class="">
+              <p>CV *</p>
+            </li>
+            <li class="">
+              <p>Lettre de recommandation</p>
+            </li>
+            <li class="">
+              <p>Autres documents complémentaires</p>
+            </li>
+          </ul>
+          <div class="text-center mt-5">
+            <button class="btn btn-primary template-btn1-dark block"
+              [routerLink]="['', 'uftam_inscription']">Canditature</button>
+          </div>
+        </div>
+        <div class="split_right_items d-none" id="display_choice_4">
+          <table class="table-admission">
+            <thead>
+              <tr>
+                <td>Masters et Licences</td>
+                <td>Tarif étudiant</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  - Master en Intelligence Economique Africaine <br>
+                  - Master en Sciences des données pour les nouveaux métiers du numérique <br>
+                  - Master en Expertise économique des Politiques <br>
+                  et Projets de Développement <br>
+                  - Master Génie électrique et Informatique industrielle pour l’enseignement et l’industrie <br>
+                  - Master en Gestion de l’environnement et Métiers de l’eau <br>
+                  - Master en Mutations Digitales <br>
+                </td>
+                <td>
+                  9 000 Dt / an
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="table-admission second">
+            <thead>
+              <tr>
+                <td>Certificats</td>
+                <td>Tarif étudiant</td>
+                <td>Tarif formation continue</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  Certificat: <br>
+                  Soft skills, <br>
+                  Entrepreneuriat <br>
+                  et Créativité
+                </td>
+                <td>
+                  3 400 DT + 400 DT <br>
+                  par atelier
+                  supplémentaire
+                </td>
+                <td>
+                  4 200 DT
+                </td>
+              </tr>
+              <tr>
+                <td colspan="3"></td>
+              </tr>
+              <tr>
+                <td>
+                  Certificat: <br>
+                  Ingénierie <br>
+                  de Projets <br>
+                  Euro-Méditerr <br>
+                  anéens
+                </td>
+                <td>
+                  2 300 DT
+                </td>
+                <td>
+                  3 900 DT
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="split_right_items d-none" id="display_choice_5">
+          <div class="bourse_desc">
+            <h2>Bourses de l'Ambassade de France</h2>
+            <p>Le gouvernement français met en place un programme d’appui pour vous, étudiants tunisiens, d’excellent
+              niveau académique, souhaitant poursuivre vos études de Master à l’UFTAM.
+              Ce programme consiste en la prise en charge totale par l’Ambassade de France en Tunisie de vos frais
+              d’inscription en Master pour l’année universitaire 2019-2020.
+              La sélection tiendra compte de votre excellence académique, de votre situation socioéconomique. Seront
+              privilégié.e.s les candidat.e.s issu.e.s des régions de l’intérieur ou dans une situation de handicap ou
+              de famille fragile (parents divorcés, un des parant décédé, etc.)
+              Cet appel à candidatures par voie électronique sera impérativement clos le mardi 15 Octobre 2019 à minuit
+              (heure de Tunis). Aucune dérogation ne sera admise.</p>
+            <span>Tout dossier incomplet ne sera pas traité</span>
+          </div>
+          <div class="bourse_expand">
+            <div class="accordion" id="accordionFirst">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <style>
+                    hr {
+                      width: 94%;
+                      margin-top: 0px;
+                      margin-left: 25px;
+                      background: var(--primary-color);
+                    }
+
+                  </style>
+                  <h2 class="mb-0">
+                    <button class="btn btn-link" (click)="expandStudentInfo($event, 0)" type="button"
+                      data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                      aria-controls="collapseOne">
+                      <i class="fas fa-caret-{{value[0]}}"></i> Éligibilité
+                    </button>
+                    <hr>
+                  </h2>
+                </div>
+
+                <div id="collapseOne" class="collapse hide bourse_collapse" aria-labelledby="headingOne"
+                  data-parent="#accordionFirst">
+                  <div class="card-body">
+                    <ul>
+                      <li>
+                        Vous êtes de nationalité tunisienne ;
+                      </li>
+                      <li>
+                        Vous êtes âgé.e de moins de 26 ans ;
+                      </li>
+                      <li>
+                        Vous êtes admis.e en Master à l’UFTAM ;
+                      </li>
+                      <li>
+                        Vous avez obtenu le dernier diplôme sans aucune année de redoublement ;
+                      </li>
+                      <li>
+                        Vous avez obtenu votre dernier diplôme avec une mention « assez bien » au minimum ;
+                      </li>
+                      <li>
+                        Le revenu net de vos parents après déduction des charges sociales ne dépasse pas le salaire
+                        minimum interprofessionnel garanti SMIG (soit 4800 dinars / an).
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion" id="accordionSecond">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link" (click)="expandStudentInfo($event, 1)" type="button"
+                      data-toggle="collapse" data-target="#collapseSecond" aria-expanded="true"
+                      aria-controls="collapseSecond">
+                      <i class="fas fa-caret-{{value[1]}}"></i> Dépôt des candidatures
+                    </button>
+                    <hr>
+                  </h2>
+                </div>
+
+                <div id="collapseSecond" class="collapse hide bourse_collapse" aria-labelledby="headingOne"
+                  data-parent="#accordionSecond">
+                  <div class="card-body">
+                    Pour répondre à l’appel à candidatures, vous devez : <br>
+
+                    1. Remplir le dossier d’inscription avant le Mardi 15 Octobre 2019 (minuit, heure tunisienne, délai
+                    <br>
+                    de rigueur) en ligne :
+                    <a target="_blank"
+                      href="https://docs.google.com/forms/d/e/1FAIpQLSdhwjMu1zUtleG_3FaeKpcoBi_FdQGBD4sipbXkCLbAc1NgeQ/viewform?usp=pp_url">
+                      https://docs.google.com/
+                    </a> <br>
+                    2. Envoyer les pièces à fournir indiquées ci-dessous à contact@uftam.net en précisant dans l’objet
+                    <br>
+                    du mail : « Programme d’appui aux études à l’UFTAM » <br>
+
+                    N.B. : la candidature ne sera prise en compte qu’après réception par mail des documents demandés.
+                    <br>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion" id="accordionThird">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link" (click)="expandStudentInfo($event, 2)" type="button"
+                      data-toggle="collapse" data-target="#collapseThird" aria-expanded="true"
+                      aria-controls="collapseThird">
+                      <i class="fas fa-caret-{{value[2]}}"></i> Liste des documents à fournir
+                    </button>
+                    <hr>
+                  </h2>
+                </div>
+
+                <div id="collapseThird" class="collapse hide bourse_collapse" aria-labelledby="headingOne"
+                  data-parent="#accordionThird">
+                  <div class="card-body">
+                    – Lettre de motivation ; <br>
+                    – Copie de la carte d’identité nationale ; <br>
+                    – Extrait de naissance ; <br>
+                    – Copie de l’attestation de réussite ou copie du dernier diplôme obtenu ; <br>
+                    – Relevés de notes du dernier diplôme obtenu ; <br>
+                    – Copie originale des déclarations annuelles d’impôt sur le revenu de l’année N-1 du père et/ou de
+                    la mère. <br>
+                    Cas particuliers : <br>
+                    – Déclaration sur l’honneur de non-emploi ; <br>
+                    – Attestation de bénéfice de pension de retraite du père et/ou de la mère ; <br>
+                    – En cas de décès du père ou de la mère, fournir un acte de décès et une attestation de bénéfice ou
+                    de non-bénéfice d’une pension de veuvage ; <br>
+                    – En cas de divorce, fournir une copie du jugement mentionnant la prise en charge de l’enfant. <br>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion" id="accordionFourth">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link" (click)="expandStudentInfo($event, 3)" type="button"
+                      data-toggle="collapse" data-target="#collapseFour" aria-expanded="true"
+                      aria-controls="collapseFour">
+                      <i class="fas fa-caret-{{value[3]}}"></i> Résultats
+                    </button>
+                    <hr>
+                  </h2>
+                </div>
+
+                <div id="collapseFour" class="collapse hide bourse_collapse" aria-labelledby="headingOne"
+                  data-parent="#accordionFourth">
+                  <div class="card-body">
+                    <ul>
+                      <li>Vous recevrez par mail, une notification conditionnelle de prise en charge des frais
+                        d’inscription
+                      </li>
+                      <li>
+                        La décision définitive<sup class="text-primary"> [1]</sup> de cette de prise en charge
+                        sera notifiée seulement après l’inscription à l’université.
+                      </li>
+                      <hr style="width: 50%;margin-left: -18px;">
+                      <p style="margin-left: -18px;">
+                        <span class="text-primary">[1]</span> Les candidats retenus seront contactés par la direction de
+                        l’UFTAM afin de confirmer leur choix de s’inscrire en Master à l’UFTAM
+                      </p>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="split_right_items d-none" id="display_choice_6">
+          <div class="choice_block">
+            <div class="block_cell">
+            </div>
+            <div class="block_cell">
+              <h2>
+                Pout toutes les filières
+              </h2>
+            </div>
+
+            <div class="block_cell">
+              <h2>
+                Pour la filière <br>
+                eau et environnement
+              </h2>
+            </div>
+          </div>
+          <div class="grid_choice">
+            <div class="choice_block_2">
+              <div class="block_cell">
+                <h4>
+                  Phase 1 <br>
+                  Etude du dossier
+                </h4>
+              </div>
+
+              <div class="block_cell">
+                <h4>
+                  Phase 2 <br>
+                  Entretien <br>
+                  en face-à-face
+                </h4>
+              </div>
+            </div>
+            <div class="choice_block_3">
+              <div class="block_cell">
+                <p>
+                  Votre dossier envoyé par mail sera étudié par un comité scientifique. Après délibération, vous serez
+                  informé par mail et par téléphone que votre candidature a été sélectionnée.
+                </p>
+              </div>
+
+              <div class="block_cell">
+                <p>
+                  Non concernés
+                </p>
+              </div>
+            </div>
+            <div class="choice_block_4">
+              <div class="block_cell">
+                <p>
+                  Votre dossier envoyé par mail sera étudié par un comité scientifique. Après délibération, vous serez
+                  informé par mail et par téléphone que votre candidature a été présélectionnée ainsi que la date de
+                  votre
+                  entretien
+                </p>
+              </div>
+
+              <div class="block_cell">
+                <p>
+                  Une fois votre candidature présélectionnée, vous passerez un entretien en face à face (pour les
+                  résidents en Tunisie) ou en visioconférence (pour les étudiants vivants à l’étranger) avec les
+                  responsables tunisiens et français des formations. C’est à l’issue de cet entretien, que votre
+                  admission
+                  à l’UFTAM sera déterminée définitivement.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bottom_block">
+            <div class="block_cell">
+              <h4>
+                Phase 3 <br>
+                Déposer <br>
+                le dossier papier <br>
+                à l'administration
+              </h4>
+            </div>
+            <div class="block_cell">
+              <p>
+                Après votre sélection, il est obligatoire de passer à l’administration pour déposer en version papier
+                les documents envoyés par mail et procéder également au paiement de la première tranche des frais de
+                scolarité avant la date de la rentrée universitaire. Les étudiants internationaux procéderont à un
+                virement bancaire à partir de leur pays d’origine.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-footer></app-footer>

@@ -1,0 +1,45 @@
+<div class="pageheader-nav">
+  <ol class="breadcrumb slim-breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="/dashboard">Home</a></li>
+    <li class="breadcrumb-item"><a routerLink="/admin/eventView">Évènement</a></li>
+    <li class="breadcrumb-item">Edit Évènement</li>
+  </ol>
+</div>
+<form (ngSubmit)="updateEvent($event)" *ngFor="let f of event">
+  <div class="form-group">
+    <label for="eventName">Nom</label>
+    <input required type="text" class="form-control" id="eventName" aria-describedby="emailHelp"
+      placeholder="Nom Formation.." value="{{f.lib}}">
+    <!-- <small id="formationHelp" class="form-text text-muted">exemple.</small> -->
+  </div>
+
+  <div class="form-group">
+    <label for="eventDescription">Description</label>
+    <input value="{{f.desc}}" required type="text" class="form-control" id="eventDescription"
+      placeholder="Description Formation..">
+  </div>
+
+  <div class="form-group" id="datepick">
+    <label for="eventDate">Date</label>
+    <input value="{{f.date}}" required type="text" class="form-control" bsDatepicker id="eventDate"
+      placeholder="Choisir un date">
+  </div>
+
+  <div class="form-group">
+    <label for="typeEvent">Type</label>
+    <div *ngFor="let allEv of allEventTypes; let i = index">
+      <select class="form-control" id="typeEvent" *ngIf="i<1">
+        <!-- <option value="{{allEv.id}}" *ngIf="allFor.lib === idFormation" selected>
+            {{allEv.lib}}
+          </option> -->
+        <option *ngFor="let allEv of allEventTypes" value="{{allEv.id}}">
+          {{allEv.lib}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="text-center">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+ 

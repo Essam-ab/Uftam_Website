@@ -1,0 +1,52 @@
+<div class="pageheader-nav">
+  <ol class="breadcrumb slim-breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="/dashboard">Home</a></li>
+    <li class="breadcrumb-item"><a routerLink="/admin/eventView">Évènement</a></li>
+    <li class="breadcrumb-item">Add Évènement</li>
+  </ol>
+</div>
+<form (ngSubmit)="addEvent($event)">
+  <div class="form-group">
+    <label for="eventName">Nom</label>
+    <input #name required type="text" class="form-control" id="eventName" aria-describedby="emailHelp"
+      placeholder="Nom évènement..">
+    <!-- <small id="formationHelp" class="form-text text-muted">exemple.</small> -->
+  </div>
+
+  <div class="form-group">
+    <label for="eventDescription">Description</label>
+    <input #desc required type="text" class="form-control" id="eventDescription" placeholder="Description évènement..">
+  </div>
+
+  <div class="form-group">
+    <label for="typeEvent">Type</label>
+    <select #type class="form-control" id="typeEvent">
+      <option value="Default">Type de l'évènement</option>
+      <option *ngFor="let type of types" value="{{type.id}}">{{type.lib}}</option>
+    </select>
+  </div>
+
+  <div class="form-group" id="datepick">
+    <label for="eventDate">Date</label>
+    <input required type="text" class="form-control" bsDatepicker id="eventDate" placeholder="Choisir un date">
+  </div>
+
+  <style>
+    input[type="file"] {
+      padding: 3px;
+    }
+
+  </style>
+
+  <label>Image</label>
+  <div class="input-group mb-5">
+    <input type='file' class="form-control" (change)='onFileChanged($event)'>
+    <button class="btn btn-outline-success" type="button" (click)="upload()">Upload</button>
+  </div>
+
+
+  <div class="text-center">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+ 

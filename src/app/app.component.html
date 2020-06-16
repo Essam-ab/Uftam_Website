@@ -1,0 +1,6 @@
+<app-internal-nav *ngIf="isInternal"></app-internal-nav>
+<!-- remove comments to use router animation -->
+<!-- <main [@routeAnimations]="prepareRoute(outlet)" class="page-content"> -->
+<!-- <router-outlet #outlet="outlet" (activate)="onActivate($event)"></router-outlet> -->
+<router-outlet (activate)="onActivate($event)"></router-outlet>
+<!-- </main> -->

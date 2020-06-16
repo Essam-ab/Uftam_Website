@@ -1,0 +1,17 @@
+<div class="pageheader-nav">
+  <ol class="breadcrumb slim-breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="/dashboard">Home</a></li>
+    <li class="breadcrumb-item"><a routerLink="/admin/typeEventView">Type Event</a></li>
+    <li class="breadcrumb-item">Add Type Event</li>
+  </ol>
+</div>
+<form (ngSubmit)="addTypeEvent($event)">
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" id="typeEvent" placeholder="Nom Du Type" aria-label="Recipient's username"
+      aria-describedby="basic-addon2" required>
+    <div class="input-group-append">
+      <button class="btn btn-outline-primary" type="submit">Ajouter</button>
+    </div>
+  </div>
+</form>
+ 

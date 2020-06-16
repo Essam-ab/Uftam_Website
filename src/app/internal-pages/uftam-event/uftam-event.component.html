@@ -1,0 +1,177 @@
+<app-internal-nav></app-internal-nav>
+<section class="event_articles">
+  <div class="eve_wrapper">
+    <div class="flex_layout" *ngFor="let event of indexedEvents">
+      <div class="image">
+        <img src="{{apiUrl}}handers/events/situational/{{event.path}}" alt="img">
+      </div>
+      <div class="body">
+        <h1 [innerHtml]="event.lib | slice:0:70"></h1>
+        <span>{{event.day}} {{event.monthName}} {{event.date | slice:0:4}}</span>
+        <p [innerHtml]="event.desc | slice:0:200">
+        </p>
+        <button class="btn btn-primary template-btn1-dark block" [routerLink]="['', 'uftam_event', event.id]">Lire la
+          suite</button>
+      </div>
+    </div>
+    <div class="act_load">
+      <button class="btn btn-primary template-btn1-dark block" (click)="loadEvents($event)">Voir plus
+        d'acticles</button>
+    </div>
+  </div>
+</section>
+
+<!-- <section id="event" data-column="eventCarousel" class="event_slider">
+  <div class="carousel-wrapper" *ngIf="!isMobile">
+    <div class="carousel-inner-wrapper">
+      <owl-carousel-o [options]="otherOptions">
+        <ng-container>
+          <ng-template carouselSlide *ngFor='let eve of secondEvents, let i = index, let c = count'>
+<div class="e_slide container tester_slide" name="e_slide" *ngIf="i==1">
+  <div class="e_slide_image">
+    <img src="{{apiUrl}}handers/events/uploads/{{eve.path}}" alt="">
+  </div>
+  <div class="e_slide_body">
+    <h2 class="font-weight-bold">{{eve.lib}}</h2>
+  </div>
+  <div class="e_slide_footer">
+    <a [routerLink]="['', 'uftam_article', eve.id]">
+      <span>Plus de détails </span>
+      <i class="fas fa-angle-right"></i></a>
+  </div>
+</div>
+
+<div class="e_slide container tester_slide_full" style="width: 30vw !important;" name="e_slide" *ngIf="i == 0">
+  <div class="e_slide_image">
+    <img src="{{apiUrl}}handers/events/uploads/{{eve.path}}" alt="">
+  </div>
+  <div class="e_slide_header" *ngIf="i==0">
+    <h2 class="font-weight-bold">A la une</h2>
+  </div>
+  <div class="e_slide_body">
+    <h2 class="font-weight-bold">{{eve.lib}}</h2>
+  </div>
+  <div class="e_slide_footer">
+    <a [routerLink]="['', 'uftam_article', eve.id]">
+      <span>Plus de détails </span>
+      <i class="fas fa-angle-right"></i></a>
+  </div>
+</div>
+
+<div class="e_slide container" name="e_slide" *ngIf="i!=0 && i!=1">
+  <div class="e_slide_image">
+    <img src="{{apiUrl}}handers/events/uploads/{{eve.path}}" alt="">
+  </div>
+  <div class="e_slide_body">
+    <h2 class="font-weight-bold">{{eve.lib}}</h2>
+  </div>
+  <div class="e_slide_footer">
+    <a [routerLink]="['', 'uftam_article', eve.id]">
+      <span>Plus de détails </span>
+      <i class="fas fa-angle-right"></i></a>
+  </div>
+</div>
+</ng-template>
+</ng-container>
+</owl-carousel-o>
+</div>
+</div>
+</section> -->
+
+<section id="feedCarousel" data-column="temoignage">
+  <img alt="" class="student_icon" src="../../assets/img/studentExpIcon.png">
+  <div class="carousel-wrapper" *ngIf="!isMobile">
+    <div class="carousel-inner-wrapper">
+      <owl-carousel-o [options]="lastOptions">
+        <ng-container>
+          <ng-template carouselSlide *ngFor='let vie of laVies, let i = index, let c = count'>
+            <div class="feed_container">
+              <div class="feed_picture">
+                <img src="{{apiUrl}}handers/laVie/uploads/{{vie.path}}" alt="img">
+              </div>
+              <div class="feed_header">
+                <h2>{{vie.lib}}</h2>
+              </div>
+              <div class="feed_body">
+                <p>
+                  {{vie.description}}
+                </p>
+              </div>
+            </div>
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
+    </div>
+  </div>
+</section>
+
+<section class="conatct">
+  <div class="newsletter">
+    <div class="newsletter_left">
+      <h2>Commencez à nous suivre</h2>
+      <p>Inscrivez-vous à notre newsletter</p>
+    </div>
+    <div class="newsletter_right">
+      <form #f="ngForm" [formGroup]="userInfo" (submit)="setNewsletter($event)" class="input-group mb-3">
+        <input type="email" class="form-control" placeholder="Insérez votre adresse mail"
+          formControlName="userInfoEmail" [email]="true" aria-describedby="subscribe" required>
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary animate__animated" type="submit" id="subscribe"
+            [disabled]="f.invalid">S'abonner</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="contact_info">
+    <div class="contact_map" *ngIf="!isMobile">
+      <a target="_blank"
+        href="https://www.google.com/maps/place/L'Universit%C3%A9+franco-tunisienne+pour+l'Afrique+et+la+M%C3%A9diterran%C3%A9e+(UFTAM)/@36.7208792,10.2353453,15z/data=!4m2!3m1!1s0x0:0x217e55ddb0636451?sa=X&ved=2ahUKEwjK35qcosXpAhUnxoUKHfFRCd8Q_BIwFnoECAsQCA"><img
+          src="../../assets/img/location.png" alt=" map"></a>
+    </div>
+    <div class="contact_details">
+      <div class="contact_email">
+        <h4>Email</h4>
+        <p>contact@uftam.net</p>
+      </div>
+      <div class="phone">
+        <h4>Appelez-nous</h4>
+        <p>71 100 100 / 71 666 666</p>
+      </div>
+      <div class="contact_address">
+        <h4>Adresse</h4>
+        <p>UFTAM(prés de Marché de Gros, Bir El <br> Kasaa) El Mourouj 2074, TUNISIE</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer_top">
+    <div class="container">
+      <ul>
+        <li><a [routerLink]='["", "uftam_welcome" ]'>A propos de l'Uftam</a></li>
+        <li><a [routerLink]='["", "uftam_admission" ]'>Admission</a></li>
+        <li><a [routerLink]='["", "uftam_contact" ]'>Contactez-nous</a></li>
+        <li>
+          <a target="_blank" href="https://www.facebook.com/UFTAMUniversite/">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" target="_blank">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/universit%C3%A9-uftam-8814541a5/" target="_blank">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer_bottom">
+    <div class="footer_bootom_left">
+      <p> Tous les droits sont reservés pour UFTAM</p>
+    </div>
+    <div class="footer_bootom_right">
+      <p> Powred by Digilinks</p>
+    </div>
+  </div>
+</footer>
