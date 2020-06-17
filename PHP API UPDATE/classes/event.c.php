@@ -120,14 +120,14 @@ class Event extends database
         $query = $this->connect()->prepare(
             "SELECT e.*, t.*
             FROM t_event e join t_type_event t using(tte_id)
-            ORDER BY eve_lib ASC
+            WHERE eve_active = :active AND tte_lib = :lib
+            ORDER BY eve_date DESC
             LIMIT :start, :limit;"
         );
-        // WHERE eve_active = :active AND tte_lib = :lib
-        // $query->bindParam(':active ', 'yes', PDO::PARAM_STR);
-        // $query->bindParam(':lib', 'first', PDO::PARAM_STR);
-        $query->bindParam(':limit', $limit, PDO::PARAM_INT);
-        $query->bindParam(':start', $start, PDO::PARAM_INT);
+        $query->bindValue(':active', 'yes', PDO::PARAM_STR);
+        $query->bindValue(':lib', 'first', PDO::PARAM_STR);
+        $query->bindValue(':start', 0, PDO::PARAM_INT);
+        $query->bindValue(':limit', $limit, PDO::PARAM_INT);
         $query->execute();
         return $query;
     }
@@ -150,11 +150,14 @@ class Event extends database
         $query = $this->connect()->prepare(
             "SELECT *
             FROM t_event join t_type_event using(tte_id)
-            ORDER BY tte_lib DESC, eve_date DESC
+            WHERE  eve_active = :active AND tte_lib = :lib
+            ORDER BY eve_date DESC
             LIMIT :start, :limit;"
         );
-        $query->bindParam(':start', $start, PDO::PARAM_INT);
-        $query->bindParam(':limit', $limit, PDO::PARAM_INT);
+        $query->bindValue(':active', 'yes', PDO::PARAM_STR);
+        $query->bindValue(':lib', 'second', PDO::PARAM_STR);
+        $query->bindValue(':start', 0, PDO::PARAM_INT);
+        $query->bindValue(':limit', $limit, PDO::PARAM_INT);
         $query->execute();
         return $query;
     }

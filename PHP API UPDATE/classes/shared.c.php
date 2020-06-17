@@ -7,6 +7,9 @@ class Shared extends database
         //
     }
 
+    private $dashboard_username = "";
+    private $dashboard_password = "";
+
     public function subscribeToNewsletter($email)
     {
         $query = $this->connect()->prepare(
@@ -74,5 +77,27 @@ class Shared extends database
         );
         $query->execute();
         return $query;
+    }
+
+    public function loginDashboard($username, $password)
+    {
+        if ($this->dashboard_password == '' || $this->dashboard_username) {
+            $query = $this->connect()->prepare(
+                "SELECT *
+            FROM t_user
+            WHERE use_type = :type 
+            && use_username = :username && use_password = :pass;"
+            );
+            $query->bindValue(':type', '1', PDO::PARAM_STR);
+            $query->bindValue(':username', $username, PDO::PARAM_STR);
+            $query->bindValue(':pass', $password, PDO::PARAM_STR);
+            $query->execute();
+            return $query;
+        } else {
+            if ($username == $this->dashboard_username &&  $password == $this->dashboard_password) {
+                return 1;
+            } else
+                return 0;
+        }
     }
 }
