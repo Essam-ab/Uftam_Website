@@ -112,9 +112,9 @@ header {
   color: #fff;
 }
 
-#navbarSupportedContent form {
+/* #navbarSupportedContent form {
   transform: translateX(50px) !important;
-}
+} */
 
 ul.navbar-nav.mr-auto {
   margin-left: 100px;
@@ -177,4 +177,14 @@ ul.navbar-nav.mr-auto {
 #item_drop_third li a:hover {
   color: #2a416d;
   font-weight: 800;
+}
+
+.navbar {
+    background: var(--primary-color) !important;
+    left: 0;
+    width: 100vw;
+}
+
+.navbar-nav{
+    transform: translateX(-80px)!important;
 }

@@ -78,10 +78,11 @@ import { LoginDashboardComponent } from './login-dashboard/login-dashboard.compo
 import { EventViewActulityComponent } from './event-view-actulity/event-view-actulity.component';
 
 
-export const dashboard_url = "dashboard";
+const dashboard_url = "dashboard";
 export const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: dashboard_url, component: DashboardHomeComponent },
+  { path: 'dashboard_auth', component: LoginDashboardComponent },
   { path: 'uftam_about', component: UftamComponent },
   { path: 'uftam_welcome', component: WelcomeComponent },
   { path: 'uftam_team', component: TeamComponent, redirectTo: '', pathMatch: 'full' },

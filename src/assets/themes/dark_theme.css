@@ -96,7 +96,7 @@ ul ul a:hover {
 }
 
 thead {
-  background: #ff2f56 !important;
+  background: #007bff !important;
   color: white !important;
 }
 
@@ -129,6 +129,7 @@ tbody {
 .btn-outline-warning {
   color: #f5ce3e !important;
   border-color: #f5ce3e !important;
+    width: 44px !important;
 }
 
 .btn-outline-warning:hover {
@@ -140,6 +141,7 @@ tbody {
 .btn-outline-danger {
   color: #e91529 !important;
   border-color: #e91529 !important;
+    width: 44px !important;
 }
 
 .btn-outline-danger:hover {

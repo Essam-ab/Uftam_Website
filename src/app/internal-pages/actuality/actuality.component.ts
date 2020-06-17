@@ -61,7 +61,7 @@ export class ActualityComponent implements OnInit {
 
   loadArticles(event) {
     const target = event.target;
-    if (this.limit <= this.indexedEventsLength) {
+    if (this.limit <= this.indexedEventsLength - 1) {
       this.limit += 2;
       this._formation.displaySecondEvents_indexed(this.start, this.limit).subscribe(
         (data: Formation[]) => {

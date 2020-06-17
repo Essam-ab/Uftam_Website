@@ -19,10 +19,10 @@
           <a routerLink="/admin/formationView"><i class="fas fa-id-badge"></i> Formation</a>
         </li>
         <li name="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-          <a routerLink="/admin/addFormationDocument"><i class="fas fa-file"></i> Formation Brochure </a>
+          <a routerLink="/admin/addFormationDocument"><i class="fas fa-file"></i> Brochure Formation  </a>
         </li>
         <li name="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-          <a routerLink="/admin/addFormationDetails"><i class="fas fa-info-circle"></i> Définir les détails d'un
+          <a routerLink="/admin/addFormationDetails"><i class="fas fa-info-circle"></i> Définir les détails d'une
             formation </a>
         </li>
       </ul>
@@ -30,13 +30,13 @@
     <li>
       <a href="#eventSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" name="nav-item"
         routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-        <i class="fas fa-list"></i> Évènement</a>
+        <i class="fas fa-list"></i> Actualités et Event</a>
       <ul class="collapse list-unstyled" id="eventSubmenu">
         <li name="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-          <a routerLink="/admin/typeEventView"><i class="far fa-eye"></i> Type Évènement</a>
+          <a routerLink="/admin/typeEventView"><i class="far fa-eye"></i> Type</a>
         </li>
         <li name="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-          <a routerLink="/admin/eventView"><i class="fas fa-calendar-alt"></i> Évènement</a>
+          <a routerLink="/admin/eventView"><i class="fas fa-calendar-alt"></i> Actualités et Event</a>
         </li>
         <li name="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
           <a routerLink="/admin/addEventDetails"><i class="fas fa-info-circle"></i> Définir les détails d'un évènement
@@ -46,16 +46,16 @@
     </li>
     <li>
       <a href="#editSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" name="nav-item"
-        routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><i class="fas fa-list"></i> Modification</a>
+        routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><i class="fas fa-list"></i> Rubriques </a>
       <ul class="collapse list-unstyled" id="editSubmenu">
         <li name="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-          <a routerLink="/admin/modification/partners"><i class="far fa-eye"></i> Partenaire</a>
+          <a routerLink="/admin/modification/partners"><i class="far fa-eye"></i> Partenaires</a>
         </li>
         <li name="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-          <a routerLink="/admin/modification/confCompaniesView"><i class="far fa-eye"></i> Confiance Company</a>
+          <a routerLink="/admin/modification/confCompaniesView"><i class="far fa-eye"></i> Entreprises </a>
         </li>
         <li name="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-          <a routerLink="/admin/modification/laVieView"><i class="far fa-eye"></i> La Vie</a>
+          <a routerLink="/admin/modification/laVieView"><i class="far fa-eye"></i> Témoignages</a>
         </li>
         <li name="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
           <a routerLink="/admin/modification/studentExpView"><i class="far fa-eye"></i> Vie Étudiant</a>
@@ -71,14 +71,14 @@
     <li name="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
       <a routerLink="/admin/candidatView" class="">
         <i class="fas fa-users"></i>
-        Condidat
+        Candidature
       </a>
     </li>
   </ul>
 
   <ul class="list-unstyled CTAs">
     <li>
-      <a routerLink="/" class="article btn btn-primary">Back to Site</a>
+      <a (click)="logout($event)" class="article btn btn-primary">Deconnexion</a>
     </li>
   </ul>
 </nav>

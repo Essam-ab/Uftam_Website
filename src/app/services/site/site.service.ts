@@ -65,4 +65,13 @@ export class SiteService {
       )
     );
   }
+
+  loginDashboard(username, password) {
+    return this.http.post<Response>(
+      environment.apiUrl + "handers/login.hand.php", {
+      username,
+      password
+    }
+    )
+  }
 }

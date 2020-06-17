@@ -1,4 +1,7 @@
 window.onload = function () {
+  $('.navbar').removeClass('changed');
+  $('.navbar-brand').removeClass('changed');
+  $('.navbar-nav').removeClass('changed');
   var goto = "";
   var direction = "";
   $(document).on('click', '.data_row', function () {

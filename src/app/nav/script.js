@@ -19,4 +19,16 @@ window.onload = function () {
       window.location = "http://localhost:4200/uftam_event/" + id;
     }
   })
+
+    $(window).on('scroll', function(){
+        if($(window).scrollTop()){
+            $('.navbar').addClass('changed');
+            $('.navbar-brand').addClass('changed');
+            $('.navbar-nav').addClass('changed');
+        }else{
+            $('.navbar').removeClass('changed');
+            $('.navbar-brand').removeClass('changed');
+            $('.navbar-nav').removeClass('changed');
+        }
+    })
 }

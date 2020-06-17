@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from "jquery";
+import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -8,9 +10,16 @@ import * as $ from "jquery";
 })
 export class AdminComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private _auth: AuthService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
+    if (this._auth.isLoggedIn() === 'false') {
+      this.router.navigateByUrl('/');
+    }
+
     $(document).ready(function () {
       $('#sidebarCollapse').on('click', function () {
         $('#sidebar').toggleClass('active');

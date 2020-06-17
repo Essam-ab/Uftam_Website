@@ -1,7 +1,7 @@
 <div class="pageheader-nav">
   <ol class="breadcrumb slim-breadcrumb">
     <li class="breadcrumb-item"><a routerLink="/dashboard">Home</a></li>
-    <li class="breadcrumb-item">Évenement Details</li>
+    <li class="breadcrumb-item">Actualités et Event Details</li>
   </ol>
 </div>
 <form (ngSubmit)="addEventDetails()">
@@ -17,6 +17,6 @@
   <angular-editor [(ngModel)]="htmlContent" [ngModelOptions]="{standalone: true}"></angular-editor>
 
   <div class="text-center">
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-secondary">Submit</button>
   </div>
 </form>

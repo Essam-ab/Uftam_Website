@@ -16,67 +16,10 @@
     </div>
     <div class="act_load">
       <button class="btn btn-primary template-btn1-dark block" (click)="loadEvents($event)">Voir plus
-        d'acticles</button>
+        d'articles</button>
     </div>
   </div>
 </section>
-
-<!-- <section id="event" data-column="eventCarousel" class="event_slider">
-  <div class="carousel-wrapper" *ngIf="!isMobile">
-    <div class="carousel-inner-wrapper">
-      <owl-carousel-o [options]="otherOptions">
-        <ng-container>
-          <ng-template carouselSlide *ngFor='let eve of secondEvents, let i = index, let c = count'>
-<div class="e_slide container tester_slide" name="e_slide" *ngIf="i==1">
-  <div class="e_slide_image">
-    <img src="{{apiUrl}}handers/events/uploads/{{eve.path}}" alt="">
-  </div>
-  <div class="e_slide_body">
-    <h2 class="font-weight-bold">{{eve.lib}}</h2>
-  </div>
-  <div class="e_slide_footer">
-    <a [routerLink]="['', 'uftam_article', eve.id]">
-      <span>Plus de détails </span>
-      <i class="fas fa-angle-right"></i></a>
-  </div>
-</div>
-
-<div class="e_slide container tester_slide_full" style="width: 30vw !important;" name="e_slide" *ngIf="i == 0">
-  <div class="e_slide_image">
-    <img src="{{apiUrl}}handers/events/uploads/{{eve.path}}" alt="">
-  </div>
-  <div class="e_slide_header" *ngIf="i==0">
-    <h2 class="font-weight-bold">A la une</h2>
-  </div>
-  <div class="e_slide_body">
-    <h2 class="font-weight-bold">{{eve.lib}}</h2>
-  </div>
-  <div class="e_slide_footer">
-    <a [routerLink]="['', 'uftam_article', eve.id]">
-      <span>Plus de détails </span>
-      <i class="fas fa-angle-right"></i></a>
-  </div>
-</div>
-
-<div class="e_slide container" name="e_slide" *ngIf="i!=0 && i!=1">
-  <div class="e_slide_image">
-    <img src="{{apiUrl}}handers/events/uploads/{{eve.path}}" alt="">
-  </div>
-  <div class="e_slide_body">
-    <h2 class="font-weight-bold">{{eve.lib}}</h2>
-  </div>
-  <div class="e_slide_footer">
-    <a [routerLink]="['', 'uftam_article', eve.id]">
-      <span>Plus de détails </span>
-      <i class="fas fa-angle-right"></i></a>
-  </div>
-</div>
-</ng-template>
-</ng-container>
-</owl-carousel-o>
-</div>
-</div>
-</section> -->
 
 <section id="feedCarousel" data-column="temoignage">
   <img alt="" class="student_icon" src="../../assets/img/studentExpIcon.png">

@@ -87,7 +87,7 @@ export class NavComponent implements OnInit {
     var hint = document.querySelector('#selectedHint');
     if (this.selected == 0) {
       this.selectedHint = "formation";
-    } else
+    } else if(this.selected == 1)
       this.selectedHint = "event";
 
     const selector = document.querySelector('.search_result');

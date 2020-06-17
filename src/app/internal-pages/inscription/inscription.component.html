@@ -63,7 +63,7 @@
     <div class="row">
       <div class="col" data-aos="fade-up">
         <select class="form-control" id="typeFormation" formControlName="userInfoFormation">
-          <option value="Default" selected>--- Choisir un Formation ---</option>
+          <option value="Default" selected>--- Choisir une formation ---</option>
           <option *ngFor="let formation of formations_select" value="{{formation.id}}">
             <span [innerHtml]="formation.type"></span> : <span [innerHtml]="formation.lib"></span>
           </option>

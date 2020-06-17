@@ -767,3 +767,46 @@ pre .text h2 {
   font-weight: 800 !important;
   text-decoration: none !important;
 }
+
+.demand_list_left span p {
+  font-size: 35px;
+  font-family: 'poppins';
+  color: #fff !important;
+  line-height: 15px !important;
+}
+
+.feed_header {
+    margin: 0!important;
+    margin-top: -30px !important;
+    width: 90% !important;
+}
+
+.feed_body p {
+  font-size: 12px !important;
+   line-height: 1rem !important;
+    text-align: justify !important;
+}
+
+.small, small {
+font-weight: 800 !important;
+  font-size: 10px !important;
+}
+
+.feed_body {
+    margin-top: 20px;
+}
+
+table.table-dark{
+      width: 98%;
+    margin: 0 auto;
+}
+
+.pageheader-nav {
+    margin-top: -30px !important;
+    margin: 20px !important;
+}
+
+app-admin form{
+  width: 95% !important;
+  margin: 0 auto !important;
+}

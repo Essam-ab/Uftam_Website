@@ -54,6 +54,9 @@ export class InternalNavComponent implements OnInit {
 
 
   ngOnInit() {
+    $('.navbar').removeClass('changed');
+    $('.navbar-brand').removeClass('changed');
+    $('.navbar-nav').removeClass('changed');
     this.apiUrl = environment.apiUrl;
     //nav setup
     this._formation.displayFormations().subscribe(
@@ -106,7 +109,7 @@ export class InternalNavComponent implements OnInit {
     var hint = document.querySelector('#selectedHint');
     if (this.selected == 0) {
       this.selectedHint = "formation";
-    } else
+    } else if (this.selected == 1)
       this.selectedHint = "event";
     console.log(this.selectedHint)
 

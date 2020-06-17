@@ -1,14 +1,14 @@
 <div class="pageheader-nav">
   <ol class="breadcrumb slim-breadcrumb">
     <li class="breadcrumb-item"><a routerLink="/dashboard">Home</a></li>
-    <li class="breadcrumb-item">Add Brochure</li>
+    <li class="breadcrumb-item">Ajouter brochure</li>
   </ol>
 </div>
 <form (ngSubmit)="upload($event)">
   <div class="form-group">
     <label for="ormation">Formation</label>
     <select class="form-control" id="formation">
-      <option value="Default">--- Selectionez un formation ---</option>
+      <option value="Default">--- Selectionez une formation ---</option>
       <option *ngFor="let formation of formations" value="{{formation.id}}">{{formation.lib}}</option>
     </select>
   </div>
@@ -26,6 +26,6 @@
   </div>
 
   <div class="text-center">
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-secondary">Submit</button>
   </div>
 </form>
