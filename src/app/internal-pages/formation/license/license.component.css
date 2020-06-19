@@ -61,3 +61,24 @@ section.logos h1 {
     font-size: 1.5rem !important;
     text-transform: uppercase;
 }
+
+@media(max-width:500px){
+    .main-formation .buttons a:first-child{
+    display:none;
+  }
+  
+  .main-formation .buttons a{
+    display:none;
+    font-size: 8px !important;
+    width: 50% !important;
+  }
+
+  section.program table th {
+    font-size: 12px !important;
+}
+
+section.program table td {
+    font-size: 8px;
+    border-top: 2px solid #fff !important;
+}
+}

@@ -319,3 +319,13 @@
   font-size: 26px;
   text-align: center !important;
 }
+
+@media (max-width:500px){
+  .card-body {
+    font-size: 12px !important;
+}
+
+section.info, section#actuality, section#admission, section#research, div#partners, section.company, section.inscription, .event_articles {
+    margin-top: 60px !important;
+}
+}

@@ -103,3 +103,55 @@
   place-items: start;
   padding-bottom: 50px !important;
 }
+
+@media (max-width:500px){
+  section.info, section#actuality, section#admission, section#research, div#partners, section.company, section.inscription, .event_articles {
+    margin-top: 60px !important;
+}
+
+  #research {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
+#block {
+    flex-direction: column !important;
+}
+
+.first_block > .left {
+    width: 100% !important;
+}
+
+.first_block > .right p {
+    font-size: 10px !important;
+}
+
+.first_block > .right h2 {
+    font-size: 20px !important;
+}
+
+.second_block>.left p {
+    font-size: 12px !important;
+}
+
+.second_block>.right p {
+    font-size: 14px !important;
+}
+
+.third_block > .left h2 {
+    font-size: 20px;
+}
+
+.third_block > .left p {
+    font-size: 12px;
+}
+
+.third_block > .left {
+    margin-top: 20px !important;
+    padding-right: 0px !important;
+}
+
+.third_block[_ngcontent-pgi-c147] > .right[_ngcontent-pgi-c147] {
+    padding-right: 0px !important;
+}
+}

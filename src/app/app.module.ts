@@ -76,6 +76,7 @@ import { FileUploadComponent } from './internal-pages/file-upload/file-upload.co
 import { CondidatureViewComponent } from './condidature-view/condidature-view.component';
 import { LoginDashboardComponent } from './login-dashboard/login-dashboard.component';
 import { EventViewActulityComponent } from './event-view-actulity/event-view-actulity.component';
+import { FormationNotificationComponent } from './formation-notification/formation-notification.component';
 
 
 const dashboard_url = "dashboard";
@@ -122,6 +123,7 @@ export const routes: Routes = [
       { path: 'addFormationDetails', component: AddFormationDetailsComponent },
       { path: 'addFormationDocument', component: AddFormationDocumentComponent },
       { path: 'formationDetailsView', component: FormationDetailsViewComponent },
+      { path: 'formationNotification', component: FormationNotificationComponent },
       { path: 'addTypeEvent', component: AddTypeEventComponent },
       { path: 'addEvent', component: AddEventComponent },
       { path: 'addEventDetails', component: AddEventDetailsComponent },
@@ -209,7 +211,8 @@ export const routes: Routes = [
     FileUploadComponent,
     CondidatureViewComponent,
     LoginDashboardComponent,
-    EventViewActulityComponent
+    EventViewActulityComponent,
+    FormationNotificationComponent
   ],
   imports: [
     BrowserModule,

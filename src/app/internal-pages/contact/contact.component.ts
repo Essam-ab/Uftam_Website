@@ -67,8 +67,8 @@ export class ContactComponent implements OnInit {
   contactEmail: any = "";
   contactRobot: boolean = false;
   contactMsg: any = "";
-  receiverEmail: string = "abedissam95@gmail.com";
-  contactSubject: string = "subject goes here!";
+  receiverEmail: string = "contact@uftam.net";
+  contactSubject: string = "UFTAM Contact request!";
   sendMail(event) {
     if (this.contactRobot == false && this.contactName == "" && this.contactEmail == "" && this.contactMsg == "") {
       Swal.fire(

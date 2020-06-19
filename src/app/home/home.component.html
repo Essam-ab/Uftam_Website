@@ -101,8 +101,9 @@
     </div>
 
   </ng-template>
-  <section id="formation">
-    <div class="carousel-wrapper" *ngIf="!isMobile" data-aos="fade-up">
+
+  <section id="formation" *ngIf="!isMobile">
+    <div class="carousel-wrapper" data-aos="fade-up">
       <h4 style="font-family: 'poppins'; font-weight: 800px; color: #000;font-size: 28px !important;">
         Nos Formations <br> d'excellence
       </h4>
@@ -254,53 +255,7 @@
     </div>
   </section>
 
-  <!-- original -->
-  <!-- <section class="partners" *ngIf="!isMobile">
-    <div class="section_grid">
-      <div class="f_slider_pagination">
-        <h4>
-          Membres <br> Fondateurs
-        </h4>
-        <div class="f_buttons">
-          <a style="color:black" class="carousel-control-prev" href="#partnersCarousel" role="button" data-slide="prev">
-            <span id="left" class="carousel-control-prev template-pagPrev-dark">
-              <i class=" fas fa-caret-left"></i>
-            </span>
-          </a>
-          <a style="color:black" class=" carousel-control-next" href="#partnersCarousel" role="button"
-            data-slide="next">
-            <span id="right" class="carousel-control-next template-pagNext-dark">
-              <i class="fas fa-caret-right"></i>
-            </span>
-          </a>
-        </div>
-      </div>
-      <div id="partnersCarousel" class="carousel slide f_slider_container" data-ride="carousel">
-        <div class="f_slider_wrapper carousel-inner">
-          <div class="carousel-item active">
-            <div class="row">
-              <div class="f_slide container" *ngFor="let partner of activePartners, let i = index, let c = count">
-                <div class="f_logo_container">
-                  <img src="{{apiUrl}}upload/{{partner.path}}" alt="">
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item" *ngFor="let partners of otherPartners, let i = index">
-            <div class="row">
-              <div class="f_slide container" *ngFor="let partner of partners, let i = index, let c = count">
-                <div class="f_logo_container">
-                  <img src="{{apiUrl}}upload/{{partner.path}}" alt="">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
-
-  <section id="partners">
+  <section id="partners" *ngIf="!isMobile">
     <div class="carousel-wrapper" *ngIf="!isMobile" data-aos="fade-up">
       <h4>
         Membres <br> Fondateurs
@@ -321,7 +276,7 @@
     </div>
   </section>
 
-  <section class="partners" *ngIf="isMobile" data-aos="fade-up">
+  <section class="partners" data-active="check" data-aos="fade-up">
     <div class="section_grid">
       <div class="f_slider_pagination">
         <h4>
@@ -397,7 +352,7 @@
   <section class="documentation" *ngIf="!isMobile">
     <div class="doc_wrapper">
       <div class="doc_header">
-        <h2 class="text-center font-weight-bold">Découvrir l'Uftam</h2>
+        <h2 class="text-center font-weight-bold">Découvrir l'UFTAM</h2>
       </div>
       <div class="doc_body" data-aos="fade-up">
         <p class="text-center"></p>
@@ -455,7 +410,7 @@
     </div>
   </section>
 
-  <section class="confiance" *ngIf="isMobile">
+  <section class="confiance" data-active="check">
     <div class="section_grid">
       <div class="f_slider_pagination" data-aos="fade-left">
         <h4 style="font-family: 'poppins black';">
@@ -506,123 +461,3 @@
   <app-footer></app-footer>
 
 </div>
-
-<!-- original eventCarousel -->
-<!-- <section id="eventCarousel" class="carousel slide event_slider" data-ride="carousel" *ngIf="!isMobile">
-    <div class="carousel-inner">
-      <div class="carousel-item active first">
-        <div class="e_slider_wrapper">
-          <div class="e_slide container" name="e_slide" *ngFor='let active of activeEvents'>
-            <div class="e_slide_image">
-              <img src="{{apiUrl}}handers/events/uploads/{{active.path}}" alt="">
-            </div>
-            <div class="e_slide_header">
-              <h2 class="font-weight-bold">A la une</h2>
-            </div>
-            <div class="e_slide_body">
-              <h2 class="font-weight-bold">{{active.lib}}</h2>
-            </div>
-            <div class="e_slide_footer">
-              <a [routerLink]="['', 'uftam_article', active.id]">
-                <span>Plus de détails </span>
-                <i class="fas fa-angle-right"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item second" *ngFor='let event of otherEvents, let i = index, let c = count'>
-        <div class="e_slider_wrapper">
-          <div class="e_slide container" name="e_slide" *ngFor='let e of event'>
-            <div class="e_slide_image">
-              <img src="{{apiUrl}}handers/events/uploads/{{e.path}}" alt="">
-            </div>
-            <div class="e_slide_body">
-              <h2 class="font-weight-bold">{{e.lib}}</h2>
-            </div>
-            <div class="e_slide_footer">
-              <a [routerLink]="['', 'uftam_article', e.id]">
-                Plus de détails
-                <i class="fas fa-angle-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="e_slider_pagination">
-      <div class="e_buttons">
-        <a style="color:black" class="carousel-control-prev" href="#eventCarousel" role="button" data-slide="prev">
-          <span id="left" class="carousel-control-prev template-pagPrev-dark">
-            <i class=" fas fa-caret-left"></i>
-          </span>
-        </a>
-        <a style="color:black" class=" carousel-control-next" href="#eventCarousel" role="button" data-slide="next">
-          <span id="right" class="carousel-control-next template-pagNext-dark">
-            <i class="fas fa-caret-right"></i>
-          </span>
-        </a>
-      </div>
-    </div>
-  </section> -->
-
-<!-- original temoignage -->
-<!-- <div class="section_shape" *ngIf="!isMobile">
-    <section id="feedCarousel" class="carousel slide feed mb-5" data-ride="carousel">
-      <img src="../../assets/img/studentExpIcon.png" class="student_icon" alt="">
-      <div class="container carousel-inner">
-        <div class="carousel-item active">
-          <div class="feed_wrapper row-cols-3">
-            <div class="feed_container" *ngFor="let vie of activeVies, let i = index, let c = count">
-              <div class="feed_picture">
-                <img src="{{apiUrl}}handers/laVie/uploads/{{vie.path}}" alt="img">
-              </div>
-              <div class="feed_header">
-                <h2>{{vie.lib}}</h2>
-              </div>
-              <div class="feed_body">
-                <p>
-                  {{vie.description}}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="carousel-item" *ngFor='let laVies of otherVies, let i = index, let c = count'>
-          <div class="feed_wrapper row-cols-3">
-            <div class="feed_container" *ngFor="let vie of laVies, let i = index, let c = count">
-              <div class="feed_picture">
-                <img src="{{apiUrl}}handers/laVie/uploads/{{vie.path}}" alt="img">
-              </div>
-              <div class="feed_header">
-                <h2>{{vie.lib}}</h2>
-              </div>
-              <div class="feed_body">
-                <p>
-                  {{vie.description}}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <ol class="carousel-indicators">
-        <li data-target="#feedCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#feedCarousel" data-slide-to="1"></li>
-      </ol>
-      <div class="feed_pagination">
-        <div class="feed_buttons">
-          <a style="color:black" class="carousel-control-prev" href="#feedCarousel" role="button" data-slide="prev">
-            <span id="left" class="carousel-control-prev">
-              <i class=" fas fa-caret-left"></i>
-            </span>
-          </a>
-          <a style="color:black" class=" carousel-control-next" href="#feedCarousel" role="button" data-slide="next">
-            <span id="right" class="carousel-control-next">
-              <i class="fas fa-caret-right"></i>
-            </span>
-          </a>
-        </div>
-      </div>
-    </section>
-  </div> -->

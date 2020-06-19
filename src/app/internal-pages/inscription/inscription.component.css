@@ -67,6 +67,7 @@
   width: 80vw;
   margin: 0 auto;
   margin-top: 50px;
+  margin-bottom: -70px !important;
 }
 
 .pre .text {
@@ -116,4 +117,63 @@ label {
 
 .pre {
   padding: 0 50px;
+}
+
+@media (max-width:500px){
+  .pre {
+    flex-direction: column!important;
+    width: 100vw !important;
+  }
+
+  .inscription {
+      width: 95vw !important;
+      margin: 0 auto;
+      background: #f5f6fc;
+      padding: 40px !important;
+  }
+
+  .file-drop-area {
+      border: 1px dashed #7c7db3;
+      border-radius: 3px;
+      position: relative;
+      width: 100%;
+      margin: 0 auto;
+      padding: 15px 10px 15px;
+      transition: 0.2s;
+      background-color: #ffffff;
+      text-align: center;
+  }
+
+  label {
+    font-size: 12px !important;
+}
+
+.userForm > h1 {
+    font-size: 20px;
+    color: var(--primary-color);
+    font-family: 'poppins';
+    margin-bottom: 50px;
+}
+
+.inscription select {
+    margin-right: 20px;
+    background: #707e99 !important;
+    color: #ffffff !important;
+    font-size: 10px;
+    width: 100%;
+}
+
+.pre .text h1 {
+    font-family: 'poppins black';
+    font-weight: 800;
+    color: var(--primary-color);
+    font-size: 15px;
+}
+
+.pre .text h2 {
+    font-family: 'poppins black';
+    font-weight: 800;
+    color: var(--primary-color);
+    font-size: 15px;
+}
 }

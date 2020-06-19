@@ -99,3 +99,81 @@ article.info-block:nth-child(1) span {
 .details div div {
   width: 800px !important;
 }
+
+@media (max-width:500px){
+  .act_block .act_body p {
+    font-size: 10px !important;
+}
+
+.act_block .act_body h2 {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.act_load {
+    margin: 0 auto;
+    text-align: center;
+    margin-left: 50px;
+}
+
+.info {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+}
+
+.info-header img {
+    width: 100%  !important;
+    height: auto !important;
+}
+
+.info article > p {
+    font-size: 8px  !important;
+    text-align: justify  !important;
+}
+
+article.info-block h1 {
+    font-family: 'poppins' !important;
+    font-weight: 800  !important;
+    padding: 0  !important;
+    font-size: 20px  !important;
+}
+}
+
+@media (max-width:500px){
+  .act_block .act_body p {
+    font-size: 10px !important;
+}
+
+.act_block .act_body h2 {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.act_load {
+    margin: 0 auto;
+    text-align: center;
+    margin-left: 50px;
+}
+
+.info {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+}
+
+.info-header img {
+    width: 100%  !important;
+    height: auto !important;
+}
+
+.info article > p {
+    font-size: 8px  !important;
+    text-align: justify  !important;
+}
+
+article.info-block h1 {
+    font-family: 'poppins' !important;
+    font-weight: 800  !important;
+    padding: 0  !important;
+    font-size: 20px  !important;
+}
+}

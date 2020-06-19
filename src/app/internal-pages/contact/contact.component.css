@@ -210,3 +210,53 @@ textarea:hover {
     justify-content: center;
   }
 }
+
+@media (max-width: 500px) {
+  section.info, section#actuality, section#admission, section#research, div#partners, section.company, section.inscription, .event_articles {
+    margin-top: 60px !important;
+}
+
+div.contact_form {
+    margin-top: 10px !important;
+}
+
+.info {
+    padding-top: 30px !important;
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+}
+
+.contact_left {
+    position: relative;
+    width: 100% !important;
+    padding: 40px !important;
+}
+
+.contact_right {
+    position: relative;
+    width: 100%;
+}
+
+.contact_right .inputs-group {
+    padding: 40px !important;
+}
+
+.template-btn1-dark {
+    padding: 12px 10px !important;
+    position: absolute !important;
+    bottom: 0 !important;
+    font-size: 12px !important;
+}
+
+.btn-block {
+    display: block !important;
+    width: 100% !important;
+    z-index: 123 !important;
+    padding: 20px 50px !important;
+}
+
+.container {
+    padding-right: 5px !important;
+    padding-left: 5px !important;
+}
+}

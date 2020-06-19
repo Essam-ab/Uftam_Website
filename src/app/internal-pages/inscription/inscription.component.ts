@@ -93,9 +93,9 @@ export class InscriptionComponent implements OnInit {
         var x = [], y = [], z = [];
         var j = 0, k = 0, p = 0;
         for (let i = 0; i < this.formations.length; i++) {
-          if (data[i]['type'] == "Masters") {
+          if (data[i]['type'] == 'Masters') {
             x[j++] = data[i];
-          } else if (data[i]['type'] == "Licence") {
+          } else if (data[i]['type'] == 'Licence') {
             y[k++] = data[i];
           } else {
             z[p++] = data[i]
@@ -106,7 +106,7 @@ export class InscriptionComponent implements OnInit {
         this.certificate = z;
       },
       error => {
-        console.log("there has been an error trying to get all formaions!");
+        console.log('there has been an error trying to get all formaions!');
       }
     )
 
@@ -116,7 +116,7 @@ export class InscriptionComponent implements OnInit {
         this.formations_select = data;
       },
       error => {
-        console.log("error trying to get formations");
+        console.log('error trying to get formations');
       }
     )
 
@@ -151,7 +151,7 @@ export class InscriptionComponent implements OnInit {
         this.activeFormations = a[0];
       },
       error => {
-        console.log("error trying to get formations");
+        console.log('error trying to get formations');
       }
     )
 
@@ -163,7 +163,7 @@ export class InscriptionComponent implements OnInit {
 
       },
       error => {
-        console.log("error trying to get events");
+        console.log('error trying to get events');
       }
     )
     //event 2
@@ -194,7 +194,7 @@ export class InscriptionComponent implements OnInit {
         this.activeEvents = a[0];
       },
       error => {
-        console.log("error trying to get events");
+        console.log('error trying to get events');
       }
     )
 
@@ -204,7 +204,7 @@ export class InscriptionComponent implements OnInit {
         this.students = data;
       },
       error => {
-        console.log("error trying to get students");
+        console.log('error trying to get students');
       }
     )
 
@@ -245,15 +245,15 @@ export class InscriptionComponent implements OnInit {
         this.activeVies = a[0];
       },
       error => {
-        console.log("error trying to get studentsExp");
+        console.log('error trying to get studentsExp');
       }
     )
   }
 
 
   setFocus(e) {
-    $(".input").parent().addClass('focus');
-    $(".input").focus(function () {
+    $('.input').parent().addClass('focus');
+    $('.input').focus(function () {
       $(this).parent().addClass('focus');
     })
   }
@@ -266,7 +266,6 @@ export class InscriptionComponent implements OnInit {
 
   // tslint:disable-next-line: member-ordering
   userInfo = this.formBuilder.group({
-    userInfoPhone: ['', Validators.required],
     userInfoFirstName: ['', Validators.required],
     userInfoLastName: ['', Validators.required],
     userInfoDate: ['', Validators.required],
@@ -274,14 +273,20 @@ export class InscriptionComponent implements OnInit {
     userInfoFormation: ['Default', Validators.required],
     userInfoPays: ['', Validators.required],
     userInfoTel: ['', Validators.required],
-    File: ['', Validators.required],
+    File1: ['', Validators.required],
+    File2: ['', Validators.required],
+    File3: [''],
+    File4: ['', Validators.required],
+    File5: ['', Validators.required],
+    File6: [''],
+    File7: [''],
   });
 
   selectedFile_1: File;
   onFileChanged_1(e) {
     let target = e.target;
     this.selectedFile_1 = target.files[0];
-    console.log("target changed: " + this.selectedFile_1);
+    console.log('target changed: ' + this.selectedFile_1);
   }
 
   selectedFile_2: File;
@@ -317,29 +322,33 @@ export class InscriptionComponent implements OnInit {
     this.selectedFile_7 = target.files[6];
   }
 
+ 
+
   submitCondidat(f, e) {
     // e.target.querySelector('#typeFormation').selectedIndex = 0
-    console.log(e.target.querySelector('#typeFormation').selectedIndex)
     e.preventDefault();
 
-    const phone = this.userInfo.value.phone;
     const selector = this.userInfo.value;
     const first_name = selector.userInfoFirstName;
     const last_name = selector.userInfoLastName;
     const date = selector.userInfoDate;
     const email = selector.userInfoEmail;
     const formation = selector.userInfoFormation;
+    // tslint:disable-next-line: variable-name
+    const number = selector.userInfoTel;
+    const dial_code = selector.userInfoPays;
 
     if (!this.userInfo.valid) {
       Swal.fire(
         'Error!',
-        "SVP! remplissez le formulaire.",
+        'SVP! remplissez le formulaire.',
         'error'
       )
     } else {
-      const dial_code = selector.userInfoPhone.dialCode;
+      const country_code = selector.userInfoPays;
+      /*const dial_code = selector.userInfoPhone.dialCode;
       const country_code = selector.userInfoPhone.countryCode;
-      const number = selector.userInfoPhone.number;
+      const number = selector.userInfoPhone.number;*/
       var newCondidate;
       this.http.post<Response>(environment.apiUrl + 'handers/condidat/insertCondidat.php', {
         first_name,
@@ -347,8 +356,8 @@ export class InscriptionComponent implements OnInit {
         date,
         email,
         formation,
-        dial_code,
         country_code,
+        dial_code,
         number
       }).subscribe(
         (data: Response) => {
@@ -357,6 +366,8 @@ export class InscriptionComponent implements OnInit {
             '',
             'success'
           )
+          this.userInfo.reset();
+          
           if (data.success) {
             newCondidate = data;
           } else

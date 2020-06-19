@@ -18,10 +18,9 @@ nav {
   z-index: 12335;
 }
 
-
 .navbar-brand {
-  transform: translate(80%, 0%);
-  width: 20%;
+    transform: translate(45%, 0%);
+    width: 20%;
 }
 
 .navbar-brand img {
@@ -168,6 +167,26 @@ nav {
 }
 
 
+@media (max-width:500px){
+  #navbarSupportedContent {
+    position: absolute;
+    top: 100%;
+    width: 500px !important;
+    z-index: 123;
+    /* margin-left: 50px !important; */
+    background: rgb(196, 194, 195) !important;
+    padding: 50px !important;
+    padding-left: 150px !important;
+    text-align: left !important;
+    color: #000;
+}
+
+#form_search {
+    transform: translateX(0px) !important;
+    margin-left: 0 !important;
+}
+}
+
 @media (max-width: 700px) {
   #navbarSupportedContent {
     position: absolute;
@@ -273,10 +292,6 @@ nav {
   margin-right: 10px;
   background: var(--primary-hover);
   color: #fff;
-}
-
-#form_search{
-    transform: translateX(50px)!important;
 }
 
 #navbarSupportedContent {

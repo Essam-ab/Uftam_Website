@@ -134,3 +134,24 @@ div#partners {
   background: #f5f6fc;
   padding-bottom: 0 !important;
 }
+
+@media (max-width:500px){
+  .partners {
+    font-family: 'poppins', sans-serif;
+    width: 100% !important;
+    margin: 0 auto;
+    padding: 30px !important;
+    padding-top: 60px !important;
+    margin-bottom: 160px;
+}
+
+.partners .justify-content-between {
+    justify-content: space-between!important;
+    flex-direction: column !important;
+}
+
+.partners .f_logo_container {
+    width: 95%;
+    margin: auto !important;
+}
+}
